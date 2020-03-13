@@ -57,6 +57,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddEditBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEditBook.Designer.cs">
+      <DependentUpon>frmAddEditBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEditBook.resx">
+      <DependentUpon>frmAddEditBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBook.resx">
       <DependentUpon>frmBook.cs</DependentUpon>
@@ -94,7 +103,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\left_30px.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search_20px.png" />
   </ItemGroup>
