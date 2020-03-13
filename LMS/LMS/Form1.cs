@@ -50,5 +50,13 @@ namespace LMS
             pnlMenuAnimation.ShowSync(pnlMenu);
         }
 
+        private void BtnBook_Click(object sender, EventArgs e)
+        {
+            frmBook frm = new frmBook();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }
