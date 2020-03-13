@@ -16,5 +16,11 @@ namespace LMS
         {
             InitializeComponent();
         }
+
+        private void BtnAddBook_Click(object sender, EventArgs e)
+        {
+            frmAddEditBook frm = new frmAddEditBook();
+            frm.Show();
+        }
     }
 }

@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
-            this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
-            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnPin = new Guna.UI.WinForms.GunaImageButton();
-            this.btnUnpin = new Guna.UI.WinForms.GunaImageButton();
             this.gunaAdvenceButton7 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
+            this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
+            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPin = new Guna.UI.WinForms.GunaImageButton();
+            this.btnUnpin = new Guna.UI.WinForms.GunaImageButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMenu
@@ -70,176 +70,6 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(190, 567);
             this.pnlMenu.TabIndex = 0;
-            // 
-            // gunaControlBox1
-            // 
-            this.gunaControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox1.AnimationSpeed = 0.03F;
-            this.pnlMenuAnimation.SetDecoration(this.gunaControlBox1, Guna.UI.Animation.DecorationType.None);
-            this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(679, 0);
-            this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox1.Size = new System.Drawing.Size(33, 29);
-            this.gunaControlBox1.TabIndex = 0;
-            // 
-            // gunaControlBox2
-            // 
-            this.gunaControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox2.AnimationSpeed = 0.03F;
-            this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
-            this.pnlMenuAnimation.SetDecoration(this.gunaControlBox2, Guna.UI.Animation.DecorationType.None);
-            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.IconSize = 15F;
-            this.gunaControlBox2.Location = new System.Drawing.Point(605, 0);
-            this.gunaControlBox2.Name = "gunaControlBox2";
-            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.Size = new System.Drawing.Size(33, 29);
-            this.gunaControlBox2.TabIndex = 2;
-            // 
-            // gunaControlBox3
-            // 
-            this.gunaControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaControlBox3.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox3.AnimationSpeed = 0.03F;
-            this.gunaControlBox3.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MaximizeBox;
-            this.pnlMenuAnimation.SetDecoration(this.gunaControlBox3, Guna.UI.Animation.DecorationType.None);
-            this.gunaControlBox3.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox3.IconSize = 15F;
-            this.gunaControlBox3.Location = new System.Drawing.Point(642, 0);
-            this.gunaControlBox3.Name = "gunaControlBox3";
-            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaControlBox3.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaControlBox3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox3.Size = new System.Drawing.Size(33, 29);
-            this.gunaControlBox3.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnPin);
-            this.panel2.Controls.Add(this.btnUnpin);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lblTime);
-            this.panel2.Controls.Add(this.lblDate);
-            this.panel2.Controls.Add(this.gunaControlBox1);
-            this.panel2.Controls.Add(this.gunaControlBox3);
-            this.panel2.Controls.Add(this.gunaControlBox2);
-            this.pnlMenuAnimation.SetDecoration(this.panel2, Guna.UI.Animation.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(190, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(712, 70);
-            this.panel2.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.pnlMenuAnimation.SetDecoration(this.label3, Guna.UI.Animation.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label3.Location = new System.Drawing.Point(586, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "|";
-            // 
-            // lblTime
-            // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.AutoSize = true;
-            this.pnlMenuAnimation.SetDecoration(this.lblTime, Guna.UI.Animation.DecorationType.None);
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTime.Location = new System.Drawing.Point(606, 42);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(36, 17);
-            this.lblTime.TabIndex = 5;
-            this.lblTime.Text = "Time";
-            // 
-            // lblDate
-            // 
-            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDate.AutoSize = true;
-            this.pnlMenuAnimation.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
-            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblDate.Location = new System.Drawing.Point(434, 43);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(35, 17);
-            this.lblDate.TabIndex = 4;
-            this.lblDate.Text = "Date";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.pnlMenuAnimation.SetDecoration(this.panel3, Guna.UI.Animation.DecorationType.None);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(190, 70);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(712, 497);
-            this.panel3.TabIndex = 5;
-            // 
-            // pnlMenuAnimation
-            // 
-            this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
-            this.pnlMenuAnimation.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation1;
-            this.pnlMenuAnimation.TimeStep = 0.01F;
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // btnPin
-            // 
-            this.pnlMenuAnimation.SetDecoration(this.btnPin, Guna.UI.Animation.DecorationType.None);
-            this.btnPin.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPin.Image = ((System.Drawing.Image)(resources.GetObject("btnPin.Image")));
-            this.btnPin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnPin.Location = new System.Drawing.Point(7, 6);
-            this.btnPin.Name = "btnPin";
-            this.btnPin.OnHoverImage = null;
-            this.btnPin.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnPin.Size = new System.Drawing.Size(20, 20);
-            this.btnPin.TabIndex = 8;
-            this.btnPin.Click += new System.EventHandler(this.BtnPin_Click);
-            // 
-            // btnUnpin
-            // 
-            this.pnlMenuAnimation.SetDecoration(this.btnUnpin, Guna.UI.Animation.DecorationType.None);
-            this.btnUnpin.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUnpin.Image = ((System.Drawing.Image)(resources.GetObject("btnUnpin.Image")));
-            this.btnUnpin.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnUnpin.Location = new System.Drawing.Point(7, 6);
-            this.btnUnpin.Name = "btnUnpin";
-            this.btnUnpin.OnHoverImage = null;
-            this.btnUnpin.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.btnUnpin.Size = new System.Drawing.Size(20, 20);
-            this.btnUnpin.TabIndex = 7;
-            this.btnUnpin.Click += new System.EventHandler(this.BtnUnpin_Click);
             // 
             // gunaAdvenceButton7
             // 
@@ -420,6 +250,177 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // gunaControlBox1
+            // 
+            this.gunaControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox1.AnimationSpeed = 0.03F;
+            this.pnlMenuAnimation.SetDecoration(this.gunaControlBox1, Guna.UI.Animation.DecorationType.None);
+            this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox1.IconSize = 15F;
+            this.gunaControlBox1.Location = new System.Drawing.Point(679, 0);
+            this.gunaControlBox1.Name = "gunaControlBox1";
+            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox1.Size = new System.Drawing.Size(33, 29);
+            this.gunaControlBox1.TabIndex = 0;
+            // 
+            // gunaControlBox2
+            // 
+            this.gunaControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox2.AnimationSpeed = 0.03F;
+            this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
+            this.pnlMenuAnimation.SetDecoration(this.gunaControlBox2, Guna.UI.Animation.DecorationType.None);
+            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.IconSize = 15F;
+            this.gunaControlBox2.Location = new System.Drawing.Point(605, 0);
+            this.gunaControlBox2.Name = "gunaControlBox2";
+            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.Size = new System.Drawing.Size(33, 29);
+            this.gunaControlBox2.TabIndex = 2;
+            // 
+            // gunaControlBox3
+            // 
+            this.gunaControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox3.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox3.AnimationSpeed = 0.03F;
+            this.gunaControlBox3.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MaximizeBox;
+            this.pnlMenuAnimation.SetDecoration(this.gunaControlBox3, Guna.UI.Animation.DecorationType.None);
+            this.gunaControlBox3.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox3.IconSize = 15F;
+            this.gunaControlBox3.Location = new System.Drawing.Point(642, 0);
+            this.gunaControlBox3.Name = "gunaControlBox3";
+            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox3.OnHoverIconColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.gunaControlBox3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox3.Size = new System.Drawing.Size(33, 29);
+            this.gunaControlBox3.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btnPin);
+            this.panel2.Controls.Add(this.btnUnpin);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblTime);
+            this.panel2.Controls.Add(this.lblDate);
+            this.panel2.Controls.Add(this.gunaControlBox1);
+            this.panel2.Controls.Add(this.gunaControlBox3);
+            this.panel2.Controls.Add(this.gunaControlBox2);
+            this.pnlMenuAnimation.SetDecoration(this.panel2, Guna.UI.Animation.DecorationType.None);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(190, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(712, 70);
+            this.panel2.TabIndex = 4;
+            // 
+            // btnPin
+            // 
+            this.pnlMenuAnimation.SetDecoration(this.btnPin, Guna.UI.Animation.DecorationType.None);
+            this.btnPin.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPin.Image = ((System.Drawing.Image)(resources.GetObject("btnPin.Image")));
+            this.btnPin.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPin.Location = new System.Drawing.Point(7, 6);
+            this.btnPin.Name = "btnPin";
+            this.btnPin.OnHoverImage = null;
+            this.btnPin.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.btnPin.Size = new System.Drawing.Size(20, 20);
+            this.btnPin.TabIndex = 8;
+            this.btnPin.Click += new System.EventHandler(this.BtnPin_Click);
+            // 
+            // btnUnpin
+            // 
+            this.pnlMenuAnimation.SetDecoration(this.btnUnpin, Guna.UI.Animation.DecorationType.None);
+            this.btnUnpin.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUnpin.Image = ((System.Drawing.Image)(resources.GetObject("btnUnpin.Image")));
+            this.btnUnpin.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUnpin.Location = new System.Drawing.Point(7, 6);
+            this.btnUnpin.Name = "btnUnpin";
+            this.btnUnpin.OnHoverImage = null;
+            this.btnUnpin.OnHoverImageOffset = new System.Drawing.Point(0, 0);
+            this.btnUnpin.Size = new System.Drawing.Size(20, 20);
+            this.btnUnpin.TabIndex = 7;
+            this.btnUnpin.Click += new System.EventHandler(this.BtnUnpin_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.pnlMenuAnimation.SetDecoration(this.label3, Guna.UI.Animation.DecorationType.None);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label3.Location = new System.Drawing.Point(586, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(14, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "|";
+            // 
+            // lblTime
+            // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.AutoSize = true;
+            this.pnlMenuAnimation.SetDecoration(this.lblTime, Guna.UI.Animation.DecorationType.None);
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblTime.Location = new System.Drawing.Point(606, 42);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(36, 17);
+            this.lblTime.TabIndex = 5;
+            this.lblTime.Text = "Time";
+            // 
+            // lblDate
+            // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDate.AutoSize = true;
+            this.pnlMenuAnimation.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblDate.Location = new System.Drawing.Point(434, 43);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(35, 17);
+            this.lblDate.TabIndex = 4;
+            this.lblDate.Text = "Date";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.pnlMenuAnimation.SetDecoration(this.panel3, Guna.UI.Animation.DecorationType.None);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(190, 70);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(712, 497);
+            this.panel3.TabIndex = 5;
+            // 
+            // pnlMenuAnimation
+            // 
+            this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
+            this.pnlMenuAnimation.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation1;
+            this.pnlMenuAnimation.TimeStep = 0.01F;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,9 +437,9 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
