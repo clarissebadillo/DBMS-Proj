@@ -16,5 +16,39 @@ namespace LMS
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Set current date and time
+            timer1.Start();
+            lblDate.Text = DateTime.Now.ToLongDateString();
+            lblTime.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            //Set current time
+            lblTime.Text = DateTime.Now.ToShortTimeString();
+            timer1.Start();
+        }
+
+        private void BtnPin_Click(object sender, EventArgs e)
+        {
+            btnPin.Visible = false;
+            btnUnpin.Visible = true;
+            pnlMenu.Visible = false;
+            pnlMenu.Width = 50;
+            pnlMenuAnimation.ShowSync(pnlMenu);
+        }
+
+        private void BtnUnpin_Click(object sender, EventArgs e)
+        {
+            btnUnpin.Visible = false;
+            btnPin.Visible = true;
+            pnlMenu.Visible = false;
+            pnlMenu.Width = 190;
+            pnlMenuAnimation.ShowSync(pnlMenu);
+        }
+
     }
 }
