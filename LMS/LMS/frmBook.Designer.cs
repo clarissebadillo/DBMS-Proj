@@ -279,7 +279,7 @@
             this.btnAddBook.AnimationHoverSpeed = 0.07F;
             this.btnAddBook.AnimationSpeed = 0.03F;
             this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(173)))), ((int)(((byte)(2)))));
+            this.btnAddBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnAddBook.BorderColor = System.Drawing.Color.Black;
             this.btnAddBook.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnAddBook.FocusedColor = System.Drawing.Color.Empty;

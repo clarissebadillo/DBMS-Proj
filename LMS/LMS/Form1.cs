@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LMS
 {
     public partial class Form1 : Form
     {
+        SqlConnection cn = new SqlConnection();
+        SqlCommand cm = new SqlCommand();
+        DBConnection dbcon = new DBConnection();
+
         public Form1()
         {
             InitializeComponent();
+            cn = new SqlConnection(dbcon.MyConnection());
         }
 
         private void Form1_Load(object sender, EventArgs e)
