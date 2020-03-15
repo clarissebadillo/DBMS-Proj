@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.btnSubmit = new Guna.UI.WinForms.GunaButton();
+            this.btnUpdate = new Guna.UI.WinForms.GunaButton();
+            this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtYear = new Guna.UI.WinForms.GunaTextBox();
+            this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI.WinForms.GunaTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -43,8 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtGenre = new Guna.UI.WinForms.GunaTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEdition = new Guna.UI.WinForms.GunaTextBox();
-            this.btnCopies = new Guna.UI.WinForms.GunaButton();
+            this.txtCategory = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
@@ -52,26 +55,27 @@
             this.txtTitle = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtISBN = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtCreated = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.lblID = new System.Windows.Forms.Label();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnCopies = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaLinePanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
             // 
-            this.gunaLinePanel1.Controls.Add(this.btnSubmit);
-            this.gunaLinePanel1.Controls.Add(this.gunaLinePanel3);
             this.gunaLinePanel1.Controls.Add(this.btnCopies);
+            this.gunaLinePanel1.Controls.Add(this.lblID);
+            this.gunaLinePanel1.Controls.Add(this.btnUpdate);
+            this.gunaLinePanel1.Controls.Add(this.btnSave);
+            this.gunaLinePanel1.Controls.Add(this.gunaLinePanel3);
             this.gunaLinePanel1.Controls.Add(this.panel1);
             this.gunaLinePanel1.Controls.Add(this.gunaLinePanel2);
             this.gunaLinePanel1.Controls.Add(this.gunaLinePanel4);
@@ -83,44 +87,73 @@
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(562, 548);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(562, 557);
             this.gunaLinePanel1.TabIndex = 0;
             // 
-            // btnSubmit
+            // btnUpdate
             // 
-            this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.AnimationHoverSpeed = 0.07F;
-            this.btnSubmit.AnimationSpeed = 0.03F;
-            this.btnSubmit.BackColor = System.Drawing.Color.Transparent;
-            this.btnSubmit.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnSubmit.BorderColor = System.Drawing.Color.Black;
-            this.btnSubmit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSubmit.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Image = null;
-            this.btnSubmit.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSubmit.Location = new System.Drawing.Point(453, 512);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnSubmit.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSubmit.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSubmit.OnHoverImage = null;
-            this.btnSubmit.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSubmit.Radius = 14;
-            this.btnSubmit.Size = new System.Drawing.Size(97, 29);
-            this.btnSubmit.TabIndex = 31;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSubmit.Click += new System.EventHandler(this.BtnSubmit_Click);
+            this.btnUpdate.AnimationHoverSpeed = 0.07F;
+            this.btnUpdate.AnimationSpeed = 0.03F;
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnUpdate.BorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUpdate.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Image = null;
+            this.btnUpdate.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUpdate.Location = new System.Drawing.Point(353, 512);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnUpdate.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnUpdate.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnUpdate.OnHoverImage = null;
+            this.btnUpdate.OnPressedColor = System.Drawing.Color.Black;
+            this.btnUpdate.Radius = 7;
+            this.btnUpdate.Size = new System.Drawing.Size(97, 29);
+            this.btnUpdate.TabIndex = 32;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.AnimationHoverSpeed = 0.07F;
+            this.btnSave.AnimationSpeed = 0.03F;
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnSave.BorderColor = System.Drawing.Color.Black;
+            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = null;
+            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSave.Location = new System.Drawing.Point(453, 512);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSave.OnHoverImage = null;
+            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSave.Radius = 7;
+            this.btnSave.Size = new System.Drawing.Size(97, 29);
+            this.btnSave.TabIndex = 31;
+            this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // gunaLinePanel3
             // 
             this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLinePanel3.Controls.Add(this.dtCreated);
             this.gunaLinePanel3.Controls.Add(this.label1);
+            this.gunaLinePanel3.Controls.Add(this.txtYear);
             this.gunaLinePanel3.Controls.Add(this.cboMediaType);
             this.gunaLinePanel3.Controls.Add(this.label11);
             this.gunaLinePanel3.Controls.Add(this.txtPrice);
@@ -134,7 +167,7 @@
             this.gunaLinePanel3.Controls.Add(this.label5);
             this.gunaLinePanel3.Controls.Add(this.txtGenre);
             this.gunaLinePanel3.Controls.Add(this.label4);
-            this.gunaLinePanel3.Controls.Add(this.txtEdition);
+            this.gunaLinePanel3.Controls.Add(this.txtCategory);
             this.gunaLinePanel3.LineBottom = 2;
             this.gunaLinePanel3.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaLinePanel3.LineStyle = System.Windows.Forms.BorderStyle.None;
@@ -142,6 +175,60 @@
             this.gunaLinePanel3.Name = "gunaLinePanel3";
             this.gunaLinePanel3.Size = new System.Drawing.Size(538, 242);
             this.gunaLinePanel3.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label1.Location = new System.Drawing.Point(284, 174);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.TabIndex = 40;
+            this.label1.Text = "Published Date";
+            // 
+            // txtYear
+            // 
+            this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtYear.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtYear.BorderColor = System.Drawing.Color.Silver;
+            this.txtYear.BorderSize = 0;
+            this.txtYear.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtYear.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtYear.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtYear.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtYear.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.txtYear.Location = new System.Drawing.Point(284, 190);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.PasswordChar = '\0';
+            this.txtYear.Size = new System.Drawing.Size(234, 26);
+            this.txtYear.TabIndex = 39;
+            // 
+            // cboMediaType
+            // 
+            this.cboMediaType.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.BorderColor = System.Drawing.Color.Silver;
+            this.cboMediaType.BorderSize = 0;
+            this.cboMediaType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboMediaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMediaType.FocusedColor = System.Drawing.Color.Empty;
+            this.cboMediaType.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboMediaType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboMediaType.FormattingEnabled = true;
+            this.cboMediaType.Items.AddRange(new object[] {
+            "Book",
+            "DVD",
+            "Magazine",
+            "Digital Ebook"});
+            this.cboMediaType.Location = new System.Drawing.Point(21, 87);
+            this.cboMediaType.Name = "cboMediaType";
+            this.cboMediaType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboMediaType.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboMediaType.Size = new System.Drawing.Size(234, 26);
+            this.cboMediaType.TabIndex = 38;
             // 
             // label11
             // 
@@ -313,55 +400,27 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.label4.Location = new System.Drawing.Point(21, 20);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 25;
-            this.label4.Text = "Edition";
+            this.label4.Text = "Category";
             // 
-            // txtEdition
+            // txtCategory
             // 
-            this.txtEdition.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtEdition.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtEdition.BorderColor = System.Drawing.Color.Silver;
-            this.txtEdition.BorderSize = 0;
-            this.txtEdition.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEdition.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtEdition.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtEdition.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtEdition.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.txtEdition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtEdition.Location = new System.Drawing.Point(21, 36);
-            this.txtEdition.Name = "txtEdition";
-            this.txtEdition.PasswordChar = '\0';
-            this.txtEdition.Size = new System.Drawing.Size(234, 26);
-            this.txtEdition.TabIndex = 24;
-            // 
-            // btnCopies
-            // 
-            this.btnCopies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopies.AnimationHoverSpeed = 0.07F;
-            this.btnCopies.AnimationSpeed = 0.03F;
-            this.btnCopies.BackColor = System.Drawing.Color.Transparent;
-            this.btnCopies.BaseColor = System.Drawing.Color.Gainsboro;
-            this.btnCopies.BorderColor = System.Drawing.Color.Black;
-            this.btnCopies.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCopies.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCopies.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCopies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnCopies.Image = null;
-            this.btnCopies.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCopies.Location = new System.Drawing.Point(322, 512);
-            this.btnCopies.Name = "btnCopies";
-            this.btnCopies.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnCopies.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCopies.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCopies.OnHoverImage = null;
-            this.btnCopies.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCopies.Radius = 14;
-            this.btnCopies.Size = new System.Drawing.Size(125, 29);
-            this.btnCopies.TabIndex = 29;
-            this.btnCopies.Text = "Manage Copies";
-            this.btnCopies.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCategory.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtCategory.BorderColor = System.Drawing.Color.Silver;
+            this.txtCategory.BorderSize = 0;
+            this.txtCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCategory.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtCategory.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCategory.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.txtCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.txtCategory.Location = new System.Drawing.Point(21, 36);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.PasswordChar = '\0';
+            this.txtCategory.Size = new System.Drawing.Size(234, 26);
+            this.txtCategory.TabIndex = 24;
             // 
             // panel1
             // 
@@ -477,6 +536,40 @@
             this.txtISBN.Size = new System.Drawing.Size(301, 26);
             this.txtISBN.TabIndex = 2;
             // 
+            // gunaLinePanel4
+            // 
+            this.gunaLinePanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel4.Controls.Add(this.btnBack);
+            this.gunaLinePanel4.Controls.Add(this.lblTitle);
+            this.gunaLinePanel4.LineBottom = 2;
+            this.gunaLinePanel4.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaLinePanel4.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel4.Location = new System.Drawing.Point(12, 16);
+            this.gunaLinePanel4.Name = "gunaLinePanel4";
+            this.gunaLinePanel4.Size = new System.Drawing.Size(538, 46);
+            this.gunaLinePanel4.TabIndex = 27;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblTitle.Location = new System.Drawing.Point(48, 8);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(176, 28);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Add Book Details";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(26, 528);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TabIndex = 33;
+            this.lblID.Visible = false;
+            // 
             // gunaCirclePictureBox1
             // 
             this.gunaCirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -490,162 +583,110 @@
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
-            // gunaLinePanel4
+            // btnBack
             // 
-            this.gunaLinePanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::LMS.Properties.Resources.left_30px;
+            this.btnBack.ImageActive = null;
+            this.btnBack.Location = new System.Drawing.Point(17, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(25, 25);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 2;
+            this.btnBack.TabStop = false;
+            this.btnBack.Zoom = 10;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
+            // btnCopies
+            // 
+            this.btnCopies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLinePanel4.Controls.Add(this.bunifuImageButton1);
-            this.gunaLinePanel4.Controls.Add(this.lblTitle);
-            this.gunaLinePanel4.LineBottom = 2;
-            this.gunaLinePanel4.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLinePanel4.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel4.Location = new System.Drawing.Point(12, 16);
-            this.gunaLinePanel4.Name = "gunaLinePanel4";
-            this.gunaLinePanel4.Size = new System.Drawing.Size(538, 46);
-            this.gunaLinePanel4.TabIndex = 27;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton1.Image = global::LMS.Properties.Resources.left_30px;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(17, 13);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(25, 25);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 2;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTitle.Location = new System.Drawing.Point(48, 8);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(176, 28);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Add Book Details";
-            // 
-            // cboMediaType
-            // 
-            this.cboMediaType.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.BorderColor = System.Drawing.Color.Silver;
-            this.cboMediaType.BorderSize = 0;
-            this.cboMediaType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboMediaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMediaType.FocusedColor = System.Drawing.Color.Empty;
-            this.cboMediaType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboMediaType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboMediaType.FormattingEnabled = true;
-            this.cboMediaType.Items.AddRange(new object[] {
-            "Book",
-            "DVD",
-            "Magazine",
-            "Digital Ebook"});
-            this.cboMediaType.Location = new System.Drawing.Point(21, 87);
-            this.cboMediaType.Name = "cboMediaType";
-            this.cboMediaType.OnHoverItemBaseColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cboMediaType.Size = new System.Drawing.Size(234, 26);
-            this.cboMediaType.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label1.Location = new System.Drawing.Point(287, 174);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Created At";
-            // 
-            // dtCreated
-            // 
-            this.dtCreated.BaseColor = System.Drawing.Color.Gainsboro;
-            this.dtCreated.BorderColor = System.Drawing.Color.Silver;
-            this.dtCreated.BorderSize = 0;
-            this.dtCreated.CustomFormat = "MM/dd/yyyy";
-            this.dtCreated.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtCreated.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtCreated.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtCreated.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.dtCreated.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtCreated.Location = new System.Drawing.Point(284, 190);
-            this.dtCreated.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtCreated.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtCreated.Name = "dtCreated";
-            this.dtCreated.OnHoverBaseColor = System.Drawing.Color.White;
-            this.dtCreated.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtCreated.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dtCreated.OnPressedColor = System.Drawing.Color.Black;
-            this.dtCreated.Size = new System.Drawing.Size(223, 26);
-            this.dtCreated.TabIndex = 41;
-            this.dtCreated.Text = "03/14/2020";
-            this.dtCreated.Value = new System.DateTime(2020, 3, 14, 15, 6, 39, 64);
+            this.btnCopies.AnimationHoverSpeed = 0.07F;
+            this.btnCopies.AnimationSpeed = 0.03F;
+            this.btnCopies.BackColor = System.Drawing.Color.Transparent;
+            this.btnCopies.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnCopies.BorderColor = System.Drawing.Color.Black;
+            this.btnCopies.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCopies.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCopies.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCopies.ForeColor = System.Drawing.Color.White;
+            this.btnCopies.Image = null;
+            this.btnCopies.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnCopies.Location = new System.Drawing.Point(242, 512);
+            this.btnCopies.Name = "btnCopies";
+            this.btnCopies.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnCopies.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCopies.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCopies.OnHoverImage = null;
+            this.btnCopies.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCopies.Radius = 7;
+            this.btnCopies.Size = new System.Drawing.Size(105, 29);
+            this.btnCopies.TabIndex = 34;
+            this.btnCopies.Text = "Manage Copies";
+            this.btnCopies.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCopies.Visible = false;
+            this.btnCopies.Click += new System.EventHandler(this.BtnCopies_Click);
             // 
             // frmAddEditBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(562, 548);
+            this.ClientSize = new System.Drawing.Size(562, 557);
             this.Controls.Add(this.gunaLinePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddEditBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditBook";
-            this.Load += new System.EventHandler(this.FrmAddEditBook_Load);
             this.gunaLinePanel1.ResumeLayout(false);
+            this.gunaLinePanel1.PerformLayout();
             this.gunaLinePanel3.ResumeLayout(false);
             this.gunaLinePanel3.PerformLayout();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaLinePanel4.ResumeLayout(false);
             this.gunaLinePanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
-        private Guna.UI.WinForms.GunaButton btnSubmit;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel3;
-        private System.Windows.Forms.Label label11;
-        private Guna.UI.WinForms.GunaTextBox txtPrice;
-        private System.Windows.Forms.Label label8;
-        private Guna.UI.WinForms.GunaTextBox txtPublisher;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI.WinForms.GunaTextBox txtAuthor;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI.WinForms.GunaTextBox txtLanguage;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI.WinForms.GunaTextBox txtGenre;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI.WinForms.GunaTextBox txtEdition;
-        private Guna.UI.WinForms.GunaButton btnCopies;
-        private System.Windows.Forms.Panel panel1;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
-        private Guna.UI.WinForms.GunaButton gunaButton1;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaTextBox txtTitle;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI.WinForms.GunaTextBox txtISBN;
-        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel4;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Label lblTitle;
-        private Guna.UI.WinForms.GunaComboBox cboMediaType;
-        private Guna.UI.WinForms.GunaDateTimePicker dtCreated;
-        private System.Windows.Forms.Label label1;
+        public Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
+        public Guna.UI.WinForms.GunaButton btnSave;
+        public Guna.UI.WinForms.GunaLinePanel gunaLinePanel3;
+        public System.Windows.Forms.Label label11;
+        public Guna.UI.WinForms.GunaTextBox txtPrice;
+        public System.Windows.Forms.Label label8;
+        public Guna.UI.WinForms.GunaTextBox txtPublisher;
+        public System.Windows.Forms.Label label9;
+        public Guna.UI.WinForms.GunaTextBox txtAuthor;
+        public System.Windows.Forms.Label label6;
+        public Guna.UI.WinForms.GunaTextBox txtLanguage;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label5;
+        public Guna.UI.WinForms.GunaTextBox txtGenre;
+        public System.Windows.Forms.Label label4;
+        public Guna.UI.WinForms.GunaTextBox txtCategory;
+        public System.Windows.Forms.Panel panel1;
+        public Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
+        public Guna.UI.WinForms.GunaButton gunaButton1;
+        public System.Windows.Forms.Label label3;
+        public Guna.UI.WinForms.GunaTextBox txtTitle;
+        public System.Windows.Forms.Label label2;
+        public Guna.UI.WinForms.GunaTextBox txtISBN;
+        public Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
+        public Guna.UI.WinForms.GunaLinePanel gunaLinePanel4;
+        public Bunifu.Framework.UI.BunifuImageButton btnBack;
+        public System.Windows.Forms.Label lblTitle;
+        public Guna.UI.WinForms.GunaComboBox cboMediaType;
+        public Guna.UI.WinForms.GunaButton btnUpdate;
+        public System.Windows.Forms.Label label1;
+        public Guna.UI.WinForms.GunaTextBox txtYear;
+        public System.Windows.Forms.Label lblID;
+        public Guna.UI.WinForms.GunaButton btnCopies;
     }
 }
