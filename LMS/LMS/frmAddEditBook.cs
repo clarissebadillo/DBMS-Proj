@@ -25,7 +25,7 @@ namespace LMS
             cn = new SqlConnection(dbcon.MyConnection());
             frmlist = flist;
         }
-
+        
         private void FrmAddEditBook_Load(object sender, EventArgs e)
         {
             //
@@ -93,11 +93,8 @@ namespace LMS
             {
                 if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //open connection to the database
                     cn.Open();
-                    //command to be executed on the database
                     cm = new SqlCommand("UPDATE tblBook SET bkISBN = @ISBN, bkTitle = @booktitle, bkCategory = @category, bkGenre = @genre, bkMediaType = @mediatype, bkLanguage = @language, bkAuthor = @author, bkPublisher = @publisher, bkPrice = @price, bkYear = @year WHERE bookID LIKE '" + lblID + "'", cn);
-                    //set parameters value
                     cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                     cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
                     cm.Parameters.AddWithValue("@category", txtCategory.Text);
@@ -108,10 +105,9 @@ namespace LMS
                     cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
                     cm.Parameters.AddWithValue("@price", txtPrice.Text);
                     cm.Parameters.AddWithValue("@year", txtYear.Text);
-                    //ask db to execute query
                     cm.ExecuteNonQuery();
-                    //close connection
                     cn.Close();
+
                     MessageBox.Show("Record has been successfully saved!");
                     Clear();
                     frmlist.LoadRecords();
@@ -126,10 +122,29 @@ namespace LMS
 
         private void BtnCopies_Click(object sender, EventArgs e)
         {
-            frmBookCopies fcopy = new frmBookCopies();
-            fcopy.TopLevel = false;
-            
-            //
+            frmBookCopies frm = new frmBookCopies(this);
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBook", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                frm.lblBookTitle.Text = txtTitle.Text;
+                frm.lblISBN.Text = txtISBN.Text;
+                frm.lblCategory.Text = txtCategory.Text;
+                frm.lblGenre.Text = txtGenre.Text;
+                frm.lblMediaType.Text = cboMediaType.Text;
+                frm.lblLanguage.Text = txtLanguage.Text;
+                frm.lblAuthor.Text = txtAuthor.Text;
+                frm.lblPublisher.Text = txtPublisher.Text;
+                frm.lblPrice.Text = txtPrice.Text;
+                frm.lblYear.Text = txtYear.Text;
+            }
+            dr.Close();
+            cn.Close();
+            //frm.TopLevel = false;
+            this.Hide();
+            frm.BringToFront();
+            frm.ShowDialog();
         }
     }
 }

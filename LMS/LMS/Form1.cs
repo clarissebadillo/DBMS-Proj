@@ -30,7 +30,7 @@ namespace LMS
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToShortTimeString();
         }
-
+        
         private void Timer1_Tick(object sender, EventArgs e)
         {
             //Set current time
@@ -69,7 +69,7 @@ namespace LMS
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void BtnMax_Click(object sender, EventArgs e)
