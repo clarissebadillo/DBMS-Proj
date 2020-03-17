@@ -127,4 +127,10 @@
   <data name="pencil_drawing_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pencil_drawing_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="trash_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trash_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pencil_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pencil_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
