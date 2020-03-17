@@ -35,7 +35,7 @@
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
-            this.txtBarcode = new Guna.UI.WinForms.GunaTextBox();
+            this.txtYear = new Guna.UI.WinForms.GunaTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI.WinForms.GunaTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -161,9 +161,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLinePanel3.Controls.Add(this.label1);
             this.gunaLinePanel3.Controls.Add(this.cboMediaType);
-            this.gunaLinePanel3.Controls.Add(this.txtBarcode);
             this.gunaLinePanel3.Controls.Add(this.label11);
             this.gunaLinePanel3.Controls.Add(this.txtPrice);
+            this.gunaLinePanel3.Controls.Add(this.txtYear);
             this.gunaLinePanel3.Controls.Add(this.label8);
             this.gunaLinePanel3.Controls.Add(this.txtPublisher);
             this.gunaLinePanel3.Controls.Add(this.label9);
@@ -189,11 +189,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label1.Location = new System.Drawing.Point(21, 20);
+            this.label1.Location = new System.Drawing.Point(284, 174);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 40;
-            this.label1.Text = "Barcode";
+            this.label1.Text = "Published year";
             // 
             // cboMediaType
             // 
@@ -212,30 +212,30 @@
             "DVD",
             "Magazine",
             "Digital Ebook"});
-            this.cboMediaType.Location = new System.Drawing.Point(21, 191);
+            this.cboMediaType.Location = new System.Drawing.Point(21, 87);
             this.cboMediaType.Name = "cboMediaType";
             this.cboMediaType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.cboMediaType.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.cboMediaType.Size = new System.Drawing.Size(234, 26);
             this.cboMediaType.TabIndex = 38;
             // 
-            // txtBarcode
+            // txtYear
             // 
-            this.txtBarcode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBarcode.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtBarcode.BorderColor = System.Drawing.Color.Silver;
-            this.txtBarcode.BorderSize = 0;
-            this.txtBarcode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBarcode.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtBarcode.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtBarcode.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtBarcode.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.txtBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtBarcode.Location = new System.Drawing.Point(21, 36);
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.PasswordChar = '\0';
-            this.txtBarcode.Size = new System.Drawing.Size(234, 26);
-            this.txtBarcode.TabIndex = 39;
+            this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtYear.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtYear.BorderColor = System.Drawing.Color.Silver;
+            this.txtYear.BorderSize = 0;
+            this.txtYear.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtYear.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtYear.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtYear.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtYear.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.txtYear.Location = new System.Drawing.Point(284, 190);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.PasswordChar = '\0';
+            this.txtYear.Size = new System.Drawing.Size(234, 25);
+            this.txtYear.TabIndex = 39;
             // 
             // label11
             // 
@@ -243,7 +243,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label11.Location = new System.Drawing.Point(284, 175);
+            this.label11.Location = new System.Drawing.Point(22, 174);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 13);
             this.label11.TabIndex = 37;
@@ -261,10 +261,10 @@
             this.txtPrice.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtPrice.Location = new System.Drawing.Point(284, 191);
+            this.txtPrice.Location = new System.Drawing.Point(22, 190);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
-            this.txtPrice.Size = new System.Drawing.Size(234, 26);
+            this.txtPrice.Size = new System.Drawing.Size(234, 25);
             this.txtPrice.TabIndex = 36;
             // 
             // label8
@@ -294,7 +294,7 @@
             this.txtPublisher.Location = new System.Drawing.Point(284, 138);
             this.txtPublisher.Name = "txtPublisher";
             this.txtPublisher.PasswordChar = '\0';
-            this.txtPublisher.Size = new System.Drawing.Size(234, 26);
+            this.txtPublisher.Size = new System.Drawing.Size(234, 25);
             this.txtPublisher.TabIndex = 34;
             // 
             // label9
@@ -324,7 +324,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(21, 138);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.PasswordChar = '\0';
-            this.txtAuthor.Size = new System.Drawing.Size(234, 26);
+            this.txtAuthor.Size = new System.Drawing.Size(234, 25);
             this.txtAuthor.TabIndex = 32;
             // 
             // label6
@@ -354,7 +354,7 @@
             this.txtLanguage.Location = new System.Drawing.Point(284, 87);
             this.txtLanguage.Name = "txtLanguage";
             this.txtLanguage.PasswordChar = '\0';
-            this.txtLanguage.Size = new System.Drawing.Size(234, 26);
+            this.txtLanguage.Size = new System.Drawing.Size(234, 25);
             this.txtLanguage.TabIndex = 30;
             // 
             // label7
@@ -363,7 +363,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label7.Location = new System.Drawing.Point(21, 175);
+            this.label7.Location = new System.Drawing.Point(21, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 29;
@@ -375,7 +375,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label5.Location = new System.Drawing.Point(21, 71);
+            this.label5.Location = new System.Drawing.Point(284, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 27;
@@ -393,10 +393,10 @@
             this.txtGenre.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtGenre.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtGenre.Location = new System.Drawing.Point(21, 87);
+            this.txtGenre.Location = new System.Drawing.Point(284, 36);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.PasswordChar = '\0';
-            this.txtGenre.Size = new System.Drawing.Size(234, 26);
+            this.txtGenre.Size = new System.Drawing.Size(234, 25);
             this.txtGenre.TabIndex = 26;
             // 
             // label4
@@ -405,7 +405,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label4.Location = new System.Drawing.Point(284, 20);
+            this.label4.Location = new System.Drawing.Point(22, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 25;
@@ -423,10 +423,10 @@
             this.txtCategory.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtCategory.Location = new System.Drawing.Point(284, 36);
+            this.txtCategory.Location = new System.Drawing.Point(22, 36);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.PasswordChar = '\0';
-            this.txtCategory.Size = new System.Drawing.Size(234, 26);
+            this.txtCategory.Size = new System.Drawing.Size(234, 25);
             this.txtCategory.TabIndex = 24;
             // 
             // panel1
@@ -653,7 +653,7 @@
         public Guna.UI.WinForms.GunaComboBox cboMediaType;
         public Guna.UI.WinForms.GunaButton btnUpdate;
         public System.Windows.Forms.Label label1;
-        public Guna.UI.WinForms.GunaTextBox txtBarcode;
+        public Guna.UI.WinForms.GunaTextBox txtYear;
         public System.Windows.Forms.Label lblID;
     }
 }

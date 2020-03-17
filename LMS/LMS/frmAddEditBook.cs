@@ -41,7 +41,7 @@ namespace LMS
             txtPrice.Text = "";
             cboMediaType.Items.Clear();
             txtLanguage.Text = "";
-            txtBarcode.Text = "";
+            txtYear.Text = "";
             txtISBN.Focus();
         }
 
@@ -54,7 +54,7 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblBook VALUES (@ISBN, @booktitle, @category, @genre, @mediatype, @language, @author, @publisher, @price, @barcode)", cn);
+                    cm = new SqlCommand("INSERT INTO tblBook VALUES (@ISBN, @booktitle, @category, @genre, @mediatype, @language, @author, @publisher, @price, @year)", cn);
                     //set parameters value
                     cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                     cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
@@ -65,7 +65,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@author", txtAuthor.Text);
                     cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
                     cm.Parameters.AddWithValue("@price", txtPrice.Text);
-                    cm.Parameters.AddWithValue("@barcode", txtBarcode.Text);
+                    cm.Parameters.AddWithValue("@year", txtYear.Text);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
                     //close connection
@@ -103,7 +103,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@author", txtAuthor.Text);
                     cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
                     cm.Parameters.AddWithValue("@price", txtPrice.Text);
-                    cm.Parameters.AddWithValue("@year", txtBarcode.Text);
+                    cm.Parameters.AddWithValue("@year", txtYear.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
 

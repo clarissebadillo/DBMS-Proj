@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ZXing;
 
 namespace LMS
 {
@@ -43,27 +44,33 @@ namespace LMS
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkBarcode"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkGenre"].ToString(), dr["bkCategory"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkCategory"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString());
             }
             dr.Close();
             cn.Close();
         }
 
-        
+
 
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblBarcode.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
-            lblBookTitle.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
-            lblISBN.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
-            lblCategory.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
-            lblGenre.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
-            lblMediaType.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
-            lblLanguage.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
-            lblAuthor.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
-            lblPublisher.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
-            lblPrice.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
+            //Generate barcode using ZXing.Net
+            BarcodeWriter writer = new BarcodeWriter() { Format = BarcodeFormat.CODE_128 };
+            picBarcode.Image?.Dispose();
+            picBarcode.Image = writer.Write(gunaDataGridView1[3, e.RowIndex].Value.ToString());
 
+            //Load to labels
+            lblBookTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
+            lblISBN.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
+            lblCategory.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
+            lblGenre.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
+            lblMediaType.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
+            lblLanguage.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
+            lblAuthor.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
+            lblPublisher.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
+            lblPrice.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
+            lblYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
+        
             string colName = gunaDataGridView1.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {
@@ -71,16 +78,16 @@ namespace LMS
                 frm.btnSave.Enabled = false;
                 frm.lblTitle.Text = "Edit Book Details";
                 frm.lblID.Text = gunaDataGridView1[1, e.RowIndex].Value.ToString();
-                frm.txtBarcode.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
-                frm.txtTitle.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
-                frm.txtISBN.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
-                frm.txtGenre.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
-                frm.txtCategory.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
-                frm.cboMediaType.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
-                frm.txtLanguage.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
-                frm.txtAuthor.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
-                frm.txtPublisher.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
-                frm.txtPrice.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
+                frm.txtTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
+                frm.txtISBN.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
+                frm.txtGenre.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
+                frm.txtCategory.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
+                frm.cboMediaType.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
+                frm.txtLanguage.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
+                frm.txtAuthor.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
+                frm.txtPublisher.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
+                frm.txtPrice.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
+                frm.txtYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
                 frm.ShowDialog();
             }
             else if (colName == "Delete")
