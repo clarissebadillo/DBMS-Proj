@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.lblID = new System.Windows.Forms.Label();
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtYear = new Guna.UI.WinForms.GunaTextBox();
             this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
+            this.txtBarcode = new Guna.UI.WinForms.GunaTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI.WinForms.GunaTextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,23 +56,20 @@
             this.txtTitle = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtISBN = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblID = new System.Windows.Forms.Label();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCopies = new Guna.UI.WinForms.GunaButton();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
-            this.gunaLinePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            this.gunaLinePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
             // 
-            this.gunaLinePanel1.Controls.Add(this.btnCopies);
             this.gunaLinePanel1.Controls.Add(this.lblID);
             this.gunaLinePanel1.Controls.Add(this.btnUpdate);
             this.gunaLinePanel1.Controls.Add(this.btnSave);
@@ -89,6 +87,15 @@
             this.gunaLinePanel1.Name = "gunaLinePanel1";
             this.gunaLinePanel1.Size = new System.Drawing.Size(562, 557);
             this.gunaLinePanel1.TabIndex = 0;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(26, 528);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TabIndex = 33;
+            this.lblID.Visible = false;
             // 
             // btnUpdate
             // 
@@ -153,8 +160,8 @@
             this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLinePanel3.Controls.Add(this.label1);
-            this.gunaLinePanel3.Controls.Add(this.txtYear);
             this.gunaLinePanel3.Controls.Add(this.cboMediaType);
+            this.gunaLinePanel3.Controls.Add(this.txtBarcode);
             this.gunaLinePanel3.Controls.Add(this.label11);
             this.gunaLinePanel3.Controls.Add(this.txtPrice);
             this.gunaLinePanel3.Controls.Add(this.label8);
@@ -182,29 +189,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label1.Location = new System.Drawing.Point(284, 174);
+            this.label1.Location = new System.Drawing.Point(21, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(48, 13);
             this.label1.TabIndex = 40;
-            this.label1.Text = "Published Date";
-            // 
-            // txtYear
-            // 
-            this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtYear.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtYear.BorderColor = System.Drawing.Color.Silver;
-            this.txtYear.BorderSize = 0;
-            this.txtYear.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtYear.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtYear.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtYear.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtYear.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtYear.Location = new System.Drawing.Point(284, 190);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.PasswordChar = '\0';
-            this.txtYear.Size = new System.Drawing.Size(234, 26);
-            this.txtYear.TabIndex = 39;
+            this.label1.Text = "Barcode";
             // 
             // cboMediaType
             // 
@@ -223,12 +212,30 @@
             "DVD",
             "Magazine",
             "Digital Ebook"});
-            this.cboMediaType.Location = new System.Drawing.Point(21, 87);
+            this.cboMediaType.Location = new System.Drawing.Point(21, 191);
             this.cboMediaType.Name = "cboMediaType";
             this.cboMediaType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.cboMediaType.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.cboMediaType.Size = new System.Drawing.Size(234, 26);
             this.cboMediaType.TabIndex = 38;
+            // 
+            // txtBarcode
+            // 
+            this.txtBarcode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBarcode.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtBarcode.BorderColor = System.Drawing.Color.Silver;
+            this.txtBarcode.BorderSize = 0;
+            this.txtBarcode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBarcode.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtBarcode.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtBarcode.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBarcode.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.txtBarcode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.txtBarcode.Location = new System.Drawing.Point(21, 36);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.PasswordChar = '\0';
+            this.txtBarcode.Size = new System.Drawing.Size(234, 26);
+            this.txtBarcode.TabIndex = 39;
             // 
             // label11
             // 
@@ -236,7 +243,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label11.Location = new System.Drawing.Point(21, 174);
+            this.label11.Location = new System.Drawing.Point(284, 175);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 13);
             this.label11.TabIndex = 37;
@@ -254,7 +261,7 @@
             this.txtPrice.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtPrice.Location = new System.Drawing.Point(21, 190);
+            this.txtPrice.Location = new System.Drawing.Point(284, 191);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.Size = new System.Drawing.Size(234, 26);
@@ -356,7 +363,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label7.Location = new System.Drawing.Point(21, 71);
+            this.label7.Location = new System.Drawing.Point(21, 175);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 29;
@@ -368,7 +375,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label5.Location = new System.Drawing.Point(284, 20);
+            this.label5.Location = new System.Drawing.Point(21, 71);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 27;
@@ -386,7 +393,7 @@
             this.txtGenre.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtGenre.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtGenre.Location = new System.Drawing.Point(284, 36);
+            this.txtGenre.Location = new System.Drawing.Point(21, 87);
             this.txtGenre.Name = "txtGenre";
             this.txtGenre.PasswordChar = '\0';
             this.txtGenre.Size = new System.Drawing.Size(234, 26);
@@ -398,7 +405,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label4.Location = new System.Drawing.Point(21, 20);
+            this.label4.Location = new System.Drawing.Point(284, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 25;
@@ -416,7 +423,7 @@
             this.txtCategory.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtCategory.Location = new System.Drawing.Point(21, 36);
+            this.txtCategory.Location = new System.Drawing.Point(284, 36);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.PasswordChar = '\0';
             this.txtCategory.Size = new System.Drawing.Size(234, 26);
@@ -536,6 +543,19 @@
             this.txtISBN.Size = new System.Drawing.Size(301, 26);
             this.txtISBN.TabIndex = 2;
             // 
+            // gunaCirclePictureBox1
+            // 
+            this.gunaCirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.Gainsboro;
+            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(34, 17);
+            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
+            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox1.TabIndex = 1;
+            this.gunaCirclePictureBox1.TabStop = false;
+            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
+            // 
             // gunaLinePanel4
             // 
             this.gunaLinePanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -549,39 +569,6 @@
             this.gunaLinePanel4.Name = "gunaLinePanel4";
             this.gunaLinePanel4.Size = new System.Drawing.Size(538, 46);
             this.gunaLinePanel4.TabIndex = 27;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTitle.Location = new System.Drawing.Point(48, 8);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(176, 28);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Add Book Details";
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(26, 528);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(0, 13);
-            this.lblID.TabIndex = 33;
-            this.lblID.Visible = false;
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(34, 17);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 1;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // btnBack
             // 
@@ -598,35 +585,16 @@
             this.btnBack.Zoom = 10;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
-            // btnCopies
+            // lblTitle
             // 
-            this.btnCopies.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCopies.AnimationHoverSpeed = 0.07F;
-            this.btnCopies.AnimationSpeed = 0.03F;
-            this.btnCopies.BackColor = System.Drawing.Color.Transparent;
-            this.btnCopies.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnCopies.BorderColor = System.Drawing.Color.Black;
-            this.btnCopies.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCopies.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCopies.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCopies.ForeColor = System.Drawing.Color.White;
-            this.btnCopies.Image = null;
-            this.btnCopies.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCopies.Location = new System.Drawing.Point(242, 512);
-            this.btnCopies.Name = "btnCopies";
-            this.btnCopies.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnCopies.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCopies.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCopies.OnHoverImage = null;
-            this.btnCopies.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCopies.Radius = 7;
-            this.btnCopies.Size = new System.Drawing.Size(105, 29);
-            this.btnCopies.TabIndex = 34;
-            this.btnCopies.Text = "Manage Copies";
-            this.btnCopies.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCopies.Visible = false;
-            this.btnCopies.Click += new System.EventHandler(this.BtnCopies_Click);
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblTitle.Location = new System.Drawing.Point(48, 8);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(176, 28);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Add Book Details";
             // 
             // frmAddEditBook
             // 
@@ -645,9 +613,9 @@
             this.gunaLinePanel3.PerformLayout();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaLinePanel4.ResumeLayout(false);
             this.gunaLinePanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
 
@@ -685,8 +653,7 @@
         public Guna.UI.WinForms.GunaComboBox cboMediaType;
         public Guna.UI.WinForms.GunaButton btnUpdate;
         public System.Windows.Forms.Label label1;
-        public Guna.UI.WinForms.GunaTextBox txtYear;
+        public Guna.UI.WinForms.GunaTextBox txtBarcode;
         public System.Windows.Forms.Label lblID;
-        public Guna.UI.WinForms.GunaButton btnCopies;
     }
 }
