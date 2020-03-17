@@ -51,7 +51,6 @@ namespace LMS
         }
 
 
-
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Generate barcode using ZXing.Net
@@ -103,6 +102,11 @@ namespace LMS
                     LoadRecords();
                 }
             }
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadRecords();
         }
     }
 }
