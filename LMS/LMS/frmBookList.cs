@@ -27,6 +27,11 @@ namespace LMS
             LoadRecords();
         }
 
+        private void FrmBookList_Load(object sender, EventArgs e)
+        {
+            cboSubject.SelectedIndex = 0;
+        }
+
         private void BtnAddBook_Click(object sender, EventArgs e)
         {
             frmAddEditBook frm = new frmAddEditBook(this);
@@ -44,9 +49,17 @@ namespace LMS
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkCategory"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkSubject"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString());
             }
             dr.Close();
+            cn.Close();
+        }
+
+        public void LoadSubjects()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBook WHERE bkSubject LIKE '" + cboSubject.SelectedIndex.ToString() + "%'", cn);
+            cm.ExecuteNonQuery();
             cn.Close();
         }
 
@@ -61,7 +74,7 @@ namespace LMS
             //Load to labels
             lblBookTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
             lblISBN.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
-            lblCategory.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
+            lblSubject.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
             lblGenre.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
             lblMediaType.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
             lblLanguage.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
@@ -79,8 +92,8 @@ namespace LMS
                 frm.lblID.Text = gunaDataGridView1[1, e.RowIndex].Value.ToString();
                 frm.txtTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
                 frm.txtISBN.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
-                frm.txtGenre.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
-                frm.txtCategory.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
+                frm.cboSubject.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
+                frm.txtGenre.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
                 frm.cboMediaType.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
                 frm.txtLanguage.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
                 frm.txtAuthor.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
@@ -96,7 +109,6 @@ namespace LMS
                     cn.Open();
                     cm = new SqlCommand("DELETE FROM tblBook WHERE bookID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
-
                     cn.Close();
                     MessageBox.Show("Record has been successfully deleted!", stitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadRecords();
@@ -108,5 +120,11 @@ namespace LMS
         {
             LoadRecords();
         }
+
+        private void CboSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //LoadSubjects();
+        }
+
     }
 }

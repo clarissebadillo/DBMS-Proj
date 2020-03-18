@@ -34,12 +34,10 @@ namespace LMS
         {
             txtTitle.Text = "";
             txtAuthor.Text = "";
-            txtCategory.Text = "";
             txtGenre.Text = "";
             txtISBN.Text = "";
             txtPublisher.Text = "";
             txtPrice.Text = "";
-            cboMediaType.Items.Clear();
             txtLanguage.Text = "";
             txtYear.Text = "";
             txtISBN.Focus();
@@ -54,11 +52,11 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblBook VALUES (@ISBN, @booktitle, @category, @genre, @mediatype, @language, @author, @publisher, @price, @year)", cn);
+                    cm = new SqlCommand("INSERT INTO tblBook VALUES (@ISBN, @booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @year)", cn);
                     //set parameters value
                     cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                     cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
-                    cm.Parameters.AddWithValue("@category", txtCategory.Text);
+                    cm.Parameters.AddWithValue("@subject", cboSubject.Text);
                     cm.Parameters.AddWithValue("@genre", txtGenre.Text);
                     cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
                     cm.Parameters.AddWithValue("@language", txtLanguage.Text);
@@ -93,10 +91,10 @@ namespace LMS
                 if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("UPDATE tblBook SET bkISBN = @ISBN, bkTitle = @booktitle, bkCategory = @category, bkGenre = @genre, bkMediaType = @mediatype, bkLanguage = @language, bkAuthor = @author, bkPublisher = @publisher, bkPrice = @price, bkYear = @year WHERE bookID LIKE '" + lblID + "'", cn);
+                    cm = new SqlCommand("UPDATE tblBook SET bkISBN = @ISBN, bkTitle = @booktitle, bkSubject = @subject, bkGenre = @genre, bkMediaType = @mediatype, bkLanguage = @language, bkAuthor = @author, bkPublisher = @publisher, bkPrice = @price, bkYear = @year WHERE bookID LIKE '" + lblID + "'", cn);
                     cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                     cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
-                    cm.Parameters.AddWithValue("@category", txtCategory.Text);
+                    cm.Parameters.AddWithValue("@subject", cboSubject.Text);
                     cm.Parameters.AddWithValue("@genre", txtGenre.Text);
                     cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
                     cm.Parameters.AddWithValue("@language", txtLanguage.Text);

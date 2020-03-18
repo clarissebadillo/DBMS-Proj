@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation2 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.gunaAdvenceButton7 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton4 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnUser = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -69,22 +69,22 @@
             // 
             this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
             this.pnlMenuAnimation.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation1;
             this.pnlMenuAnimation.TimeStep = 0.01F;
             // 
             // pnlMenu
@@ -92,7 +92,7 @@
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton7);
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton3);
-            this.pnlMenu.Controls.Add(this.gunaAdvenceButton4);
+            this.pnlMenu.Controls.Add(this.btnUser);
             this.pnlMenu.Controls.Add(this.btnBook);
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton1);
             this.pnlMenu.Controls.Add(this.pictureBox1);
@@ -169,38 +169,39 @@
             this.gunaAdvenceButton3.Text = "Reports";
             this.gunaAdvenceButton3.TextOffsetX = 10;
             // 
-            // gunaAdvenceButton4
+            // btnUser
             // 
-            this.gunaAdvenceButton4.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton4.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton4.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceButton4.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton4.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
-            this.gunaAdvenceButton4.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.CheckedImage")));
-            this.gunaAdvenceButton4.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.pnlMenuAnimation.SetDecoration(this.gunaAdvenceButton4, Guna.UI.Animation.DecorationType.None);
-            this.gunaAdvenceButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceButton4.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton4.Image")));
-            this.gunaAdvenceButton4.ImageOffsetX = 5;
-            this.gunaAdvenceButton4.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton4.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton4.Location = new System.Drawing.Point(0, 280);
-            this.gunaAdvenceButton4.Name = "gunaAdvenceButton4";
-            this.gunaAdvenceButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaAdvenceButton4.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton4.OnHoverImage = null;
-            this.gunaAdvenceButton4.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton4.Size = new System.Drawing.Size(190, 42);
-            this.gunaAdvenceButton4.TabIndex = 3;
-            this.gunaAdvenceButton4.Text = "Users";
-            this.gunaAdvenceButton4.TextOffsetX = 10;
+            this.btnUser.AnimationHoverSpeed = 0.07F;
+            this.btnUser.AnimationSpeed = 0.03F;
+            this.btnUser.BaseColor = System.Drawing.Color.Transparent;
+            this.btnUser.BorderColor = System.Drawing.Color.Black;
+            this.btnUser.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnUser.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnUser.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUser.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnUser.CheckedImage")));
+            this.btnUser.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.pnlMenuAnimation.SetDecoration(this.btnUser, Guna.UI.Animation.DecorationType.None);
+            this.btnUser.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnUser.FocusedColor = System.Drawing.Color.Empty;
+            this.btnUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUser.ForeColor = System.Drawing.Color.White;
+            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
+            this.btnUser.ImageOffsetX = 5;
+            this.btnUser.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnUser.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnUser.Location = new System.Drawing.Point(0, 280);
+            this.btnUser.Name = "btnUser";
+            this.btnUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnUser.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnUser.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnUser.OnHoverImage = null;
+            this.btnUser.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnUser.OnPressedColor = System.Drawing.Color.Black;
+            this.btnUser.Size = new System.Drawing.Size(190, 42);
+            this.btnUser.TabIndex = 3;
+            this.btnUser.Text = "Users";
+            this.btnUser.TextOffsetX = 10;
+            this.btnUser.Click += new System.EventHandler(this.BtnUser_Click);
             // 
             // btnBook
             // 
@@ -474,7 +475,7 @@
         private System.Windows.Forms.Panel pnlMenu;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton7;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton3;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton4;
+        private Guna.UI.WinForms.GunaAdvenceButton btnUser;
         private Guna.UI.WinForms.GunaAdvenceButton btnBook;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
