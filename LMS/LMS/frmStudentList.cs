@@ -28,7 +28,7 @@ namespace LMS
 
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
-            frmAddEditStudent frm = new frmAddEditStudent();
+            frmAddEditStudent frm = new frmAddEditStudent(this);
             frm.Show();
         }
 

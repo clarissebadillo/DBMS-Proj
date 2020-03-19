@@ -65,15 +65,15 @@ namespace LMS
             frm.Show();
         }
 
-        private void BtnUser_Click(object sender, EventArgs e)
+        private void BtnStudent_Click(object sender, EventArgs e)
         {
-
             frmStudentList frm = new frmStudentList();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();
             frm.Show();
         }
+        
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -114,7 +114,6 @@ namespace LMS
                 this.WindowState = FormWindowState.Maximized;
             }
         }
-
 
     }
 }
