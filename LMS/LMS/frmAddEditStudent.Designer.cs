@@ -49,23 +49,24 @@
             this.txtLname = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
-            this.rbFemale = new Guna.UI.WinForms.GunaRadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbMale = new Guna.UI.WinForms.GunaRadioButton();
-            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.rbFemale = new Guna.UI.WinForms.GunaRadioButton();
+            this.btnChoose = new Guna.UI.WinForms.GunaButton();
             this.label2 = new System.Windows.Forms.Label();
             this.txtStudNo = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.gunaLinePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
@@ -414,11 +415,11 @@
             // 
             this.gunaLinePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel2.Controls.Add(this.studImage);
             this.gunaLinePanel2.Controls.Add(this.groupBox1);
-            this.gunaLinePanel2.Controls.Add(this.gunaButton1);
+            this.gunaLinePanel2.Controls.Add(this.btnChoose);
             this.gunaLinePanel2.Controls.Add(this.label2);
             this.gunaLinePanel2.Controls.Add(this.txtStudNo);
-            this.gunaLinePanel2.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaLinePanel2.LineBottom = 2;
             this.gunaLinePanel2.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaLinePanel2.LineStyle = System.Windows.Forms.BorderStyle.None;
@@ -427,17 +428,16 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(535, 177);
             this.gunaLinePanel2.TabIndex = 28;
             // 
-            // rbFemale
+            // groupBox1
             // 
-            this.rbFemale.BaseColor = System.Drawing.SystemColors.Control;
-            this.rbFemale.CheckedOffColor = System.Drawing.Color.Gray;
-            this.rbFemale.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.rbFemale.FillColor = System.Drawing.Color.White;
-            this.rbFemale.Location = new System.Drawing.Point(93, 23);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(68, 20);
-            this.rbFemale.TabIndex = 8;
-            this.rbFemale.Text = "Female";
+            this.groupBox1.Controls.Add(this.rbMale);
+            this.groupBox1.Controls.Add(this.rbFemale);
+            this.groupBox1.Location = new System.Drawing.Point(196, 86);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(301, 58);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = " Gender ";
             // 
             // rbMale
             // 
@@ -451,32 +451,45 @@
             this.rbMale.TabIndex = 7;
             this.rbMale.Text = "Male";
             // 
-            // gunaButton1
+            // rbFemale
             // 
-            this.gunaButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaButton1.AnimationSpeed = 0.03F;
-            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton1.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaButton1.Image = null;
-            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton1.Location = new System.Drawing.Point(33, 127);
-            this.gunaButton1.Name = "gunaButton1";
-            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton1.OnHoverImage = null;
-            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton1.Radius = 14;
-            this.gunaButton1.Size = new System.Drawing.Size(125, 29);
-            this.gunaButton1.TabIndex = 6;
-            this.gunaButton1.Text = "Choose Photo";
-            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rbFemale.BaseColor = System.Drawing.SystemColors.Control;
+            this.rbFemale.CheckedOffColor = System.Drawing.Color.Gray;
+            this.rbFemale.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.rbFemale.FillColor = System.Drawing.Color.White;
+            this.rbFemale.Location = new System.Drawing.Point(93, 23);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(68, 20);
+            this.rbFemale.TabIndex = 8;
+            this.rbFemale.Text = "Female";
+            // 
+            // btnChoose
+            // 
+            this.btnChoose.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnChoose.AnimationHoverSpeed = 0.07F;
+            this.btnChoose.AnimationSpeed = 0.03F;
+            this.btnChoose.BackColor = System.Drawing.Color.Transparent;
+            this.btnChoose.BaseColor = System.Drawing.Color.Gainsboro;
+            this.btnChoose.BorderColor = System.Drawing.Color.Black;
+            this.btnChoose.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnChoose.FocusedColor = System.Drawing.Color.Empty;
+            this.btnChoose.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChoose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnChoose.Image = null;
+            this.btnChoose.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnChoose.Location = new System.Drawing.Point(31, 137);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnChoose.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnChoose.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnChoose.OnHoverImage = null;
+            this.btnChoose.OnPressedColor = System.Drawing.Color.Black;
+            this.btnChoose.Radius = 14;
+            this.btnChoose.Size = new System.Drawing.Size(125, 29);
+            this.btnChoose.TabIndex = 6;
+            this.btnChoose.Text = "Choose Photo";
+            this.btnChoose.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnChoose.Click += new System.EventHandler(this.BtnChoose_Click);
             // 
             // label2
             // 
@@ -507,19 +520,6 @@
             this.txtStudNo.PasswordChar = '\0';
             this.txtStudNo.Size = new System.Drawing.Size(301, 26);
             this.txtStudNo.TabIndex = 2;
-            // 
-            // gunaCirclePictureBox1
-            // 
-            this.gunaCirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaCirclePictureBox1.BackColor = System.Drawing.Color.White;
-            this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaCirclePictureBox1.Location = new System.Drawing.Point(45, 17);
-            this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
-            this.gunaCirclePictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaCirclePictureBox1.TabIndex = 1;
-            this.gunaCirclePictureBox1.TabStop = false;
-            this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
             // gunaLinePanel4
             // 
@@ -560,16 +560,21 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Add Student Details";
             // 
-            // groupBox1
+            // openFileDialog
             // 
-            this.groupBox1.Controls.Add(this.rbMale);
-            this.groupBox1.Controls.Add(this.rbFemale);
-            this.groupBox1.Location = new System.Drawing.Point(196, 86);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(301, 58);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = " Gender ";
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
+            // studImage
+            // 
+            this.studImage.BackColor = System.Drawing.Color.White;
+            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
+            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studImage.Location = new System.Drawing.Point(33, 10);
+            this.studImage.Name = "studImage";
+            this.studImage.Size = new System.Drawing.Size(120, 120);
+            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.studImage.TabIndex = 10;
+            this.studImage.TabStop = false;
             // 
             // frmAddEditStudent
             // 
@@ -588,12 +593,12 @@
             this.gunaLinePanel3.PerformLayout();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.gunaLinePanel4.ResumeLayout(false);
             this.gunaLinePanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -615,10 +620,9 @@
         public Guna.UI.WinForms.GunaTextBox txtLname;
         public System.Windows.Forms.Panel panel1;
         public Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
-        public Guna.UI.WinForms.GunaButton gunaButton1;
+        public Guna.UI.WinForms.GunaButton btnChoose;
         public System.Windows.Forms.Label label2;
         public Guna.UI.WinForms.GunaTextBox txtStudNo;
-        public Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
         public Guna.UI.WinForms.GunaLinePanel gunaLinePanel4;
         public Bunifu.Framework.UI.BunifuImageButton btnBack;
         public System.Windows.Forms.Label lblTitle;
@@ -631,5 +635,7 @@
         public System.Windows.Forms.Label label3;
         public Guna.UI.WinForms.GunaTextBox txtFname;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private Guna.UI.WinForms.GunaPictureBox studImage;
     }
 }

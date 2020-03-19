@@ -80,5 +80,18 @@ namespace LMS
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void BtnChoose_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "JPG Files(*.jpeg)|*.jpg|PNG Files(*.png)|*.png|All Files(*.*)|*.*";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                string imgPath = dlg.FileName.ToString();
+                studImage.ImageLocation = imgPath;
+            }
+
+        }
     }
 }
