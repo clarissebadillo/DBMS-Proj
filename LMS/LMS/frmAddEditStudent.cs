@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace LMS
 {
@@ -19,6 +20,7 @@ namespace LMS
         frmStudentList frmlist;
 
         string gender = "";
+        string imgPath = "";
 
         public frmAddEditStudent(frmStudentList flist)
         {
@@ -39,6 +41,14 @@ namespace LMS
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
+            //Save image to database
+            byte[] imageBt = null;
+            FileStream fstream = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fstream);
+            imageBt = br.ReadBytes((int)fstream.Length);
+
+
+            //Save radio button selected value
             if (rbMale.Checked)
             {
                 gender = "Male";
@@ -55,7 +65,7 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress)", cn);
+                    cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @imageBt)", cn);
                     //set parameters value
                     cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
                     cm.Parameters.AddWithValue("@stLname", txtLname.Text);
@@ -66,6 +76,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@stContact", txtContact.Text);
                     cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
                     cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
+                    cm.Parameters.AddWithValue("@imageBt", imageBt);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
                     //close connection
@@ -88,10 +99,15 @@ namespace LMS
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                string imgPath = dlg.FileName.ToString();
+                imgPath = dlg.FileName.ToString();
                 studImage.ImageLocation = imgPath;
             }
 
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

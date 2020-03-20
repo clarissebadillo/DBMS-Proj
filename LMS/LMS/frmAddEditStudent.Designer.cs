@@ -49,6 +49,7 @@
             this.txtLname = new Guna.UI.WinForms.GunaTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
+            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbMale = new Guna.UI.WinForms.GunaRadioButton();
             this.rbFemale = new Guna.UI.WinForms.GunaRadioButton();
@@ -59,14 +60,13 @@
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gunaLinePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
@@ -428,6 +428,18 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(535, 177);
             this.gunaLinePanel2.TabIndex = 28;
             // 
+            // studImage
+            // 
+            this.studImage.BackColor = System.Drawing.Color.White;
+            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
+            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studImage.Location = new System.Drawing.Point(33, 10);
+            this.studImage.Name = "studImage";
+            this.studImage.Size = new System.Drawing.Size(120, 120);
+            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.studImage.TabIndex = 10;
+            this.studImage.TabStop = false;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rbMale);
@@ -548,6 +560,7 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.TabStop = false;
             this.btnBack.Zoom = 10;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // lblTitle
             // 
@@ -563,18 +576,6 @@
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // studImage
-            // 
-            this.studImage.BackColor = System.Drawing.Color.White;
-            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
-            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.studImage.Location = new System.Drawing.Point(33, 10);
-            this.studImage.Name = "studImage";
-            this.studImage.Size = new System.Drawing.Size(120, 120);
-            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.studImage.TabIndex = 10;
-            this.studImage.TabStop = false;
             // 
             // frmAddEditStudent
             // 
@@ -593,12 +594,12 @@
             this.gunaLinePanel3.PerformLayout();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gunaLinePanel4.ResumeLayout(false);
             this.gunaLinePanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
             this.ResumeLayout(false);
 
         }
