@@ -632,8 +632,6 @@
         public System.Windows.Forms.Label lblTitle;
         public Guna.UI.WinForms.GunaButton btnUpdate;
         public Guna.UI.WinForms.GunaButton btnSave;
-        private Guna.UI.WinForms.GunaRadioButton rbFemale;
-        private Guna.UI.WinForms.GunaRadioButton rbMale;
         public Guna.UI.WinForms.GunaComboBox cboYear;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label3;
@@ -641,5 +639,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         public Guna.UI.WinForms.GunaPictureBox studImage;
+        public Guna.UI.WinForms.GunaRadioButton rbFemale;
+        public Guna.UI.WinForms.GunaRadioButton rbMale;
     }
 }

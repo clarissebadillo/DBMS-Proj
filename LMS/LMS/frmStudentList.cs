@@ -76,6 +76,15 @@ namespace LMS
                 byte[] bytes = (byte[])gunaDataGridView1[11, e.RowIndex].Value;
                 MemoryStream ms = new MemoryStream(bytes);
                 frm.studImage.Image = Image.FromStream(ms);
+                //Retrieve gender value to radio button
+                if (gunaDataGridView1[7, e.RowIndex].Value.ToString() == "Male")
+                {
+                    frm.rbMale.Checked = true;
+                }
+                else
+                {
+                    frm.rbFemale.Checked = true;
+                }
                 //Show
                 frm.ShowDialog();
             }
