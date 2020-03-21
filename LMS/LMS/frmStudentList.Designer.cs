@@ -35,20 +35,16 @@
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.picBarcode = new System.Windows.Forms.PictureBox();
+            this.stImage = new System.Windows.Forms.PictureBox();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblContact = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblPublisher = new System.Windows.Forms.Label();
-            this.lblAuthor = new System.Windows.Forms.Label();
-            this.lblLanguage = new System.Windows.Forms.Label();
-            this.lblMediaType = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
-            this.lblSubject = new System.Windows.Forms.Label();
-            this.lblISBN = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblCourse = new System.Windows.Forms.Label();
+            this.lblStudNo = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,7 +76,7 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
@@ -134,20 +130,16 @@
             this.gunaGroupBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox1.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox1.Controls.Add(this.picBarcode);
+            this.gunaGroupBox1.Controls.Add(this.stImage);
+            this.gunaGroupBox1.Controls.Add(this.lblAddress);
+            this.gunaGroupBox1.Controls.Add(this.lblEmail);
+            this.gunaGroupBox1.Controls.Add(this.lblContact);
+            this.gunaGroupBox1.Controls.Add(this.lblGender);
             this.gunaGroupBox1.Controls.Add(this.lblYear);
-            this.gunaGroupBox1.Controls.Add(this.lblPrice);
-            this.gunaGroupBox1.Controls.Add(this.lblPublisher);
-            this.gunaGroupBox1.Controls.Add(this.lblAuthor);
-            this.gunaGroupBox1.Controls.Add(this.lblLanguage);
-            this.gunaGroupBox1.Controls.Add(this.lblMediaType);
-            this.gunaGroupBox1.Controls.Add(this.lblGenre);
-            this.gunaGroupBox1.Controls.Add(this.lblSubject);
-            this.gunaGroupBox1.Controls.Add(this.lblISBN);
-            this.gunaGroupBox1.Controls.Add(this.label10);
+            this.gunaGroupBox1.Controls.Add(this.lblCourse);
+            this.gunaGroupBox1.Controls.Add(this.lblStudNo);
             this.gunaGroupBox1.Controls.Add(this.lblName);
             this.gunaGroupBox1.Controls.Add(this.label11);
-            this.gunaGroupBox1.Controls.Add(this.label6);
             this.gunaGroupBox1.Controls.Add(this.label7);
             this.gunaGroupBox1.Controls.Add(this.label8);
             this.gunaGroupBox1.Controls.Add(this.label9);
@@ -169,143 +161,93 @@
             this.gunaGroupBox1.Text = "Book Details";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 5);
             // 
-            // picBarcode
+            // stImage
             // 
-            this.picBarcode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picBarcode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBarcode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBarcode.Location = new System.Drawing.Point(634, 40);
-            this.picBarcode.Name = "picBarcode";
-            this.picBarcode.Size = new System.Drawing.Size(179, 104);
-            this.picBarcode.TabIndex = 20;
-            this.picBarcode.TabStop = false;
+            this.stImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.stImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.stImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.stImage.Location = new System.Drawing.Point(701, 41);
+            this.stImage.Name = "stImage";
+            this.stImage.Size = new System.Drawing.Size(105, 105);
+            this.stImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.stImage.TabIndex = 20;
+            this.stImage.TabStop = false;
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(391, 120);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(48, 13);
+            this.lblAddress.TabIndex = 17;
+            this.lblAddress.Text = "Address";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(391, 95);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(34, 13);
+            this.lblEmail.TabIndex = 16;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblContact
+            // 
+            this.lblContact.AutoSize = true;
+            this.lblContact.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContact.Location = new System.Drawing.Point(391, 70);
+            this.lblContact.Name = "lblContact";
+            this.lblContact.Size = new System.Drawing.Size(65, 13);
+            this.lblContact.TabIndex = 15;
+            this.lblContact.Text = "Contact No";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(390, 45);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(45, 13);
+            this.lblGender.TabIndex = 14;
+            this.lblGender.Text = "Gender";
             // 
             // lblYear
             // 
-            this.lblYear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYear.Location = new System.Drawing.Point(421, 135);
+            this.lblYear.Location = new System.Drawing.Point(95, 120);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(0, 13);
-            this.lblYear.TabIndex = 19;
+            this.lblYear.Size = new System.Drawing.Size(27, 13);
+            this.lblYear.TabIndex = 13;
+            this.lblYear.Text = "Year";
             // 
-            // lblPrice
+            // lblCourse
             // 
-            this.lblPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(421, 110);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(0, 13);
-            this.lblPrice.TabIndex = 18;
+            this.lblCourse.AutoSize = true;
+            this.lblCourse.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourse.Location = new System.Drawing.Point(95, 95);
+            this.lblCourse.Name = "lblCourse";
+            this.lblCourse.Size = new System.Drawing.Size(43, 13);
+            this.lblCourse.TabIndex = 12;
+            this.lblCourse.Text = "Course";
             // 
-            // lblPublisher
+            // lblStudNo
             // 
-            this.lblPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPublisher.AutoSize = true;
-            this.lblPublisher.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublisher.Location = new System.Drawing.Point(403, 85);
-            this.lblPublisher.Name = "lblPublisher";
-            this.lblPublisher.Size = new System.Drawing.Size(48, 13);
-            this.lblPublisher.TabIndex = 17;
-            this.lblPublisher.Text = "Address";
-            // 
-            // lblAuthor
-            // 
-            this.lblAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(403, 60);
-            this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(34, 13);
-            this.lblAuthor.TabIndex = 16;
-            this.lblAuthor.Text = "Email";
-            // 
-            // lblLanguage
-            // 
-            this.lblLanguage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLanguage.AutoSize = true;
-            this.lblLanguage.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(403, 35);
-            this.lblLanguage.Name = "lblLanguage";
-            this.lblLanguage.Size = new System.Drawing.Size(65, 13);
-            this.lblLanguage.TabIndex = 15;
-            this.lblLanguage.Text = "Contact No";
-            // 
-            // lblMediaType
-            // 
-            this.lblMediaType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMediaType.AutoSize = true;
-            this.lblMediaType.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaType.Location = new System.Drawing.Point(95, 135);
-            this.lblMediaType.Name = "lblMediaType";
-            this.lblMediaType.Size = new System.Drawing.Size(45, 13);
-            this.lblMediaType.TabIndex = 14;
-            this.lblMediaType.Text = "Gender";
-            // 
-            // lblGenre
-            // 
-            this.lblGenre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(95, 110);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(27, 13);
-            this.lblGenre.TabIndex = 13;
-            this.lblGenre.Text = "Year";
-            // 
-            // lblSubject
-            // 
-            this.lblSubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(95, 85);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(43, 13);
-            this.lblSubject.TabIndex = 12;
-            this.lblSubject.Text = "Course";
-            // 
-            // lblISBN
-            // 
-            this.lblISBN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblISBN.AutoSize = true;
-            this.lblISBN.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISBN.Location = new System.Drawing.Point(95, 60);
-            this.lblISBN.Name = "lblISBN";
-            this.lblISBN.Size = new System.Drawing.Size(92, 13);
-            this.lblISBN.TabIndex = 11;
-            this.lblISBN.Text = "Student Number";
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(327, 135);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Published Year:";
+            this.lblStudNo.AutoSize = true;
+            this.lblStudNo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudNo.Location = new System.Drawing.Point(95, 70);
+            this.lblStudNo.Name = "lblStudNo";
+            this.lblStudNo.Size = new System.Drawing.Size(92, 13);
+            this.lblStudNo.TabIndex = 11;
+            this.lblStudNo.Text = "Student Number";
             // 
             // lblName
             // 
-            this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(95, 35);
+            this.lblName.Location = new System.Drawing.Point(95, 45);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(79, 13);
             this.lblName.TabIndex = 10;
@@ -313,38 +255,21 @@
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(20, 135);
+            this.label11.Location = new System.Drawing.Point(315, 45);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(48, 13);
             this.label11.TabIndex = 8;
             this.label11.Text = "Gender:";
             // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(327, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Market Price:";
-            // 
             // label7
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(327, 85);
+            this.label7.Location = new System.Drawing.Point(315, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 13);
             this.label7.TabIndex = 6;
@@ -352,12 +277,10 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(327, 60);
+            this.label8.Location = new System.Drawing.Point(315, 95);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 5;
@@ -365,12 +288,10 @@
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(327, 35);
+            this.label9.Location = new System.Drawing.Point(315, 70);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 13);
             this.label9.TabIndex = 4;
@@ -381,19 +302,17 @@
             this.gunaVSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gunaVSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaVSeparator1.Location = new System.Drawing.Point(620, 40);
+            this.gunaVSeparator1.Location = new System.Drawing.Point(684, 42);
             this.gunaVSeparator1.Name = "gunaVSeparator1";
             this.gunaVSeparator1.Size = new System.Drawing.Size(10, 103);
             this.gunaVSeparator1.TabIndex = 2;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(20, 110);
+            this.label4.Location = new System.Drawing.Point(20, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 3;
@@ -401,12 +320,10 @@
             // 
             // label5
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(20, 85);
+            this.label5.Location = new System.Drawing.Point(20, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 2;
@@ -414,12 +331,10 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(20, 60);
+            this.label3.Location = new System.Drawing.Point(20, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 1;
@@ -427,12 +342,10 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(20, 35);
+            this.label2.Location = new System.Drawing.Point(20, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 0;
@@ -765,7 +678,7 @@
             this.gunaLinePanel1.PerformLayout();
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBarcode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
@@ -779,20 +692,16 @@
         private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
-        private System.Windows.Forms.PictureBox picBarcode;
+        private System.Windows.Forms.PictureBox stImage;
+        public System.Windows.Forms.Label lblAddress;
+        public System.Windows.Forms.Label lblEmail;
+        public System.Windows.Forms.Label lblContact;
+        public System.Windows.Forms.Label lblGender;
         public System.Windows.Forms.Label lblYear;
-        public System.Windows.Forms.Label lblPrice;
-        public System.Windows.Forms.Label lblPublisher;
-        public System.Windows.Forms.Label lblAuthor;
-        public System.Windows.Forms.Label lblLanguage;
-        public System.Windows.Forms.Label lblMediaType;
-        public System.Windows.Forms.Label lblGenre;
-        public System.Windows.Forms.Label lblSubject;
-        public System.Windows.Forms.Label lblISBN;
-        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label lblCourse;
+        public System.Windows.Forms.Label lblStudNo;
         public System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

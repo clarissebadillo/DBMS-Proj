@@ -55,9 +55,20 @@ namespace LMS
 
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Load to labels
+            lblName.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString() + " " + gunaDataGridView1[3, e.RowIndex].Value.ToString();
+            lblStudNo.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
+            lblCourse.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
+            lblYear.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
+            lblGender.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
+            lblContact.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
+            lblEmail.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
+            lblAddress.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
+            byte[] imgbytes = (byte[])gunaDataGridView1[11, e.RowIndex].Value;
+            MemoryStream mstream = new MemoryStream(imgbytes);
+            stImage.Image = Image.FromStream(mstream);
 
             string colName = gunaDataGridView1.Columns[e.ColumnIndex].Name;
-
             if (colName == "Edit")
             {
                 frmAddEditStudent frm = new frmAddEditStudent(this);
