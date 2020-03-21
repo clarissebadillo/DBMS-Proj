@@ -17,7 +17,6 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
-        SqlDataReader dr;
         frmStudentList frmlist;
 
         string gender = "";
@@ -58,37 +57,58 @@ namespace LMS
                 gender = "Female";
             }
 
-            try
+            if (txtStudNo.Text == "" || txtFname.Text == "" || txtLname.Text == "")
             {
-                if (MessageBox.Show("Are you sure you want to save this record?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (txtStudNo.Text == "")
                 {
-                    //open connection to the database
-                    cn.Open();
-                    //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @stImage)", cn);
-                    //set parameters value
-                    cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
-                    cm.Parameters.AddWithValue("@stLname", txtLname.Text);
-                    cm.Parameters.AddWithValue("@stFname", txtFname.Text);
-                    cm.Parameters.AddWithValue("@stCourse", cboCourse.Text);
-                    cm.Parameters.AddWithValue("@stYear", cboYear.Text);
-                    cm.Parameters.AddWithValue("@stGender", gender);
-                    cm.Parameters.AddWithValue("@stContact", txtContact.Text);
-                    cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
-                    cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
-                    cm.Parameters.AddWithValue("@stImage", img);
-                    //ask db to execute query
-                    cm.ExecuteNonQuery();
-                    //close connection
-                    cn.Close();
-                    MessageBox.Show("Record has been sucessfully saved!");
-                    Clear();
-                    frmlist.LoadRecords();
+                    txtStudNo.Focus();
+                    MessageBox.Show("Please enter the student number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (txtFname.Text == "")
+                {
+                    txtFname.Focus();
+                    MessageBox.Show("Please enter the student's first name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (txtLname.Text == "")
+                {
+                    txtLname.Focus();
+                    MessageBox.Show("Please enter the student's last name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    if (MessageBox.Show("Are you sure you want to save this record?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        //open connection to the database
+                        cn.Open();
+                        //command to be executed on the database
+                        cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @stImage)", cn);
+                        //set parameters value
+                        cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
+                        cm.Parameters.AddWithValue("@stLname", txtLname.Text);
+                        cm.Parameters.AddWithValue("@stFname", txtFname.Text);
+                        cm.Parameters.AddWithValue("@stCourse", cboCourse.Text);
+                        cm.Parameters.AddWithValue("@stYear", cboYear.Text);
+                        cm.Parameters.AddWithValue("@stGender", gender);
+                        cm.Parameters.AddWithValue("@stContact", txtContact.Text);
+                        cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
+                        cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
+                        cm.Parameters.AddWithValue("@stImage", img);
+                        //ask db to execute query
+                        cm.ExecuteNonQuery();
+                        //close connection
+                        cn.Close();
+                        MessageBox.Show("Record has been sucessfully saved!");
+                        Clear();
+                        frmlist.LoadRecords();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -97,7 +117,7 @@ namespace LMS
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.InitialDirectory = "C:/Download/";
             dlg.Filter = "All Files|*.*|JPEGs|*.jpg|Bitmaps|*.bmp|GIFs|*.gif";
-            dlg.FilterIndex = 2;
+            dlg.FilterIndex = 1;
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 studImage.Image = Image.FromFile(dlg.FileName);

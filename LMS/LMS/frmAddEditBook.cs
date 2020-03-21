@@ -45,37 +45,45 @@ namespace LMS
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            try
+            if (txtTitle.Text == "")
             {
-                if (MessageBox.Show("Are you sure you want to save this book?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    //open connection to the database
-                    cn.Open();
-                    //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblBook VALUES (@ISBN, @booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @year)", cn);
-                    //set parameters value
-                    cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
-                    cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
-                    cm.Parameters.AddWithValue("@subject", cboSubject.Text);
-                    cm.Parameters.AddWithValue("@genre", txtGenre.Text);
-                    cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
-                    cm.Parameters.AddWithValue("@language", txtLanguage.Text);
-                    cm.Parameters.AddWithValue("@author", txtAuthor.Text);
-                    cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
-                    cm.Parameters.AddWithValue("@price", txtPrice.Text);
-                    cm.Parameters.AddWithValue("@year", txtYear.Text);
-                    //ask db to execute query
-                    cm.ExecuteNonQuery();
-                    //close connection
-                    cn.Close();
-                    MessageBox.Show("Record has been sucessfully saved!");
-                    Clear();
-                    frmlist.LoadRecords();
-                }
+                txtTitle.Focus();
+                MessageBox.Show("Please add the book title", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    if (MessageBox.Show("Are you sure you want to save this book?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        //open connection to the database
+                        cn.Open();
+                        //command to be executed on the database
+                        cm = new SqlCommand("INSERT INTO tblBook VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year)", cn);
+                        //set parameters value
+                        cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
+                        cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
+                        cm.Parameters.AddWithValue("@subject", cboSubject.Text);
+                        cm.Parameters.AddWithValue("@genre", txtGenre.Text);
+                        cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
+                        cm.Parameters.AddWithValue("@language", txtLanguage.Text);
+                        cm.Parameters.AddWithValue("@author", txtAuthor.Text);
+                        cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
+                        cm.Parameters.AddWithValue("@price", txtPrice.Text);
+                        cm.Parameters.AddWithValue("@year", txtYear.Text);
+                        //ask db to execute query
+                        cm.ExecuteNonQuery();
+                        //close connection
+                        cn.Close();
+                        MessageBox.Show("Record has been sucessfully saved!");
+                        Clear();
+                        frmlist.LoadRecords();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -86,36 +94,52 @@ namespace LMS
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (txtTitle.Text == "")
             {
-                if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cm = new SqlCommand("UPDATE tblBook SET bkISBN = @ISBN, bkTitle = @booktitle, bkSubject = @subject, bkGenre = @genre, bkMediaType = @mediatype, bkLanguage = @language, bkAuthor = @author, bkPublisher = @publisher, bkPrice = @price, bkYear = @year WHERE bookID LIKE '" + lblID + "'", cn);
-                    cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
-                    cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
-                    cm.Parameters.AddWithValue("@subject", cboSubject.Text);
-                    cm.Parameters.AddWithValue("@genre", txtGenre.Text);
-                    cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
-                    cm.Parameters.AddWithValue("@language", txtLanguage.Text);
-                    cm.Parameters.AddWithValue("@author", txtAuthor.Text);
-                    cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
-                    cm.Parameters.AddWithValue("@price", txtPrice.Text);
-                    cm.Parameters.AddWithValue("@year", txtYear.Text);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
-
-                    MessageBox.Show("Record has been successfully updated!");
-                    Clear();
-                    frmlist.LoadRecords();
-                    this.Close();
-                }
+                txtTitle.Focus();
+                MessageBox.Show("Please add the book title", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tblBook SET bkISBN = @ISBN, bkTitle = @booktitle, bkSubject = @subject, bkGenre = @genre, bkMediaType = @mediatype, bkLanguage = @language, bkAuthor = @author, bkPublisher = @publisher, bkPrice = @price, bkYear = @year WHERE bookID LIKE '" + lblID + "'", cn);
+                        cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
+                        cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
+                        cm.Parameters.AddWithValue("@subject", cboSubject.Text);
+                        cm.Parameters.AddWithValue("@genre", txtGenre.Text);
+                        cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
+                        cm.Parameters.AddWithValue("@language", txtLanguage.Text);
+                        cm.Parameters.AddWithValue("@author", txtAuthor.Text);
+                        cm.Parameters.AddWithValue("@publisher", txtPublisher.Text);
+                        cm.Parameters.AddWithValue("@price", txtPrice.Text);
+                        cm.Parameters.AddWithValue("@year", txtYear.Text);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        MessageBox.Show("Record has been successfully updated!");
+                        Clear();
+                        frmlist.LoadRecords();
+                        this.Close();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
+        private void TxtYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

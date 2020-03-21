@@ -185,8 +185,8 @@
             // 
             this.cboYear.BackColor = System.Drawing.Color.Gainsboro;
             this.cboYear.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboYear.BorderColor = System.Drawing.Color.Silver;
-            this.cboYear.BorderSize = 0;
+            this.cboYear.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboYear.BorderSize = 1;
             this.cboYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboYear.FocusedColor = System.Drawing.Color.Empty;
@@ -233,11 +233,11 @@
             // 
             this.txtFname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtFname.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtFname.BorderColor = System.Drawing.Color.Silver;
-            this.txtFname.BorderSize = 0;
+            this.txtFname.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtFname.BorderSize = 1;
             this.txtFname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFname.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtFname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtFname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtFname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtFname.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtFname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -251,8 +251,8 @@
             // 
             this.cboCourse.BackColor = System.Drawing.Color.Gainsboro;
             this.cboCourse.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboCourse.BorderColor = System.Drawing.Color.Silver;
-            this.cboCourse.BorderSize = 0;
+            this.cboCourse.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.BorderSize = 1;
             this.cboCourse.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCourse.FocusedColor = System.Drawing.Color.Empty;
@@ -288,11 +288,11 @@
             // 
             this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtAddress.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtAddress.BorderColor = System.Drawing.Color.Silver;
-            this.txtAddress.BorderSize = 0;
+            this.txtAddress.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtAddress.BorderSize = 1;
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtAddress.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtAddress.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtAddress.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -318,11 +318,11 @@
             // 
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtEmail.BorderColor = System.Drawing.Color.Silver;
-            this.txtEmail.BorderSize = 0;
+            this.txtEmail.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtEmail.BorderSize = 1;
             this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEmail.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -348,11 +348,11 @@
             // 
             this.txtContact.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtContact.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtContact.BorderColor = System.Drawing.Color.Silver;
-            this.txtContact.BorderSize = 0;
+            this.txtContact.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtContact.BorderSize = 1;
             this.txtContact.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtContact.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtContact.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtContact.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtContact.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtContact.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -390,11 +390,11 @@
             // 
             this.txtLname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLname.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtLname.BorderColor = System.Drawing.Color.Silver;
-            this.txtLname.BorderSize = 0;
+            this.txtLname.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtLname.BorderSize = 1;
             this.txtLname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLname.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtLname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtLname.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtLname.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLname.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtLname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -522,11 +522,11 @@
             // 
             this.txtStudNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtStudNo.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtStudNo.BorderColor = System.Drawing.Color.Silver;
-            this.txtStudNo.BorderSize = 0;
+            this.txtStudNo.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtStudNo.BorderSize = 1;
             this.txtStudNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtStudNo.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtStudNo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtStudNo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtStudNo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtStudNo.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtStudNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));

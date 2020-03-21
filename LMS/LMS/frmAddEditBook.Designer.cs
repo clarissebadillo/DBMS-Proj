@@ -33,6 +33,7 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
+            this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
@@ -183,6 +183,35 @@
             this.gunaLinePanel3.Size = new System.Drawing.Size(538, 242);
             this.gunaLinePanel3.TabIndex = 30;
             // 
+            // cboSubject
+            // 
+            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderSize = 1;
+            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
+            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Items.AddRange(new object[] {
+            "All Subjects",
+            "Math",
+            "Economics",
+            "Science",
+            "Programming",
+            "History",
+            "Law",
+            "Education",
+            "Psychology"});
+            this.cboSubject.Location = new System.Drawing.Point(22, 36);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboSubject.Size = new System.Drawing.Size(234, 26);
+            this.cboSubject.TabIndex = 41;
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -199,8 +228,8 @@
             // 
             this.cboMediaType.BackColor = System.Drawing.Color.Gainsboro;
             this.cboMediaType.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.BorderColor = System.Drawing.Color.Silver;
-            this.cboMediaType.BorderSize = 0;
+            this.cboMediaType.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.BorderSize = 1;
             this.cboMediaType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboMediaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMediaType.FocusedColor = System.Drawing.Color.Empty;
@@ -235,11 +264,11 @@
             // 
             this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPrice.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtPrice.BorderColor = System.Drawing.Color.Silver;
-            this.txtPrice.BorderSize = 0;
+            this.txtPrice.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtPrice.BorderSize = 1;
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrice.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtPrice.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPrice.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtPrice.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -253,11 +282,11 @@
             // 
             this.txtYear.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtYear.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtYear.BorderColor = System.Drawing.Color.Silver;
-            this.txtYear.BorderSize = 0;
+            this.txtYear.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtYear.BorderSize = 1;
             this.txtYear.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtYear.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtYear.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtYear.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtYear.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtYear.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -266,6 +295,7 @@
             this.txtYear.PasswordChar = '\0';
             this.txtYear.Size = new System.Drawing.Size(234, 25);
             this.txtYear.TabIndex = 39;
+            this.txtYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtYear_KeyPress);
             // 
             // label8
             // 
@@ -283,11 +313,11 @@
             // 
             this.txtPublisher.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtPublisher.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtPublisher.BorderColor = System.Drawing.Color.Silver;
-            this.txtPublisher.BorderSize = 0;
+            this.txtPublisher.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtPublisher.BorderSize = 1;
             this.txtPublisher.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPublisher.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtPublisher.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtPublisher.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtPublisher.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPublisher.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtPublisher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -313,11 +343,11 @@
             // 
             this.txtAuthor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtAuthor.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtAuthor.BorderColor = System.Drawing.Color.Silver;
-            this.txtAuthor.BorderSize = 0;
+            this.txtAuthor.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtAuthor.BorderSize = 1;
             this.txtAuthor.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAuthor.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtAuthor.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtAuthor.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtAuthor.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtAuthor.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtAuthor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -343,11 +373,11 @@
             // 
             this.txtLanguage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLanguage.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtLanguage.BorderColor = System.Drawing.Color.Silver;
-            this.txtLanguage.BorderSize = 0;
+            this.txtLanguage.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtLanguage.BorderSize = 1;
             this.txtLanguage.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLanguage.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtLanguage.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtLanguage.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtLanguage.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtLanguage.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtLanguage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -385,11 +415,11 @@
             // 
             this.txtGenre.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGenre.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtGenre.BorderColor = System.Drawing.Color.Silver;
-            this.txtGenre.BorderSize = 0;
+            this.txtGenre.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtGenre.BorderSize = 1;
             this.txtGenre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtGenre.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtGenre.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtGenre.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtGenre.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtGenre.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -481,11 +511,11 @@
             // 
             this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTitle.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtTitle.BorderColor = System.Drawing.Color.Silver;
-            this.txtTitle.BorderSize = 0;
+            this.txtTitle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtTitle.BorderSize = 1;
             this.txtTitle.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTitle.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtTitle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtTitle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtTitle.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -511,11 +541,11 @@
             // 
             this.txtISBN.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtISBN.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtISBN.BorderColor = System.Drawing.Color.Silver;
-            this.txtISBN.BorderSize = 0;
+            this.txtISBN.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtISBN.BorderSize = 1;
             this.txtISBN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtISBN.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtISBN.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtISBN.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtISBN.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtISBN.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.txtISBN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
@@ -577,35 +607,6 @@
             this.lblTitle.Size = new System.Drawing.Size(176, 28);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Add Book Details";
-            // 
-            // cboSubject
-            // 
-            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BorderColor = System.Drawing.Color.Silver;
-            this.cboSubject.BorderSize = 0;
-            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
-            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Items.AddRange(new object[] {
-            "All Subjects",
-            "Math",
-            "Economics",
-            "Science",
-            "Programming",
-            "History",
-            "Law",
-            "Education",
-            "Psychology"});
-            this.cboSubject.Location = new System.Drawing.Point(22, 36);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.Size = new System.Drawing.Size(234, 26);
-            this.cboSubject.TabIndex = 41;
             // 
             // frmAddEditBook
             // 
