@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditStudent));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
@@ -115,6 +116,7 @@
             this.btnUpdate.TabIndex = 35;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnSave
             // 
@@ -433,6 +435,7 @@
             this.studImage.BackColor = System.Drawing.Color.White;
             this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
             this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studImage.Image = ((System.Drawing.Image)(resources.GetObject("studImage.Image")));
             this.studImage.Location = new System.Drawing.Point(33, 10);
             this.studImage.Name = "studImage";
             this.studImage.Size = new System.Drawing.Size(120, 120);
@@ -637,6 +640,6 @@
         public Guna.UI.WinForms.GunaTextBox txtFname;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private Guna.UI.WinForms.GunaPictureBox studImage;
+        public Guna.UI.WinForms.GunaPictureBox studImage;
     }
 }

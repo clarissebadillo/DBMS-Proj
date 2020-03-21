@@ -29,6 +29,9 @@ namespace LMS
             timer1.Start();
             lblDate.Text = DateTime.Now.ToLongDateString();
             lblTime.Text = DateTime.Now.ToShortTimeString();
+
+            //form shadow
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
         }
         
         private void Timer1_Tick(object sender, EventArgs e)

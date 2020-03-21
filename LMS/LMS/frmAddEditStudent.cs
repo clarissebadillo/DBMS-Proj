@@ -17,10 +17,10 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
         frmStudentList frmlist;
 
         string gender = "";
-        string imgPath = "";
 
         public frmAddEditStudent(frmStudentList flist)
         {
@@ -29,7 +29,7 @@ namespace LMS
             frmlist = flist;
         }
 
-        private void Clear()
+        public void Clear()
         {
             txtAddress.Text = "";
             txtStudNo.Text = "";
@@ -37,17 +37,17 @@ namespace LMS
             txtFname.Text = "";
             txtContact.Text = "";
             txtEmail.Text = "";
+            studImage.Image = null;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             //Save image to database
-            byte[] imageBt = null;
-            FileStream fstream = new FileStream(imgPath, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fstream);
-            imageBt = br.ReadBytes((int)fstream.Length);
-
-
+            MemoryStream ms = new MemoryStream();
+            studImage.Image.Save(ms, studImage.Image.RawFormat);
+            byte[] img = ms.GetBuffer();
+            ms.Close();
+            
             //Save radio button selected value
             if (rbMale.Checked)
             {
@@ -60,12 +60,12 @@ namespace LMS
 
             try
             {
-                if (MessageBox.Show("Are you sure you want to save this book?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to save this record?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @imageBt)", cn);
+                    cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @stImage)", cn);
                     //set parameters value
                     cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
                     cm.Parameters.AddWithValue("@stLname", txtLname.Text);
@@ -76,7 +76,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@stContact", txtContact.Text);
                     cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
                     cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
-                    cm.Parameters.AddWithValue("@imageBt", imageBt);
+                    cm.Parameters.AddWithValue("@stImage", img);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
                     //close connection
@@ -95,19 +95,70 @@ namespace LMS
         private void BtnChoose_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "JPG Files(*.jpeg)|*.jpg|PNG Files(*.png)|*.png|All Files(*.*)|*.*";
-
+            dlg.InitialDirectory = "C:/Download/";
+            dlg.Filter = "All Files|*.*|JPEGs|*.jpg|Bitmaps|*.bmp|GIFs|*.gif";
+            dlg.FilterIndex = 2;
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                imgPath = dlg.FileName.ToString();
-                studImage.ImageLocation = imgPath;
+                studImage.Image = Image.FromFile(dlg.FileName);
             }
-
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            //Save image to database
+            MemoryStream ms = new MemoryStream();
+            studImage.Image.Save(ms, studImage.Image.RawFormat);
+            byte[] img = ms.GetBuffer();
+            ms.Close();
+
+            //Save radio button selected value
+            if (rbMale.Checked)
+            {
+                gender = "Male";
+            }
+            if (rbFemale.Checked)
+            {
+                gender = "Female";
+            }
+
+            try
+            {
+                if (MessageBox.Show("Are you sure you want to update this record?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //open connection to the database
+                    cn.Open();
+                    //command to be executed on the database
+                    cm = new SqlCommand("UPDATE tblStudent SET stNumber = @stNumber, stLname = @stLname, stFname = @stFname, stCourse = @stCourse, stYear = @stYear, stGender = @stGender, stContact = @stContact, stEmail = @stEmail, stAddress = @stAddress, stImage = @stImage", cn);
+                    //set parameters value
+                    cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
+                    cm.Parameters.AddWithValue("@stLname", txtLname.Text);
+                    cm.Parameters.AddWithValue("@stFname", txtFname.Text);
+                    cm.Parameters.AddWithValue("@stCourse", cboCourse.Text);
+                    cm.Parameters.AddWithValue("@stYear", cboYear.Text);
+                    cm.Parameters.AddWithValue("@stGender", gender);
+                    cm.Parameters.AddWithValue("@stContact", txtContact.Text);
+                    cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
+                    cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
+                    cm.Parameters.AddWithValue("@stImage", img);
+                    //ask db to execute query
+                    cm.ExecuteNonQuery();
+                    //close connection
+                    cn.Close();
+                    MessageBox.Show("Record has been sucessfully updated!");
+                    Clear();
+                    frmlist.LoadRecords();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

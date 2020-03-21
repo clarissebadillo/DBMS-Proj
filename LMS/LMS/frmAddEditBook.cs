@@ -105,7 +105,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
-                    MessageBox.Show("Record has been successfully saved!");
+                    MessageBox.Show("Record has been successfully updated!");
                     Clear();
                     frmlist.LoadRecords();
                     this.Close();
