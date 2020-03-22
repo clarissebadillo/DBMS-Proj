@@ -61,7 +61,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.dtDueDate = new Syncfusion.WinForms.Input.SfDateTimeEdit();
-            this.btnAddStudent = new Guna.UI.WinForms.GunaButton();
+            this.btnProccessIssue = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.gunaLinePanel2.SuspendLayout();
@@ -449,32 +449,33 @@
             this.dtDueDate.Style.BackColor = System.Drawing.Color.White;
             this.dtDueDate.TabIndex = 11;
             // 
-            // btnAddStudent
+            // btnProccessIssue
             // 
-            this.btnAddStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddStudent.AnimationHoverSpeed = 0.07F;
-            this.btnAddStudent.AnimationSpeed = 0.03F;
-            this.btnAddStudent.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddStudent.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnAddStudent.BorderColor = System.Drawing.Color.Black;
-            this.btnAddStudent.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddStudent.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddStudent.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnAddStudent.ForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.Image = null;
-            this.btnAddStudent.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddStudent.Location = new System.Drawing.Point(671, 462);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnAddStudent.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddStudent.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.OnHoverImage = null;
-            this.btnAddStudent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddStudent.Radius = 15;
-            this.btnAddStudent.Size = new System.Drawing.Size(118, 32);
-            this.btnAddStudent.TabIndex = 49;
-            this.btnAddStudent.Text = "Process Issue";
-            this.btnAddStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnProccessIssue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProccessIssue.AnimationHoverSpeed = 0.07F;
+            this.btnProccessIssue.AnimationSpeed = 0.03F;
+            this.btnProccessIssue.BackColor = System.Drawing.Color.Transparent;
+            this.btnProccessIssue.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnProccessIssue.BorderColor = System.Drawing.Color.Black;
+            this.btnProccessIssue.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProccessIssue.FocusedColor = System.Drawing.Color.Empty;
+            this.btnProccessIssue.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnProccessIssue.ForeColor = System.Drawing.Color.White;
+            this.btnProccessIssue.Image = null;
+            this.btnProccessIssue.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnProccessIssue.Location = new System.Drawing.Point(671, 462);
+            this.btnProccessIssue.Name = "btnProccessIssue";
+            this.btnProccessIssue.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnProccessIssue.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnProccessIssue.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnProccessIssue.OnHoverImage = null;
+            this.btnProccessIssue.OnPressedColor = System.Drawing.Color.Black;
+            this.btnProccessIssue.Radius = 15;
+            this.btnProccessIssue.Size = new System.Drawing.Size(118, 32);
+            this.btnProccessIssue.TabIndex = 49;
+            this.btnProccessIssue.Text = "Process Issue";
+            this.btnProccessIssue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnProccessIssue.Click += new System.EventHandler(this.BtnProccessIssue_Click);
             // 
             // frmIssueBook
             // 
@@ -482,7 +483,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(821, 509);
-            this.Controls.Add(this.btnAddStudent);
+            this.Controls.Add(this.btnProccessIssue);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.dtDueDate);
             this.Controls.Add(this.label17);
@@ -549,6 +550,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private Syncfusion.WinForms.Input.SfDateTimeEdit dtDueDate;
-        private Guna.UI.WinForms.GunaButton btnAddStudent;
+        private Guna.UI.WinForms.GunaButton btnProccessIssue;
     }
 }

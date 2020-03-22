@@ -39,6 +39,37 @@ namespace LMS
         {
             AutoCompleteStudentNo();
             LoadBooks();
+
+            dtIssue.Text = DateTime.Now.ToShortDateString();
+            dtDueDate.Text = DateTime.Now.ToShortDateString();
+        }
+
+        public void BorrowBook()
+        {
+            try
+            {
+                if (MessageBox.Show("Are you sure you want to issue this book?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //open connection to the database
+                    cn.Open();
+                    //command to be executed on the database
+                    cm = new SqlCommand("INSERT INTO tblIssueBook (stNumber, bkTitle, releaseDate, dueDate) VALUES (@stNumber, @bkTitle, @releaseDate, @dueDate)", cn);
+                    //set parameters value
+                    cm.Parameters.AddWithValue("@stNumber", txtSearchStud.Text);
+                    cm.Parameters.AddWithValue("@bkTitle", cboBooks.Text);
+                    cm.Parameters.AddWithValue("@releaseDate", dtIssue.Value);
+                    cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
+                    //ask db to execute query
+                    cm.ExecuteNonQuery();
+                    //close connection
+                    cn.Close();
+                    MessageBox.Show("Record has been sucessfully saved!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void AutoCompleteStudentNo()
@@ -70,6 +101,21 @@ namespace LMS
             cn.Close();
         }
 
+        public void Clear()
+        {
+            lblAuthor.Text = "";
+            lblCourse.Text = "";
+            lblISBN.Text = "";
+            lblName.Text = "";
+            lblStudNo.Text = "";
+            lblSubject.Text = "";
+            lblTitle.Text = "";
+            lblYear.Text = "";
+            cboBooks.Items.Clear();
+            txtSearchStud.Text = "";
+            studImage.Image = null;
+        }
+
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,7 +124,7 @@ namespace LMS
         private void TxtSearchStud_TextChanged(object sender, EventArgs e)
         {
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblStudent WHERE stNumber ='" + txtSearchStud.Text + "'", cn);
+            cm = new SqlCommand("SELECT * FROM tblStudent WHERE stNUmber ='" + txtSearchStud.Text + "'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -108,6 +154,17 @@ namespace LMS
             }
             dr.Close();
             cn.Close();
+        }
+
+        private void BtnProccessIssue_Click(object sender, EventArgs e)
+        {
+            if (txtSearchStud.Text == "" || cboBooks.Text == "")
+            {
+                txtSearchStud.Focus();
+                MessageBox.Show("Please enter the student number", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            BorrowBook();
+            Clear();
         }
     }
 }
