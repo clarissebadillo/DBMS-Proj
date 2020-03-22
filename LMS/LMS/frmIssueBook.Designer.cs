@@ -30,11 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIssueBook));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
-            this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
-            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.lblYear = new System.Windows.Forms.Label();
             this.lblCourse = new System.Windows.Forms.Label();
             this.lblStudNo = new System.Windows.Forms.Label();
@@ -43,6 +41,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
+            this.label14 = new System.Windows.Forms.Label();
             this.lblAuthor = new System.Windows.Forms.Label();
             this.lblSubject = new System.Windows.Forms.Label();
             this.lblISBN = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtSearchStud = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,8 +65,8 @@
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.gunaLinePanel2.SuspendLayout();
-            this.gunaLinePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
+            this.gunaLinePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -85,17 +85,6 @@
             this.gunaLinePanel1.Size = new System.Drawing.Size(797, 37);
             this.gunaLinePanel1.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label1.Location = new System.Drawing.Point(38, -4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Issue Book";
-            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.Transparent;
@@ -110,6 +99,17 @@
             this.btnBack.TabStop = false;
             this.btnBack.Zoom = 10;
             this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label1.Location = new System.Drawing.Point(38, -4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(113, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Issue Book";
             // 
             // gunaLinePanel2
             // 
@@ -132,42 +132,6 @@
             this.gunaLinePanel2.Name = "gunaLinePanel2";
             this.gunaLinePanel2.Size = new System.Drawing.Size(425, 201);
             this.gunaLinePanel2.TabIndex = 2;
-            // 
-            // gunaLinePanel3
-            // 
-            this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLinePanel3.Controls.Add(this.label14);
-            this.gunaLinePanel3.Controls.Add(this.lblAuthor);
-            this.gunaLinePanel3.Controls.Add(this.lblSubject);
-            this.gunaLinePanel3.Controls.Add(this.lblISBN);
-            this.gunaLinePanel3.Controls.Add(this.lblTitle);
-            this.gunaLinePanel3.Controls.Add(this.label10);
-            this.gunaLinePanel3.Controls.Add(this.label11);
-            this.gunaLinePanel3.Controls.Add(this.label12);
-            this.gunaLinePanel3.Controls.Add(this.label13);
-            this.gunaLinePanel3.LineBottom = 1;
-            this.gunaLinePanel3.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLinePanel3.LineLeft = 1;
-            this.gunaLinePanel3.LineRight = 1;
-            this.gunaLinePanel3.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel3.LineTop = 1;
-            this.gunaLinePanel3.Location = new System.Drawing.Point(470, 115);
-            this.gunaLinePanel3.Name = "gunaLinePanel3";
-            this.gunaLinePanel3.Size = new System.Drawing.Size(339, 201);
-            this.gunaLinePanel3.TabIndex = 3;
-            // 
-            // studImage
-            // 
-            this.studImage.BackColor = System.Drawing.Color.White;
-            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
-            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.studImage.Image = ((System.Drawing.Image)(resources.GetObject("studImage.Image")));
-            this.studImage.Location = new System.Drawing.Point(21, 31);
-            this.studImage.Name = "studImage";
-            this.studImage.Size = new System.Drawing.Size(130, 130);
-            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.studImage.TabIndex = 11;
-            this.studImage.TabStop = false;
             // 
             // lblYear
             // 
@@ -253,6 +217,53 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Name:";
             // 
+            // studImage
+            // 
+            this.studImage.BackColor = System.Drawing.Color.White;
+            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
+            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studImage.Image = ((System.Drawing.Image)(resources.GetObject("studImage.Image")));
+            this.studImage.Location = new System.Drawing.Point(21, 31);
+            this.studImage.Name = "studImage";
+            this.studImage.Size = new System.Drawing.Size(130, 130);
+            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.studImage.TabIndex = 11;
+            this.studImage.TabStop = false;
+            // 
+            // gunaLinePanel3
+            // 
+            this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel3.Controls.Add(this.label14);
+            this.gunaLinePanel3.Controls.Add(this.lblAuthor);
+            this.gunaLinePanel3.Controls.Add(this.lblSubject);
+            this.gunaLinePanel3.Controls.Add(this.lblISBN);
+            this.gunaLinePanel3.Controls.Add(this.lblTitle);
+            this.gunaLinePanel3.Controls.Add(this.label10);
+            this.gunaLinePanel3.Controls.Add(this.label11);
+            this.gunaLinePanel3.Controls.Add(this.label12);
+            this.gunaLinePanel3.Controls.Add(this.label13);
+            this.gunaLinePanel3.LineBottom = 1;
+            this.gunaLinePanel3.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaLinePanel3.LineLeft = 1;
+            this.gunaLinePanel3.LineRight = 1;
+            this.gunaLinePanel3.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel3.LineTop = 1;
+            this.gunaLinePanel3.Location = new System.Drawing.Point(470, 115);
+            this.gunaLinePanel3.Name = "gunaLinePanel3";
+            this.gunaLinePanel3.Size = new System.Drawing.Size(339, 201);
+            this.gunaLinePanel3.TabIndex = 3;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(26, 16);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 25);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Book Details";
+            // 
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
@@ -337,19 +348,10 @@
             this.label13.TabIndex = 22;
             this.label13.Text = "Title:";
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(26, 16);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 25);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Book Details";
-            // 
             // txtSearchStud
             // 
+            this.txtSearchStud.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSearchStud.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearchStud.BackColor = System.Drawing.Color.Gainsboro;
             this.txtSearchStud.BeforeTouchSize = new System.Drawing.Size(263, 20);
             this.txtSearchStud.BorderColor = System.Drawing.Color.Gainsboro;
@@ -361,6 +363,7 @@
             this.txtSearchStud.Size = new System.Drawing.Size(263, 20);
             this.txtSearchStud.TabIndex = 4;
             this.txtSearchStud.UseBorderColorOnFocus = true;
+            this.txtSearchStud.TextChanged += new System.EventHandler(this.TxtSearchStud_TextChanged);
             // 
             // label15
             // 
@@ -386,11 +389,14 @@
             // cboBooks
             // 
             this.cboBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboBooks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboBooks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboBooks.FormattingEnabled = true;
             this.cboBooks.Location = new System.Drawing.Point(470, 83);
             this.cboBooks.Name = "cboBooks";
             this.cboBooks.Size = new System.Drawing.Size(265, 21);
             this.cboBooks.TabIndex = 7;
+            this.cboBooks.SelectedIndexChanged += new System.EventHandler(this.CboBooks_SelectedIndexChanged);
             // 
             // label16
             // 
@@ -493,14 +499,15 @@
             this.Name = "frmIssueBook";
             this.Text = "frmIssueBook";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmIssueBook_Load);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
             this.gunaLinePanel3.ResumeLayout(false);
             this.gunaLinePanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
