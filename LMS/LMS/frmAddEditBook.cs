@@ -24,7 +24,17 @@ namespace LMS
             cn = new SqlConnection(dbcon.MyConnection());
             frmlist = flist;
         }
-        
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
         private void FrmAddEditBook_Load(object sender, EventArgs e)
         {
             //
@@ -59,10 +69,11 @@ namespace LMS
                         //open connection to the database
                         cn.Open();
                         //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblBook VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year)", cn);
+                        cm = new SqlCommand("INSERT INTO tblBook  VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year, @copies)", cn);
                         //set parameters value
                         cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
+                        cm.Parameters.AddWithValue("@copies", txtCopies.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
                         cm.Parameters.AddWithValue("@genre", txtGenre.Text);
                         cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);

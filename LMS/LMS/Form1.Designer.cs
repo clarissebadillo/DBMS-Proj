@@ -62,7 +62,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(190, 70);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(712, 497);
+            this.panel3.Size = new System.Drawing.Size(795, 497);
             this.panel3.TabIndex = 5;
             // 
             // pnlMenuAnimation
@@ -298,7 +298,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(190, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(712, 70);
+            this.panel2.Size = new System.Drawing.Size(795, 70);
             this.panel2.TabIndex = 4;
             // 
             // btnMin
@@ -315,7 +315,7 @@
             this.btnMin.ForeColor = System.Drawing.Color.White;
             this.btnMin.Image = null;
             this.btnMin.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnMin.Location = new System.Drawing.Point(646, 12);
+            this.btnMin.Location = new System.Drawing.Point(729, 12);
             this.btnMin.Name = "btnMin";
             this.btnMin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(173)))), ((int)(((byte)(4)))));
             this.btnMin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -340,7 +340,7 @@
             this.btnMax.ForeColor = System.Drawing.Color.White;
             this.btnMax.Image = null;
             this.btnMax.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnMax.Location = new System.Drawing.Point(666, 12);
+            this.btnMax.Location = new System.Drawing.Point(749, 12);
             this.btnMax.Name = "btnMax";
             this.btnMax.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(179)))), ((int)(((byte)(57)))));
             this.btnMax.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -365,7 +365,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = null;
             this.btnClose.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnClose.Location = new System.Drawing.Point(686, 12);
+            this.btnClose.Location = new System.Drawing.Point(769, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(62)))), ((int)(((byte)(52)))));
             this.btnClose.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -411,7 +411,7 @@
             this.pnlMenuAnimation.SetDecoration(this.label3, Guna.UI.Animation.DecorationType.None);
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label3.Location = new System.Drawing.Point(578, 41);
+            this.label3.Location = new System.Drawing.Point(661, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 20);
             this.label3.TabIndex = 6;
@@ -424,7 +424,7 @@
             this.pnlMenuAnimation.SetDecoration(this.lblTime, Guna.UI.Animation.DecorationType.None);
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTime.Location = new System.Drawing.Point(598, 42);
+            this.lblTime.Location = new System.Drawing.Point(681, 42);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(36, 17);
             this.lblTime.TabIndex = 5;
@@ -437,7 +437,7 @@
             this.pnlMenuAnimation.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblDate.Location = new System.Drawing.Point(426, 43);
+            this.lblDate.Location = new System.Drawing.Point(500, 43);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(35, 17);
             this.lblDate.TabIndex = 4;
@@ -452,7 +452,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(902, 567);
+            this.ClientSize = new System.Drawing.Size(985, 567);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlMenu);

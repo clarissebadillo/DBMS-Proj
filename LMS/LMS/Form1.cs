@@ -23,6 +23,16 @@ namespace LMS
             cn = new SqlConnection(dbcon.MyConnection());
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //Set current date and time
@@ -32,6 +42,15 @@ namespace LMS
 
             //form shadow
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+        }
+
+        public void ShowIssueBook()
+        {
+            frmIssueBook frm = new frmIssueBook();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
         }
         
         private void Timer1_Tick(object sender, EventArgs e)
@@ -61,7 +80,7 @@ namespace LMS
 
         private void BtnBook_Click(object sender, EventArgs e)
         {
-            frmBookList frm = new frmBookList();
+            frmBookList frm = new frmBookList(this);
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

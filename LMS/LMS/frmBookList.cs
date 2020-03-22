@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using ZXing;
 
 namespace LMS
 {
@@ -19,12 +18,24 @@ namespace LMS
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
         string stitle = "Library Management System";
+        Form1 f1;
 
-        public frmBookList()
+        public frmBookList(Form1 frm1)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             LoadRecords();
+            f1 = frm1;
+        }
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
         }
 
         private void FrmBookList_Load(object sender, EventArgs e)
@@ -49,7 +60,7 @@ namespace LMS
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkSubject"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkSubject"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString(), dr["bkCopies"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -66,11 +77,6 @@ namespace LMS
 
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Generate barcode using ZXing.Net
-            BarcodeWriter writer = new BarcodeWriter() { Format = BarcodeFormat.CODE_128 };
-            picBarcode.Image?.Dispose();
-            picBarcode.Image = writer.Write(gunaDataGridView1[3, e.RowIndex].Value.ToString());
-
             //Load to labels
             lblBookTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
             lblISBN.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
@@ -82,6 +88,7 @@ namespace LMS
             lblPublisher.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
             lblPrice.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
             lblYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
+            lblAllCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
         
             string colName = gunaDataGridView1.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
@@ -100,6 +107,7 @@ namespace LMS
                 frm.txtPublisher.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
                 frm.txtPrice.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
                 frm.txtYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
+                frm.txtCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
                 frm.ShowDialog();
             }
             else if (colName == "Delete")
@@ -126,5 +134,9 @@ namespace LMS
             //LoadSubjects();
         }
 
+        private void BtnIssueBook_Click(object sender, EventArgs e)
+        {
+            f1.ShowIssueBook();
+        }
     }
 }
