@@ -258,7 +258,7 @@
         RJpYNVcAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="gunaAdvenceButton1.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDashboard.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATBJREFUSEvt
         ljFqwzAUhk2G7DlCIOQChdBmypAThF6iQyHp0s14yNC1EAo9QAg9Q6/Qe7TN0LEZOrifpBfLCKUWqYwW
@@ -269,7 +269,7 @@
         fwcxod8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="gunaAdvenceButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnDashboard.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATBJREFUSEvt
         ljFqwzAUhk2G7DlCIOQChdBmypAThF6iQyHp0s14yNC1EAo9QAg9Q6/Qe7TN0LEZOrifpBfLCKUWqYwW

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Tulpep.NotificationWindow;
 
 namespace LMS
 {
@@ -44,6 +45,15 @@ namespace LMS
             dtDueDate.Text = DateTime.Now.ToShortDateString();
         }
 
+        public void Notif()
+        {
+            PopupNotifier pp = new PopupNotifier();
+            //pp.Image = Properties.Resources.iconfinder_130_man_student_2_3099383;
+            pp.TitleText = "School System";
+            pp.ContentText = cboBooks.Text + "has been issued to" + lblName.Text;
+            pp.Popup();
+        }
+
         public void BorrowBook()
         {
             try
@@ -61,15 +71,25 @@ namespace LMS
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
+                    Deduction();
                     //close connection
                     cn.Close();
-                    MessageBox.Show("Record has been sucessfully saved!");
+                    //Notif();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void Deduction()
+        {
+         //   cn.Open();
+            cm = new SqlCommand("UPDATE tblBook set bkCopies = bkCopies - 1 WHERE bkTitle = '" + cboBooks.Text + "'", cn);
+            cm.ExecuteNonQuery();
+           // cn.Close();
+            Notif();
         }
 
         public void AutoCompleteStudentNo()
@@ -113,7 +133,7 @@ namespace LMS
             lblYear.Text = "";
             cboBooks.Items.Clear();
             txtSearchStud.Text = "";
-            studImage.Image = null;
+            studImage.Image = Properties.Resources.user;
         }
 
         private void BtnBack_Click(object sender, EventArgs e)

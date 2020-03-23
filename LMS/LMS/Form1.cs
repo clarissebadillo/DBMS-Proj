@@ -78,6 +78,15 @@ namespace LMS
             pnlMenuAnimation.ShowSync(pnlMenu);
         }
 
+        private void BtnDashboard_Click(object sender, EventArgs e)
+        {
+            frmDashboard frm = new frmDashboard();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
         private void BtnBook_Click(object sender, EventArgs e)
         {
             frmBookList frm = new frmBookList(this);

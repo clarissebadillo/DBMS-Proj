@@ -69,10 +69,11 @@ namespace LMS
                         //open connection to the database
                         cn.Open();
                         //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblBook  VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year, @copies)", cn);
+                        cm = new SqlCommand("INSERT INTO tblBook (bookTitle, bkSubject, bkGenre, bkMediaType, bkLanguage, bkAuthor, bkPublisher, bkPrice, bkISBN, bkYear, bkAllCopies, bkCopies)  VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year, , @allcopies, @copies)", cn);
                         //set parameters value
                         cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
+                        cm.Parameters.AddWithValue("@allcopies", txtCopies.Text);
                         cm.Parameters.AddWithValue("@copies", txtCopies.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
                         cm.Parameters.AddWithValue("@genre", txtGenre.Text);

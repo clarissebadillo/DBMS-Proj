@@ -222,7 +222,7 @@
             this.studImage.BackColor = System.Drawing.Color.White;
             this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
             this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.studImage.Image = ((System.Drawing.Image)(resources.GetObject("studImage.Image")));
+            this.studImage.Image = global::LMS.Properties.Resources.user;
             this.studImage.Location = new System.Drawing.Point(21, 31);
             this.studImage.Name = "studImage";
             this.studImage.Size = new System.Drawing.Size(130, 130);
