@@ -47,10 +47,11 @@
             this.txtLanguage = new Guna.UI.WinForms.GunaTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtGenre = new Guna.UI.WinForms.GunaTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCopies = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTitle = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,8 +59,7 @@
             this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtCopies = new Guna.UI.WinForms.GunaTextBox();
+            this.cboGenre = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
@@ -158,6 +158,7 @@
             // 
             this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel3.Controls.Add(this.cboGenre);
             this.gunaLinePanel3.Controls.Add(this.cboSubject);
             this.gunaLinePanel3.Controls.Add(this.label1);
             this.gunaLinePanel3.Controls.Add(this.cboMediaType);
@@ -172,7 +173,6 @@
             this.gunaLinePanel3.Controls.Add(this.txtLanguage);
             this.gunaLinePanel3.Controls.Add(this.label7);
             this.gunaLinePanel3.Controls.Add(this.label5);
-            this.gunaLinePanel3.Controls.Add(this.txtGenre);
             this.gunaLinePanel3.Controls.Add(this.label4);
             this.gunaLinePanel3.LineBottom = 2;
             this.gunaLinePanel3.LineColor = System.Drawing.Color.Gainsboro;
@@ -184,6 +184,8 @@
             // 
             // cboSubject
             // 
+            this.cboSubject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboSubject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
             this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
             this.cboSubject.BorderColor = System.Drawing.Color.Gainsboro;
@@ -195,15 +197,13 @@
             this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.cboSubject.FormattingEnabled = true;
             this.cboSubject.Items.AddRange(new object[] {
-            "All Subjects",
-            "Math",
-            "Economics",
             "Science",
+            "Math",
+            "English",
             "Programming",
+            "Economics",
             "History",
-            "Law",
-            "Education",
-            "Psychology"});
+            "Law"});
             this.cboSubject.Location = new System.Drawing.Point(22, 36);
             this.cboSubject.Name = "cboSubject";
             this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
@@ -225,6 +225,8 @@
             // 
             // cboMediaType
             // 
+            this.cboMediaType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboMediaType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboMediaType.BackColor = System.Drawing.Color.Gainsboro;
             this.cboMediaType.BaseColor = System.Drawing.Color.Gainsboro;
             this.cboMediaType.BorderColor = System.Drawing.Color.Gainsboro;
@@ -410,24 +412,6 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "Genre";
             // 
-            // txtGenre
-            // 
-            this.txtGenre.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtGenre.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtGenre.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtGenre.BorderSize = 1;
-            this.txtGenre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtGenre.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtGenre.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtGenre.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtGenre.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.txtGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtGenre.Location = new System.Drawing.Point(284, 36);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.PasswordChar = '\0';
-            this.txtGenre.Size = new System.Drawing.Size(234, 25);
-            this.txtGenre.TabIndex = 26;
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -466,6 +450,36 @@
             this.gunaLinePanel2.Name = "gunaLinePanel2";
             this.gunaLinePanel2.Size = new System.Drawing.Size(538, 153);
             this.gunaLinePanel2.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label10.Location = new System.Drawing.Point(444, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 13);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "No of Copies";
+            // 
+            // txtCopies
+            // 
+            this.txtCopies.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCopies.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtCopies.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtCopies.BorderSize = 1;
+            this.txtCopies.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCopies.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtCopies.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtCopies.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCopies.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.txtCopies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.txtCopies.Location = new System.Drawing.Point(444, 103);
+            this.txtCopies.Name = "txtCopies";
+            this.txtCopies.PasswordChar = '\0';
+            this.txtCopies.Size = new System.Drawing.Size(74, 26);
+            this.txtCopies.TabIndex = 6;
             // 
             // label3
             // 
@@ -567,35 +581,31 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Add Book Details";
             // 
-            // label10
+            // cboGenre
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label10.Location = new System.Drawing.Point(444, 87);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 13);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "No of Copies";
-            // 
-            // txtCopies
-            // 
-            this.txtCopies.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCopies.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtCopies.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtCopies.BorderSize = 1;
-            this.txtCopies.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCopies.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtCopies.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtCopies.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCopies.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.txtCopies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.txtCopies.Location = new System.Drawing.Point(444, 103);
-            this.txtCopies.Name = "txtCopies";
-            this.txtCopies.PasswordChar = '\0';
-            this.txtCopies.Size = new System.Drawing.Size(74, 26);
-            this.txtCopies.TabIndex = 6;
+            this.cboGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboGenre.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BorderSize = 1;
+            this.cboGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGenre.FocusedColor = System.Drawing.Color.Empty;
+            this.cboGenre.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboGenre.FormattingEnabled = true;
+            this.cboGenre.Items.AddRange(new object[] {
+            "Fiction",
+            "Non-Fiction",
+            "Romance",
+            "General Fiction"});
+            this.cboGenre.Location = new System.Drawing.Point(284, 36);
+            this.cboGenre.Name = "cboGenre";
+            this.cboGenre.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboGenre.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboGenre.Size = new System.Drawing.Size(234, 26);
+            this.cboGenre.TabIndex = 42;
             // 
             // frmAddEditBook
             // 
@@ -636,7 +646,6 @@
         public Guna.UI.WinForms.GunaTextBox txtLanguage;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label5;
-        public Guna.UI.WinForms.GunaTextBox txtGenre;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Panel panel1;
         public Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
@@ -655,5 +664,6 @@
         public Guna.UI.WinForms.GunaComboBox cboSubject;
         public System.Windows.Forms.Label label10;
         public Guna.UI.WinForms.GunaTextBox txtCopies;
+        public Guna.UI.WinForms.GunaComboBox cboGenre;
     }
 }

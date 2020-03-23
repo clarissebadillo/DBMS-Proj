@@ -46,7 +46,7 @@ namespace LMS
             txtFname.Text = "";
             txtContact.Text = "";
             txtEmail.Text = "";
-            studImage.Image = null;
+            studImage.Image = Properties.Resources.user;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

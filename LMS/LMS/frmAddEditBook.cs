@@ -44,12 +44,13 @@ namespace LMS
         {
             txtTitle.Text = "";
             txtAuthor.Text = "";
-            txtGenre.Text = "";
+            cboGenre.SelectedItem = "";
             txtISBN.Text = "";
             txtPublisher.Text = "";
             txtPrice.Text = "";
             txtLanguage.Text = "";
             txtYear.Text = "";
+            txtCopies.Text = "";
             txtISBN.Focus();
         }
 
@@ -69,14 +70,14 @@ namespace LMS
                         //open connection to the database
                         cn.Open();
                         //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblBook (bookTitle, bkSubject, bkGenre, bkMediaType, bkLanguage, bkAuthor, bkPublisher, bkPrice, bkISBN, bkYear, bkAllCopies, bkCopies)  VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year, , @allcopies, @copies)", cn);
+                        cm = new SqlCommand("INSERT INTO tblBook (bkTitle, bkSubject, bkGenre, bkMediaType, bkLanguage, bkAuthor, bkPublisher, bkPrice, bkISBN, bkYear, bkAllCopies, bkCopies)  VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year, @allcopies, @copies)", cn);
                         //set parameters value
                         cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
                         cm.Parameters.AddWithValue("@allcopies", txtCopies.Text);
                         cm.Parameters.AddWithValue("@copies", txtCopies.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
-                        cm.Parameters.AddWithValue("@genre", txtGenre.Text);
+                        cm.Parameters.AddWithValue("@genre", cboGenre.Text);
                         cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
                         cm.Parameters.AddWithValue("@language", txtLanguage.Text);
                         cm.Parameters.AddWithValue("@author", txtAuthor.Text);
@@ -122,7 +123,7 @@ namespace LMS
                         cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
-                        cm.Parameters.AddWithValue("@genre", txtGenre.Text);
+                        cm.Parameters.AddWithValue("@genre", cboGenre.Text);
                         cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
                         cm.Parameters.AddWithValue("@language", txtLanguage.Text);
                         cm.Parameters.AddWithValue("@author", txtAuthor.Text);

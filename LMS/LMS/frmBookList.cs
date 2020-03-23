@@ -60,7 +60,7 @@ namespace LMS
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkSubject"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString(), dr["bkCopies"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkSubject"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString(), dr["bkAllCopies"].ToString(), dr["bkCopies"].ToString(), dr["bkLost"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -100,7 +100,7 @@ namespace LMS
                 frm.txtTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
                 frm.txtISBN.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
                 frm.cboSubject.Text = gunaDataGridView1[4, e.RowIndex].Value.ToString();
-                frm.txtGenre.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
+                frm.cboGenre.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
                 frm.cboMediaType.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
                 frm.txtLanguage.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
                 frm.txtAuthor.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
