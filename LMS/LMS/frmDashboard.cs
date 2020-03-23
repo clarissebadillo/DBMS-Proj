@@ -25,10 +25,10 @@ namespace LMS
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-            curDate.Value = DateTime.Now;
             CountBooks();
             CountStudents();
             CountBorrowToday();
+            CountReturnToday();
         }
 
         public void CountBooks()
@@ -50,9 +50,16 @@ namespace LMS
         public void CountBorrowToday()
         {
             cn.Open();
-            //cmd.CommandText = "select count(*) from borrow where date = curdate()";
-            cm = new SqlCommand("SELECT COUNT(*) FROM tblIssueBook WHERE releaseDate = '" + curDate.Value + "'", cn);
-            //lblBorrowed.Text = Convert.ToDateTime(cm.ExecuteScalar().ToString());
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblIssueBook WHERE releaseDate = CAST(GETDATE() AS DATE)", cn);
+            lblBorrowed.Text = cm.ExecuteScalar().ToString();
+            cn.Close();
+        }
+
+        public void CountReturnToday()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblIssueBook WHERE returnDate = CAST(GETDATE() AS DATE)", cn);
+            lblReturned.Text = cm.ExecuteScalar().ToString();
             cn.Close();
         }
     }

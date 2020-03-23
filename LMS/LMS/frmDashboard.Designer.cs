@@ -43,7 +43,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblReturned = new System.Windows.Forms.Label();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
-            this.curDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -194,23 +193,12 @@
             this.gunaSeparator1.TabIndex = 10;
             this.gunaSeparator1.Thickness = 3;
             // 
-            // curDate
-            // 
-            this.curDate.CustomFormat = "MM/dd/yyyy";
-            this.curDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.curDate.Location = new System.Drawing.Point(528, 22);
-            this.curDate.Name = "curDate";
-            this.curDate.Size = new System.Drawing.Size(200, 20);
-            this.curDate.TabIndex = 11;
-            this.curDate.Visible = false;
-            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(783, 539);
-            this.Controls.Add(this.curDate);
             this.Controls.Add(this.gunaSeparator1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
@@ -258,6 +246,5 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblReturned;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
-        private System.Windows.Forms.DateTimePicker curDate;
     }
 }
