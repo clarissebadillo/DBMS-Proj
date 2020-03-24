@@ -41,20 +41,14 @@ namespace LMS
             AutoCompleteStudentNo();
             LoadBooks();
 
-            dtIssueDate.Text = DateTime.Now.ToShortDateString();
+            dtIssueDate.Value = DateTime.Now;
             dtDueDate.Value = dtIssueDate.Value.AddDays(7);
         }
 
         public void Notif()
         {
-            PopupNotifier pp = new PopupNotifier();
-            //pp.Image = Properties.Resources.iconfinder_130_man_student_2_3099383;
-            pp.TitleText = "School System";
-            pp.ContentText = cboBooks.Text + "has been issued to" + lblName.Text;
-            pp.Popup();
-
-            
-            
+            popupNotifier.ContentText = cboBooks.Text + " has been issued to " + lblName.Text;
+            popupNotifier.Popup();
         }
 
         public void BorrowBook()

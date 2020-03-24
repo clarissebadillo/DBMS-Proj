@@ -33,6 +33,7 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
+            this.cboGenre = new Guna.UI.WinForms.GunaComboBox();
             this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
@@ -59,7 +60,7 @@
             this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.cboGenre = new Guna.UI.WinForms.GunaComboBox();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
@@ -181,6 +182,32 @@
             this.gunaLinePanel3.Name = "gunaLinePanel3";
             this.gunaLinePanel3.Size = new System.Drawing.Size(538, 237);
             this.gunaLinePanel3.TabIndex = 30;
+            // 
+            // cboGenre
+            // 
+            this.cboGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboGenre.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BorderSize = 1;
+            this.cboGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGenre.FocusedColor = System.Drawing.Color.Empty;
+            this.cboGenre.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboGenre.FormattingEnabled = true;
+            this.cboGenre.Items.AddRange(new object[] {
+            "Fiction",
+            "Non-Fiction",
+            "Romance",
+            "General Fiction"});
+            this.cboGenre.Location = new System.Drawing.Point(284, 36);
+            this.cboGenre.Name = "cboGenre";
+            this.cboGenre.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboGenre.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboGenre.Size = new System.Drawing.Size(234, 26);
+            this.cboGenre.TabIndex = 42;
             // 
             // cboSubject
             // 
@@ -581,31 +608,28 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Add Book Details";
             // 
-            // cboGenre
+            // popupNotifier
             // 
-            this.cboGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboGenre.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboGenre.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboGenre.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cboGenre.BorderSize = 1;
-            this.cboGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGenre.FocusedColor = System.Drawing.Color.Empty;
-            this.cboGenre.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboGenre.FormattingEnabled = true;
-            this.cboGenre.Items.AddRange(new object[] {
-            "Fiction",
-            "Non-Fiction",
-            "Romance",
-            "General Fiction"});
-            this.cboGenre.Location = new System.Drawing.Point(284, 36);
-            this.cboGenre.Name = "cboGenre";
-            this.cboGenre.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboGenre.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboGenre.Size = new System.Drawing.Size(234, 26);
-            this.cboGenre.TabIndex = 42;
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier.TitleText = null;
             // 
             // frmAddEditBook
             // 
@@ -665,5 +689,6 @@
         public System.Windows.Forms.Label label10;
         public Guna.UI.WinForms.GunaTextBox txtCopies;
         public Guna.UI.WinForms.GunaComboBox cboGenre;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
     }
 }

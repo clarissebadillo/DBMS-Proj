@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIssueBook));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
             this.lblStudID = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
             this.lblBookID = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtSearchStud = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cboBooks = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -64,15 +61,17 @@
             this.btnProccessIssue = new Guna.UI.WinForms.GunaButton();
             this.dtIssueDate = new Guna.UI.WinForms.GunaDateTimePicker();
             this.dtDueDate = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.txtCopies = new Guna.UI.WinForms.GunaTextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.studImage = new Guna.UI.WinForms.GunaPictureBox();
+            this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.gunaLinePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.gunaLinePanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             this.gunaLinePanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
@@ -88,21 +87,6 @@
             this.gunaLinePanel1.Name = "gunaLinePanel1";
             this.gunaLinePanel1.Size = new System.Drawing.Size(797, 37);
             this.gunaLinePanel1.TabIndex = 1;
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = global::LMS.Properties.Resources.left_30px;
-            this.btnBack.ImageActive = null;
-            this.btnBack.Location = new System.Drawing.Point(8, -1);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(25, 25);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnBack.TabIndex = 3;
-            this.btnBack.TabStop = false;
-            this.btnBack.Zoom = 10;
-            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // label1
             // 
@@ -232,19 +216,6 @@
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "Name:";
-            // 
-            // studImage
-            // 
-            this.studImage.BackColor = System.Drawing.Color.White;
-            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
-            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.studImage.Image = global::LMS.Properties.Resources.user;
-            this.studImage.Location = new System.Drawing.Point(21, 31);
-            this.studImage.Name = "studImage";
-            this.studImage.Size = new System.Drawing.Size(130, 130);
-            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.studImage.TabIndex = 11;
-            this.studImage.TabStop = false;
             // 
             // gunaLinePanel3
             // 
@@ -403,17 +374,6 @@
             this.label15.TabIndex = 5;
             this.label15.Text = "Enter Student Number";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(256, 86);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // cboBooks
             // 
             this.cboBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -442,7 +402,7 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(338, 335);
+            this.label17.Location = new System.Drawing.Point(554, 334);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(60, 13);
             this.label17.TabIndex = 10;
@@ -453,7 +413,7 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(338, 384);
+            this.label18.Location = new System.Drawing.Point(554, 387);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(55, 13);
             this.label18.TabIndex = 12;
@@ -500,18 +460,18 @@
             this.dtIssueDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtIssueDate.ForeColor = System.Drawing.Color.Black;
             this.dtIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtIssueDate.Location = new System.Drawing.Point(341, 351);
+            this.dtIssueDate.Location = new System.Drawing.Point(557, 350);
             this.dtIssueDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtIssueDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtIssueDate.Name = "dtIssueDate";
-            this.dtIssueDate.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtIssueDate.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.dtIssueDate.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.dtIssueDate.OnHoverForeColor = System.Drawing.Color.Black;
             this.dtIssueDate.OnPressedColor = System.Drawing.Color.Black;
             this.dtIssueDate.Size = new System.Drawing.Size(232, 30);
             this.dtIssueDate.TabIndex = 50;
             this.dtIssueDate.Text = "03/23/2020";
-            this.dtIssueDate.Value = new System.DateTime(2020, 3, 23, 17, 47, 21, 456);
+            this.dtIssueDate.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             // 
             // dtDueDate
             // 
@@ -526,46 +486,80 @@
             this.dtDueDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtDueDate.ForeColor = System.Drawing.Color.Black;
             this.dtDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDueDate.Location = new System.Drawing.Point(341, 400);
+            this.dtDueDate.Location = new System.Drawing.Point(557, 403);
             this.dtDueDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtDueDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtDueDate.Name = "dtDueDate";
-            this.dtDueDate.OnHoverBaseColor = System.Drawing.Color.White;
+            this.dtDueDate.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
             this.dtDueDate.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dtDueDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtDueDate.OnHoverForeColor = System.Drawing.Color.Black;
             this.dtDueDate.OnPressedColor = System.Drawing.Color.Black;
             this.dtDueDate.Size = new System.Drawing.Size(232, 30);
             this.dtDueDate.TabIndex = 51;
             this.dtDueDate.Text = "03/23/2020";
             this.dtDueDate.Value = new System.DateTime(2020, 3, 23, 17, 47, 21, 456);
             // 
-            // txtCopies
+            // pictureBox1
             // 
-            this.txtCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCopies.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtCopies.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtCopies.BorderSize = 1;
-            this.txtCopies.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCopies.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtCopies.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtCopies.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCopies.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCopies.Location = new System.Drawing.Point(590, 351);
-            this.txtCopies.Name = "txtCopies";
-            this.txtCopies.PasswordChar = '\0';
-            this.txtCopies.Size = new System.Drawing.Size(199, 30);
-            this.txtCopies.TabIndex = 52;
+            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(256, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(15, 15);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
-            // label6
+            // studImage
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(587, 335);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 13);
-            this.label6.TabIndex = 53;
-            this.label6.Text = "No. of Copies";
+            this.studImage.BackColor = System.Drawing.Color.White;
+            this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
+            this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.studImage.Image = global::LMS.Properties.Resources.user;
+            this.studImage.Location = new System.Drawing.Point(21, 31);
+            this.studImage.Name = "studImage";
+            this.studImage.Size = new System.Drawing.Size(130, 130);
+            this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.studImage.TabIndex = 11;
+            this.studImage.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = global::LMS.Properties.Resources.left_30px;
+            this.btnBack.ImageActive = null;
+            this.btnBack.Location = new System.Drawing.Point(8, -1);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(25, 25);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnBack.TabIndex = 3;
+            this.btnBack.TabStop = false;
+            this.btnBack.Zoom = 10;
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
+            // popupNotifier
+            // 
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier.TitleText = null;
             // 
             // frmIssueBook
             // 
@@ -573,8 +567,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(821, 509);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtCopies);
             this.Controls.Add(this.dtDueDate);
             this.Controls.Add(this.dtIssueDate);
             this.Controls.Add(this.btnProccessIssue);
@@ -594,14 +586,14 @@
             this.Load += new System.EventHandler(this.FrmIssueBook_Load);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
             this.gunaLinePanel3.ResumeLayout(false);
             this.gunaLinePanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -644,7 +636,6 @@
         private Guna.UI.WinForms.GunaDateTimePicker dtDueDate;
         public System.Windows.Forms.Label lblStudID;
         public System.Windows.Forms.Label lblBookID;
-        private Guna.UI.WinForms.GunaTextBox txtCopies;
-        private System.Windows.Forms.Label label6;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
     }
 }

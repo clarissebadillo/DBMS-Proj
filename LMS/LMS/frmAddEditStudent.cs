@@ -71,21 +71,7 @@ namespace LMS
 
             if (txtStudNo.Text == "" || txtFname.Text == "" || txtLname.Text == "")
             {
-                if (txtStudNo.Text == "")
-                {
-                    txtStudNo.Focus();
-                    MessageBox.Show("Please enter the student number", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (txtFname.Text == "")
-                {
-                    txtFname.Focus();
-                    MessageBox.Show("Please enter the student's first name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (txtLname.Text == "")
-                {
-                    txtLname.Focus();
-                    MessageBox.Show("Please enter the student's last name", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                MessageBox.Show("Please don't leave blank spaces", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -114,7 +100,9 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         //close connection
                         cn.Close();
-                        MessageBox.Show("Record has been sucessfully saved!");
+
+                        popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + "has been successfully added";
+                        popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
                     }
@@ -184,7 +172,9 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     //close connection
                     cn.Close();
-                    MessageBox.Show("Record has been sucessfully updated!");
+
+                    popupNotifier.ContentText = txtFname + " " + txtLname + " has been successfully updated";
+                    popupNotifier.Popup();
                     Clear();
                     frmlist.LoadRecords();
                 }

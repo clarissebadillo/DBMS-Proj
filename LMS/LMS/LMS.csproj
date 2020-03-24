@@ -171,9 +171,6 @@
     <None Include="Resources\search_20px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pencil_drawing_16px.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\trash_16px.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jungkook.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

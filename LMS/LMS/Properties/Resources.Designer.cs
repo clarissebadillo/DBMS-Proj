@@ -63,6 +63,16 @@ namespace LMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap jungkook {
+            get {
+                object obj = ResourceManager.GetObject("jungkook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap left_30px {
             get {
                 object obj = ResourceManager.GetObject("left_30px", resourceCulture);
@@ -76,16 +86,6 @@ namespace LMS.Properties {
         internal static System.Drawing.Bitmap pencil_16px {
             get {
                 object obj = ResourceManager.GetObject("pencil_16px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap pencil_drawing_16px {
-            get {
-                object obj = ResourceManager.GetObject("pencil_drawing_16px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

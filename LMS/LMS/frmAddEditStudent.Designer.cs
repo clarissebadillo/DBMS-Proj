@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddEditStudent));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.lblValues = new System.Windows.Forms.Label();
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.lblID = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.lblValues = new System.Windows.Forms.Label();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
@@ -91,6 +92,17 @@
             this.gunaLinePanel1.Name = "gunaLinePanel1";
             this.gunaLinePanel1.Size = new System.Drawing.Size(559, 559);
             this.gunaLinePanel1.TabIndex = 1;
+            // 
+            // lblValues
+            // 
+            this.lblValues.AutoSize = true;
+            this.lblValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValues.Location = new System.Drawing.Point(64, 533);
+            this.lblValues.Name = "lblValues";
+            this.lblValues.Size = new System.Drawing.Size(16, 17);
+            this.lblValues.TabIndex = 3;
+            this.lblValues.Text = "0";
+            this.lblValues.Visible = false;
             // 
             // btnUpdate
             // 
@@ -582,16 +594,28 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // lblValues
+            // popupNotifier
             // 
-            this.lblValues.AutoSize = true;
-            this.lblValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValues.Location = new System.Drawing.Point(64, 533);
-            this.lblValues.Name = "lblValues";
-            this.lblValues.Size = new System.Drawing.Size(16, 17);
-            this.lblValues.TabIndex = 3;
-            this.lblValues.Text = "0";
-            this.lblValues.Visible = false;
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier.TitleText = null;
             // 
             // frmAddEditStudent
             // 
@@ -655,5 +679,6 @@
         public Guna.UI.WinForms.GunaRadioButton rbFemale;
         public Guna.UI.WinForms.GunaRadioButton rbMale;
         private System.Windows.Forms.Label lblValues;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
     }
 }

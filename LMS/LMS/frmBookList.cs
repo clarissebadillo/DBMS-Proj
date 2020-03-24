@@ -17,7 +17,6 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
-        string stitle = "Library Management System";
         Form1 f1;
 
         public frmBookList(Form1 frm1)
@@ -119,7 +118,9 @@ namespace LMS
                     cm = new SqlCommand("DELETE FROM tblBook WHERE bookID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
-                    MessageBox.Show("Record has been successfully deleted!", stitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    popupNotifier.ContentText = "Record has been successfully removed!";
+                    popupNotifier.Popup();
                     LoadRecords();
                 }
             }

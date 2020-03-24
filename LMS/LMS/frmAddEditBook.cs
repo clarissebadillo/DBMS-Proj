@@ -90,7 +90,9 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         //close connection
                         cn.Close();
-                        MessageBox.Show("Record has been sucessfully saved!");
+
+                        popupNotifier.ContentText = txtTitle.Text + "has been successfully added";
+                        popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
                     }
@@ -135,7 +137,8 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         cn.Close();
 
-                        MessageBox.Show("Record has been successfully updated!");
+                        popupNotifier.ContentText = txtTitle.Text + " has been successfully updated";
+                        popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
                         this.Close();

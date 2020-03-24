@@ -18,7 +18,6 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
-        string stitle = "Library Management System";
 
         public frmStudentList()
         {
@@ -49,7 +48,6 @@ namespace LMS
             int i = 0;
             gunaDataGridView1.Rows.Clear();
             cn.Open();
-            //cm = new SqlCommand("SELECT tblStudent.studID, tblStudent.stNumber, tblStudent.stLname, tblStudent.stFname, tblStudent.stCourse, tblStudent.stYear, tblStudent.stGender, tblStudent.stContact, tblStudent.stEmail, tblStudent.stAddress, tblStudent.stImage, tblIssueBook.stCopies, tblIssueBook.stLost FROM tblStudent INNER JOIN tblIssueBook ON tblStudent.studID = tblIssueBook.studID WHERE stLname LIKE '" + txtSearch.Text + "'", cn);
             cm = new SqlCommand("SELECT * FROM tblStudent WHERE stLname LIKE '" + txtSearch.Text + "%'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -118,7 +116,9 @@ namespace LMS
                     cm = new SqlCommand("DELETE FROM tblStudent WHERE studID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
-                    MessageBox.Show("Record has been successfully deleted!", stitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    popupNotifier.ContentText = "Record has been successfully removed";
+                    popupNotifier.Popup();
                     LoadRecords();
                 }
             }
