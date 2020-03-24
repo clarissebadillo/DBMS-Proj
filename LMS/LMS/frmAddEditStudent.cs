@@ -46,6 +46,8 @@ namespace LMS
             txtFname.Text = "";
             txtContact.Text = "";
             txtEmail.Text = "";
+            cboCourse.SelectedIndex = -1;
+            cboYear.SelectedIndex = -1;
             studImage.Image = Properties.Resources.user;
         }
 
@@ -94,7 +96,7 @@ namespace LMS
                         //open connection to the database
                         cn.Open();
                         //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @stImage)", cn);
+                        cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @stImage, @stCopies, @stLost)", cn);
                         //set parameters value
                         cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
                         cm.Parameters.AddWithValue("@stLname", txtLname.Text);
@@ -106,6 +108,8 @@ namespace LMS
                         cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
                         cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
                         cm.Parameters.AddWithValue("@stImage", img);
+                        cm.Parameters.AddWithValue("@stCopies", lblValues.Text);
+                        cm.Parameters.AddWithValue("@stLost", lblValues.Text);
                         //ask db to execute query
                         cm.ExecuteNonQuery();
                         //close connection

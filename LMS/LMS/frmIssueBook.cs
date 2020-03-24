@@ -41,8 +41,8 @@ namespace LMS
             AutoCompleteStudentNo();
             LoadBooks();
 
-            dtIssue.Text = DateTime.Now.ToShortDateString();
-            dtDueDate.Text = DateTime.Now.ToShortDateString();
+            dtIssueDate.Text = DateTime.Now.ToShortDateString();
+            dtDueDate.Value = dtIssueDate.Value.AddDays(7);
         }
 
         public void Notif()
@@ -52,6 +52,9 @@ namespace LMS
             pp.TitleText = "School System";
             pp.ContentText = cboBooks.Text + "has been issued to" + lblName.Text;
             pp.Popup();
+
+            
+            
         }
 
         public void BorrowBook()
@@ -63,15 +66,18 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblIssueBook (stNumber, bkTitle, releaseDate, dueDate) VALUES (@stNumber, @bkTitle, @releaseDate, @dueDate)", cn);
+                    cm = new SqlCommand("INSERT INTO tblIssueBook (studID, bookID, stNumber, bkTitle, releaseDate, dueDate) VALUES (@studID, @bookID, @stNumber, @bkTitle, @releaseDate, @dueDate)", cn);
                     //set parameters value
+                    cm.Parameters.AddWithValue("@studID", lblStudID.Text);
+                    cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
                     cm.Parameters.AddWithValue("@stNumber", txtSearchStud.Text);
                     cm.Parameters.AddWithValue("@bkTitle", cboBooks.Text);
-                    cm.Parameters.AddWithValue("@releaseDate", dtIssue.Value);
+                    cm.Parameters.AddWithValue("@releaseDate", dtIssueDate.Value);
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
                     Deduction();
+                    StudentPossession();
                     //close connection
                     cn.Close();
                     //Notif();
@@ -85,11 +91,15 @@ namespace LMS
 
         public void Deduction()
         {
-         //   cn.Open();
-            cm = new SqlCommand("UPDATE tblBook set bkCopies = bkCopies - 1 WHERE bkTitle = '" + cboBooks.Text + "'", cn);
+            cm = new SqlCommand("UPDATE tblBook SET bkCopies = bkCopies - 1 WHERE bkTitle = '" + cboBooks.Text + "'", cn);
             cm.ExecuteNonQuery();
-           // cn.Close();
             Notif();
+        }
+
+        public void StudentPossession()
+        {
+            cm = new SqlCommand("UPDATE tblStudent SET stCopies = stCopies + 1 WHERE studID = '" + lblStudID.Text + "'", cn);
+            cm.ExecuteNonQuery();
         }
 
         public void AutoCompleteStudentNo()
@@ -152,6 +162,7 @@ namespace LMS
                 lblStudNo.Text = dr["stNumber"].ToString();
                 lblCourse.Text = dr["stCourse"].ToString();
                 lblYear.Text = dr["stYear"].ToString();
+                lblStudID.Text = dr["studID"].ToString();
                 byte[] imgbytes = (byte[])dr["stImage"];
                 MemoryStream mstream = new MemoryStream(imgbytes);
                 studImage.Image = Image.FromStream(mstream);
@@ -171,6 +182,7 @@ namespace LMS
                 lblISBN.Text = dr["bkISBN"].ToString();
                 lblSubject.Text = dr["bkSubject"].ToString();
                 lblAuthor.Text = dr["bkAuthor"].ToString();
+                lblBookID.Text = dr["bookID"].ToString();
             }
             dr.Close();
             cn.Close();
@@ -183,8 +195,12 @@ namespace LMS
                 txtSearchStud.Focus();
                 MessageBox.Show("Please enter the student number", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            BorrowBook();
-            Clear();
+            else
+            {
+                BorrowBook();
+                Clear();
+            }
         }
+
     }
 }

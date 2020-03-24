@@ -89,7 +89,8 @@ namespace LMS
             lblPrice.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
             lblYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
             lblAllCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
-        
+            lblAvailable.Text = gunaDataGridView1[13, e.RowIndex].Value.ToString();
+
             string colName = gunaDataGridView1.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
             {

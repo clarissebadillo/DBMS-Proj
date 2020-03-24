@@ -44,13 +44,15 @@ namespace LMS
         {
             txtTitle.Text = "";
             txtAuthor.Text = "";
-            cboGenre.SelectedItem = "";
             txtISBN.Text = "";
             txtPublisher.Text = "";
             txtPrice.Text = "";
             txtLanguage.Text = "";
             txtYear.Text = "";
             txtCopies.Text = "";
+            cboGenre.SelectedIndex = -1;
+            cboMediaType.SelectedIndex = -1;
+            cboSubject.SelectedIndex = -1;
             txtISBN.Focus();
         }
 

@@ -49,12 +49,13 @@ namespace LMS
             int i = 0;
             gunaDataGridView1.Rows.Clear();
             cn.Open();
+            //cm = new SqlCommand("SELECT tblStudent.studID, tblStudent.stNumber, tblStudent.stLname, tblStudent.stFname, tblStudent.stCourse, tblStudent.stYear, tblStudent.stGender, tblStudent.stContact, tblStudent.stEmail, tblStudent.stAddress, tblStudent.stImage, tblIssueBook.stCopies, tblIssueBook.stLost FROM tblStudent INNER JOIN tblIssueBook ON tblStudent.studID = tblIssueBook.studID WHERE stLname LIKE '" + txtSearch.Text + "'", cn);
             cm = new SqlCommand("SELECT * FROM tblStudent WHERE stLname LIKE '" + txtSearch.Text + "%'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["studID"].ToString(), dr["stNumber"].ToString(), dr["stLname"].ToString(), dr["stFname"].ToString(), dr["stCourse"].ToString(), dr["stYear"].ToString(), dr["stGender"].ToString(), dr["stContact"].ToString(), dr["stEmail"].ToString(), dr["stAddress"].ToString(), dr["stImage"]);
+                gunaDataGridView1.Rows.Add(i, dr["studID"].ToString(), dr["stNumber"].ToString(), dr["stLname"].ToString(), dr["stFname"].ToString(), dr["stCourse"].ToString(), dr["stYear"].ToString(), dr["stGender"].ToString(), dr["stContact"].ToString(), dr["stEmail"].ToString(), dr["stAddress"].ToString(), dr["stImage"], dr["stCopies"].ToString(), dr["stLost"].ToString());//, dr["stCopies"].ToString());//, dr["stBookLost"].ToString());
             }
             dr.Close();
             cn.Close();

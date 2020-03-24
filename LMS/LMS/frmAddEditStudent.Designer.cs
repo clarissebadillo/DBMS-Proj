@@ -61,6 +61,7 @@
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lblValues = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.lblValues);
             this.gunaLinePanel1.Controls.Add(this.btnUpdate);
             this.gunaLinePanel1.Controls.Add(this.btnSave);
             this.gunaLinePanel1.Controls.Add(this.lblID);
@@ -580,6 +582,17 @@
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // lblValues
+            // 
+            this.lblValues.AutoSize = true;
+            this.lblValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValues.Location = new System.Drawing.Point(64, 533);
+            this.lblValues.Name = "lblValues";
+            this.lblValues.Size = new System.Drawing.Size(16, 17);
+            this.lblValues.TabIndex = 3;
+            this.lblValues.Text = "0";
+            this.lblValues.Visible = false;
+            // 
             // frmAddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -641,5 +654,6 @@
         public Guna.UI.WinForms.GunaPictureBox studImage;
         public Guna.UI.WinForms.GunaRadioButton rbFemale;
         public Guna.UI.WinForms.GunaRadioButton rbMale;
+        private System.Windows.Forms.Label lblValues;
     }
 }
