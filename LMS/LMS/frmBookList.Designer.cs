@@ -83,7 +83,6 @@
             this.lblLost = new System.Windows.Forms.Label();
             this.lblAvailable = new System.Windows.Forms.Label();
             this.lblBorrowed = new System.Windows.Forms.Label();
-            this.btnIssueBook = new Guna.UI.WinForms.GunaButton();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblAllCopies = new System.Windows.Forms.Label();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
@@ -410,7 +409,6 @@
             this.btnAddBook.TabIndex = 5;
             this.btnAddBook.Text = "Add Book";
             this.btnAddBook.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
             // cboSubject
             // 
@@ -799,34 +797,6 @@
             this.lblBorrowed.TabIndex = 3;
             this.lblBorrowed.Text = "00";
             // 
-            // btnIssueBook
-            // 
-            this.btnIssueBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnIssueBook.AnimationHoverSpeed = 0.07F;
-            this.btnIssueBook.AnimationSpeed = 0.03F;
-            this.btnIssueBook.BackColor = System.Drawing.Color.Transparent;
-            this.btnIssueBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnIssueBook.BorderColor = System.Drawing.Color.Black;
-            this.btnIssueBook.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnIssueBook.FocusedColor = System.Drawing.Color.Empty;
-            this.btnIssueBook.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnIssueBook.Image = null;
-            this.btnIssueBook.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnIssueBook.Location = new System.Drawing.Point(136, 476);
-            this.btnIssueBook.Name = "btnIssueBook";
-            this.btnIssueBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnIssueBook.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnIssueBook.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnIssueBook.OnHoverImage = null;
-            this.btnIssueBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnIssueBook.Radius = 17;
-            this.btnIssueBook.Size = new System.Drawing.Size(118, 35);
-            this.btnIssueBook.TabIndex = 43;
-            this.btnIssueBook.Text = "Issue Book";
-            this.btnIssueBook.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnIssueBook.Click += new System.EventHandler(this.BtnIssueBook_Click);
-            // 
             // gunaGroupBox2
             // 
             this.gunaGroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -951,7 +921,6 @@
             this.Controls.Add(this.gunaGroupBox4);
             this.Controls.Add(this.gunaGroupBox3);
             this.Controls.Add(this.gunaGroupBox2);
-            this.Controls.Add(this.btnIssueBook);
             this.Controls.Add(this.gunaGroupBox1);
             this.Controls.Add(this.gunaComboBox1);
             this.Controls.Add(this.cboSubject);
@@ -1018,7 +987,6 @@
         public System.Windows.Forms.Label lblPrice;
         public System.Windows.Forms.Label lblYear;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
-        private Guna.UI.WinForms.GunaButton btnIssueBook;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

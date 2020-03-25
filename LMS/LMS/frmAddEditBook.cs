@@ -91,7 +91,7 @@ namespace LMS
                         //close connection
                         cn.Close();
 
-                        popupNotifier.ContentText = txtTitle.Text + "has been successfully added";
+                        popupNotifier.ContentText = txtTitle.Text + "has been successfully added!";
                         popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
@@ -137,7 +137,7 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         cn.Close();
 
-                        popupNotifier.ContentText = txtTitle.Text + " has been successfully updated";
+                        popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
                         popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();

@@ -47,7 +47,7 @@ namespace LMS
 
         public void Notif()
         {
-            popupNotifier.ContentText = cboBooks.Text + " has been issued to " + lblName.Text;
+            popupNotifier.ContentText = cboBooks.Text + " has been issued to " + lblName.Text + " successfully!";
             popupNotifier.Popup();
         }
 

@@ -17,14 +17,12 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
-        Form1 f1;
 
-        public frmBookList(Form1 frm1)
+        public frmBookList()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
             LoadRecords();
-            f1 = frm1;
         }
 
         protected override CreateParams CreateParams
@@ -40,13 +38,6 @@ namespace LMS
         private void FrmBookList_Load(object sender, EventArgs e)
         {
             cboSubject.SelectedIndex = 0;
-        }
-
-        private void BtnAddBook_Click(object sender, EventArgs e)
-        {
-            frmAddEditBook frm = new frmAddEditBook(this);
-            frm.btnUpdate.Enabled = false;
-            frm.Show();
         }
 
         public void LoadRecords()
@@ -134,11 +125,6 @@ namespace LMS
         private void CboSubject_SelectedIndexChanged(object sender, EventArgs e)
         {
             //LoadSubjects();
-        }
-
-        private void BtnIssueBook_Click(object sender, EventArgs e)
-        {
-            f1.ShowIssueBook();
         }
     }
 }

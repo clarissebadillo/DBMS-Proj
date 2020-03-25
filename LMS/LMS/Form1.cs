@@ -38,25 +38,16 @@ namespace LMS
             //Set current date and time
             timer1.Start();
             lblDate.Text = DateTime.Now.ToLongDateString();
-            lblTime.Text = DateTime.Now.ToShortTimeString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
 
             //form shadow
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
         }
 
-        public void ShowIssueBook()
-        {
-            frmIssueBook frm = new frmIssueBook();
-            frm.TopLevel = false;
-            panel3.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
-        
         private void Timer1_Tick(object sender, EventArgs e)
         {
             //Set current time
-            lblTime.Text = DateTime.Now.ToShortTimeString();
+            lblTime.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
 
@@ -105,6 +96,14 @@ namespace LMS
             frm.Show();
         }
         
+        private void BtnIssueBook_Click(object sender, EventArgs e)
+        {
+            frmIssueBook frm = new frmIssueBook();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {

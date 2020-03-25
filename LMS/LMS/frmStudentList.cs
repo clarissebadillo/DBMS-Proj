@@ -117,7 +117,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
-                    popupNotifier.ContentText = "Record has been successfully removed";
+                    popupNotifier.ContentText = "Record has been successfully removed!";
                     popupNotifier.Popup();
                     LoadRecords();
                 }

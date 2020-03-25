@@ -230,7 +230,8 @@
             "Programming",
             "Economics",
             "History",
-            "Law"});
+            "Law",
+            "Others"});
             this.cboSubject.Location = new System.Drawing.Point(22, 36);
             this.cboSubject.Name = "cboSubject";
             this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));

@@ -66,6 +66,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(81)))), ((int)(((byte)(100)))));
             this.panel1.Controls.Add(this.lblTotalBooks);
             this.panel1.Location = new System.Drawing.Point(112, 213);
@@ -75,6 +76,7 @@
             // 
             // lblTotalBooks
             // 
+            this.lblTotalBooks.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalBooks.AutoSize = true;
             this.lblTotalBooks.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBooks.ForeColor = System.Drawing.Color.White;
@@ -86,6 +88,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.lblTotalStudent);
             this.panel2.Location = new System.Drawing.Point(271, 213);
@@ -95,6 +98,7 @@
             // 
             // lblTotalStudent
             // 
+            this.lblTotalStudent.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTotalStudent.AutoSize = true;
             this.lblTotalStudent.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalStudent.ForeColor = System.Drawing.Color.White;
@@ -106,6 +110,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(172)))), ((int)(((byte)(80)))));
             this.panel3.Controls.Add(this.lblBorrowed);
             this.panel3.Location = new System.Drawing.Point(437, 213);
@@ -115,6 +120,7 @@
             // 
             // lblBorrowed
             // 
+            this.lblBorrowed.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblBorrowed.AutoSize = true;
             this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBorrowed.ForeColor = System.Drawing.Color.White;
@@ -126,6 +132,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
             this.panel4.Controls.Add(this.lblReturned);
             this.panel4.Location = new System.Drawing.Point(599, 213);
@@ -135,6 +142,7 @@
             // 
             // lblReturned
             // 
+            this.lblReturned.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblReturned.AutoSize = true;
             this.lblReturned.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReturned.ForeColor = System.Drawing.Color.White;
@@ -146,6 +154,8 @@
             // 
             // gunaSeparator1
             // 
+            this.gunaSeparator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaSeparator1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaSeparator1.Location = new System.Drawing.Point(38, 52);
             this.gunaSeparator1.Name = "gunaSeparator1";
@@ -155,6 +165,7 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(556, 78);
             this.pictureBox4.Name = "pictureBox4";
@@ -165,6 +176,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(393, 84);
             this.pictureBox3.Name = "pictureBox3";
@@ -175,6 +187,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(226, 84);
             this.pictureBox2.Name = "pictureBox2";
@@ -185,6 +198,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(68, 88);
             this.pictureBox1.Name = "pictureBox1";
