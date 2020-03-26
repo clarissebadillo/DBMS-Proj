@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation3 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation2 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnIssueBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton7 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnStudent = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -50,7 +51,6 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnIssueBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,22 +70,22 @@
             // 
             this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
             this.pnlMenuAnimation.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation3;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation2;
             this.pnlMenuAnimation.TimeStep = 0.01F;
             // 
             // pnlMenu
@@ -104,6 +104,40 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(190, 603);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnIssueBook
+            // 
+            this.btnIssueBook.AnimationHoverSpeed = 0.07F;
+            this.btnIssueBook.AnimationSpeed = 0.03F;
+            this.btnIssueBook.BaseColor = System.Drawing.Color.Transparent;
+            this.btnIssueBook.BorderColor = System.Drawing.Color.Black;
+            this.btnIssueBook.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnIssueBook.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnIssueBook.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnIssueBook.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnIssueBook.CheckedImage")));
+            this.btnIssueBook.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.pnlMenuAnimation.SetDecoration(this.btnIssueBook, Guna.UI.Animation.DecorationType.None);
+            this.btnIssueBook.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnIssueBook.FocusedColor = System.Drawing.Color.Empty;
+            this.btnIssueBook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssueBook.ForeColor = System.Drawing.Color.White;
+            this.btnIssueBook.Image = ((System.Drawing.Image)(resources.GetObject("btnIssueBook.Image")));
+            this.btnIssueBook.ImageOffsetX = 5;
+            this.btnIssueBook.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnIssueBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnIssueBook.Location = new System.Drawing.Point(0, 326);
+            this.btnIssueBook.Name = "btnIssueBook";
+            this.btnIssueBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnIssueBook.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnIssueBook.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnIssueBook.OnHoverImage = null;
+            this.btnIssueBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnIssueBook.OnPressedColor = System.Drawing.Color.Black;
+            this.btnIssueBook.Size = new System.Drawing.Size(190, 42);
+            this.btnIssueBook.TabIndex = 6;
+            this.btnIssueBook.Text = "Issue Book";
+            this.btnIssueBook.TextOffsetX = 10;
+            this.btnIssueBook.Click += new System.EventHandler(this.BtnIssueBook_Click);
             // 
             // gunaAdvenceButton7
             // 
@@ -449,40 +483,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // btnIssueBook
-            // 
-            this.btnIssueBook.AnimationHoverSpeed = 0.07F;
-            this.btnIssueBook.AnimationSpeed = 0.03F;
-            this.btnIssueBook.BaseColor = System.Drawing.Color.Transparent;
-            this.btnIssueBook.BorderColor = System.Drawing.Color.Black;
-            this.btnIssueBook.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnIssueBook.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnIssueBook.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnIssueBook.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnIssueBook.CheckedImage")));
-            this.btnIssueBook.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.pnlMenuAnimation.SetDecoration(this.btnIssueBook, Guna.UI.Animation.DecorationType.None);
-            this.btnIssueBook.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnIssueBook.FocusedColor = System.Drawing.Color.Empty;
-            this.btnIssueBook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIssueBook.ForeColor = System.Drawing.Color.White;
-            this.btnIssueBook.Image = ((System.Drawing.Image)(resources.GetObject("btnIssueBook.Image")));
-            this.btnIssueBook.ImageOffsetX = 5;
-            this.btnIssueBook.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnIssueBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnIssueBook.Location = new System.Drawing.Point(0, 326);
-            this.btnIssueBook.Name = "btnIssueBook";
-            this.btnIssueBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnIssueBook.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnIssueBook.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnIssueBook.OnHoverImage = null;
-            this.btnIssueBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnIssueBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnIssueBook.Size = new System.Drawing.Size(190, 42);
-            this.btnIssueBook.TabIndex = 6;
-            this.btnIssueBook.Text = "Issue Book";
-            this.btnIssueBook.TextOffsetX = 10;
-            this.btnIssueBook.Click += new System.EventHandler(this.BtnIssueBook_Click);
             // 
             // Form1
             // 

@@ -99,6 +99,12 @@
     <Compile Include="frmBookList.Designer.cs">
       <DependentUpon>frmBookList.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBooksOnHand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBooksOnHand.Designer.cs">
+      <DependentUpon>frmBooksOnHand.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBookList.resx">
       <DependentUpon>frmBookList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBooksOnHand.resx">
+      <DependentUpon>frmBooksOnHand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>

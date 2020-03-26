@@ -23,13 +23,14 @@ namespace LMS
             cn = new SqlConnection(dbcon.MyConnection());
         }
 
+        private const int cs = 0x00020000;
         protected override CreateParams CreateParams
         {
             get
             {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
-                return handleParam;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle = cs;
+                return cp;
             }
         }
 
@@ -42,6 +43,9 @@ namespace LMS
 
             //form shadow
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+
+            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //this.WindowState = FormWindowState.Maximized;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
