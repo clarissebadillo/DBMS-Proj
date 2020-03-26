@@ -50,7 +50,7 @@ namespace LMS
         public void CountBorrowToday()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT COUNT(*) FROM tblIssueBook WHERE releaseDate = CAST(GETDATE() AS DATE)", cn);
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE dateBorrowed = CAST(GETDATE() AS DATE)", cn);
             lblBorrowed.Text = cm.ExecuteScalar().ToString();
             cn.Close();
         }
@@ -58,7 +58,7 @@ namespace LMS
         public void CountReturnToday()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT COUNT(*) FROM tblIssueBook WHERE returnDate = CAST(GETDATE() AS DATE)", cn);
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE returnedDate = CAST(GETDATE() AS DATE)", cn);
             lblReturned.Text = cm.ExecuteScalar().ToString();
             cn.Close();
         }

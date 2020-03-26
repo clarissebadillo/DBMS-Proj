@@ -10,7 +10,7 @@ namespace LMS
     {
         public string MyConnection()
         {
-            string con = "Data Source=LAPTOP-PM36MAJR;Initial Catalog=LIBDB;Integrated Security=True";
+            string con = "Data Source=LAPTOP-PM36MAJR;Initial Catalog=LibraryDB;Integrated Security=True";
             return con;
         }
     }

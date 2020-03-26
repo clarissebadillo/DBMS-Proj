@@ -72,12 +72,12 @@ namespace LMS
                         //open connection to the database
                         cn.Open();
                         //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblBook (bkTitle, bkSubject, bkGenre, bkMediaType, bkLanguage, bkAuthor, bkPublisher, bkPrice, bkISBN, bkYear, bkAllCopies, bkCopies)  VALUES (@booktitle, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @ISBN, @year, @allcopies, @copies)", cn);
+                        cm = new SqlCommand("INSERT INTO tblBook (bookTitle, bookISBN, subject, genre, mediaType, language, author, publisher, price, pubYear, allCopies, availableCopies)  VALUES (@booktitle, @bookisbn, @subject, @genre, @mediatype, @language, @author, @publisher, @price, @year, @allcopies, @available)", cn);
                         //set parameters value
-                        cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
+                        cm.Parameters.AddWithValue("@bookisbn", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
                         cm.Parameters.AddWithValue("@allcopies", txtCopies.Text);
-                        cm.Parameters.AddWithValue("@copies", txtCopies.Text);
+                        cm.Parameters.AddWithValue("@available", txtCopies.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
                         cm.Parameters.AddWithValue("@genre", cboGenre.Text);
                         cm.Parameters.AddWithValue("@mediatype", cboMediaType.Text);
@@ -91,7 +91,7 @@ namespace LMS
                         //close connection
                         cn.Close();
 
-                        popupNotifier.ContentText = txtTitle.Text + "has been successfully added!";
+                        popupNotifier.ContentText = txtTitle.Text + " has been successfully added!";
                         popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
@@ -123,8 +123,8 @@ namespace LMS
                     if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cn.Open();
-                        cm = new SqlCommand("UPDATE tblBook SET bkISBN = @ISBN, bkTitle = @booktitle, bkSubject = @subject, bkGenre = @genre, bkMediaType = @mediatype, bkLanguage = @language, bkAuthor = @author, bkPublisher = @publisher, bkPrice = @price, bkYear = @year WHERE bookID LIKE '" + lblID + "'", cn);
-                        cm.Parameters.AddWithValue("@ISBN", txtISBN.Text);
+                        cm = new SqlCommand("UPDATE tblBook SET bookISBN = @bookisbn, bookTitle = @booktitle, subject = @subject, genre = @genre, mediaType = @mediatype, language = @language, author = @author, publisher = @publisher, price = @price, pubyear = @year WHERE bookID LIKE '" + lblID + "'", cn);
+                        cm.Parameters.AddWithValue("@bookisbn", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
                         cm.Parameters.AddWithValue("@genre", cboGenre.Text);

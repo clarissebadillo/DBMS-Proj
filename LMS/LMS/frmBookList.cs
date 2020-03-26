@@ -45,12 +45,13 @@ namespace LMS
             int i = 0;
             gunaDataGridView1.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBook WHERE bkTitle LIKE '" + txtSearch.Text + "%'", cn);
+            //cm = new SqlCommand("SELECT * FROM tblBook WHERE bookTitle LIKE '" + txtSearch.Text + "%'", cn);
+            cm = new SqlCommand("SELECT b.*, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Not Returned' AND bb.bookID = b.bookID) AS BookBorrowed, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Lost' AND bb.bookID = b.bookID) AS BookLost FROM tblBook b WHERE bookTitle LIKE '" + txtSearch.Text + "%'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bkTitle"].ToString(), dr["bkISBN"].ToString(), dr["bkSubject"].ToString(), dr["bkGenre"].ToString(), dr["bkMediaType"].ToString(), dr["bkLanguage"].ToString(), dr["bkAuthor"].ToString(), dr["bkPublisher"].ToString(), dr["bkPrice"].ToString(), dr["bkYear"].ToString(), dr["bkAllCopies"].ToString(), dr["bkCopies"].ToString(), dr["bkLost"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bookTitle"].ToString(), dr["bookISBN"].ToString(), dr["subject"].ToString(), dr["genre"].ToString(), dr["mediaType"].ToString(), dr["language"].ToString(), dr["author"].ToString(), dr["publisher"].ToString(), dr["price"].ToString(), dr["pubYear"].ToString(), dr["allCopies"].ToString(), dr["availableCopies"].ToString(), dr["BookBorrowed"].ToString(), dr["BookLost"].ToString());//, dr["lostCopies"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -59,7 +60,7 @@ namespace LMS
         public void LoadSubjects()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBook WHERE bkSubject LIKE '" + cboSubject.SelectedIndex.ToString() + "%'", cn);
+            cm = new SqlCommand("SELECT * FROM tblBook WHERE subject LIKE '" + cboSubject.SelectedIndex.ToString() + "%'", cn);
             cm.ExecuteNonQuery();
             cn.Close();
         }
@@ -80,6 +81,8 @@ namespace LMS
             lblYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
             lblAllCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
             lblAvailable.Text = gunaDataGridView1[13, e.RowIndex].Value.ToString();
+            lblBorrowed.Text = gunaDataGridView1[14, e.RowIndex].Value.ToString();
+            lblLost.Text = gunaDataGridView1[15, e.RowIndex].Value.ToString();
 
             string colName = gunaDataGridView1.Columns[e.ColumnIndex].Name;
             if (colName == "Edit")
@@ -125,6 +128,13 @@ namespace LMS
         private void CboSubject_SelectedIndexChanged(object sender, EventArgs e)
         {
             //LoadSubjects();
+        }
+
+        private void BtnAddBook_Click(object sender, EventArgs e)
+        {
+            frmAddEditBook frm = new frmAddEditBook(this);
+            frm.btnUpdate.Enabled = false;
+            frm.ShowDialog();
         }
     }
 }

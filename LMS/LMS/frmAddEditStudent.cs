@@ -82,20 +82,18 @@ namespace LMS
                         //open connection to the database
                         cn.Open();
                         //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblStudent VALUES (@stNumber, @stLname, @stFname, @stCourse, @stYear, @stGender, @stContact, @stEmail, @stAddress, @stImage, @stCopies, @stLost)", cn);
+                        cm = new SqlCommand("INSERT INTO tblStudent VALUES (@studentNum, @lastName, @firstName, @course, @year, @gender, @contact, @email, @address, @image)", cn);
                         //set parameters value
-                        cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
-                        cm.Parameters.AddWithValue("@stLname", txtLname.Text);
-                        cm.Parameters.AddWithValue("@stFname", txtFname.Text);
-                        cm.Parameters.AddWithValue("@stCourse", cboCourse.Text);
-                        cm.Parameters.AddWithValue("@stYear", cboYear.Text);
-                        cm.Parameters.AddWithValue("@stGender", gender);
-                        cm.Parameters.AddWithValue("@stContact", txtContact.Text);
-                        cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
-                        cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
-                        cm.Parameters.AddWithValue("@stImage", img);
-                        cm.Parameters.AddWithValue("@stCopies", lblValues.Text);
-                        cm.Parameters.AddWithValue("@stLost", lblValues.Text);
+                        cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
+                        cm.Parameters.AddWithValue("@lastName", txtLname.Text);
+                        cm.Parameters.AddWithValue("@firstName", txtFname.Text);
+                        cm.Parameters.AddWithValue("@course", cboCourse.Text);
+                        cm.Parameters.AddWithValue("@year", cboYear.Text);
+                        cm.Parameters.AddWithValue("@gender", gender);
+                        cm.Parameters.AddWithValue("@contact", txtContact.Text);
+                        cm.Parameters.AddWithValue("@email", txtEmail.Text);
+                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cm.Parameters.AddWithValue("@image", img);
                         //ask db to execute query
                         cm.ExecuteNonQuery();
                         //close connection
@@ -156,24 +154,24 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("UPDATE tblStudent SET stNumber = @stNumber, stLname = @stLname, stFname = @stFname, stCourse = @stCourse, stYear = @stYear, stGender = @stGender, stContact = @stContact, stEmail = @stEmail, stAddress = @stAddress, stImage = @stImage", cn);
+                    cm = new SqlCommand("UPDATE tblStudent SET studentNum = @studentNum, lastName = @lastName, firstName = @firstName, course = @course, year = @year, gender = @gender, contact = @contact, email = @email, address = @address, image = @image", cn);
                     //set parameters value
-                    cm.Parameters.AddWithValue("@stNumber", txtStudNo.Text);
-                    cm.Parameters.AddWithValue("@stLname", txtLname.Text);
-                    cm.Parameters.AddWithValue("@stFname", txtFname.Text);
-                    cm.Parameters.AddWithValue("@stCourse", cboCourse.Text);
-                    cm.Parameters.AddWithValue("@stYear", cboYear.Text);
-                    cm.Parameters.AddWithValue("@stGender", gender);
-                    cm.Parameters.AddWithValue("@stContact", txtContact.Text);
-                    cm.Parameters.AddWithValue("@stEmail", txtEmail.Text);
-                    cm.Parameters.AddWithValue("@stAddress", txtAddress.Text);
-                    cm.Parameters.AddWithValue("@stImage", img);
+                    cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
+                    cm.Parameters.AddWithValue("@lastName", txtLname.Text);
+                    cm.Parameters.AddWithValue("@firstName", txtFname.Text);
+                    cm.Parameters.AddWithValue("@course", cboCourse.Text);
+                    cm.Parameters.AddWithValue("@year", cboYear.Text);
+                    cm.Parameters.AddWithValue("@gender", gender);
+                    cm.Parameters.AddWithValue("@contact", txtContact.Text);
+                    cm.Parameters.AddWithValue("@email", txtEmail.Text);
+                    cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                    cm.Parameters.AddWithValue("@image", img);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
                     //close connection
                     cn.Close();
 
-                    popupNotifier.ContentText = txtFname + " " + txtLname + " has been successfully updated!";
+                    popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + " has been successfully updated!";
                     popupNotifier.Popup();
                     Clear();
                     frmlist.LoadRecords();

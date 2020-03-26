@@ -80,7 +80,7 @@ namespace LMS
 
         private void BtnBook_Click(object sender, EventArgs e)
         {
-            frmBookList frm = new frmBookList(this);
+            frmBookList frm = new frmBookList();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

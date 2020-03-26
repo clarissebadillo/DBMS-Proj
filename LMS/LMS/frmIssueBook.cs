@@ -60,18 +60,18 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("INSERT INTO tblIssueBook (studID, bookID, stNumber, bkTitle, releaseDate, dueDate) VALUES (@studID, @bookID, @stNumber, @bkTitle, @releaseDate, @dueDate)", cn);
+                    cm = new SqlCommand("INSERT INTO tblBorrowedBook (studentID, bookID, studentNum, bookTitle, dateBorrowed, dueDate, status) VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, 'Not Returned')", cn);
                     //set parameters value
-                    cm.Parameters.AddWithValue("@studID", lblStudID.Text);
+                    cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
                     cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
-                    cm.Parameters.AddWithValue("@stNumber", txtSearchStud.Text);
-                    cm.Parameters.AddWithValue("@bkTitle", cboBooks.Text);
-                    cm.Parameters.AddWithValue("@releaseDate", dtIssueDate.Value);
+                    cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
+                    cm.Parameters.AddWithValue("@bookTitle", cboBooks.Text);
+                    cm.Parameters.AddWithValue("@dateBorrowed", dtIssueDate.Value);
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
                     //ask db to execute query
                     cm.ExecuteNonQuery();
                     Deduction();
-                    StudentPossession();
+                    //StudentPossession();
                     //close connection
                     cn.Close();
                     //Notif();
@@ -85,21 +85,21 @@ namespace LMS
 
         public void Deduction()
         {
-            cm = new SqlCommand("UPDATE tblBook SET bkCopies = bkCopies - 1 WHERE bkTitle = '" + cboBooks.Text + "'", cn);
+            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = '" + cboBooks.Text + "'", cn);
             cm.ExecuteNonQuery();
             Notif();
         }
 
-        public void StudentPossession()
-        {
-            cm = new SqlCommand("UPDATE tblStudent SET stCopies = stCopies + 1 WHERE studID = '" + lblStudID.Text + "'", cn);
-            cm.ExecuteNonQuery();
-        }
+        //public void StudentPossession()
+        //{
+        //    cm = new SqlCommand("UPDATE tblStudent SET stCopies = stCopies + 1 WHERE studID = '" + lblStudID.Text + "'", cn);
+        //    cm.ExecuteNonQuery();
+        //}
 
         public void AutoCompleteStudentNo()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT stNumber FROM tblStudent", cn);
+            cm = new SqlCommand("SELECT studentNum FROM tblStudent", cn);
             dr = cm.ExecuteReader();
             AutoCompleteStringCollection Collection = new AutoCompleteStringCollection();
             while (dr.Read())
@@ -115,7 +115,7 @@ namespace LMS
         {
             cboBooks.Items.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT bkTitle FROM tblBook", cn);
+            cm = new SqlCommand("SELECT bookTitle FROM tblBook", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -145,43 +145,6 @@ namespace LMS
             this.Close();
         }
 
-        private void TxtSearchStud_TextChanged(object sender, EventArgs e)
-        {
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblStudent WHERE stNUmber ='" + txtSearchStud.Text + "'", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                lblName.Text = dr["stFname"].ToString() + " " + dr["stLname"].ToString();
-                lblStudNo.Text = dr["stNumber"].ToString();
-                lblCourse.Text = dr["stCourse"].ToString();
-                lblYear.Text = dr["stYear"].ToString();
-                lblStudID.Text = dr["studID"].ToString();
-                byte[] imgbytes = (byte[])dr["stImage"];
-                MemoryStream mstream = new MemoryStream(imgbytes);
-                studImage.Image = Image.FromStream(mstream);
-            }
-            dr.Close();
-            cn.Close();
-        }
-
-        private void CboBooks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBook WHERE bkTitle ='" + cboBooks.Text + "'", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                lblTitle.Text = dr["bkTitle"].ToString();
-                lblISBN.Text = dr["bkISBN"].ToString();
-                lblSubject.Text = dr["bkSubject"].ToString();
-                lblAuthor.Text = dr["bkAuthor"].ToString();
-                lblBookID.Text = dr["bookID"].ToString();
-            }
-            dr.Close();
-            cn.Close();
-        }
-
         private void BtnProccessIssue_Click(object sender, EventArgs e)
         {
             if (txtSearchStud.Text == "" || cboBooks.Text == "")
@@ -196,5 +159,41 @@ namespace LMS
             }
         }
 
+        private void CboBooks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBook WHERE bookTitle ='" + cboBooks.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                lblTitle.Text = dr["bookTitle"].ToString();
+                lblISBN.Text = dr["bookISBN"].ToString();
+                lblSubject.Text = dr["subject"].ToString();
+                lblAuthor.Text = dr["author"].ToString();
+                lblBookID.Text = dr["bookID"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void TxtSearchStud_TextChanged(object sender, EventArgs e)
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblStudent WHERE studentNUm ='" + txtSearchStud.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                lblName.Text = dr["firstName"].ToString() + " " + dr["lastName"].ToString();
+                lblStudNo.Text = dr["studentNum"].ToString();
+                lblCourse.Text = dr["course"].ToString();
+                lblYear.Text = dr["year"].ToString();
+                lblStudID.Text = dr["studentID"].ToString();
+                byte[] imgbytes = (byte[])dr["image"];
+                MemoryStream mstream = new MemoryStream(imgbytes);
+                studImage.Image = Image.FromStream(mstream);
+            }
+            dr.Close();
+            cn.Close();
+        }
     }
 }

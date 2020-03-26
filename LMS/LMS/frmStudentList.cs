@@ -19,6 +19,7 @@ namespace LMS
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
 
+
         public frmStudentList()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace LMS
             LoadRecords();
         }
 
+        
         protected override CreateParams CreateParams
         {
             get
@@ -45,15 +47,16 @@ namespace LMS
 
         public void LoadRecords()
         {
+            frmAddEditStudent frm = new frmAddEditStudent(this);
             int i = 0;
             gunaDataGridView1.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblStudent WHERE stLname LIKE '" + txtSearch.Text + "%'", cn);
+            cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s WHERE lastName LIKE '" + txtSearch.Text + "%'", cn); //abc%'")
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["studID"].ToString(), dr["stNumber"].ToString(), dr["stLname"].ToString(), dr["stFname"].ToString(), dr["stCourse"].ToString(), dr["stYear"].ToString(), dr["stGender"].ToString(), dr["stContact"].ToString(), dr["stEmail"].ToString(), dr["stAddress"].ToString(), dr["stImage"], dr["stCopies"].ToString(), dr["stLost"].ToString());//, dr["stCopies"].ToString());//, dr["stBookLost"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["studentID"].ToString(), dr["studentNum"].ToString(), dr["lastName"].ToString(), dr["firstName"].ToString(), dr["course"].ToString(), dr["year"].ToString(), dr["gender"].ToString(), dr["contact"].ToString(), dr["email"].ToString(), dr["address"].ToString(), dr["image"], dr["BookCount"].ToString());//, dr["stCopies"].ToString(), dr["stLost"].ToString());//, dr["stCopies"].ToString());//, dr["stBookLost"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -113,7 +116,7 @@ namespace LMS
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("DELETE FROM tblStudent WHERE studID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
+                    cm = new SqlCommand("DELETE FROM tblStudent WHERE studentID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
@@ -122,6 +125,11 @@ namespace LMS
                     LoadRecords();
                 }
             }
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadRecords();
         }
     }
 }

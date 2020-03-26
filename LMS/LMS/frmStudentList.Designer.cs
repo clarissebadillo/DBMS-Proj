@@ -62,7 +62,6 @@
             this.btnAddStudent = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +78,7 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stImage)).BeginInit();
@@ -439,6 +439,7 @@
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Size = new System.Drawing.Size(222, 26);
             this.txtSearch.TabIndex = 43;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // btnAddStudent
             // 
@@ -461,8 +462,8 @@
             this.btnAddStudent.OnHoverForeColor = System.Drawing.Color.White;
             this.btnAddStudent.OnHoverImage = null;
             this.btnAddStudent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddStudent.Radius = 17;
-            this.btnAddStudent.Size = new System.Drawing.Size(118, 35);
+            this.btnAddStudent.Radius = 15;
+            this.btnAddStudent.Size = new System.Drawing.Size(117, 30);
             this.btnAddStudent.TabIndex = 48;
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -559,29 +560,6 @@
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.gunaDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GunaDataGridView1_CellContentClick);
-            // 
-            // popupNotifier
-            // 
-            this.popupNotifier.BodyColor = System.Drawing.Color.White;
-            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
-            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.popupNotifier.ContentText = null;
-            this.popupNotifier.GradientPower = 0;
-            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.HeaderHeight = 10;
-            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
-            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
-            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
-            this.popupNotifier.IsRightToLeft = false;
-            this.popupNotifier.OptionsMenu = null;
-            this.popupNotifier.ShowGrip = false;
-            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
-            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
-            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
-            this.popupNotifier.TitleText = null;
             // 
             // Column1
             // 
@@ -710,6 +688,29 @@
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             this.Delete.Width = 5;
+            // 
+            // popupNotifier
+            // 
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier.TitleText = null;
             // 
             // frmStudentList
             // 
