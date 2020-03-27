@@ -90,7 +90,7 @@ namespace LMS
                 if (MessageBox.Show("Are you sure you want to issue '" + lblBookTitle.Text + "'?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("INSERT INTO tblBorrowedBook (studentID, bookID, studentNum, bookTitle, dateBorrowed, dueDate, status) VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, 'Not Returned')", cn);
+                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned')", cn);
                     cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
                     cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
                     cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
@@ -143,9 +143,10 @@ namespace LMS
             lblName.Text = "";
             lblStudNo.Text = "";
             lblYear.Text = "";
-            txtSearchStud.Text = "";
+            //txtSearchStud.Text = "";
             lblBookAllCopies.Text = "00";
             lblAvailable.Text = "00";
+            lblBooksOnHand.Text = "0";
             studImage.Image = Properties.Resources.user;
         }
 
@@ -154,6 +155,25 @@ namespace LMS
             this.Close();
         }
 
+        public void LoadDetails()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblStudent WHERE studentNUm ='" + txtSearchStud.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                lblName.Text = dr["firstName"].ToString() + " " + dr["lastName"].ToString();
+                lblStudNo.Text = dr["studentNum"].ToString();
+                lblCourse.Text = dr["course"].ToString();
+                lblYear.Text = dr["year"].ToString();
+                lblStudID.Text = dr["studentID"].ToString();
+                byte[] imgbytes = (byte[])dr["image"];
+                MemoryStream mstream = new MemoryStream(imgbytes);
+                studImage.Image = Image.FromStream(mstream);
+            }
+            dr.Close();
+            cn.Close();
+        }
 
         private void TxtSearchStud_TextChanged(object sender, EventArgs e)
         {
@@ -188,6 +208,8 @@ namespace LMS
             {
                 BorrowBook();
                 Clear();
+                LoadDetails();
+                BooksOnHand();
             }
         }
 
@@ -204,9 +226,9 @@ namespace LMS
             lblBookTitle.Text = gunaDataGridView3[2, e.RowIndex].Value.ToString();
         }
 
-        private void LblBooksOnHand_Click(object sender, EventArgs e)
+        public void OnHand()
         {
-            frmBooksOnHand frm = new frmBooksOnHand();
+            frmBooksOnHand frm = new frmBooksOnHand(this);
             frm.gunaDataGridView1.Rows.Clear();
             int i = 0;
             cn.Open();
@@ -220,6 +242,28 @@ namespace LMS
             dr.Close();
             cn.Close();
             frm.Show();
+        }
+
+        public void OnHandRefresh()
+        {
+            frmBooksOnHand frm = new frmBooksOnHand(this);
+            frm.gunaDataGridView1.Rows.Clear();
+            int i = 0;
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + lblStudNo.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void LblBooksOnHand_Click(object sender, EventArgs e)
+        {
+            OnHand();
         }
     }
 }

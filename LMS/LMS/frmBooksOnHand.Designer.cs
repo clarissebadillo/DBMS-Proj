@@ -56,6 +56,11 @@
             this.declareLostBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnBookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.declareLostBookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblBookID = new System.Windows.Forms.Label();
+            this.lblBookTitle = new System.Windows.Forms.Label();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.lblID = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
@@ -64,6 +69,10 @@
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.lblID);
+            this.gunaLinePanel1.Controls.Add(this.lblStudentID);
+            this.gunaLinePanel1.Controls.Add(this.lblBookTitle);
+            this.gunaLinePanel1.Controls.Add(this.lblBookID);
             this.gunaLinePanel1.Controls.Add(this.gunaControlBox1);
             this.gunaLinePanel1.Controls.Add(this.lblTitle);
             this.gunaLinePanel1.Controls.Add(this.panel1);
@@ -193,6 +202,7 @@
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 30;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GunaDataGridView1_CellContentClick);
             this.gunaDataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GunaDataGridView1_CellMouseUp);
             // 
             // Column1
@@ -308,6 +318,7 @@
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
             this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.returnBookToolStripMenuItem.Text = "Return Selected Book";
+            this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.ReturnBookToolStripMenuItem_Click);
             // 
             // declareLostBookToolStripMenuItem
             // 
@@ -327,6 +338,69 @@
             this.declareLostBookToolStripMenuItem1.Name = "declareLostBookToolStripMenuItem1";
             this.declareLostBookToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
             this.declareLostBookToolStripMenuItem1.Text = "Declare Lost Book";
+            // 
+            // lblBookID
+            // 
+            this.lblBookID.AutoSize = true;
+            this.lblBookID.Location = new System.Drawing.Point(283, 35);
+            this.lblBookID.Name = "lblBookID";
+            this.lblBookID.Size = new System.Drawing.Size(43, 13);
+            this.lblBookID.TabIndex = 3;
+            this.lblBookID.Text = "BookID";
+            this.lblBookID.Visible = false;
+            // 
+            // lblBookTitle
+            // 
+            this.lblBookTitle.AutoSize = true;
+            this.lblBookTitle.Location = new System.Drawing.Point(341, 35);
+            this.lblBookTitle.Name = "lblBookTitle";
+            this.lblBookTitle.Size = new System.Drawing.Size(52, 13);
+            this.lblBookTitle.TabIndex = 4;
+            this.lblBookTitle.Text = "BookTitle";
+            this.lblBookTitle.Visible = false;
+            // 
+            // lblStudentID
+            // 
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.Location = new System.Drawing.Point(399, 35);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(55, 13);
+            this.lblStudentID.TabIndex = 5;
+            this.lblStudentID.Text = "StudentID";
+            this.lblStudentID.Visible = false;
+            // 
+            // popupNotifier
+            // 
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier.TitleText = null;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(460, 35);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(51, 13);
+            this.lblID.TabIndex = 6;
+            this.lblID.Text = "BorrowID";
+            this.lblID.Visible = false;
             // 
             // frmBooksOnHand
             // 
@@ -370,5 +444,10 @@
         private System.Windows.Forms.ToolStripMenuItem declareLostBookToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnBookToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem declareLostBookToolStripMenuItem1;
+        private System.Windows.Forms.Label lblStudentID;
+        private System.Windows.Forms.Label lblBookTitle;
+        private System.Windows.Forms.Label lblBookID;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
+        private System.Windows.Forms.Label lblID;
     }
 }
