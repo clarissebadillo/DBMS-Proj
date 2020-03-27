@@ -39,15 +39,47 @@ namespace LMS
         private void FrmIssueBook_Load(object sender, EventArgs e)
         {
             AutoCompleteStudentNo();
-            LoadBooks();
+            LoadRecords();
 
             dtIssueDate.Value = DateTime.Now;
             dtDueDate.Value = dtIssueDate.Value.AddDays(7);
         }
 
+        public void LoadRecords()
+        {
+            int i = 0;
+            gunaDataGridView3.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT bookID, bookTitle, bookISBN, subject, author, allCopies, availableCopies FROM tblBook WHERE bookTitle LIKE '" + txtSearchBook.Text + "%'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                gunaDataGridView3.Rows.Add(i, dr["bookID"].ToString(), dr["bookTitle"].ToString(), dr["bookISBN"].ToString(), dr["subject"].ToString(), dr["author"].ToString(), dr["allCopies"].ToString(), dr["availableCopies"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        public void BooksOnHand()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + txtSearchStud.Text + "'", cn);
+            lblBooksOnHand.Text = cm.ExecuteScalar().ToString();
+            cn.Close();
+        }
+
+        public void BorrowHistory()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE studentNum = '" + lblStudNo.Text + "'", cn);
+            lblHistory.Text = cm.ExecuteScalar().ToString();
+            cn.Close();
+        }
+
         public void Notif()
         {
-            popupNotifier.ContentText = cboBooks.Text + " has been issued to " + lblName.Text + " successfully!";
+            popupNotifier.ContentText = lblBookTitle.Text + " has been issued to " + lblName.Text + " successfully!";
             popupNotifier.Popup();
         }
 
@@ -55,26 +87,22 @@ namespace LMS
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to issue this book?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to issue '" + lblBookTitle.Text + "'?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //open connection to the database
                     cn.Open();
-                    //command to be executed on the database
                     cm = new SqlCommand("INSERT INTO tblBorrowedBook (studentID, bookID, studentNum, bookTitle, dateBorrowed, dueDate, status) VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, 'Not Returned')", cn);
-                    //set parameters value
                     cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
+                    cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
                     cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
-                    cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
-                    cm.Parameters.AddWithValue("@bookTitle", cboBooks.Text);
+                    cm.Parameters.AddWithValue("@bookTitle", lblBookTitle.Text);
                     cm.Parameters.AddWithValue("@dateBorrowed", dtIssueDate.Value);
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
-                    //ask db to execute query
                     cm.ExecuteNonQuery();
-                    Deduction();
-                    //StudentPossession();
-                    //close connection
                     cn.Close();
-                    //Notif();
+
+                    Deduction();
+                    gunaDataGridView3.Rows.Clear();
+                    LoadRecords();
                 }
             }
             catch (Exception ex)
@@ -82,19 +110,16 @@ namespace LMS
                 MessageBox.Show(ex.Message);
             }
         }
+    
 
         public void Deduction()
         {
-            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = '" + cboBooks.Text + "'", cn);
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = '" + lblBookTitle.Text + "'", cn);
             cm.ExecuteNonQuery();
+            cn.Close();
             Notif();
         }
-
-        //public void StudentPossession()
-        //{
-        //    cm = new SqlCommand("UPDATE tblStudent SET stCopies = stCopies + 1 WHERE studID = '" + lblStudID.Text + "'", cn);
-        //    cm.ExecuteNonQuery();
-        //}
 
         public void AutoCompleteStudentNo()
         {
@@ -111,32 +136,16 @@ namespace LMS
             cn.Close();
         }
 
-        public void LoadBooks()
-        {
-            cboBooks.Items.Clear();
-            cn.Open();
-            cm = new SqlCommand("SELECT bookTitle FROM tblBook", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                cboBooks.Items.Add(dr[0].ToString());
-            }
-            dr.Close();
-            cn.Close();
-        }
 
         public void Clear()
         {
-            lblAuthor.Text = "";
             lblCourse.Text = "";
-            lblISBN.Text = "";
             lblName.Text = "";
             lblStudNo.Text = "";
-            lblSubject.Text = "";
-            lblTitle.Text = "";
             lblYear.Text = "";
-            cboBooks.Items.Clear();
             txtSearchStud.Text = "";
+            lblBookAllCopies.Text = "00";
+            lblAvailable.Text = "00";
             studImage.Image = Properties.Resources.user;
         }
 
@@ -145,36 +154,6 @@ namespace LMS
             this.Close();
         }
 
-        private void BtnProccessIssue_Click(object sender, EventArgs e)
-        {
-            if (txtSearchStud.Text == "" || cboBooks.Text == "")
-            {
-                txtSearchStud.Focus();
-                MessageBox.Show("Please enter the student number", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                BorrowBook();
-                Clear();
-            }
-        }
-
-        private void CboBooks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBook WHERE bookTitle ='" + cboBooks.Text + "'", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                lblTitle.Text = dr["bookTitle"].ToString();
-                lblISBN.Text = dr["bookISBN"].ToString();
-                lblSubject.Text = dr["subject"].ToString();
-                lblAuthor.Text = dr["author"].ToString();
-                lblBookID.Text = dr["bookID"].ToString();
-            }
-            dr.Close();
-            cn.Close();
-        }
 
         private void TxtSearchStud_TextChanged(object sender, EventArgs e)
         {
@@ -194,6 +173,53 @@ namespace LMS
             }
             dr.Close();
             cn.Close();
+            BooksOnHand();
+            BorrowHistory();
+        }
+
+        private void BtnProccessIssue_Click(object sender, EventArgs e)
+        {
+            if (txtSearchStud.Text == "")
+            {
+                txtSearchStud.Focus();
+                MessageBox.Show("Please enter the student number", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                BorrowBook();
+                Clear();
+            }
+        }
+
+        private void TxtSearchBook_TextChanged(object sender, EventArgs e)
+        {
+            LoadRecords();
+        }
+
+        private void GunaDataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblBookAllCopies.Text = gunaDataGridView3[6, e.RowIndex].Value.ToString();
+            lblAvailable.Text = gunaDataGridView3[7, e.RowIndex].Value.ToString();
+            lblBookID.Text = gunaDataGridView3[1, e.RowIndex].Value.ToString();
+            lblBookTitle.Text = gunaDataGridView3[2, e.RowIndex].Value.ToString();
+        }
+
+        private void LblBooksOnHand_Click(object sender, EventArgs e)
+        {
+            frmBooksOnHand frm = new frmBooksOnHand();
+            frm.gunaDataGridView1.Rows.Clear();
+            int i = 0;
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + lblStudNo.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+            frm.Show();
         }
     }
 }

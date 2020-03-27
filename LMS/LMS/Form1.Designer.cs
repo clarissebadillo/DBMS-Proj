@@ -61,9 +61,9 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.pnlMenuAnimation.SetDecoration(this.panel3, Guna.UI.Animation.DecorationType.None);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(190, 70);
+            this.panel3.Location = new System.Drawing.Point(230, 87);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(831, 533);
+            this.panel3.Size = new System.Drawing.Size(1030, 533);
             this.panel3.TabIndex = 5;
             // 
             // pnlMenuAnimation
@@ -102,7 +102,7 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(190, 603);
+            this.pnlMenu.Size = new System.Drawing.Size(230, 620);
             this.pnlMenu.TabIndex = 0;
             // 
             // btnIssueBook
@@ -119,13 +119,13 @@
             this.pnlMenuAnimation.SetDecoration(this.btnIssueBook, Guna.UI.Animation.DecorationType.None);
             this.btnIssueBook.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnIssueBook.FocusedColor = System.Drawing.Color.Empty;
-            this.btnIssueBook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIssueBook.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIssueBook.ForeColor = System.Drawing.Color.White;
             this.btnIssueBook.Image = ((System.Drawing.Image)(resources.GetObject("btnIssueBook.Image")));
-            this.btnIssueBook.ImageOffsetX = 5;
+            this.btnIssueBook.ImageOffsetX = 15;
             this.btnIssueBook.ImageSize = new System.Drawing.Size(22, 22);
             this.btnIssueBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnIssueBook.Location = new System.Drawing.Point(0, 326);
+            this.btnIssueBook.Location = new System.Drawing.Point(0, 381);
             this.btnIssueBook.Name = "btnIssueBook";
             this.btnIssueBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnIssueBook.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -133,10 +133,10 @@
             this.btnIssueBook.OnHoverImage = null;
             this.btnIssueBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnIssueBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnIssueBook.Size = new System.Drawing.Size(190, 42);
+            this.btnIssueBook.Size = new System.Drawing.Size(231, 51);
             this.btnIssueBook.TabIndex = 6;
             this.btnIssueBook.Text = "Issue Book";
-            this.btnIssueBook.TextOffsetX = 10;
+            this.btnIssueBook.TextOffsetX = 18;
             this.btnIssueBook.Click += new System.EventHandler(this.BtnIssueBook_Click);
             // 
             // gunaAdvenceButton7
@@ -153,13 +153,13 @@
             this.pnlMenuAnimation.SetDecoration(this.gunaAdvenceButton7, Guna.UI.Animation.DecorationType.None);
             this.gunaAdvenceButton7.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton7.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton7.ForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton7.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton7.Image")));
-            this.gunaAdvenceButton7.ImageOffsetX = 5;
+            this.gunaAdvenceButton7.ImageOffsetX = 15;
             this.gunaAdvenceButton7.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton7.Location = new System.Drawing.Point(0, 418);
+            this.gunaAdvenceButton7.Location = new System.Drawing.Point(0, 491);
             this.gunaAdvenceButton7.Name = "gunaAdvenceButton7";
             this.gunaAdvenceButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.gunaAdvenceButton7.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -167,10 +167,10 @@
             this.gunaAdvenceButton7.OnHoverImage = null;
             this.gunaAdvenceButton7.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceButton7.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton7.Size = new System.Drawing.Size(190, 42);
+            this.gunaAdvenceButton7.Size = new System.Drawing.Size(231, 51);
             this.gunaAdvenceButton7.TabIndex = 5;
             this.gunaAdvenceButton7.Text = "Settings";
-            this.gunaAdvenceButton7.TextOffsetX = 10;
+            this.gunaAdvenceButton7.TextOffsetX = 18;
             // 
             // gunaAdvenceButton3
             // 
@@ -186,13 +186,13 @@
             this.pnlMenuAnimation.SetDecoration(this.gunaAdvenceButton3, Guna.UI.Animation.DecorationType.None);
             this.gunaAdvenceButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaAdvenceButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaAdvenceButton3.ForeColor = System.Drawing.Color.White;
             this.gunaAdvenceButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.Image")));
-            this.gunaAdvenceButton3.ImageOffsetX = 5;
+            this.gunaAdvenceButton3.ImageOffsetX = 15;
             this.gunaAdvenceButton3.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton3.Location = new System.Drawing.Point(0, 372);
+            this.gunaAdvenceButton3.Location = new System.Drawing.Point(0, 436);
             this.gunaAdvenceButton3.Name = "gunaAdvenceButton3";
             this.gunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.gunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -200,10 +200,10 @@
             this.gunaAdvenceButton3.OnHoverImage = null;
             this.gunaAdvenceButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.gunaAdvenceButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton3.Size = new System.Drawing.Size(190, 42);
+            this.gunaAdvenceButton3.Size = new System.Drawing.Size(231, 51);
             this.gunaAdvenceButton3.TabIndex = 4;
             this.gunaAdvenceButton3.Text = "Reports";
-            this.gunaAdvenceButton3.TextOffsetX = 10;
+            this.gunaAdvenceButton3.TextOffsetX = 18;
             // 
             // btnStudent
             // 
@@ -219,13 +219,13 @@
             this.pnlMenuAnimation.SetDecoration(this.btnStudent, Guna.UI.Animation.DecorationType.None);
             this.btnStudent.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnStudent.FocusedColor = System.Drawing.Color.Empty;
-            this.btnStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudent.ForeColor = System.Drawing.Color.White;
             this.btnStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnStudent.Image")));
-            this.btnStudent.ImageOffsetX = 5;
+            this.btnStudent.ImageOffsetX = 15;
             this.btnStudent.ImageSize = new System.Drawing.Size(20, 20);
             this.btnStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnStudent.Location = new System.Drawing.Point(0, 280);
+            this.btnStudent.Location = new System.Drawing.Point(0, 326);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnStudent.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -233,10 +233,10 @@
             this.btnStudent.OnHoverImage = null;
             this.btnStudent.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnStudent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnStudent.Size = new System.Drawing.Size(190, 42);
+            this.btnStudent.Size = new System.Drawing.Size(231, 51);
             this.btnStudent.TabIndex = 3;
             this.btnStudent.Text = "Students";
-            this.btnStudent.TextOffsetX = 10;
+            this.btnStudent.TextOffsetX = 18;
             this.btnStudent.Click += new System.EventHandler(this.BtnStudent_Click);
             // 
             // btnBook
@@ -253,13 +253,13 @@
             this.pnlMenuAnimation.SetDecoration(this.btnBook, Guna.UI.Animation.DecorationType.None);
             this.btnBook.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnBook.FocusedColor = System.Drawing.Color.Empty;
-            this.btnBook.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBook.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBook.ForeColor = System.Drawing.Color.White;
             this.btnBook.Image = ((System.Drawing.Image)(resources.GetObject("btnBook.Image")));
-            this.btnBook.ImageOffsetX = 5;
+            this.btnBook.ImageOffsetX = 15;
             this.btnBook.ImageSize = new System.Drawing.Size(20, 20);
             this.btnBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnBook.Location = new System.Drawing.Point(0, 234);
+            this.btnBook.Location = new System.Drawing.Point(0, 271);
             this.btnBook.Name = "btnBook";
             this.btnBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnBook.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -267,10 +267,10 @@
             this.btnBook.OnHoverImage = null;
             this.btnBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBook.Size = new System.Drawing.Size(190, 42);
+            this.btnBook.Size = new System.Drawing.Size(231, 51);
             this.btnBook.TabIndex = 2;
             this.btnBook.Text = "Books";
-            this.btnBook.TextOffsetX = 10;
+            this.btnBook.TextOffsetX = 18;
             this.btnBook.Click += new System.EventHandler(this.BtnBook_Click);
             // 
             // btnDashboard
@@ -287,13 +287,13 @@
             this.pnlMenuAnimation.SetDecoration(this.btnDashboard, Guna.UI.Animation.DecorationType.None);
             this.btnDashboard.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnDashboard.FocusedColor = System.Drawing.Color.Empty;
-            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDashboard.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
-            this.btnDashboard.ImageOffsetX = 5;
+            this.btnDashboard.ImageOffsetX = 15;
             this.btnDashboard.ImageSize = new System.Drawing.Size(20, 20);
             this.btnDashboard.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnDashboard.Location = new System.Drawing.Point(0, 188);
+            this.btnDashboard.Location = new System.Drawing.Point(0, 216);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnDashboard.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -301,10 +301,10 @@
             this.btnDashboard.OnHoverImage = null;
             this.btnDashboard.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDashboard.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDashboard.Size = new System.Drawing.Size(190, 42);
+            this.btnDashboard.Size = new System.Drawing.Size(231, 51);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
-            this.btnDashboard.TextOffsetX = 10;
+            this.btnDashboard.TextOffsetX = 18;
             this.btnDashboard.Click += new System.EventHandler(this.BtnDashboard_Click);
             // 
             // pictureBox1
@@ -313,9 +313,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlMenuAnimation.SetDecoration(this.pictureBox1, Guna.UI.Animation.DecorationType.None);
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(28, 23);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 40);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(155, 155);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -333,9 +333,9 @@
             this.panel2.Controls.Add(this.lblDate);
             this.pnlMenuAnimation.SetDecoration(this.panel2, Guna.UI.Animation.DecorationType.None);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(190, 0);
+            this.panel2.Location = new System.Drawing.Point(230, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(831, 70);
+            this.panel2.Size = new System.Drawing.Size(1030, 87);
             this.panel2.TabIndex = 4;
             // 
             // btnMin
@@ -352,14 +352,14 @@
             this.btnMin.ForeColor = System.Drawing.Color.White;
             this.btnMin.Image = null;
             this.btnMin.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnMin.Location = new System.Drawing.Point(765, 12);
+            this.btnMin.Location = new System.Drawing.Point(956, 13);
             this.btnMin.Name = "btnMin";
             this.btnMin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(173)))), ((int)(((byte)(4)))));
             this.btnMin.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnMin.OnHoverForeColor = System.Drawing.Color.White;
             this.btnMin.OnHoverImage = null;
             this.btnMin.OnPressedColor = System.Drawing.Color.Black;
-            this.btnMin.Size = new System.Drawing.Size(14, 14);
+            this.btnMin.Size = new System.Drawing.Size(15, 15);
             this.btnMin.TabIndex = 12;
             this.btnMin.Click += new System.EventHandler(this.BtnMin_Click);
             // 
@@ -377,14 +377,14 @@
             this.btnMax.ForeColor = System.Drawing.Color.White;
             this.btnMax.Image = null;
             this.btnMax.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnMax.Location = new System.Drawing.Point(785, 12);
+            this.btnMax.Location = new System.Drawing.Point(977, 13);
             this.btnMax.Name = "btnMax";
             this.btnMax.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(179)))), ((int)(((byte)(57)))));
             this.btnMax.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnMax.OnHoverForeColor = System.Drawing.Color.White;
             this.btnMax.OnHoverImage = null;
             this.btnMax.OnPressedColor = System.Drawing.Color.Black;
-            this.btnMax.Size = new System.Drawing.Size(14, 14);
+            this.btnMax.Size = new System.Drawing.Size(15, 15);
             this.btnMax.TabIndex = 11;
             this.btnMax.Click += new System.EventHandler(this.BtnMax_Click);
             // 
@@ -402,14 +402,14 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = null;
             this.btnClose.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnClose.Location = new System.Drawing.Point(805, 12);
+            this.btnClose.Location = new System.Drawing.Point(998, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(62)))), ((int)(((byte)(52)))));
             this.btnClose.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnClose.OnHoverForeColor = System.Drawing.Color.White;
             this.btnClose.OnHoverImage = null;
             this.btnClose.OnPressedColor = System.Drawing.Color.Black;
-            this.btnClose.Size = new System.Drawing.Size(14, 14);
+            this.btnClose.Size = new System.Drawing.Size(15, 15);
             this.btnClose.TabIndex = 10;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
@@ -446,11 +446,11 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.pnlMenuAnimation.SetDecoration(this.label3, Guna.UI.Animation.DecorationType.None);
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label3.Location = new System.Drawing.Point(697, 41);
+            this.label3.Location = new System.Drawing.Point(874, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(14, 20);
+            this.label3.Size = new System.Drawing.Size(15, 21);
             this.label3.TabIndex = 6;
             this.label3.Text = "|";
             // 
@@ -459,11 +459,11 @@
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.AutoSize = true;
             this.pnlMenuAnimation.SetDecoration(this.lblTime, Guna.UI.Animation.DecorationType.None);
-            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTime.Location = new System.Drawing.Point(717, 42);
+            this.lblTime.Location = new System.Drawing.Point(897, 51);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(36, 17);
+            this.lblTime.Size = new System.Drawing.Size(42, 20);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "Time";
             // 
@@ -472,11 +472,11 @@
             this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.AutoSize = true;
             this.pnlMenuAnimation.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
-            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblDate.Location = new System.Drawing.Point(521, 43);
+            this.lblDate.Location = new System.Drawing.Point(694, 52);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(35, 17);
+            this.lblDate.Size = new System.Drawing.Size(41, 20);
             this.lblDate.TabIndex = 4;
             this.lblDate.Text = "Date";
             // 
@@ -489,7 +489,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1021, 603);
+            this.ClientSize = new System.Drawing.Size(1260, 620);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlMenu);

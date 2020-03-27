@@ -12,6 +12,8 @@ namespace LMS
 {
     public partial class frmBooksOnHand : Form
     {
+        int rowIndex = 0;
+
         public frmBooksOnHand()
         {
             InitializeComponent();
@@ -20,6 +22,17 @@ namespace LMS
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GunaDataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.gunaDataGridView1.Rows[e.RowIndex].Selected = true;
+                this.rowIndex = e.RowIndex;
+                this.gunaContextMenuStrip1.Show(this.gunaDataGridView1, e.Location);
+                this.gunaContextMenuStrip1.Show(Cursor.Position);
+            }
         }
     }
 }

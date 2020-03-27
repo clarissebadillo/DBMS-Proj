@@ -61,6 +61,10 @@ namespace LMS
             cn.Close();
         }
 
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadRecords();
+        }
 
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -73,7 +77,6 @@ namespace LMS
             lblContact.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
             lblEmail.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
             lblAddress.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
-            lblOnHand.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
             byte[] imgbytes = (byte[])gunaDataGridView1[11, e.RowIndex].Value;
             MemoryStream mstream = new MemoryStream(imgbytes);
             stImage.Image = Image.FromStream(mstream);
@@ -83,7 +86,7 @@ namespace LMS
             {
                 frmAddEditStudent frm = new frmAddEditStudent(this);
                 frm.btnSave.Enabled = false;
-                frm.lblTitle.Text = "Edit Book Details";
+                frm.lblTitle.Text = "Edit Student Details";
                 frm.lblID.Text = gunaDataGridView1[1, e.RowIndex].Value.ToString();
                 frm.txtStudNo.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
                 frm.txtLname.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
@@ -107,7 +110,7 @@ namespace LMS
                     frm.rbFemale.Checked = true;
                 }
                 //Show
-                frm.ShowDialog();
+                frm.Show();
             }
             else if (colName == "Delete")
             {
@@ -123,30 +126,6 @@ namespace LMS
                     LoadRecords();
                 }
             }
-        }
-
-
-        private void TxtSearch_TextChanged(object sender, EventArgs e)
-        {
-            LoadRecords();
-        }
-
-        private void LblOnHand_Click(object sender, EventArgs e)
-        {
-            frmBooksOnHand frm = new frmBooksOnHand();
-            frm.gunaDataGridView1.Rows.Clear();
-            int i = 0;
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + lblStudNo.Text + "'", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i += 1;
-                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
-            }
-            dr.Close();
-            cn.Close();
-            frm.Show();
         }
     }
 }

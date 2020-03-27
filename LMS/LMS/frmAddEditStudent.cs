@@ -46,6 +46,8 @@ namespace LMS
             txtFname.Text = "";
             txtContact.Text = "";
             txtEmail.Text = "";
+            rbFemale.Checked = false;
+            rbMale.Checked = false;
             cboCourse.SelectedIndex = -1;
             cboYear.SelectedIndex = -1;
             studImage.Image = Properties.Resources.user;
@@ -154,7 +156,7 @@ namespace LMS
                     //open connection to the database
                     cn.Open();
                     //command to be executed on the database
-                    cm = new SqlCommand("UPDATE tblStudent SET studentNum = @studentNum, lastName = @lastName, firstName = @firstName, course = @course, year = @year, gender = @gender, contact = @contact, email = @email, address = @address, image = @image", cn);
+                    cm = new SqlCommand("UPDATE tblStudent SET studentNum = @studentNum, lastName = @lastName, firstName = @firstName, course = @course, year = @year, gender = @gender, contact = @contact, email = @email, address = @address, image = @image WHERE studentID LIKE '" + lblID.Text + "'", cn);
                     //set parameters value
                     cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
                     cm.Parameters.AddWithValue("@lastName", txtLname.Text);
@@ -170,7 +172,6 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     //close connection
                     cn.Close();
-
                     popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + " has been successfully updated!";
                     popupNotifier.Popup();
                     Clear();

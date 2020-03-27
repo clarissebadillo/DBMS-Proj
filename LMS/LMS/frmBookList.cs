@@ -51,7 +51,7 @@ namespace LMS
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bookTitle"].ToString(), dr["bookISBN"].ToString(), dr["subject"].ToString(), dr["genre"].ToString(), dr["mediaType"].ToString(), dr["language"].ToString(), dr["author"].ToString(), dr["publisher"].ToString(), dr["price"].ToString(), dr["pubYear"].ToString(), dr["allCopies"].ToString(), dr["availableCopies"].ToString(), dr["BookBorrowed"].ToString(), dr["BookLost"].ToString());//, dr["lostCopies"].ToString());
+                gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bookTitle"].ToString(), dr["bookISBN"].ToString(), dr["subject"].ToString(), dr["genre"].ToString(), dr["mediaType"].ToString(), dr["language"].ToString(), dr["author"].ToString(), dr["publisher"].ToString(), dr["price"].ToString(), dr["pubYear"].ToString(), dr["allCopies"].ToString(), dr["availableCopies"].ToString(), dr["BookBorrowed"].ToString(), dr["BookLost"].ToString());
             }
             dr.Close();
             cn.Close();

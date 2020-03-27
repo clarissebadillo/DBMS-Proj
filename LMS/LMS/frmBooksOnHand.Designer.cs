@@ -35,11 +35,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBooksOnHand));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +51,15 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
+            this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.declareLostBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.returnBookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.declareLostBookToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gunaLinePanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
+            this.gunaContextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
@@ -69,8 +76,34 @@
             this.gunaLinePanel1.LineTop = 5;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(611, 380);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(628, 422);
             this.gunaLinePanel1.TabIndex = 0;
+            // 
+            // gunaControlBox1
+            // 
+            this.gunaControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox1.AnimationSpeed = 0.03F;
+            this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox1.IconSize = 10F;
+            this.gunaControlBox1.Location = new System.Drawing.Point(588, 23);
+            this.gunaControlBox1.Name = "gunaControlBox1";
+            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
+            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox1.Size = new System.Drawing.Size(30, 29);
+            this.gunaControlBox1.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblTitle.Location = new System.Drawing.Point(12, 21);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(227, 31);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Books In Possession";
             // 
             // panel1
             // 
@@ -80,7 +113,7 @@
             this.panel1.Controls.Add(this.gunaDataGridView1);
             this.panel1.Location = new System.Drawing.Point(5, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(600, 308);
+            this.panel1.Size = new System.Drawing.Size(617, 350);
             this.panel1.TabIndex = 1;
             // 
             // gunaDataGridView1
@@ -136,7 +169,7 @@
             this.gunaDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.gunaDataGridView1.RowTemplate.Height = 30;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(600, 308);
+            this.gunaDataGridView1.Size = new System.Drawing.Size(617, 350);
             this.gunaDataGridView1.TabIndex = 0;
             this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -160,32 +193,7 @@
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 30;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTitle.Location = new System.Drawing.Point(12, 21);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(227, 31);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Books In Possession";
-            // 
-            // gunaControlBox1
-            // 
-            this.gunaControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox1.AnimationSpeed = 0.03F;
-            this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox1.IconSize = 10F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(571, 23);
-            this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox1.Size = new System.Drawing.Size(30, 29);
-            this.gunaControlBox1.TabIndex = 2;
+            this.gunaDataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.GunaDataGridView1_CellMouseUp);
             // 
             // Column1
             // 
@@ -202,7 +210,7 @@
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Visible = false;
-            this.Column2.Width = 42;
+            this.Column2.Width = 52;
             // 
             // Column3
             // 
@@ -211,7 +219,7 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Visible = false;
-            this.Column3.Width = 87;
+            this.Column3.Width = 97;
             // 
             // Column5
             // 
@@ -220,7 +228,7 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Visible = false;
-            this.Column5.Width = 69;
+            this.Column5.Width = 79;
             // 
             // Column7
             // 
@@ -229,7 +237,7 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             this.Column7.Visible = false;
-            this.Column7.Width = 102;
+            this.Column7.Width = 112;
             // 
             // Column4
             // 
@@ -265,7 +273,7 @@
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             this.Column10.Visible = false;
-            this.Column10.Width = 88;
+            this.Column10.Width = 98;
             // 
             // Column11
             // 
@@ -277,12 +285,55 @@
             this.Column11.ReadOnly = true;
             this.Column11.Width = 74;
             // 
+            // gunaContextMenuStrip1
+            // 
+            this.gunaContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.returnBookToolStripMenuItem,
+            this.declareLostBookToolStripMenuItem});
+            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
+            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
+            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(218, 48);
+            // 
+            // returnBookToolStripMenuItem
+            // 
+            this.returnBookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("returnBookToolStripMenuItem.Image")));
+            this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.returnBookToolStripMenuItem.Text = "Return Selected Book";
+            // 
+            // declareLostBookToolStripMenuItem
+            // 
+            this.declareLostBookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("declareLostBookToolStripMenuItem.Image")));
+            this.declareLostBookToolStripMenuItem.Name = "declareLostBookToolStripMenuItem";
+            this.declareLostBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.declareLostBookToolStripMenuItem.Text = "Mark Selected Book as Lost";
+            // 
+            // returnBookToolStripMenuItem1
+            // 
+            this.returnBookToolStripMenuItem1.Name = "returnBookToolStripMenuItem1";
+            this.returnBookToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.returnBookToolStripMenuItem1.Text = "Return Book";
+            // 
+            // declareLostBookToolStripMenuItem1
+            // 
+            this.declareLostBookToolStripMenuItem1.Name = "declareLostBookToolStripMenuItem1";
+            this.declareLostBookToolStripMenuItem1.Size = new System.Drawing.Size(168, 22);
+            this.declareLostBookToolStripMenuItem1.Text = "Declare Lost Book";
+            // 
             // frmBooksOnHand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(611, 380);
+            this.ClientSize = new System.Drawing.Size(628, 422);
             this.Controls.Add(this.gunaLinePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBooksOnHand";
@@ -292,6 +343,7 @@
             this.gunaLinePanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
+            this.gunaContextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -313,5 +365,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private Guna.UI.WinForms.GunaContextMenuStrip gunaContextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem returnBookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem declareLostBookToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem returnBookToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem declareLostBookToolStripMenuItem1;
     }
 }

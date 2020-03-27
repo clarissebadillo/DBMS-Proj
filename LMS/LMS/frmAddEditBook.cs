@@ -123,7 +123,7 @@ namespace LMS
                     if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cn.Open();
-                        cm = new SqlCommand("UPDATE tblBook SET bookISBN = @bookisbn, bookTitle = @booktitle, subject = @subject, genre = @genre, mediaType = @mediatype, language = @language, author = @author, publisher = @publisher, price = @price, pubyear = @year WHERE bookID LIKE '" + lblID + "'", cn);
+                        cm = new SqlCommand("UPDATE tblBook SET bookISBN = @bookisbn, bookTitle = @booktitle, subject = @subject, genre = @genre, mediaType = @mediatype, language = @language, author = @author, publisher = @publisher, price = @price, pubyear = @year WHERE bookID LIKE '" + lblID.Text + "'", cn);
                         cm.Parameters.AddWithValue("@bookisbn", txtISBN.Text);
                         cm.Parameters.AddWithValue("@booktitle", txtTitle.Text);
                         cm.Parameters.AddWithValue("@subject", cboSubject.Text);
@@ -137,8 +137,8 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         cn.Close();
 
-                        popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
-                        popupNotifier.Popup();
+                        //popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
+                        //popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
                         this.Close();

@@ -44,8 +44,8 @@ namespace LMS
             //form shadow
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
 
-            //this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            //this.WindowState = FormWindowState.Maximized;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace LMS
             btnPin.Visible = false;
             btnUnpin.Visible = true;
             pnlMenu.Visible = false;
-            pnlMenu.Width = 50;
+            pnlMenu.Width = 70;
             pnlMenuAnimation.ShowSync(pnlMenu);
         }
 
@@ -69,7 +69,7 @@ namespace LMS
             btnUnpin.Visible = false;
             btnPin.Visible = true;
             pnlMenu.Visible = false;
-            pnlMenu.Width = 190;
+            pnlMenu.Width = 230;
             pnlMenuAnimation.ShowSync(pnlMenu);
         }
 
