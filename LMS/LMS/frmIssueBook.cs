@@ -197,12 +197,22 @@ namespace LMS
             BorrowHistory();
         }
 
+
         private void BtnProccessIssue_Click(object sender, EventArgs e)
         {
+            SqlCommand limitBooks = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + txtSearchStud.Text + "'", cn);
             if (txtSearchStud.Text == "")
             {
                 txtSearchStud.Focus();
                 MessageBox.Show("Please enter the student number", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (lblBooksOnHand.Text == "5")
+            {
+                MessageBox.Show("Student already reached the maximum number of borrowed book!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (lblAvailable.Text == "0")
+            {
+                MessageBox.Show("No available copies left", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -210,6 +220,7 @@ namespace LMS
                 Clear();
                 LoadDetails();
                 BooksOnHand();
+                BorrowHistory();
             }
         }
 
@@ -244,22 +255,6 @@ namespace LMS
             frm.Show();
         }
 
-        public void OnHandRefresh()
-        {
-            frmBooksOnHand frm = new frmBooksOnHand(this);
-            frm.gunaDataGridView1.Rows.Clear();
-            int i = 0;
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + lblStudNo.Text + "'", cn);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i += 1;
-                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
-            }
-            dr.Close();
-            cn.Close();
-        }
 
         private void LblBooksOnHand_Click(object sender, EventArgs e)
         {

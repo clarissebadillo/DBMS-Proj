@@ -16,6 +16,7 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
         frmIssueBook frmissue;
 
         int rowIndex = 0;
@@ -59,6 +60,22 @@ namespace LMS
             cn.Close();
         }
 
+        public void RefreshBooksOnHand()
+        {
+            frmissue.gunaDataGridView1.Rows.Clear();
+            int i = 0;
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + frmissue.lblStudNo.Text + "'", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+
         private void ReturnBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -77,7 +94,8 @@ namespace LMS
                     frmissue.Clear();
                     frmissue.LoadDetails();
                     frmissue.BooksOnHand();
-                    frmissue.OnHandRefresh();
+                    RefreshBooksOnHand();
+                    frmissue.LoadRecords();
 
                     popupNotifier.ContentText = lblBookTitle.Text + " has been successfuly returned!";
                     popupNotifier.Popup();
