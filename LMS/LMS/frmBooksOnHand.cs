@@ -20,6 +20,7 @@ namespace LMS
         frmIssueBook frmissue;
 
         int rowIndex = 0;
+        int fine = 5;
 
         public frmBooksOnHand(frmIssueBook fissue)
         {
@@ -47,7 +48,8 @@ namespace LMS
         private void UpdateStatus()
         {
             cn.Open();
-            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Returned' WHERE borrowID = '" + lblID.Text + "'", cn);
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Returned' WHERE borrowID = @borrowID", cn);
+            cm.Parameters.AddWithValue("@borrowID", lblID.Text);
             cm.ExecuteNonQuery();
             cn.Close();
         }
@@ -55,7 +57,8 @@ namespace LMS
         public void RetreiveBook()
         {
             cn.Open();
-            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies + 1 WHERE bookTitle = '" + lblBookTitle.Text + "'", cn);
+            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies + 1 WHERE bookTitle = @bookTitle", cn);
+            cm.Parameters.AddWithValue("@bookTitle", lblBookTitle.Text);
             cm.ExecuteNonQuery();
             cn.Close();
         }
@@ -65,7 +68,8 @@ namespace LMS
             frmissue.gunaDataGridView1.Rows.Clear();
             int i = 0;
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + frmissue.lblStudNo.Text + "'", cn);
+            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", frmissue.lblStudNo.Text);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -78,14 +82,21 @@ namespace LMS
 
         public void CalculateFine()
         {
-            DateTime issueDate = new DateTime();
             DateTime dueDate = new DateTime();
-            issueDate = frmissue.dtIssueDate.Value;
+            DateTime returnDate = new DateTime();
             dueDate = frmissue.dtDueDate.Value;
-            TimeSpan diff = dueDate.Subtract(issueDate);
+            returnDate = DateTime.Now;
+            TimeSpan diff = returnDate.Subtract(dueDate);
             int days = diff.Days;
-            int fine = days * 5;
-            frmissue.lblFine.Text = fine.ToString();
+            fine = days * 5;
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblFine VALUES (@borrowID, @studentID, @totalFine)", cn);
+            cm.Parameters.AddWithValue("@borrowID", lblID.Text);
+            cm.Parameters.AddWithValue("@studentID", lblStudentID.Text);
+            cm.Parameters.AddWithValue("@totalFine", fine);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
 
         private void ReturnBookToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,12 +114,14 @@ namespace LMS
                     RetreiveBook();
 
                     gunaDataGridView1.Rows.Clear();
+                    RefreshBooksOnHand();
+                    CalculateFine();
+
                     frmissue.Clear();
                     frmissue.LoadDetails();
                     frmissue.BooksOnHand();
-                    RefreshBooksOnHand();
                     frmissue.LoadRecords();
-                    CalculateFine();
+                    frmissue.CountFine();
 
                     popupNotifier.ContentText = lblBookTitle.Text + " has been successfuly returned!";
                     popupNotifier.Popup();

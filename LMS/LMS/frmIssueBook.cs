@@ -38,6 +38,7 @@ namespace LMS
 
         private void FrmIssueBook_Load(object sender, EventArgs e)
         {
+            frmBooksOnHand frm = new frmBooksOnHand(this);
             AutoCompleteStudentNo();
             LoadRecords();
 
@@ -64,7 +65,8 @@ namespace LMS
         public void BooksOnHand()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + txtSearchStud.Text + "'", cn);
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
             lblBooksOnHand.Text = cm.ExecuteScalar().ToString();
             cn.Close();
         }
@@ -72,9 +74,20 @@ namespace LMS
         public void BorrowHistory()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE studentNum = '" + lblStudNo.Text + "'", cn);
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
             lblHistory.Text = cm.ExecuteScalar().ToString();
             cn.Close();
+        }
+
+        public void CountFine()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT SUM(totalFine) FROM tblFine where studentID =  @studentID", cn);
+            cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
+            lblFine.Text = lblPesoSign.Text + cm.ExecuteScalar().ToString() + lbl00.Text;
+            cn.Close();
+
         }
 
         public void Notif()
@@ -83,11 +96,12 @@ namespace LMS
             popupNotifier.Popup();
         }
 
+
         public void BorrowBook()
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to issue '" + lblBookTitle.Text + "'?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to issue " + lblBookTitle.Text + "?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
                     cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned')", cn);
@@ -115,7 +129,8 @@ namespace LMS
         public void Deduction()
         {
             cn.Open();
-            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = '" + lblBookTitle.Text + "'", cn);
+            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = @bookTitle", cn);
+            cm.Parameters.AddWithValue("@bookTitle", lblBookTitle.Text);
             cm.ExecuteNonQuery();
             cn.Close();
             Notif();
@@ -158,7 +173,8 @@ namespace LMS
         public void LoadDetails()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblStudent WHERE studentNUm ='" + txtSearchStud.Text + "'", cn);
+            cm = new SqlCommand("SELECT * FROM tblStudent WHERE studentNUm = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -175,10 +191,13 @@ namespace LMS
             cn.Close();
         }
 
+        
+
         private void TxtSearchStud_TextChanged(object sender, EventArgs e)
         {
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblStudent WHERE studentNUm ='" + txtSearchStud.Text + "'", cn);
+            cm = new SqlCommand("SELECT * FROM tblStudent WHERE studentNUm = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -195,12 +214,12 @@ namespace LMS
             cn.Close();
             BooksOnHand();
             BorrowHistory();
+            CountFine();
         }
 
 
         private void BtnProccessIssue_Click(object sender, EventArgs e)
         {
-            SqlCommand limitBooks = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + txtSearchStud.Text + "'", cn);
             if (txtSearchStud.Text == "")
             {
                 txtSearchStud.Focus();
@@ -243,7 +262,8 @@ namespace LMS
             frm.gunaDataGridView1.Rows.Clear();
             int i = 0;
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = '" + lblStudNo.Text + "'", cn);
+            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {

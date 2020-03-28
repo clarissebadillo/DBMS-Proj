@@ -140,6 +140,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
+            this.lblPesoSign = new System.Windows.Forms.Label();
+            this.lbl00 = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
@@ -236,6 +239,9 @@
             // 
             // tabPageAdv1
             // 
+            this.tabPageAdv1.Controls.Add(this.lblID);
+            this.tabPageAdv1.Controls.Add(this.lbl00);
+            this.tabPageAdv1.Controls.Add(this.lblPesoSign);
             this.tabPageAdv1.Controls.Add(this.lblBookID);
             this.tabPageAdv1.Controls.Add(this.lblBookTitle);
             this.tabPageAdv1.Controls.Add(this.gunaGroupBox9);
@@ -603,7 +609,7 @@
             bannerTextInfo2.Text = "  Search book here";
             bannerTextInfo2.Visible = true;
             this.bannerTextProvider1.SetBannerText(this.txtSearchBook, bannerTextInfo2);
-            this.txtSearchBook.BeforeTouchSize = new System.Drawing.Size(211, 21);
+            this.txtSearchBook.BeforeTouchSize = new System.Drawing.Size(100, 21);
             this.txtSearchBook.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtSearchBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchBook.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -756,11 +762,11 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.DimGray;
-            this.label23.Location = new System.Drawing.Point(34, 28);
+            this.label23.Location = new System.Drawing.Point(41, 28);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(98, 41);
+            this.label23.Size = new System.Drawing.Size(73, 41);
             this.label23.TabIndex = 1;
-            this.label23.Text = "00000";
+            this.label23.Text = "0.00";
             // 
             // gunaGroupBox3
             // 
@@ -818,11 +824,11 @@
             this.lblFine.AutoSize = true;
             this.lblFine.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFine.ForeColor = System.Drawing.Color.DimGray;
-            this.lblFine.Location = new System.Drawing.Point(34, 28);
+            this.lblFine.Location = new System.Drawing.Point(38, 29);
             this.lblFine.Name = "lblFine";
-            this.lblFine.Size = new System.Drawing.Size(98, 41);
+            this.lblFine.Size = new System.Drawing.Size(73, 41);
             this.lblFine.TabIndex = 1;
-            this.lblFine.Text = "00000";
+            this.lblFine.Text = "0.00";
             // 
             // gunaGroupBox1
             // 
@@ -925,9 +931,8 @@
             this.lblStudID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStudID.Location = new System.Drawing.Point(179, 24);
             this.lblStudID.Name = "lblStudID";
-            this.lblStudID.Size = new System.Drawing.Size(62, 13);
+            this.lblStudID.Size = new System.Drawing.Size(0, 13);
             this.lblStudID.TabIndex = 23;
-            this.lblStudID.Text = "Student ID";
             this.lblStudID.Visible = false;
             // 
             // lblYear
@@ -1054,7 +1059,7 @@
             this.txtSearchStud.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtSearchStud.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSearchStud.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSearchStud.BeforeTouchSize = new System.Drawing.Size(211, 21);
+            this.txtSearchStud.BeforeTouchSize = new System.Drawing.Size(100, 21);
             this.txtSearchStud.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtSearchStud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchStud.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -1655,6 +1660,41 @@
             this.label9.TabIndex = 79;
             this.label9.Text = "Filter By Date";
             // 
+            // lblPesoSign
+            // 
+            this.lblPesoSign.AutoSize = true;
+            this.lblPesoSign.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoSign.ForeColor = System.Drawing.Color.DimGray;
+            this.lblPesoSign.Location = new System.Drawing.Point(879, 279);
+            this.lblPesoSign.Name = "lblPesoSign";
+            this.lblPesoSign.Size = new System.Drawing.Size(36, 41);
+            this.lblPesoSign.TabIndex = 2;
+            this.lblPesoSign.Text = "₱";
+            this.lblPesoSign.Visible = false;
+            // 
+            // lbl00
+            // 
+            this.lbl00.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl00.AutoSize = true;
+            this.lbl00.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl00.ForeColor = System.Drawing.Color.DimGray;
+            this.lbl00.Location = new System.Drawing.Point(921, 279);
+            this.lbl00.Name = "lbl00";
+            this.lbl00.Size = new System.Drawing.Size(57, 41);
+            this.lbl00.TabIndex = 3;
+            this.lbl00.Text = ".00";
+            this.lbl00.Visible = false;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(491, 314);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(32, 15);
+            this.lblID.TabIndex = 85;
+            this.lblID.Text = "lblID";
+            this.lblID.Visible = false;
+            // 
             // frmIssueBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1817,5 +1857,8 @@
         public Guna.UI.WinForms.GunaDateTimePicker dtDueDate;
         public Guna.UI.WinForms.GunaDateTimePicker dtIssueDate;
         public System.Windows.Forms.Label lblFine;
+        public System.Windows.Forms.Label lblPesoSign;
+        public System.Windows.Forms.Label lbl00;
+        private System.Windows.Forms.Label lblID;
     }
 }
