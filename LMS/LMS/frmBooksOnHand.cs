@@ -76,6 +76,18 @@ namespace LMS
             cn.Close();
         }
 
+        public void CalculateFine()
+        {
+            DateTime issueDate = new DateTime();
+            DateTime dueDate = new DateTime();
+            issueDate = frmissue.dtIssueDate.Value;
+            dueDate = frmissue.dtDueDate.Value;
+            TimeSpan diff = dueDate.Subtract(issueDate);
+            int days = diff.Days;
+            int fine = days * 5;
+            frmissue.lblFine.Text = fine.ToString();
+        }
+
         private void ReturnBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -96,6 +108,7 @@ namespace LMS
                     frmissue.BooksOnHand();
                     RefreshBooksOnHand();
                     frmissue.LoadRecords();
+                    CalculateFine();
 
                     popupNotifier.ContentText = lblBookTitle.Text + " has been successfuly returned!";
                     popupNotifier.Popup();
