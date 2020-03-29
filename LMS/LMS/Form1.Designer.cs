@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation2 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
@@ -70,22 +70,22 @@
             // 
             this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
             this.pnlMenuAnimation.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation1;
             this.pnlMenuAnimation.TimeStep = 0.01F;
             // 
             // pnlMenu
@@ -111,7 +111,7 @@
             this.btnIssueBook.AnimationSpeed = 0.03F;
             this.btnIssueBook.BaseColor = System.Drawing.Color.Transparent;
             this.btnIssueBook.BorderColor = System.Drawing.Color.Black;
-            this.btnIssueBook.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnIssueBook.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnIssueBook.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnIssueBook.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnIssueBook.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnIssueBook.CheckedImage")));
@@ -178,7 +178,7 @@
             this.gunaAdvenceButton3.AnimationSpeed = 0.03F;
             this.gunaAdvenceButton3.BaseColor = System.Drawing.Color.Transparent;
             this.gunaAdvenceButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton3.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.gunaAdvenceButton3.CheckedBorderColor = System.Drawing.Color.Black;
             this.gunaAdvenceButton3.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
             this.gunaAdvenceButton3.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton3.CheckedImage")));
@@ -211,7 +211,7 @@
             this.btnStudent.AnimationSpeed = 0.03F;
             this.btnStudent.BaseColor = System.Drawing.Color.Transparent;
             this.btnStudent.BorderColor = System.Drawing.Color.Black;
-            this.btnStudent.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnStudent.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnStudent.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnStudent.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnStudent.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnStudent.CheckedImage")));
@@ -245,7 +245,7 @@
             this.btnBook.AnimationSpeed = 0.03F;
             this.btnBook.BaseColor = System.Drawing.Color.Transparent;
             this.btnBook.BorderColor = System.Drawing.Color.Black;
-            this.btnBook.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnBook.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnBook.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnBook.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnBook.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnBook.CheckedImage")));

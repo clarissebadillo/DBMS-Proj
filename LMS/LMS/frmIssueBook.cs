@@ -41,6 +41,7 @@ namespace LMS
             frmBooksOnHand frm = new frmBooksOnHand(this);
             AutoCompleteStudentNo();
             LoadRecords();
+            Overdue();
 
             dtIssueDate.Value = DateTime.Now;
             dtDueDate.Value = dtIssueDate.Value.AddDays(7);
@@ -71,6 +72,15 @@ namespace LMS
             cn.Close();
         }
 
+        public void BooksOverdue()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Overdue' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
+            lblBooksOverdue.Text = cm.ExecuteScalar().ToString();
+            cn.Close();
+        }
+
         public void BorrowHistory()
         {
             cn.Open();
@@ -87,7 +97,6 @@ namespace LMS
             cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
             lblFine.Text = lblPesoSign.Text + cm.ExecuteScalar().ToString() + lbl00.Text;
             cn.Close();
-
         }
 
         public void Notif()
@@ -148,6 +157,14 @@ namespace LMS
             }
             txtSearchStud.AutoCompleteCustomSource = Collection;
             dr.Close();
+            cn.Close();
+        }
+
+        public void Overdue()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Overdue' WHERE status = 'Not Returned' AND dueDate < GETDATE()", cn);
+            cm.ExecuteNonQuery();
             cn.Close();
         }
 
@@ -213,6 +230,7 @@ namespace LMS
             dr.Close();
             cn.Close();
             BooksOnHand();
+            BooksOverdue();
             BorrowHistory();
             CountFine();
         }
@@ -272,6 +290,20 @@ namespace LMS
             }
             dr.Close();
             cn.Close();
+
+            //Overdue
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Overdue' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+
             frm.Show();
         }
 

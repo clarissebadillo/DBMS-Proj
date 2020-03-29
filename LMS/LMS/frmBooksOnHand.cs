@@ -139,6 +139,8 @@ namespace LMS
             lblStudentID.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
             lblBookID.Text = gunaDataGridView1[3, e.RowIndex].Value.ToString();
             lblBookTitle.Text = gunaDataGridView1[5, e.RowIndex].Value.ToString();
+            lblDateBorrowed.Text = gunaDataGridView1[6, e.RowIndex].Value.ToString();
+            lblDueDate.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
         }
     }
 }

@@ -75,6 +75,11 @@ namespace LMS
 
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
+            btnDashboard.Checked = true;
+            btnStudent.Checked = false;
+            btnBook.Checked = false;
+            btnIssueBook.Checked = false;
+
             frmDashboard frm = new frmDashboard();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
@@ -84,6 +89,11 @@ namespace LMS
 
         private void BtnBook_Click(object sender, EventArgs e)
         {
+            btnBook.Checked = true;
+            btnStudent.Checked = false;
+            btnDashboard.Checked = false;
+            btnIssueBook.Checked = false;
+
             frmBookList frm = new frmBookList();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
@@ -93,6 +103,11 @@ namespace LMS
 
         private void BtnStudent_Click(object sender, EventArgs e)
         {
+            btnStudent.Checked = true;
+            btnBook.Checked = false;
+            btnDashboard.Checked = false;
+            btnIssueBook.Checked = false;
+
             frmStudentList frm = new frmStudentList();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
@@ -102,6 +117,11 @@ namespace LMS
         
         private void BtnIssueBook_Click(object sender, EventArgs e)
         {
+            btnIssueBook.Checked = true;
+            btnStudent.Checked = false;
+            btnBook.Checked = false;
+            btnDashboard.Checked = false;
+
             frmIssueBook frm = new frmIssueBook();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
