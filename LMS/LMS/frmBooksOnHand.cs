@@ -90,6 +90,11 @@ namespace LMS
             int days = diff.Days;
             fine = days * 5;
 
+            if (fine < 0)
+            {
+                fine = 0;
+            }
+
             cn.Open();
             cm = new SqlCommand("INSERT INTO tblFine VALUES (@borrowID, @studentID, @totalFine)", cn);
             cm.Parameters.AddWithValue("@borrowID", lblID.Text);
@@ -120,6 +125,7 @@ namespace LMS
                     frmissue.Clear();
                     frmissue.LoadDetails();
                     frmissue.BooksOnHand();
+                    frmissue.BooksOverdue();
                     frmissue.LoadRecords();
                     frmissue.CountFine();
 

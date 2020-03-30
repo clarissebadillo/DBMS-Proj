@@ -136,5 +136,5 @@ namespace LMS
             frm.btnUpdate.Enabled = false;
             frm.ShowDialog();
         }
-    }
+}
 }

@@ -44,7 +44,7 @@ namespace LMS
             Overdue();
 
             dtIssueDate.Value = DateTime.Now;
-            dtDueDate.Value = dtIssueDate.Value.AddDays(7);
+            dtDueDate.Value = dtIssueDate.Value.AddDays(5);
         }
 
         public void LoadRecords()
@@ -66,7 +66,7 @@ namespace LMS
         public void BooksOnHand()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = @studentNum", cn);
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status IN ('Not Returned', 'Overdue') AND studentNum = @studentNum", cn);
             cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
             lblBooksOnHand.Text = cm.ExecuteScalar().ToString();
             cn.Close();
@@ -310,7 +310,9 @@ namespace LMS
 
         private void LblBooksOnHand_Click(object sender, EventArgs e)
         {
-            OnHand();
+            //OnHand();
+            frmOnHand frm = new frmOnHand(this);
+            frm.Show();
         }
     }
 }

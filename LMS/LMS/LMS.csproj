@@ -81,6 +81,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddBook.Designer.cs">
+      <DependentUpon>frmAddBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddEditBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,18 @@
     <Compile Include="frmIssueBook.Designer.cs">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListOfBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListOfBooks.Designer.cs">
+      <DependentUpon>frmListOfBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOnHand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOnHand.Designer.cs">
+      <DependentUpon>frmOnHand.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,8 +143,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucBooksOnHand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucBooksOnHand.Designer.cs">
+      <DependentUpon>ucBooksOnHand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewBook.Designer.cs">
+      <DependentUpon>viewBook.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddBook.resx">
+      <DependentUpon>frmAddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddEditBook.resx">
       <DependentUpon>frmAddEditBook.cs</DependentUpon>
@@ -146,6 +179,12 @@
     <EmbeddedResource Include="frmIssueBook.resx">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmListOfBooks.resx">
+      <DependentUpon>frmListOfBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOnHand.resx">
+      <DependentUpon>frmOnHand.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmStudentList.resx">
       <DependentUpon>frmStudentList.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +192,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucBooksOnHand.resx">
+      <DependentUpon>ucBooksOnHand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewBook.resx">
+      <DependentUpon>viewBook.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -94,7 +94,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnIssueBook.Checked = false;
 
-            frmBookList frm = new frmBookList();
+            frmListOfBooks frm = new frmListOfBooks();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

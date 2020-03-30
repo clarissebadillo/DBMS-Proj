@@ -120,30 +120,6 @@
   <metadata name="popupNotifier.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="dataGridViewTextBoxColumn16.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn17.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn18.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn19.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn20.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="dataGridViewTextBoxColumn21.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -179,6 +155,54 @@
         rDhnKUOqAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="tabPageAdv2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAX5JREFUSEtj
+        GAUMoauYedwWhvC5L2gRyzhapjTtSwe5WHH65xbFqZ9DGBr+M0FNxw143ReuBeL/ICySuPeA4rTP/ynG
+        0z+vhhqPHfB6LVSDWUpVi4FYeepHFag1mIDHY74DrSxWmP7ZAWoNJiDV4r0PfsPx1LM/saqBYapa/PjT
+        XzjedPsXVjUwTFWL9eZ8gWPtWV+wqoFhqlq86PIvOG468gOrGhgeHkHtvuIrHNst+YpVDQxT1eKO4z/g
+        OH/3d6xqYHh4BPWoxdjUwDBFFqvM+Py//jAiQSFbfObFH7h4xvZvKJaCMMU+jtn07f/DjwgL0fHlV3/+
+        Wy7ELMWoEtSgUgqbpQ8+/P0fvA57fqaKxUpAvPTKLwyLKw/gzstUS1ygSuHw499wSxdcomOqtgcWkzfe
+        /gHXxxqzsKuBYapaDMLxW74RLKdBmOoWE4vxWszrNl+DVhYrTfmkBrUGOwBaSP/mLRhAG/RAi8vFso5m
+        KUz7VE4JJrpBP8wBAwMAi7wcr8Ubj1UAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="tabPageAdv3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAY1JREFUSEtj
+        GAUMoauYedwWhvC5L2gRyzhapjTtSwe5WHH65xbFqZ9DGBr+M0FNxw143ReuBeL/ICySuPeA4rTP/ynG
+        0z+vhhqPHfB6LVSDWUpVi4FYeepHFag1mIDHY74DrSxWmP7ZAWoNJiDH4vgt3/7bLfmKVQ4ZU9Viz5Vf
+        /999//f/8ae//+vO+YJVDQxTzWLDeV/+n3nx5//jT3/BeOX1X/+Vp2NXC8JUsVhlxuf/G2/9hlsKw81H
+        fmCohWGqWNx78ieGpSD8CIgTt37DUA/CFFuctfM7Vkth+Oa7P/8dl2EmNoosBsVh0d7v/2sO/gBjZAtP
+        PvsNF4/djOlrqiUuEEa2eNPtX1jVwPCoxShgyFgMS0wgnLINezaCYapaHLr+Kxy7r8BfXg+PoJ569icc
+        V+z/jlUNDFPVYutFX+HYdAGdaicQHrCgXn/zNxz3ACsObGpgmKoWk4LxWszrNl+DVhYrTfmkBrUGOwBa
+        SP/mLRhAG/RAi8vFso5mKUz7VE4JJrpBP8wBAwMA7DUcz5gwDQkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="dataGridViewTextBoxColumn16.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn17.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn18.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn19.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn20.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn21.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -197,18 +221,6 @@
   <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="tabPageAdv2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAX5JREFUSEtj
-        GAUMoauYedwWhvC5L2gRyzhapjTtSwe5WHH65xbFqZ9DGBr+M0FNxw143ReuBeL/ICySuPeA4rTP/ynG
-        0z+vhhqPHfB6LVSDWUpVi4FYeepHFag1mIDHY74DrSxWmP7ZAWoNJiDV4r0PfsPx1LM/saqBYapa/PjT
-        XzjedPsXVjUwTFWL9eZ8gWPtWV+wqoFhqlq86PIvOG468gOrGhgeHkHtvuIrHNst+YpVDQxT1eKO4z/g
-        OH/3d6xqYHh4BPWoxdjUwDBFFqvM+Py//jAiQSFbfObFH7h4xvZvKJaCMMU+jtn07f/DjwgL0fHlV3/+
-        Wy7ELMWoEtSgUgqbpQ8+/P0fvA57fqaKxUpAvPTKLwyLKw/gzstUS1ygSuHw499wSxdcomOqtgcWkzfe
-        /gHXxxqzsKuBYapaDMLxW74RLKdBmOoWE4vxWszrNl+DVhYrTfmkBrUGOwBaSP/mLRhAG/RAi8vFso5m
-        KUz7VE4JJrpBP8wBAwMAi7wcr8Ubj1UAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="dataGridViewTextBoxColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -260,18 +272,6 @@
   <metadata name="dataGridViewImageColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="tabPageAdv3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAY1JREFUSEtj
-        GAUMoauYedwWhvC5L2gRyzhapjTtSwe5WHH65xbFqZ9DGBr+M0FNxw143ReuBeL/ICySuPeA4rTP/ynG
-        0z+vhhqPHfB6LVSDWUpVi4FYeepHFag1mIDHY74DrSxWmP7ZAWoNJiDH4vgt3/7bLfmKVQ4ZU9Viz5Vf
-        /999//f/8ae//+vO+YJVDQxTzWLDeV/+n3nx5//jT3/BeOX1X/+Vp2NXC8JUsVhlxuf/G2/9hlsKw81H
-        fmCohWGqWNx78ieGpSD8CIgTt37DUA/CFFuctfM7Vkth+Oa7P/8dl2EmNoosBsVh0d7v/2sO/gBjZAtP
-        PvsNF4/djOlrqiUuEEa2eNPtX1jVwPCoxShgyFgMS0wgnLINezaCYapaHLr+Kxy7r8BfXg+PoJ569icc
-        V+z/jlUNDFPVYutFX+HYdAGdaicQHrCgXn/zNxz3ACsObGpgmKoWk4LxWszrNl+DVhYrTfmkBrUGOwBa
-        SP/mLRhAG/RAi8vFso5mKUz7VE4JJrpBP8wBAwMA7DUcz5gwDQkAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>51</value>
   </metadata>
