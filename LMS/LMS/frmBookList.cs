@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -37,7 +38,16 @@ namespace LMS
 
         private void FrmBookList_Load(object sender, EventArgs e)
         {
-            cboSubject.SelectedIndex = 0;
+            //DataGridView Padding
+            gunaDataGridView1.Columns[3].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView1.Columns[4].DefaultCellStyle.Padding = new Padding(30, 0, 0, 0);
+            gunaDataGridView1.Columns[5].DefaultCellStyle.Padding = new Padding(30, 0, 0, 0);
+            gunaDataGridView1.Columns[8].DefaultCellStyle.Padding = new Padding(30, 0, 0, 0);
+
+            gunaDataGridView1.Columns[3].HeaderCell.Style.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView1.Columns[4].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
+            gunaDataGridView1.Columns[5].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
+            gunaDataGridView1.Columns[8].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
         }
 
         public void LoadRecords()
@@ -46,7 +56,7 @@ namespace LMS
             gunaDataGridView1.Rows.Clear();
             cn.Open();
             //cm = new SqlCommand("SELECT * FROM tblBook WHERE bookTitle LIKE '" + txtSearch.Text + "%'", cn);
-            cm = new SqlCommand("SELECT b.*, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Not Returned' AND bb.bookID = b.bookID) AS BookBorrowed, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Lost' AND bb.bookID = b.bookID) AS BookLost FROM tblBook b WHERE bookTitle LIKE '" + txtSearch.Text + "%'", cn);
+            cm = new SqlCommand("SELECT b.*, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status IN ('Not Returned', 'Overdue') AND bb.bookID = b.bookID) AS BookBorrowed, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Lost' AND bb.bookID = b.bookID) AS BookLost FROM tblBook b WHERE bookTitle LIKE '" + txtSearch.Text + "%'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -56,15 +66,6 @@ namespace LMS
             dr.Close();
             cn.Close();
         }
-
-        public void LoadSubjects()
-        {
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBook WHERE subject LIKE '" + cboSubject.SelectedIndex.ToString() + "%'", cn);
-            cm.ExecuteNonQuery();
-            cn.Close();
-        }
-
 
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -106,15 +107,14 @@ namespace LMS
             }
             else if (colName == "Delete")
             {
-                if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Are you sure you want to remove this record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
                     cm = new SqlCommand("DELETE FROM tblBook WHERE bookID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
-                    popupNotifier.ContentText = "Record has been successfully removed!";
-                    popupNotifier.Popup();
+                    MyMessageBox.ShowMessage("Record has been successfully removed!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadRecords();
                 }
             }
@@ -136,5 +136,5 @@ namespace LMS
             frm.btnUpdate.Enabled = false;
             frm.ShowDialog();
         }
-}
+    }
 }

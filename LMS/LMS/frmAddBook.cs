@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -53,16 +54,16 @@ namespace LMS
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (txtTitle.Text == "")
+            if (txtTitle.Text == "" || txtAuthor.Text == "" || txtISBN.Text == "" || txtPublisher.Text == "" || txtPrice.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtYear.Text == "" || txtCopies.Text == "" || cboGenre.Text == "" || cboMediaType.Text == "" || cboSubject.Text == "")
             {
                 txtTitle.Focus();
-                MessageBox.Show("Please add the book title", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MyMessageBox.ShowMessage("Please don't leave blank spaces!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             }
             else
             {
                 try
                 {
-                    if (MessageBox.Show("Are you sure you want to save this book?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MyMessageBox.ShowMessage("Are you sure you want to add " + txtTitle.Text + "?","", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //open connection to the database
                         cn.Open();

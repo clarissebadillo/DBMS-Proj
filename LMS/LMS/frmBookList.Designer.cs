@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookList));
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +56,6 @@
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
-            this.btnAddBook = new Guna.UI.WinForms.GunaButton();
-            this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,7 +88,8 @@
             this.gunaGroupBox4 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
-            this.panel1.SuspendLayout();
+            this.btnAddBook = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,18 +98,8 @@
             this.gunaGroupBox3.SuspendLayout();
             this.gunaGroupBox4.SuspendLayout();
             this.gunaGroupBox5.SuspendLayout();
+            this.gunaLinePanel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.gunaDataGridView1);
-            this.panel1.Location = new System.Drawing.Point(12, 283);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1006, 200);
-            this.panel1.TabIndex = 0;
             // 
             // gunaDataGridView1
             // 
@@ -171,7 +159,7 @@
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.RowTemplate.Height = 35;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(1006, 200);
+            this.gunaDataGridView1.Size = new System.Drawing.Size(680, 446);
             this.gunaDataGridView1.TabIndex = 0;
             this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -358,9 +346,9 @@
             this.gunaLinePanel1.LineBottom = 2;
             this.gunaLinePanel1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel1.Location = new System.Drawing.Point(12, 1);
+            this.gunaLinePanel1.Location = new System.Drawing.Point(26, 1);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(1006, 46);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(1086, 46);
             this.gunaLinePanel1.TabIndex = 0;
             // 
             // gunaControlBox1
@@ -370,7 +358,7 @@
             this.gunaControlBox1.AnimationSpeed = 0.03F;
             this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
             this.gunaControlBox1.IconSize = 10F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(973, 7);
+            this.gunaControlBox1.Location = new System.Drawing.Point(1053, 7);
             this.gunaControlBox1.Name = "gunaControlBox1";
             this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
@@ -400,94 +388,12 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.Location = new System.Drawing.Point(759, 251);
+            this.txtSearch.Location = new System.Drawing.Point(432, 119);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Size = new System.Drawing.Size(233, 26);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
-            // 
-            // btnAddBook
-            // 
-            this.btnAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddBook.AnimationHoverSpeed = 0.07F;
-            this.btnAddBook.AnimationSpeed = 0.03F;
-            this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnAddBook.BorderColor = System.Drawing.Color.Black;
-            this.btnAddBook.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAddBook.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAddBook.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnAddBook.ForeColor = System.Drawing.Color.White;
-            this.btnAddBook.Image = null;
-            this.btnAddBook.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAddBook.Location = new System.Drawing.Point(12, 494);
-            this.btnAddBook.Name = "btnAddBook";
-            this.btnAddBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnAddBook.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAddBook.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAddBook.OnHoverImage = null;
-            this.btnAddBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAddBook.Radius = 15;
-            this.btnAddBook.Size = new System.Drawing.Size(117, 30);
-            this.btnAddBook.TabIndex = 5;
-            this.btnAddBook.Text = "Add Book";
-            this.btnAddBook.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
-            // 
-            // cboSubject
-            // 
-            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BorderColor = System.Drawing.Color.Silver;
-            this.cboSubject.BorderSize = 0;
-            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
-            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Items.AddRange(new object[] {
-            "All Subjects",
-            "Science",
-            "Math",
-            "Economics",
-            "Programming",
-            "History",
-            "Law",
-            "Psychology",
-            "Education"});
-            this.cboSubject.Location = new System.Drawing.Point(12, 251);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.Size = new System.Drawing.Size(186, 26);
-            this.cboSubject.TabIndex = 39;
-            this.cboSubject.SelectedIndexChanged += new System.EventHandler(this.CboSubject_SelectedIndexChanged);
-            // 
-            // gunaComboBox1
-            // 
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.BorderSize = 0;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Items.AddRange(new object[] {
-            "Book",
-            "DVD",
-            "Magazine",
-            "Digital Ebook"});
-            this.gunaComboBox1.Location = new System.Drawing.Point(204, 251);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaComboBox1.Size = new System.Drawing.Size(186, 26);
-            this.gunaComboBox1.TabIndex = 40;
             // 
             // dataGridViewImageColumn1
             // 
@@ -501,7 +407,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
-            this.pictureBox1.Location = new System.Drawing.Point(992, 251);
+            this.pictureBox1.Location = new System.Drawing.Point(665, 119);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -515,7 +421,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(28, 40);
+            this.label2.Location = new System.Drawing.Point(31, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 17);
             this.label2.TabIndex = 0;
@@ -528,7 +434,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(28, 65);
+            this.label3.Location = new System.Drawing.Point(31, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 17);
             this.label3.TabIndex = 1;
@@ -541,7 +447,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(28, 90);
+            this.label5.Location = new System.Drawing.Point(31, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 17);
             this.label5.TabIndex = 2;
@@ -554,7 +460,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(28, 115);
+            this.label4.Location = new System.Drawing.Point(31, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
             this.label4.TabIndex = 3;
@@ -567,7 +473,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(398, 40);
+            this.label9.Location = new System.Drawing.Point(31, 185);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(68, 17);
             this.label9.TabIndex = 4;
@@ -580,7 +486,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(398, 65);
+            this.label8.Location = new System.Drawing.Point(31, 210);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 17);
             this.label8.TabIndex = 5;
@@ -593,7 +499,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(398, 90);
+            this.label7.Location = new System.Drawing.Point(31, 235);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 6;
@@ -606,7 +512,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(398, 115);
+            this.label6.Location = new System.Drawing.Point(31, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 17);
             this.label6.TabIndex = 7;
@@ -619,7 +525,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(28, 140);
+            this.label11.Location = new System.Drawing.Point(31, 160);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(79, 17);
             this.label11.TabIndex = 8;
@@ -631,7 +537,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblBookTitle.AutoSize = true;
             this.lblBookTitle.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBookTitle.Location = new System.Drawing.Point(118, 40);
+            this.lblBookTitle.Location = new System.Drawing.Point(136, 60);
             this.lblBookTitle.Name = "lblBookTitle";
             this.lblBookTitle.Size = new System.Drawing.Size(0, 17);
             this.lblBookTitle.TabIndex = 10;
@@ -643,7 +549,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(398, 140);
+            this.label10.Location = new System.Drawing.Point(31, 285);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 17);
             this.label10.TabIndex = 9;
@@ -655,7 +561,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblISBN.AutoSize = true;
             this.lblISBN.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISBN.Location = new System.Drawing.Point(118, 65);
+            this.lblISBN.Location = new System.Drawing.Point(136, 85);
             this.lblISBN.Name = "lblISBN";
             this.lblISBN.Size = new System.Drawing.Size(0, 17);
             this.lblISBN.TabIndex = 11;
@@ -666,7 +572,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSubject.AutoSize = true;
             this.lblSubject.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(118, 90);
+            this.lblSubject.Location = new System.Drawing.Point(136, 110);
             this.lblSubject.Name = "lblSubject";
             this.lblSubject.Size = new System.Drawing.Size(0, 17);
             this.lblSubject.TabIndex = 12;
@@ -677,7 +583,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGenre.AutoSize = true;
             this.lblGenre.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenre.Location = new System.Drawing.Point(118, 115);
+            this.lblGenre.Location = new System.Drawing.Point(136, 135);
             this.lblGenre.Name = "lblGenre";
             this.lblGenre.Size = new System.Drawing.Size(0, 17);
             this.lblGenre.TabIndex = 13;
@@ -688,7 +594,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMediaType.AutoSize = true;
             this.lblMediaType.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaType.Location = new System.Drawing.Point(118, 140);
+            this.lblMediaType.Location = new System.Drawing.Point(136, 160);
             this.lblMediaType.Name = "lblMediaType";
             this.lblMediaType.Size = new System.Drawing.Size(0, 17);
             this.lblMediaType.TabIndex = 14;
@@ -699,7 +605,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLanguage.AutoSize = true;
             this.lblLanguage.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLanguage.Location = new System.Drawing.Point(503, 40);
+            this.lblLanguage.Location = new System.Drawing.Point(136, 185);
             this.lblLanguage.Name = "lblLanguage";
             this.lblLanguage.Size = new System.Drawing.Size(0, 17);
             this.lblLanguage.TabIndex = 15;
@@ -710,7 +616,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAuthor.AutoSize = true;
             this.lblAuthor.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAuthor.Location = new System.Drawing.Point(503, 65);
+            this.lblAuthor.Location = new System.Drawing.Point(136, 210);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(0, 17);
             this.lblAuthor.TabIndex = 16;
@@ -721,7 +627,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPublisher.AutoSize = true;
             this.lblPublisher.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPublisher.Location = new System.Drawing.Point(503, 90);
+            this.lblPublisher.Location = new System.Drawing.Point(136, 235);
             this.lblPublisher.Name = "lblPublisher";
             this.lblPublisher.Size = new System.Drawing.Size(0, 17);
             this.lblPublisher.TabIndex = 17;
@@ -732,7 +638,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(503, 115);
+            this.lblPrice.Location = new System.Drawing.Point(136, 260);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(0, 17);
             this.lblPrice.TabIndex = 18;
@@ -743,7 +649,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYear.Location = new System.Drawing.Point(503, 140);
+            this.lblYear.Location = new System.Drawing.Point(136, 285);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(0, 17);
             this.lblYear.TabIndex = 19;
@@ -781,9 +687,9 @@
             this.gunaGroupBox1.LineColor = System.Drawing.Color.Gainsboro;
             this.gunaGroupBox1.LineLeft = 1;
             this.gunaGroupBox1.LineRight = 1;
-            this.gunaGroupBox1.Location = new System.Drawing.Point(12, 60);
+            this.gunaGroupBox1.Location = new System.Drawing.Point(26, 198);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
-            this.gunaGroupBox1.Size = new System.Drawing.Size(801, 167);
+            this.gunaGroupBox1.Size = new System.Drawing.Size(378, 405);
             this.gunaGroupBox1.TabIndex = 41;
             this.gunaGroupBox1.Text = "Book Details";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 5);
@@ -836,7 +742,7 @@
             this.gunaGroupBox2.LineLeft = 1;
             this.gunaGroupBox2.LineRight = 1;
             this.gunaGroupBox2.LineTop = 25;
-            this.gunaGroupBox2.Location = new System.Drawing.Point(827, 60);
+            this.gunaGroupBox2.Location = new System.Drawing.Point(26, 96);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
             this.gunaGroupBox2.Size = new System.Drawing.Size(90, 82);
             this.gunaGroupBox2.TabIndex = 44;
@@ -867,7 +773,7 @@
             this.gunaGroupBox3.LineLeft = 1;
             this.gunaGroupBox3.LineRight = 1;
             this.gunaGroupBox3.LineTop = 25;
-            this.gunaGroupBox3.Location = new System.Drawing.Point(928, 60);
+            this.gunaGroupBox3.Location = new System.Drawing.Point(122, 96);
             this.gunaGroupBox3.Name = "gunaGroupBox3";
             this.gunaGroupBox3.Size = new System.Drawing.Size(90, 82);
             this.gunaGroupBox3.TabIndex = 45;
@@ -887,7 +793,7 @@
             this.gunaGroupBox4.LineLeft = 1;
             this.gunaGroupBox4.LineRight = 1;
             this.gunaGroupBox4.LineTop = 25;
-            this.gunaGroupBox4.Location = new System.Drawing.Point(827, 145);
+            this.gunaGroupBox4.Location = new System.Drawing.Point(218, 96);
             this.gunaGroupBox4.Name = "gunaGroupBox4";
             this.gunaGroupBox4.Size = new System.Drawing.Size(90, 82);
             this.gunaGroupBox4.TabIndex = 45;
@@ -907,7 +813,7 @@
             this.gunaGroupBox5.LineLeft = 1;
             this.gunaGroupBox5.LineRight = 1;
             this.gunaGroupBox5.LineTop = 25;
-            this.gunaGroupBox5.Location = new System.Drawing.Point(928, 145);
+            this.gunaGroupBox5.Location = new System.Drawing.Point(314, 96);
             this.gunaGroupBox5.Name = "gunaGroupBox5";
             this.gunaGroupBox5.Size = new System.Drawing.Size(90, 82);
             this.gunaGroupBox5.TabIndex = 46;
@@ -937,30 +843,73 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
+            // btnAddBook
+            // 
+            this.btnAddBook.AnimationHoverSpeed = 0.07F;
+            this.btnAddBook.AnimationSpeed = 0.03F;
+            this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnAddBook.BorderColor = System.Drawing.Color.Black;
+            this.btnAddBook.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnAddBook.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnAddBook.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAddBook.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnAddBook.CheckedImage")));
+            this.btnAddBook.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnAddBook.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAddBook.FocusedColor = System.Drawing.Color.Empty;
+            this.btnAddBook.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddBook.ForeColor = System.Drawing.Color.White;
+            this.btnAddBook.Image = ((System.Drawing.Image)(resources.GetObject("btnAddBook.Image")));
+            this.btnAddBook.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnAddBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnAddBook.Location = new System.Drawing.Point(971, 110);
+            this.btnAddBook.Name = "btnAddBook";
+            this.btnAddBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.btnAddBook.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnAddBook.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnAddBook.OnHoverImage = null;
+            this.btnAddBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnAddBook.OnPressedColor = System.Drawing.Color.Black;
+            this.btnAddBook.Radius = 7;
+            this.btnAddBook.Size = new System.Drawing.Size(141, 35);
+            this.btnAddBook.TabIndex = 61;
+            this.btnAddBook.Text = "Add New Book";
+            this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
+            // 
+            // gunaLinePanel2
+            // 
+            this.gunaLinePanel2.Controls.Add(this.gunaDataGridView1);
+            this.gunaLinePanel2.LineBottom = 2;
+            this.gunaLinePanel2.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaLinePanel2.LineLeft = 1;
+            this.gunaLinePanel2.LineRight = 1;
+            this.gunaLinePanel2.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel2.Location = new System.Drawing.Point(432, 157);
+            this.gunaLinePanel2.Name = "gunaLinePanel2";
+            this.gunaLinePanel2.Size = new System.Drawing.Size(680, 446);
+            this.gunaLinePanel2.TabIndex = 62;
+            // 
             // frmBookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1030, 533);
+            this.ClientSize = new System.Drawing.Size(1137, 641);
+            this.Controls.Add(this.gunaLinePanel2);
+            this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.gunaGroupBox5);
             this.Controls.Add(this.gunaGroupBox4);
             this.Controls.Add(this.gunaGroupBox3);
             this.Controls.Add(this.gunaGroupBox2);
             this.Controls.Add(this.gunaGroupBox1);
-            this.Controls.Add(this.gunaComboBox1);
-            this.Controls.Add(this.cboSubject);
-            this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.gunaLinePanel1);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBookList";
             this.Text = "frmBook";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBookList_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
@@ -975,21 +924,17 @@
             this.gunaGroupBox4.PerformLayout();
             this.gunaGroupBox5.ResumeLayout(false);
             this.gunaGroupBox5.PerformLayout();
+            this.gunaLinePanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaTextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
-        private Guna.UI.WinForms.GunaButton btnAddBook;
-        public Guna.UI.WinForms.GunaComboBox cboSubject;
-        public Guna.UI.WinForms.GunaComboBox gunaComboBox1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         public Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
         private System.Windows.Forms.Label label2;
@@ -1040,5 +985,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
+        private Guna.UI.WinForms.GunaAdvenceButton btnAddBook;
+        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
     }
 }

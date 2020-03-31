@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -58,16 +59,16 @@ namespace LMS
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (txtTitle.Text == "")
+            if (txtTitle.Text == "" || txtAuthor.Text == "" || txtISBN.Text == "" || txtPublisher.Text == "" || txtPrice.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtYear.Text == "" || txtCopies.Text == "" || cboGenre.Text == "" || cboMediaType.Text == "" || cboSubject.Text == "")
             {
                 txtTitle.Focus();
-                MessageBox.Show("Please add the book title", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MyMessageBox.ShowMessage("Please don't leave blank spaces! Add 'NA' for blank spaces instead.", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
-                    if (MessageBox.Show("Are you sure you want to save this book?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MyMessageBox.ShowMessage("Are you sure you want to add " + txtTitle.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //open connection to the database
                         cn.Open();
@@ -111,16 +112,16 @@ namespace LMS
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtTitle.Text == "")
+            if (txtTitle.Text == "" || txtAuthor.Text == "" || txtISBN.Text == "" || txtPublisher.Text == "" || txtPrice.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtLanguage.Text == "" || txtYear.Text == "" || txtCopies.Text == "" || cboGenre.Text == "" || cboMediaType.Text == "" || cboSubject.Text == "")
             {
                 txtTitle.Focus();
-                MessageBox.Show("Please add the book title", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MyMessageBox.ShowMessage("Please don't leave blank spaces! Add 'NA' for blank spaces instead.", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
-                    if (MessageBox.Show("Are you sure you want to update this book?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MyMessageBox.ShowMessage("Are you sure you want to update " + txtTitle.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cn.Open();
                         cm = new SqlCommand("UPDATE tblBook SET bookISBN = @bookisbn, bookTitle = @booktitle, subject = @subject, genre = @genre, mediaType = @mediatype, language = @language, author = @author, publisher = @publisher, price = @price, pubyear = @year WHERE bookID LIKE '" + lblID.Text + "'", cn);
@@ -137,8 +138,8 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         cn.Close();
 
-                        //popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
-                        //popupNotifier.Popup();
+                        popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
+                        popupNotifier.Popup();
                         Clear();
                         frmlist.LoadRecords();
                         this.Close();
@@ -153,8 +154,31 @@ namespace LMS
 
         private void TxtYear_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-        (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 46)
+            {
+                //accept . character
+            }
+            else if (e.KeyChar == 8)
+            {
+                //accept backspace
+            }
+            else if ((e.KeyChar < 48) || (e.KeyChar > 57)) //ascii code 48-57 between 0-99
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCopies_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using Tulpep.NotificationWindow;
+using MyMessage;
 
 namespace LMS
 {
@@ -110,7 +111,7 @@ namespace LMS
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to issue " + lblBookTitle.Text + "?", "Issue Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Are you sure you want to issue " + lblBookTitle.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
                     cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned')", cn);
@@ -310,7 +311,6 @@ namespace LMS
 
         private void LblBooksOnHand_Click(object sender, EventArgs e)
         {
-            //OnHand();
             frmOnHand frm = new frmOnHand(this);
             frm.Show();
         }

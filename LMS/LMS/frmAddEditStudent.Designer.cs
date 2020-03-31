@@ -375,6 +375,7 @@
             this.txtContact.PasswordChar = '\0';
             this.txtContact.Size = new System.Drawing.Size(234, 25);
             this.txtContact.TabIndex = 32;
+            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContact_KeyPress);
             // 
             // label7
             // 

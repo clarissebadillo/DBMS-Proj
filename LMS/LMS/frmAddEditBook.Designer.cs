@@ -199,9 +199,7 @@
             this.cboGenre.FormattingEnabled = true;
             this.cboGenre.Items.AddRange(new object[] {
             "Fiction",
-            "Non-Fiction",
-            "Romance",
-            "General Fiction"});
+            "Non-Fiction"});
             this.cboGenre.Location = new System.Drawing.Point(284, 36);
             this.cboGenre.Name = "cboGenre";
             this.cboGenre.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
@@ -306,6 +304,7 @@
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.Size = new System.Drawing.Size(234, 25);
             this.txtPrice.TabIndex = 36;
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtPrice_KeyPress);
             // 
             // txtYear
             // 
@@ -508,6 +507,7 @@
             this.txtCopies.PasswordChar = '\0';
             this.txtCopies.Size = new System.Drawing.Size(74, 26);
             this.txtCopies.TabIndex = 6;
+            this.txtCopies.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCopies_KeyPress);
             // 
             // label3
             // 

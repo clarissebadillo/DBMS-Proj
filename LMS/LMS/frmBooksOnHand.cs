@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -108,7 +109,7 @@ namespace LMS
         {
             try
             {
-                if (MessageBox.Show("Receive selected book?", "Receiving Book", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Return selected book?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
                     cm = new SqlCommand("UPDATE tblBorrowedBook SET returnedDate = GETDATE() WHERE borrowID ='" + lblID.Text + "'", cn);

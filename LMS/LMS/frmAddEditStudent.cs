@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using MyMessage;
 
 namespace LMS
 {
@@ -71,15 +72,15 @@ namespace LMS
                 gender = "Female";
             }
 
-            if (txtStudNo.Text == "" || txtFname.Text == "" || txtLname.Text == "")
+            if (txtStudNo.Text == "" || txtFname.Text == "" || txtLname.Text == "" || txtAddress.Text == "" || txtContact.Text == "" || txtEmail.Text == "" || cboCourse.Text == "" || cboYear.Text == "")
             {
-                MessageBox.Show("Please don't leave blank spaces", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyMessageBox.ShowMessage("Please don't leave blank spaces! Add 'NA' for blank spaces instead.", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
             else
             {
                 try
                 {
-                    if (MessageBox.Show("Are you sure you want to save this record?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MyMessageBox.ShowMessage("Are you sure you want to add " + txtFname.Text + " " + txtLname.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         //open connection to the database
                         cn.Open();
@@ -151,7 +152,7 @@ namespace LMS
 
             try
             {
-                if (MessageBox.Show("Are you sure you want to update this record?", "Updating Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Are you sure you want to update this record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     //open connection to the database
                     cn.Open();
@@ -176,11 +177,20 @@ namespace LMS
                     popupNotifier.Popup();
                     Clear();
                     frmlist.LoadRecords();
+                    this.Close();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TxtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
     }

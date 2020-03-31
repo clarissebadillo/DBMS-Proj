@@ -162,7 +162,7 @@
             this.gunaGroupBox1.Name = "gunaGroupBox1";
             this.gunaGroupBox1.Size = new System.Drawing.Size(1006, 177);
             this.gunaGroupBox1.TabIndex = 42;
-            this.gunaGroupBox1.Text = "Book Details";
+            this.gunaGroupBox1.Text = "Student Details";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 5);
             // 
             // stImage
