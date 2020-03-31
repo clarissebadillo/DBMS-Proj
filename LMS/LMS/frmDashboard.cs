@@ -29,6 +29,19 @@ namespace LMS
             CountStudents();
             CountBorrowToday();
             CountReturnToday();
+
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = 15000;//5 seconds
+            timer.Tick += new System.EventHandler(timer_Tick);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            CountBooks();
+            CountStudents();
+            CountBorrowToday();
+            CountReturnToday();
         }
 
         public void CountBooks()

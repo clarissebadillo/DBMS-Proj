@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -31,12 +32,6 @@ namespace LMS
             BooksOnHand();
             BooksOverdue();
         }
-
-        public void DueDateTime()
-        {
-
-        }
-
 
         public void BooksOnHand()
         {

@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucBooksOnHand));
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
+            this.dtDueDate = new System.Windows.Forms.DateTimePicker();
+            this.lblStudentID = new System.Windows.Forms.Label();
+            this.lblBorrowID = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblDueDate = new System.Windows.Forms.Label();
             this.lblDateBorrowed = new System.Windows.Forms.Label();
             this.lblBookName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblBorrowID = new System.Windows.Forms.Label();
             this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
             this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.declareLostBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblStudentID = new System.Windows.Forms.Label();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
-            this.dtDueDate = new System.Windows.Forms.DateTimePicker();
             this.gunaLinePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaContextMenuStrip1.SuspendLayout();
@@ -64,6 +64,47 @@
             this.gunaLinePanel2.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             this.gunaLinePanel2.MouseHover += new System.EventHandler(this.GunaLinePanel2_MouseHover);
             this.gunaLinePanel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GunaLinePanel2_MouseUp);
+            // 
+            // dtDueDate
+            // 
+            this.dtDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDueDate.Location = new System.Drawing.Point(146, 8);
+            this.dtDueDate.Name = "dtDueDate";
+            this.dtDueDate.Size = new System.Drawing.Size(108, 20);
+            this.dtDueDate.TabIndex = 68;
+            this.dtDueDate.Visible = false;
+            // 
+            // lblStudentID
+            // 
+            this.lblStudentID.AutoSize = true;
+            this.lblStudentID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblStudentID.Location = new System.Drawing.Point(46, 11);
+            this.lblStudentID.Name = "lblStudentID";
+            this.lblStudentID.Size = new System.Drawing.Size(0, 13);
+            this.lblStudentID.TabIndex = 9;
+            this.lblStudentID.Visible = false;
+            // 
+            // lblBorrowID
+            // 
+            this.lblBorrowID.AutoSize = true;
+            this.lblBorrowID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBorrowID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblBorrowID.Location = new System.Drawing.Point(46, 11);
+            this.lblBorrowID.Name = "lblBorrowID";
+            this.lblBorrowID.Size = new System.Drawing.Size(0, 13);
+            this.lblBorrowID.TabIndex = 8;
+            this.lblBorrowID.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
             // 
             // lblStatus
             // 
@@ -109,27 +150,6 @@
             this.lblBookName.TabIndex = 4;
             this.lblBookName.Text = "Book Name";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 67;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblBorrowID
-            // 
-            this.lblBorrowID.AutoSize = true;
-            this.lblBorrowID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBorrowID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblBorrowID.Location = new System.Drawing.Point(46, 11);
-            this.lblBorrowID.Name = "lblBorrowID";
-            this.lblBorrowID.Size = new System.Drawing.Size(0, 13);
-            this.lblBorrowID.TabIndex = 8;
-            this.lblBorrowID.Visible = false;
-            // 
             // gunaContextMenuStrip1
             // 
             this.gunaContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -162,17 +182,6 @@
             this.declareLostBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.declareLostBookToolStripMenuItem.Text = "Mark Selected Book as Lost";
             // 
-            // lblStudentID
-            // 
-            this.lblStudentID.AutoSize = true;
-            this.lblStudentID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudentID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblStudentID.Location = new System.Drawing.Point(46, 11);
-            this.lblStudentID.Name = "lblStudentID";
-            this.lblStudentID.Size = new System.Drawing.Size(0, 13);
-            this.lblStudentID.TabIndex = 9;
-            this.lblStudentID.Visible = false;
-            // 
             // popupNotifier
             // 
             this.popupNotifier.BodyColor = System.Drawing.Color.White;
@@ -195,14 +204,6 @@
             this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
-            // 
-            // dtDueDate
-            // 
-            this.dtDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDueDate.Location = new System.Drawing.Point(146, 8);
-            this.dtDueDate.Name = "dtDueDate";
-            this.dtDueDate.Size = new System.Drawing.Size(108, 20);
-            this.dtDueDate.TabIndex = 68;
             // 
             // ucBooksOnHand
             // 
