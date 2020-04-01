@@ -44,6 +44,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.lblBorrowID = new System.Windows.Forms.Label();
             this.btnProcessIssue = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lbl00 = new System.Windows.Forms.Label();
             this.lblPesoSign = new System.Windows.Forms.Label();
@@ -101,48 +102,40 @@
             this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.txtSearchStud = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gunaDateTimePicker2 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaDateTimePicker1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
+            this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
             this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cboStatus = new Guna.UI.WinForms.GunaComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
+            this.dt2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dt1 = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.tabPageAdv3 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
+            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gunaDataGridView2 = new Guna.UI.WinForms.GunaDataGridView();
+            this.dtTo = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtFrom = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.gunaDateTimePicker3 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaDateTimePicker4 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.gunaLinePanel5 = new Guna.UI.WinForms.GunaLinePanel();
-            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
-            this.lblBorrowID = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
@@ -166,13 +159,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).BeginInit();
             this.tabPageAdv2.SuspendLayout();
+            this.gunaLinePanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
-            this.gunaLinePanel4.SuspendLayout();
             this.tabPageAdv3.SuspendLayout();
+            this.gunaLinePanel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView2)).BeginInit();
-            this.gunaLinePanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // popupNotifier
@@ -265,6 +258,15 @@
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = " Issue Book  ";
             this.tabPageAdv1.ThemesEnabled = false;
+            // 
+            // lblBorrowID
+            // 
+            this.lblBorrowID.AutoSize = true;
+            this.lblBorrowID.Location = new System.Drawing.Point(491, 317);
+            this.lblBorrowID.Name = "lblBorrowID";
+            this.lblBorrowID.Size = new System.Drawing.Size(0, 15);
+            this.lblBorrowID.TabIndex = 89;
+            this.lblBorrowID.Visible = false;
             // 
             // btnProcessIssue
             // 
@@ -1113,10 +1115,11 @@
             // 
             // tabPageAdv2
             // 
+            this.tabPageAdv2.Controls.Add(this.gunaLinePanel3);
+            this.tabPageAdv2.Controls.Add(this.cboStatus);
             this.tabPageAdv2.Controls.Add(this.panel2);
-            this.tabPageAdv2.Controls.Add(this.gunaDateTimePicker2);
-            this.tabPageAdv2.Controls.Add(this.gunaDateTimePicker1);
-            this.tabPageAdv2.Controls.Add(this.gunaLinePanel4);
+            this.tabPageAdv2.Controls.Add(this.dt2);
+            this.tabPageAdv2.Controls.Add(this.dt1);
             this.tabPageAdv2.Controls.Add(this.label6);
             this.tabPageAdv2.Image = ((System.Drawing.Image)(resources.GetObject("tabPageAdv2.Image")));
             this.tabPageAdv2.ImageSize = new System.Drawing.Size(22, 22);
@@ -1128,15 +1131,80 @@
             this.tabPageAdv2.Text = " Borrow History  ";
             this.tabPageAdv2.ThemesEnabled = false;
             // 
+            // gunaLinePanel3
+            // 
+            this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel3.Controls.Add(this.gunaControlBox2);
+            this.gunaLinePanel3.Controls.Add(this.label7);
+            this.gunaLinePanel3.LineBottom = 2;
+            this.gunaLinePanel3.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaLinePanel3.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel3.Location = new System.Drawing.Point(18, 13);
+            this.gunaLinePanel3.Name = "gunaLinePanel3";
+            this.gunaLinePanel3.Size = new System.Drawing.Size(1071, 46);
+            this.gunaLinePanel3.TabIndex = 80;
+            // 
+            // gunaControlBox2
+            // 
+            this.gunaControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox2.AnimationSpeed = 0.03F;
+            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.IconSize = 10F;
+            this.gunaControlBox2.Location = new System.Drawing.Point(1038, 8);
+            this.gunaControlBox2.Name = "gunaControlBox2";
+            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
+            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.Size = new System.Drawing.Size(30, 29);
+            this.gunaControlBox2.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(215, 37);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Borrow History";
+            // 
+            // cboStatus
+            // 
+            this.cboStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cboStatus.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboStatus.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStatus.FocusedColor = System.Drawing.Color.Empty;
+            this.cboStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboStatus.ForeColor = System.Drawing.Color.Black;
+            this.cboStatus.FormattingEnabled = true;
+            this.cboStatus.Items.AddRange(new object[] {
+            "All Records",
+            "Overdue",
+            "Returned",
+            "Not Returned",
+            "Lost"});
+            this.cboStatus.Location = new System.Drawing.Point(838, 100);
+            this.cboStatus.Name = "cboStatus";
+            this.cboStatus.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.cboStatus.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cboStatus.Size = new System.Drawing.Size(258, 26);
+            this.cboStatus.TabIndex = 79;
+            this.cboStatus.TextChanged += new System.EventHandler(this.CboStatus_TextChanged);
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.gunaDataGridView1);
-            this.panel2.Location = new System.Drawing.Point(18, 123);
+            this.panel2.Location = new System.Drawing.Point(18, 138);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1078, 443);
+            this.panel2.Size = new System.Drawing.Size(1078, 426);
             this.panel2.TabIndex = 78;
             // 
             // gunaDataGridView1
@@ -1147,7 +1215,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gunaDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gunaDataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.gunaDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.gunaDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1155,17 +1223,20 @@
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gunaDataGridView1.ColumnHeadersHeight = 30;
+            this.gunaDataGridView1.ColumnHeadersHeight = 35;
             this.gunaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column7,
             this.Column3,
             this.Column5,
+            this.Column10,
+            this.Column11,
             this.Column4});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -1184,7 +1255,7 @@
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.RowTemplate.Height = 30;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(1078, 443);
+            this.gunaDataGridView1.Size = new System.Drawing.Size(1078, 426);
             this.gunaDataGridView1.TabIndex = 0;
             this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1192,14 +1263,14 @@
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.gunaDataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gunaDataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 30;
+            this.gunaDataGridView1.ThemeStyle.HeaderStyle.Height = 35;
             this.gunaDataGridView1.ThemeStyle.ReadOnly = true;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -1208,6 +1279,329 @@
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 30;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // dt2
+            // 
+            this.dt2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dt2.BackColor = System.Drawing.Color.Gainsboro;
+            this.dt2.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dt2.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dt2.BorderSize = 1;
+            this.dt2.CustomFormat = "MM/dd/yyyy";
+            this.dt2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dt2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dt2.ForeColor = System.Drawing.Color.Black;
+            this.dt2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt2.Location = new System.Drawing.Point(212, 96);
+            this.dt2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dt2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dt2.Name = "dt2";
+            this.dt2.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dt2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt2.OnHoverForeColor = System.Drawing.Color.Black;
+            this.dt2.OnPressedColor = System.Drawing.Color.Black;
+            this.dt2.Size = new System.Drawing.Size(188, 30);
+            this.dt2.TabIndex = 77;
+            this.dt2.Text = "03/23/2020";
+            this.dt2.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
+            this.dt2.ValueChanged += new System.EventHandler(this.Dt2_ValueChanged);
+            // 
+            // dt1
+            // 
+            this.dt1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dt1.BackColor = System.Drawing.Color.Gainsboro;
+            this.dt1.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dt1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dt1.BorderSize = 1;
+            this.dt1.CustomFormat = "MM/dd/yyyy";
+            this.dt1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dt1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dt1.ForeColor = System.Drawing.Color.Black;
+            this.dt1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt1.Location = new System.Drawing.Point(18, 96);
+            this.dt1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dt1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dt1.Name = "dt1";
+            this.dt1.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dt1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt1.OnHoverForeColor = System.Drawing.Color.Black;
+            this.dt1.OnPressedColor = System.Drawing.Color.Black;
+            this.dt1.Size = new System.Drawing.Size(188, 30);
+            this.dt1.TabIndex = 76;
+            this.dt1.Text = "03/23/2020";
+            this.dt1.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
+            this.dt1.ValueChanged += new System.EventHandler(this.Dt1_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 16);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Filter By Date (From - To)";
+            // 
+            // tabPageAdv3
+            // 
+            this.tabPageAdv3.Controls.Add(this.gunaLinePanel4);
+            this.tabPageAdv3.Controls.Add(this.panel3);
+            this.tabPageAdv3.Controls.Add(this.dtTo);
+            this.tabPageAdv3.Controls.Add(this.dtFrom);
+            this.tabPageAdv3.Controls.Add(this.label9);
+            this.tabPageAdv3.Image = ((System.Drawing.Image)(resources.GetObject("tabPageAdv3.Image")));
+            this.tabPageAdv3.ImageSize = new System.Drawing.Size(22, 22);
+            this.tabPageAdv3.Location = new System.Drawing.Point(2, 34);
+            this.tabPageAdv3.Name = "tabPageAdv3";
+            this.tabPageAdv3.ShowCloseButton = true;
+            this.tabPageAdv3.Size = new System.Drawing.Size(1109, 581);
+            this.tabPageAdv3.TabIndex = 3;
+            this.tabPageAdv3.Text = " Return History  ";
+            this.tabPageAdv3.ThemesEnabled = true;
+            // 
+            // gunaLinePanel4
+            // 
+            this.gunaLinePanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel4.Controls.Add(this.gunaControlBox3);
+            this.gunaLinePanel4.Controls.Add(this.label8);
+            this.gunaLinePanel4.LineBottom = 2;
+            this.gunaLinePanel4.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaLinePanel4.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel4.Location = new System.Drawing.Point(18, 13);
+            this.gunaLinePanel4.Name = "gunaLinePanel4";
+            this.gunaLinePanel4.Size = new System.Drawing.Size(1071, 46);
+            this.gunaLinePanel4.TabIndex = 85;
+            // 
+            // gunaControlBox3
+            // 
+            this.gunaControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox3.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox3.AnimationSpeed = 0.03F;
+            this.gunaControlBox3.IconColor = System.Drawing.Color.Black;
+            this.gunaControlBox3.IconSize = 10F;
+            this.gunaControlBox3.Location = new System.Drawing.Point(1038, 8);
+            this.gunaControlBox3.Name = "gunaControlBox3";
+            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox3.OnHoverIconColor = System.Drawing.Color.White;
+            this.gunaControlBox3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox3.Size = new System.Drawing.Size(30, 29);
+            this.gunaControlBox3.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(206, 37);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Return History";
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.gunaDataGridView2);
+            this.panel3.Location = new System.Drawing.Point(18, 138);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1078, 426);
+            this.panel3.TabIndex = 84;
+            // 
+            // gunaDataGridView2
+            // 
+            this.gunaDataGridView2.AllowUserToAddRows = false;
+            this.gunaDataGridView2.AllowUserToDeleteRows = false;
+            this.gunaDataGridView2.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.gunaDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gunaDataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.gunaDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gunaDataGridView2.ColumnHeadersHeight = 35;
+            this.gunaDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn8});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            this.gunaDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaDataGridView2.EnableHeadersVisualStyles = false;
+            this.gunaDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.gunaDataGridView2.Name = "gunaDataGridView2";
+            this.gunaDataGridView2.ReadOnly = true;
+            this.gunaDataGridView2.RowHeadersVisible = false;
+            this.gunaDataGridView2.RowTemplate.Height = 30;
+            this.gunaDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gunaDataGridView2.Size = new System.Drawing.Size(1078, 426);
+            this.gunaDataGridView2.TabIndex = 0;
+            this.gunaDataGridView2.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.gunaDataGridView2.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView2.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.gunaDataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.gunaDataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.gunaDataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.gunaDataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.gunaDataGridView2.ThemeStyle.HeaderStyle.Height = 35;
+            this.gunaDataGridView2.ThemeStyle.ReadOnly = true;
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.Height = 30;
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaDataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // dtTo
+            // 
+            this.dtTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtTo.BackColor = System.Drawing.Color.Gainsboro;
+            this.dtTo.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dtTo.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dtTo.BorderSize = 1;
+            this.dtTo.CustomFormat = "MM/dd/yyyy";
+            this.dtTo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtTo.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtTo.ForeColor = System.Drawing.Color.Black;
+            this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtTo.Location = new System.Drawing.Point(212, 96);
+            this.dtTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtTo.Name = "dtTo";
+            this.dtTo.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dtTo.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtTo.OnHoverForeColor = System.Drawing.Color.Black;
+            this.dtTo.OnPressedColor = System.Drawing.Color.Black;
+            this.dtTo.Size = new System.Drawing.Size(188, 30);
+            this.dtTo.TabIndex = 83;
+            this.dtTo.Text = "03/23/2020";
+            this.dtTo.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
+            this.dtTo.ValueChanged += new System.EventHandler(this.DtTo_ValueChanged);
+            // 
+            // dtFrom
+            // 
+            this.dtFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtFrom.BackColor = System.Drawing.Color.Gainsboro;
+            this.dtFrom.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dtFrom.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dtFrom.BorderSize = 1;
+            this.dtFrom.CustomFormat = "MM/dd/yyyy";
+            this.dtFrom.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtFrom.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtFrom.ForeColor = System.Drawing.Color.Black;
+            this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtFrom.Location = new System.Drawing.Point(18, 96);
+            this.dtFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtFrom.Name = "dtFrom";
+            this.dtFrom.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dtFrom.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtFrom.OnHoverForeColor = System.Drawing.Color.Black;
+            this.dtFrom.OnPressedColor = System.Drawing.Color.Black;
+            this.dtFrom.Size = new System.Drawing.Size(188, 30);
+            this.dtFrom.TabIndex = 82;
+            this.dtFrom.Text = "03/23/2020";
+            this.dtFrom.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
+            this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(157, 16);
+            this.label9.TabIndex = 81;
+            this.label9.Text = "Filter By Date (From - To)";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "#";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 37;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 42;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Book Title";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Student Number";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date Returned";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 64;
             // 
             // Column1
             // 
@@ -1228,11 +1622,10 @@
             // 
             // Column7
             // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column7.HeaderText = "Book Title";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Width = 84;
             // 
             // Column3
             // 
@@ -1249,6 +1642,22 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column10.HeaderText = "Date Borrowed";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 112;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column11.HeaderText = "Due Date";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 82;
+            // 
             // Column4
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1256,456 +1665,6 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             this.Column4.Width = 64;
-            // 
-            // gunaDateTimePicker2
-            // 
-            this.gunaDateTimePicker2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaDateTimePicker2.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker2.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker2.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker2.BorderSize = 1;
-            this.gunaDateTimePicker2.CustomFormat = "MM/dd/yyyy";
-            this.gunaDateTimePicker2.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker2.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.gunaDateTimePicker2.Location = new System.Drawing.Point(518, 83);
-            this.gunaDateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker2.Name = "gunaDateTimePicker2";
-            this.gunaDateTimePicker2.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker2.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker2.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker2.Size = new System.Drawing.Size(188, 30);
-            this.gunaDateTimePicker2.TabIndex = 77;
-            this.gunaDateTimePicker2.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            // 
-            // gunaDateTimePicker1
-            // 
-            this.gunaDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaDateTimePicker1.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker1.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker1.BorderSize = 1;
-            this.gunaDateTimePicker1.CustomFormat = "MM/dd/yyyy";
-            this.gunaDateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.gunaDateTimePicker1.Location = new System.Drawing.Point(324, 83);
-            this.gunaDateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker1.Name = "gunaDateTimePicker1";
-            this.gunaDateTimePicker1.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker1.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker1.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker1.Size = new System.Drawing.Size(188, 30);
-            this.gunaDateTimePicker1.TabIndex = 76;
-            this.gunaDateTimePicker1.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            // 
-            // gunaLinePanel4
-            // 
-            this.gunaLinePanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLinePanel4.Controls.Add(this.gunaControlBox2);
-            this.gunaLinePanel4.Controls.Add(this.label7);
-            this.gunaLinePanel4.LineBottom = 2;
-            this.gunaLinePanel4.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLinePanel4.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel4.Location = new System.Drawing.Point(18, 11);
-            this.gunaLinePanel4.Name = "gunaLinePanel4";
-            this.gunaLinePanel4.Size = new System.Drawing.Size(1078, 37);
-            this.gunaLinePanel4.TabIndex = 2;
-            // 
-            // gunaControlBox2
-            // 
-            this.gunaControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox2.AnimationSpeed = 0.03F;
-            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.IconSize = 10F;
-            this.gunaControlBox2.Location = new System.Drawing.Point(1045, 3);
-            this.gunaControlBox2.Name = "gunaControlBox2";
-            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.Size = new System.Drawing.Size(30, 29);
-            this.gunaControlBox2.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label7.Location = new System.Drawing.Point(10, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 28);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Borrow History";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Filter By Date";
-            // 
-            // tabPageAdv3
-            // 
-            this.tabPageAdv3.Controls.Add(this.panel3);
-            this.tabPageAdv3.Controls.Add(this.gunaDateTimePicker3);
-            this.tabPageAdv3.Controls.Add(this.gunaDateTimePicker4);
-            this.tabPageAdv3.Controls.Add(this.gunaLinePanel5);
-            this.tabPageAdv3.Controls.Add(this.label9);
-            this.tabPageAdv3.Image = ((System.Drawing.Image)(resources.GetObject("tabPageAdv3.Image")));
-            this.tabPageAdv3.ImageSize = new System.Drawing.Size(22, 22);
-            this.tabPageAdv3.Location = new System.Drawing.Point(2, 34);
-            this.tabPageAdv3.Name = "tabPageAdv3";
-            this.tabPageAdv3.ShowCloseButton = true;
-            this.tabPageAdv3.Size = new System.Drawing.Size(1109, 581);
-            this.tabPageAdv3.TabIndex = 3;
-            this.tabPageAdv3.Text = " Return History  ";
-            this.tabPageAdv3.ThemesEnabled = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.gunaDataGridView2);
-            this.panel3.Location = new System.Drawing.Point(18, 123);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1078, 443);
-            this.panel3.TabIndex = 83;
-            // 
-            // gunaDataGridView2
-            // 
-            this.gunaDataGridView2.AllowUserToAddRows = false;
-            this.gunaDataGridView2.AllowUserToDeleteRows = false;
-            this.gunaDataGridView2.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.gunaDataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gunaDataGridView2.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.gunaDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaDataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gunaDataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.gunaDataGridView2.ColumnHeadersHeight = 30;
-            this.gunaDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.gunaDataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaDataGridView2.EnableHeadersVisualStyles = false;
-            this.gunaDataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.gunaDataGridView2.Name = "gunaDataGridView2";
-            this.gunaDataGridView2.ReadOnly = true;
-            this.gunaDataGridView2.RowHeadersVisible = false;
-            this.gunaDataGridView2.RowTemplate.Height = 30;
-            this.gunaDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView2.Size = new System.Drawing.Size(1078, 443);
-            this.gunaDataGridView2.TabIndex = 0;
-            this.gunaDataGridView2.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.gunaDataGridView2.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaDataGridView2.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunaDataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.gunaDataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.gunaDataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaDataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.gunaDataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.gunaDataGridView2.ThemeStyle.HeaderStyle.Height = 30;
-            this.gunaDataGridView2.ThemeStyle.ReadOnly = true;
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.Height = 30;
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "#";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.HeaderText = "#";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 37;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Title";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 53;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.HeaderText = "ISBN";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 58;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 71;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Genre";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 64;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Language";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Author";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Publisher";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn12.HeaderText = "Year";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            this.dataGridViewTextBoxColumn12.Width = 55;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn13.HeaderText = "Copies";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 68;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn14.HeaderText = "Available";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 79;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn15.HeaderText = "Lost";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 53;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::LMS.Properties.Resources.pencil_16px;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.ReadOnly = true;
-            this.dataGridViewImageColumn1.Width = 5;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewImageColumn2.HeaderText = "";
-            this.dataGridViewImageColumn2.Image = global::LMS.Properties.Resources.trash_16px;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.ReadOnly = true;
-            this.dataGridViewImageColumn2.Width = 5;
-            // 
-            // gunaDateTimePicker3
-            // 
-            this.gunaDateTimePicker3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaDateTimePicker3.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker3.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker3.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker3.BorderSize = 1;
-            this.gunaDateTimePicker3.CustomFormat = "MM/dd/yyyy";
-            this.gunaDateTimePicker3.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker3.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.gunaDateTimePicker3.Location = new System.Drawing.Point(518, 83);
-            this.gunaDateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker3.Name = "gunaDateTimePicker3";
-            this.gunaDateTimePicker3.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker3.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker3.Size = new System.Drawing.Size(188, 30);
-            this.gunaDateTimePicker3.TabIndex = 82;
-            this.gunaDateTimePicker3.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            // 
-            // gunaDateTimePicker4
-            // 
-            this.gunaDateTimePicker4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaDateTimePicker4.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker4.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker4.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker4.BorderSize = 1;
-            this.gunaDateTimePicker4.CustomFormat = "MM/dd/yyyy";
-            this.gunaDateTimePicker4.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.gunaDateTimePicker4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaDateTimePicker4.ForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.gunaDateTimePicker4.Location = new System.Drawing.Point(324, 83);
-            this.gunaDateTimePicker4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.gunaDateTimePicker4.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.gunaDateTimePicker4.Name = "gunaDateTimePicker4";
-            this.gunaDateTimePicker4.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaDateTimePicker4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaDateTimePicker4.OnHoverForeColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaDateTimePicker4.Size = new System.Drawing.Size(188, 30);
-            this.gunaDateTimePicker4.TabIndex = 81;
-            this.gunaDateTimePicker4.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            // 
-            // gunaLinePanel5
-            // 
-            this.gunaLinePanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLinePanel5.Controls.Add(this.gunaControlBox3);
-            this.gunaLinePanel5.Controls.Add(this.label8);
-            this.gunaLinePanel5.LineBottom = 2;
-            this.gunaLinePanel5.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLinePanel5.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel5.Location = new System.Drawing.Point(18, 11);
-            this.gunaLinePanel5.Name = "gunaLinePanel5";
-            this.gunaLinePanel5.Size = new System.Drawing.Size(1078, 37);
-            this.gunaLinePanel5.TabIndex = 80;
-            // 
-            // gunaControlBox3
-            // 
-            this.gunaControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaControlBox3.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox3.AnimationSpeed = 0.03F;
-            this.gunaControlBox3.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox3.IconSize = 10F;
-            this.gunaControlBox3.Location = new System.Drawing.Point(1045, 3);
-            this.gunaControlBox3.Name = "gunaControlBox3";
-            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaControlBox3.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox3.Size = new System.Drawing.Size(30, 29);
-            this.gunaControlBox3.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label8.Location = new System.Drawing.Point(10, 2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 28);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Return History";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 64);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 16);
-            this.label9.TabIndex = 79;
-            this.label9.Text = "Filter By Date";
-            // 
-            // lblBorrowID
-            // 
-            this.lblBorrowID.AutoSize = true;
-            this.lblBorrowID.Location = new System.Drawing.Point(491, 317);
-            this.lblBorrowID.Name = "lblBorrowID";
-            this.lblBorrowID.Size = new System.Drawing.Size(0, 15);
-            this.lblBorrowID.TabIndex = 89;
-            this.lblBorrowID.Visible = false;
             // 
             // frmIssueBook
             // 
@@ -1745,16 +1704,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).EndInit();
             this.tabPageAdv2.ResumeLayout(false);
             this.tabPageAdv2.PerformLayout();
+            this.gunaLinePanel3.ResumeLayout(false);
+            this.gunaLinePanel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
-            this.gunaLinePanel4.ResumeLayout(false);
-            this.gunaLinePanel4.PerformLayout();
             this.tabPageAdv3.ResumeLayout(false);
             this.tabPageAdv3.PerformLayout();
+            this.gunaLinePanel4.ResumeLayout(false);
+            this.gunaLinePanel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView2)).EndInit();
-            this.gunaLinePanel5.ResumeLayout(false);
-            this.gunaLinePanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1793,44 +1752,10 @@
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
         private System.Windows.Forms.Panel panel2;
         public Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker2;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker1;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel4;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
-        private System.Windows.Forms.Label label7;
+        private Guna.UI.WinForms.GunaDateTimePicker dt2;
+        private Guna.UI.WinForms.GunaDateTimePicker dt1;
         private System.Windows.Forms.Label label6;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv3;
-        private System.Windows.Forms.Panel panel3;
-        public Guna.UI.WinForms.GunaDataGridView gunaDataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker3;
-        private Guna.UI.WinForms.GunaDateTimePicker gunaDateTimePicker4;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel5;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox2;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearchBook;
         private System.Windows.Forms.Panel panel4;
@@ -1863,5 +1788,32 @@
         private Guna.UI.WinForms.GunaAdvenceButton btnProcessIssue;
         private System.Windows.Forms.Label lblBookID;
         private System.Windows.Forms.Label lblBorrowID;
+        private Guna.UI.WinForms.GunaComboBox cboStatus;
+        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel3;
+        private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel4;
+        private Guna.UI.WinForms.GunaControlBox gunaControlBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel3;
+        public Guna.UI.WinForms.GunaDataGridView gunaDataGridView2;
+        private Guna.UI.WinForms.GunaDateTimePicker dtTo;
+        private Guna.UI.WinForms.GunaDateTimePicker dtFrom;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }
 }

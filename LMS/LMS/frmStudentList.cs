@@ -81,7 +81,8 @@ namespace LMS
             {
                 gunaDataGridView1.Rows.Clear();
                 cn.Open();
-                cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s WHERE course LIKE '" + cboCourse.Text + "%'", cn);
+                cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s WHERE course LIKE @cboCourse", cn);
+                cm.Parameters.AddWithValue("@cboCourse", cboCourse.Text);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
