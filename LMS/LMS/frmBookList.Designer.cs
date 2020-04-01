@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookList));
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,16 +80,17 @@
             this.lblYear = new System.Windows.Forms.Label();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
+            this.lblAllCopies = new System.Windows.Forms.Label();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
+            this.lblAvailable = new System.Windows.Forms.Label();
             this.gunaGroupBox4 = new Guna.UI.WinForms.GunaGroupBox();
+            this.lblBorrowed = new System.Windows.Forms.Label();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
+            this.lblLost = new System.Windows.Forms.Label();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.btnAddBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
-            this.lblAllCopies = new System.Windows.Forms.Label();
-            this.lblAvailable = new System.Windows.Forms.Label();
-            this.lblBorrowed = new System.Windows.Forms.Label();
-            this.lblLost = new System.Windows.Forms.Label();
+            this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,21 +108,21 @@
             this.gunaDataGridView1.AllowUserToDeleteRows = false;
             this.gunaDataGridView1.AllowUserToResizeColumns = false;
             this.gunaDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gunaDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gunaDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.gunaDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gunaDataGridView1.ColumnHeadersHeight = 38;
             this.gunaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -142,14 +143,14 @@
             this.Column15,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.gunaDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaDataGridView1.EnableHeadersVisualStyles = false;
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -205,8 +206,8 @@
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column3.HeaderText = "Title";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -391,7 +392,7 @@
             this.txtSearch.Location = new System.Drawing.Point(432, 119);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.Size = new System.Drawing.Size(233, 26);
+            this.txtSearch.Size = new System.Drawing.Size(176, 26);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
@@ -407,7 +408,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
-            this.pictureBox1.Location = new System.Drawing.Point(665, 119);
+            this.pictureBox1.Location = new System.Drawing.Point(608, 119);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -714,6 +715,19 @@
             this.gunaGroupBox2.Text = "ALL COPIES";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(12, 8);
             // 
+            // lblAllCopies
+            // 
+            this.lblAllCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAllCopies.BackColor = System.Drawing.Color.Transparent;
+            this.lblAllCopies.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblAllCopies.ForeColor = System.Drawing.Color.DimGray;
+            this.lblAllCopies.Location = new System.Drawing.Point(6, 31);
+            this.lblAllCopies.Name = "lblAllCopies";
+            this.lblAllCopies.Size = new System.Drawing.Size(78, 45);
+            this.lblAllCopies.TabIndex = 92;
+            this.lblAllCopies.Text = "0";
+            this.lblAllCopies.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // gunaGroupBox3
             // 
             this.gunaGroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -733,6 +747,19 @@
             this.gunaGroupBox3.TabIndex = 45;
             this.gunaGroupBox3.Text = "AVAILABLE";
             this.gunaGroupBox3.TextLocation = new System.Drawing.Point(16, 8);
+            // 
+            // lblAvailable
+            // 
+            this.lblAvailable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAvailable.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvailable.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblAvailable.ForeColor = System.Drawing.Color.DimGray;
+            this.lblAvailable.Location = new System.Drawing.Point(6, 31);
+            this.lblAvailable.Name = "lblAvailable";
+            this.lblAvailable.Size = new System.Drawing.Size(78, 45);
+            this.lblAvailable.TabIndex = 93;
+            this.lblAvailable.Text = "0";
+            this.lblAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaGroupBox4
             // 
@@ -754,6 +781,19 @@
             this.gunaGroupBox4.Text = "BORROWED";
             this.gunaGroupBox4.TextLocation = new System.Drawing.Point(12, 8);
             // 
+            // lblBorrowed
+            // 
+            this.lblBorrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBorrowed.BackColor = System.Drawing.Color.Transparent;
+            this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblBorrowed.ForeColor = System.Drawing.Color.DimGray;
+            this.lblBorrowed.Location = new System.Drawing.Point(6, 31);
+            this.lblBorrowed.Name = "lblBorrowed";
+            this.lblBorrowed.Size = new System.Drawing.Size(78, 45);
+            this.lblBorrowed.TabIndex = 94;
+            this.lblBorrowed.Text = "0";
+            this.lblBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // gunaGroupBox5
             // 
             this.gunaGroupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -773,6 +813,19 @@
             this.gunaGroupBox5.TabIndex = 46;
             this.gunaGroupBox5.Text = "LOST COPIES";
             this.gunaGroupBox5.TextLocation = new System.Drawing.Point(8, 8);
+            // 
+            // lblLost
+            // 
+            this.lblLost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLost.BackColor = System.Drawing.Color.Transparent;
+            this.lblLost.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblLost.ForeColor = System.Drawing.Color.DimGray;
+            this.lblLost.Location = new System.Drawing.Point(6, 31);
+            this.lblLost.Name = "lblLost";
+            this.lblLost.Size = new System.Drawing.Size(78, 45);
+            this.lblLost.TabIndex = 95;
+            this.lblLost.Text = "0";
+            this.lblLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // popupNotifier
             // 
@@ -843,57 +896,37 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(680, 446);
             this.gunaLinePanel2.TabIndex = 62;
             // 
-            // lblAllCopies
+            // cboSubject
             // 
-            this.lblAllCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAllCopies.BackColor = System.Drawing.Color.Transparent;
-            this.lblAllCopies.Font = new System.Drawing.Font("Segoe UI", 22F);
-            this.lblAllCopies.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAllCopies.Location = new System.Drawing.Point(6, 31);
-            this.lblAllCopies.Name = "lblAllCopies";
-            this.lblAllCopies.Size = new System.Drawing.Size(78, 45);
-            this.lblAllCopies.TabIndex = 92;
-            this.lblAllCopies.Text = "0";
-            this.lblAllCopies.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAvailable
-            // 
-            this.lblAvailable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAvailable.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvailable.Font = new System.Drawing.Font("Segoe UI", 22F);
-            this.lblAvailable.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAvailable.Location = new System.Drawing.Point(6, 31);
-            this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(78, 45);
-            this.lblAvailable.TabIndex = 93;
-            this.lblAvailable.Text = "0";
-            this.lblAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblBorrowed
-            // 
-            this.lblBorrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblBorrowed.BackColor = System.Drawing.Color.Transparent;
-            this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 22F);
-            this.lblBorrowed.ForeColor = System.Drawing.Color.DimGray;
-            this.lblBorrowed.Location = new System.Drawing.Point(6, 31);
-            this.lblBorrowed.Name = "lblBorrowed";
-            this.lblBorrowed.Size = new System.Drawing.Size(78, 45);
-            this.lblBorrowed.TabIndex = 94;
-            this.lblBorrowed.Text = "0";
-            this.lblBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblLost
-            // 
-            this.lblLost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblLost.BackColor = System.Drawing.Color.Transparent;
-            this.lblLost.Font = new System.Drawing.Font("Segoe UI", 22F);
-            this.lblLost.ForeColor = System.Drawing.Color.DimGray;
-            this.lblLost.Location = new System.Drawing.Point(6, 31);
-            this.lblLost.Name = "lblLost";
-            this.lblLost.Size = new System.Drawing.Size(78, 45);
-            this.lblLost.TabIndex = 95;
-            this.lblLost.Text = "0";
-            this.lblLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.cboSubject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboSubject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderSize = 1;
+            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
+            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Items.AddRange(new object[] {
+            "All Subjects",
+            "Math",
+            "English",
+            "Programming",
+            "Economics",
+            "History",
+            "Law",
+            "Science",
+            "Others"});
+            this.cboSubject.Location = new System.Drawing.Point(644, 119);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboSubject.Size = new System.Drawing.Size(146, 26);
+            this.cboSubject.TabIndex = 63;
+            this.cboSubject.TextChanged += new System.EventHandler(this.CboSubject_TextChanged);
             // 
             // frmBookList
             // 
@@ -901,6 +934,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1137, 641);
+            this.Controls.Add(this.cboSubject);
             this.Controls.Add(this.gunaLinePanel2);
             this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.gunaGroupBox5);
@@ -989,5 +1023,6 @@
         private System.Windows.Forms.Label lblAvailable;
         private System.Windows.Forms.Label lblBorrowed;
         private System.Windows.Forms.Label lblLost;
+        public Guna.UI.WinForms.GunaComboBox cboSubject;
     }
 }

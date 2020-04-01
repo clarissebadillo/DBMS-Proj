@@ -76,6 +76,7 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.btnAddStudent = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.cboCourse = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.stImage)).BeginInit();
@@ -345,7 +346,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
-            this.pictureBox1.Location = new System.Drawing.Point(709, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(654, 108);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -366,7 +367,7 @@
             this.txtSearch.Location = new System.Drawing.Point(464, 108);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.Size = new System.Drawing.Size(246, 26);
+            this.txtSearch.Size = new System.Drawing.Size(191, 26);
             this.txtSearch.TabIndex = 43;
             // 
             // panel1
@@ -648,12 +649,40 @@
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.Click += new System.EventHandler(this.BtnAddStudent_Click);
             // 
+            // cboCourse
+            // 
+            this.cboCourse.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.BorderSize = 1;
+            this.cboCourse.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboCourse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCourse.FocusedColor = System.Drawing.Color.Empty;
+            this.cboCourse.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboCourse.FormattingEnabled = true;
+            this.cboCourse.Items.AddRange(new object[] {
+            "All Course",
+            "BSIT",
+            "BEED",
+            "BSED",
+            "BSBA",
+            "BSCS"});
+            this.cboCourse.Location = new System.Drawing.Point(686, 108);
+            this.cboCourse.Name = "cboCourse";
+            this.cboCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboCourse.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboCourse.Size = new System.Drawing.Size(130, 26);
+            this.cboCourse.TabIndex = 63;
+            this.cboCourse.TextChanged += new System.EventHandler(this.CboCourse_TextChanged);
+            // 
             // frmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1137, 641);
+            this.Controls.Add(this.cboCourse);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -664,6 +693,7 @@
             this.Name = "frmStudentList";
             this.Text = "frmStudentList";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmStudentList_Load);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
             this.gunaGroupBox1.ResumeLayout(false);
@@ -721,5 +751,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private Guna.UI.WinForms.GunaAdvenceButton btnAddStudent;
+        public Guna.UI.WinForms.GunaComboBox cboCourse;
     }
 }

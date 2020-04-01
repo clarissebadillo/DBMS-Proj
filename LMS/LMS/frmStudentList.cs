@@ -38,6 +38,10 @@ namespace LMS
             }
         }
 
+        private void FrmStudentList_Load(object sender, EventArgs e)
+        {
+            cboCourse.SelectedItem = "All Course";
+        }
 
         public void LoadRecords()
         {
@@ -54,6 +58,41 @@ namespace LMS
             dr.Close();
             cn.Close();
         }
+
+        //Filter using combobox
+        public void LoadCourse()
+        {
+            int i = 0;
+            if (cboCourse.Text == "All Course")
+            {
+                gunaDataGridView1.Rows.Clear();
+                cn.Open();
+                cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i += 1;
+                    gunaDataGridView1.Rows.Add(i, dr["studentID"].ToString(), dr["studentNum"].ToString(), dr["lastName"].ToString(), dr["firstName"].ToString(), dr["course"].ToString(), dr["year"].ToString(), dr["gender"].ToString(), dr["contact"].ToString(), dr["email"].ToString(), dr["address"].ToString(), dr["image"], dr["BookCount"].ToString());
+                }
+                dr.Close();
+                cn.Close();
+            }
+            else
+            {
+                gunaDataGridView1.Rows.Clear();
+                cn.Open();
+                cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s WHERE course LIKE '" + cboCourse.Text + "%'", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i += 1;
+                    gunaDataGridView1.Rows.Add(i, dr["studentID"].ToString(), dr["studentNum"].ToString(), dr["lastName"].ToString(), dr["firstName"].ToString(), dr["course"].ToString(), dr["year"].ToString(), dr["gender"].ToString(), dr["contact"].ToString(), dr["email"].ToString(), dr["address"].ToString(), dr["image"], dr["BookCount"].ToString());
+                }
+                dr.Close();
+                cn.Close();
+            }
+        }
+
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -128,5 +167,11 @@ namespace LMS
             frm.btnUpdate.Enabled = false;
             frm.Show();
         }
+
+        private void CboCourse_TextChanged(object sender, EventArgs e)
+        {
+            LoadCourse();
+        }
+
     }
 }

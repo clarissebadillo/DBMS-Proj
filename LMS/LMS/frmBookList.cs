@@ -48,6 +48,8 @@ namespace LMS
             gunaDataGridView1.Columns[4].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
             gunaDataGridView1.Columns[5].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
             gunaDataGridView1.Columns[8].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
+
+            cboSubject.SelectedItem = "All Subjects";
         }
 
         public void LoadRecords()
@@ -66,6 +68,41 @@ namespace LMS
             dr.Close();
             cn.Close();
         }
+
+        //Combobox search
+        public void LoadSubjects()
+        {
+            int i = 0;
+            if (cboSubject.Text == "All Subjects")
+            {
+                gunaDataGridView1.Rows.Clear();
+                cn.Open();
+                cm = new SqlCommand("SELECT b.*, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status IN ('Not Returned', 'Overdue') AND bb.bookID = b.bookID) AS BookBorrowed, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Lost' AND bb.bookID = b.bookID) AS BookLost FROM tblBook b", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i += 1;
+                    gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bookTitle"].ToString(), dr["bookISBN"].ToString(), dr["subject"].ToString(), dr["genre"].ToString(), dr["mediaType"].ToString(), dr["language"].ToString(), dr["author"].ToString(), dr["publisher"].ToString(), dr["price"].ToString(), dr["pubYear"].ToString(), dr["allCopies"].ToString(), dr["availableCopies"].ToString(), dr["BookBorrowed"].ToString(), dr["BookLost"].ToString());
+                }
+                dr.Close();
+                cn.Close();
+            }
+            else
+            {
+                gunaDataGridView1.Rows.Clear();
+                cn.Open();
+                cm = new SqlCommand("SELECT b.*, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status IN ('Not Returned', 'Overdue') AND bb.bookID = b.bookID) AS BookBorrowed, (SELECT COUNT(*) FROM tblBorrowedBook bb WHERE bb.status = 'Lost' AND bb.bookID = b.bookID) AS BookLost FROM tblBook b WHERE subject LIKE '" + cboSubject.Text + "%'", cn);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    i += 1;
+                    gunaDataGridView1.Rows.Add(i, dr["bookID"].ToString(), dr["bookTitle"].ToString(), dr["bookISBN"].ToString(), dr["subject"].ToString(), dr["genre"].ToString(), dr["mediaType"].ToString(), dr["language"].ToString(), dr["author"].ToString(), dr["publisher"].ToString(), dr["price"].ToString(), dr["pubYear"].ToString(), dr["allCopies"].ToString(), dr["availableCopies"].ToString(), dr["BookBorrowed"].ToString(), dr["BookLost"].ToString());
+                }
+                dr.Close();
+                cn.Close();
+            }
+        }
+
 
         private void GunaDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -135,6 +172,11 @@ namespace LMS
             frmAddEditBook frm = new frmAddEditBook(this);
             frm.btnUpdate.Enabled = false;
             frm.ShowDialog();
+        }
+
+        private void CboSubject_TextChanged(object sender, EventArgs e)
+        {
+            LoadSubjects();
         }
     }
 }
