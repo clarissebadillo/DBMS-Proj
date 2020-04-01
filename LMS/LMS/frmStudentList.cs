@@ -38,12 +38,6 @@ namespace LMS
             }
         }
 
-        private void BtnAddStudent_Click(object sender, EventArgs e)
-        {
-            frmAddEditStudent frm = new frmAddEditStudent(this);
-            frm.btnUpdate.Enabled = false;
-            frm.Show();
-        }
 
         public void LoadRecords()
         {
@@ -126,6 +120,13 @@ namespace LMS
                     LoadRecords();
                 }
             }
+        }
+
+        private void BtnAddStudent_Click(object sender, EventArgs e)
+        {
+            frmAddEditStudent frm = new frmAddEditStudent(this);
+            frm.btnUpdate.Enabled = false;
+            frm.Show();
         }
     }
 }

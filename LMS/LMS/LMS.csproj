@@ -43,7 +43,8 @@
       <HintPath>..\..\..\..\..\..\Downloads\Compressed\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MyMessage">
+    <Reference Include="MyMessage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Downloads\MyMessage.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Core.WinForms, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -84,12 +85,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddBook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAddBook.Designer.cs">
-      <DependentUpon>frmAddBook.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddEditBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +103,6 @@
     <Compile Include="frmBookList.Designer.cs">
       <DependentUpon>frmBookList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBooksOnHand.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBooksOnHand.Designer.cs">
-      <DependentUpon>frmBooksOnHand.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,12 +114,6 @@
     </Compile>
     <Compile Include="frmIssueBook.Designer.cs">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmListOfBooks.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmListOfBooks.Designer.cs">
-      <DependentUpon>frmListOfBooks.cs</DependentUpon>
     </Compile>
     <Compile Include="frmOnHand.cs">
       <SubType>Form</SubType>
@@ -152,17 +135,8 @@
     <Compile Include="ucBooksOnHand.Designer.cs">
       <DependentUpon>ucBooksOnHand.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewBook.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="viewBook.Designer.cs">
-      <DependentUpon>viewBook.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAddBook.resx">
-      <DependentUpon>frmAddBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddEditBook.resx">
       <DependentUpon>frmAddEditBook.cs</DependentUpon>
@@ -173,17 +147,11 @@
     <EmbeddedResource Include="frmBookList.resx">
       <DependentUpon>frmBookList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBooksOnHand.resx">
-      <DependentUpon>frmBooksOnHand.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueBook.resx">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmListOfBooks.resx">
-      <DependentUpon>frmListOfBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOnHand.resx">
       <DependentUpon>frmOnHand.cs</DependentUpon>
@@ -198,9 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ucBooksOnHand.resx">
       <DependentUpon>ucBooksOnHand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewBook.resx">
-      <DependentUpon>viewBook.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

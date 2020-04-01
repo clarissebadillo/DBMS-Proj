@@ -39,7 +39,6 @@ namespace LMS
 
         private void FrmIssueBook_Load(object sender, EventArgs e)
         {
-            frmBooksOnHand frm = new frmBooksOnHand(this);
             AutoCompleteStudentNo();
             LoadRecords();
             Overdue();
@@ -94,9 +93,18 @@ namespace LMS
         public void CountFine()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT SUM(totalFine) FROM tblFine where studentID =  @studentID", cn);
+            cm = new SqlCommand("SELECT SUM(CAST([totalFine] AS INT)) FROM tblBorrowedBook WHERE studentID =  @studentID", cn);
             cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
-            lblFine.Text = lblPesoSign.Text + cm.ExecuteScalar().ToString() + lbl00.Text;
+            lblFine.Text = lblPesoSign.Text +  cm.ExecuteScalar().ToString() + lbl00.Text;
+            cn.Close();
+        }
+
+        public void LostBook()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Lost' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
+            lblBookLost.Text = cm.ExecuteScalar().ToString();
             cn.Close();
         }
 
@@ -113,14 +121,16 @@ namespace LMS
             {
                 if (MyMessageBox.ShowMessage("Are you sure you want to issue " + lblBookTitle.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    int fine = 0;
                     cn.Open();
-                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned')", cn);
+                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned', @totalFine)", cn);
                     cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
                     cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
                     cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
                     cm.Parameters.AddWithValue("@bookTitle", lblBookTitle.Text);
                     cm.Parameters.AddWithValue("@dateBorrowed", dtIssueDate.Value);
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
+                    cm.Parameters.AddWithValue("@totalFine", fine);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
@@ -145,6 +155,7 @@ namespace LMS
             cn.Close();
             Notif();
         }
+
 
         public void AutoCompleteStudentNo()
         {
@@ -234,33 +245,9 @@ namespace LMS
             BooksOverdue();
             BorrowHistory();
             CountFine();
+            LostBook();
         }
 
-
-        private void BtnProccessIssue_Click(object sender, EventArgs e)
-        {
-            if (txtSearchStud.Text == "")
-            {
-                txtSearchStud.Focus();
-                MessageBox.Show("Please enter the student number", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if (lblBooksOnHand.Text == "5")
-            {
-                MessageBox.Show("Student already reached the maximum number of borrowed book!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if (lblAvailable.Text == "0")
-            {
-                MessageBox.Show("No available copies left", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                BorrowBook();
-                Clear();
-                LoadDetails();
-                BooksOnHand();
-                BorrowHistory();
-            }
-        }
 
         private void TxtSearchBook_TextChanged(object sender, EventArgs e)
         {
@@ -269,50 +256,61 @@ namespace LMS
 
         private void GunaDataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            lblBorrowID.Text = gunaDataGridView3[1, e.RowIndex].Value.ToString();
             lblBookAllCopies.Text = gunaDataGridView3[6, e.RowIndex].Value.ToString();
             lblAvailable.Text = gunaDataGridView3[7, e.RowIndex].Value.ToString();
             lblBookID.Text = gunaDataGridView3[1, e.RowIndex].Value.ToString();
             lblBookTitle.Text = gunaDataGridView3[2, e.RowIndex].Value.ToString();
         }
 
-        public void OnHand()
+
+        public void InsertFine()
         {
-            frmBooksOnHand frm = new frmBooksOnHand(this);
-            frm.gunaDataGridView1.Rows.Clear();
-            int i = 0;
             cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Not Returned' AND studentNum = @studentNum", cn);
-            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i += 1;
-                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
-            }
-            dr.Close();
+            cm = new SqlCommand("INSERT INTO tblFine VALUES (@borrowID, @studentID, @totalFine)", cn);
+            cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+            cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
+            cm.Parameters.AddWithValue("@totalFine", "0");
+            cm.ExecuteNonQuery();
             cn.Close();
-
-            //Overdue
-            cn.Open();
-            cm = new SqlCommand("SELECT * FROM tblBorrowedBook WHERE status = 'Overdue' AND studentNum = @studentNum", cn);
-            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i += 1;
-                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentID"].ToString(), dr["bookID"].ToString(), dr["studentNum"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["returnedDate"].ToString(), dr["status"].ToString());
-            }
-            dr.Close();
-            cn.Close();
-
-            frm.Show();
         }
 
+        private void BtnProcessIssue_Click(object sender, EventArgs e)
+        {
+            frmOnHand frm = new frmOnHand(this);
+            if (txtSearchStud.Text == "")
+            {
+                txtSearchStud.Focus();
+                MyMessageBox.ShowMessage("Please enter the student number", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if (lblBookTitle.Text == "Book Title")
+            {
+                MyMessageBox.ShowMessage("Please choose the book to issue!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if (lblBooksOnHand.Text == "5")
+            {
+                MyMessageBox.ShowMessage("Student already reached the maximum number of borrowed book!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            }
+            else if (lblAvailable.Text == "0")
+            {
+                MyMessageBox.ShowMessage("No available copies left!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                BorrowBook();
+                Clear();
+                LoadDetails();
+                BooksOnHand();
+                BorrowHistory();
+                InsertFine();
+            }
+        }
 
         private void LblBooksOnHand_Click(object sender, EventArgs e)
         {
             frmOnHand frm = new frmOnHand(this);
             frm.Show();
         }
+    
     }
 }

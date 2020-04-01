@@ -31,19 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDashboard));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTotalBooks = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTotalStudent = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblBorrowed = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblReturned = new System.Windows.Forms.Label();
             this.gunaSeparator1 = new Guna.UI.WinForms.GunaSeparator();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
+            this.lblTotalBooks = new System.Windows.Forms.Label();
+            this.lblTotalStudent = new System.Windows.Forms.Label();
+            this.lblBorrowed = new System.Windows.Forms.Label();
+            this.lblReturned = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,88 +70,40 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(81)))), ((int)(((byte)(100)))));
             this.panel1.Controls.Add(this.lblTotalBooks);
-            this.panel1.Location = new System.Drawing.Point(112, 213);
+            this.panel1.Location = new System.Drawing.Point(99, 213);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(57, 50);
+            this.panel1.Size = new System.Drawing.Size(84, 50);
             this.panel1.TabIndex = 6;
-            // 
-            // lblTotalBooks
-            // 
-            this.lblTotalBooks.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalBooks.AutoSize = true;
-            this.lblTotalBooks.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBooks.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBooks.Location = new System.Drawing.Point(9, -2);
-            this.lblTotalBooks.Name = "lblTotalBooks";
-            this.lblTotalBooks.Size = new System.Drawing.Size(39, 48);
-            this.lblTotalBooks.TabIndex = 0;
-            this.lblTotalBooks.Text = "0";
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(124)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.lblTotalStudent);
-            this.panel2.Location = new System.Drawing.Point(271, 213);
+            this.panel2.Location = new System.Drawing.Point(241, 213);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(57, 50);
+            this.panel2.Size = new System.Drawing.Size(115, 50);
             this.panel2.TabIndex = 7;
-            // 
-            // lblTotalStudent
-            // 
-            this.lblTotalStudent.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTotalStudent.AutoSize = true;
-            this.lblTotalStudent.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalStudent.ForeColor = System.Drawing.Color.White;
-            this.lblTotalStudent.Location = new System.Drawing.Point(9, -2);
-            this.lblTotalStudent.Name = "lblTotalStudent";
-            this.lblTotalStudent.Size = new System.Drawing.Size(39, 48);
-            this.lblTotalStudent.TabIndex = 0;
-            this.lblTotalStudent.Text = "0";
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(172)))), ((int)(((byte)(80)))));
             this.panel3.Controls.Add(this.lblBorrowed);
-            this.panel3.Location = new System.Drawing.Point(437, 213);
+            this.panel3.Location = new System.Drawing.Point(410, 213);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(57, 50);
+            this.panel3.Size = new System.Drawing.Size(118, 50);
             this.panel3.TabIndex = 8;
-            // 
-            // lblBorrowed
-            // 
-            this.lblBorrowed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblBorrowed.AutoSize = true;
-            this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBorrowed.ForeColor = System.Drawing.Color.White;
-            this.lblBorrowed.Location = new System.Drawing.Point(9, -2);
-            this.lblBorrowed.Name = "lblBorrowed";
-            this.lblBorrowed.Size = new System.Drawing.Size(39, 48);
-            this.lblBorrowed.TabIndex = 0;
-            this.lblBorrowed.Text = "0";
             // 
             // panel4
             // 
             this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(51)))), ((int)(((byte)(255)))));
             this.panel4.Controls.Add(this.lblReturned);
-            this.panel4.Location = new System.Drawing.Point(599, 213);
+            this.panel4.Location = new System.Drawing.Point(577, 213);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(57, 50);
+            this.panel4.Size = new System.Drawing.Size(107, 50);
             this.panel4.TabIndex = 9;
-            // 
-            // lblReturned
-            // 
-            this.lblReturned.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblReturned.AutoSize = true;
-            this.lblReturned.Font = new System.Drawing.Font("Segoe UI", 27F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturned.ForeColor = System.Drawing.Color.White;
-            this.lblReturned.Location = new System.Drawing.Point(9, -2);
-            this.lblReturned.Name = "lblReturned";
-            this.lblReturned.Size = new System.Drawing.Size(39, 48);
-            this.lblReturned.TabIndex = 0;
-            this.lblReturned.Text = "0";
             // 
             // gunaSeparator1
             // 
@@ -223,6 +175,54 @@
             this.gunaControlBox1.Size = new System.Drawing.Size(30, 29);
             this.gunaControlBox1.TabIndex = 11;
             // 
+            // lblTotalBooks
+            // 
+            this.lblTotalBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalBooks.Font = new System.Drawing.Font("Segoe UI", 27F);
+            this.lblTotalBooks.ForeColor = System.Drawing.Color.White;
+            this.lblTotalBooks.Location = new System.Drawing.Point(3, 0);
+            this.lblTotalBooks.Name = "lblTotalBooks";
+            this.lblTotalBooks.Size = new System.Drawing.Size(78, 45);
+            this.lblTotalBooks.TabIndex = 91;
+            this.lblTotalBooks.Text = "0";
+            this.lblTotalBooks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTotalStudent
+            // 
+            this.lblTotalStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTotalStudent.Font = new System.Drawing.Font("Segoe UI", 27F);
+            this.lblTotalStudent.ForeColor = System.Drawing.Color.White;
+            this.lblTotalStudent.Location = new System.Drawing.Point(20, 0);
+            this.lblTotalStudent.Name = "lblTotalStudent";
+            this.lblTotalStudent.Size = new System.Drawing.Size(78, 45);
+            this.lblTotalStudent.TabIndex = 92;
+            this.lblTotalStudent.Text = "0";
+            this.lblTotalStudent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblBorrowed
+            // 
+            this.lblBorrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 27F);
+            this.lblBorrowed.ForeColor = System.Drawing.Color.White;
+            this.lblBorrowed.Location = new System.Drawing.Point(20, 0);
+            this.lblBorrowed.Name = "lblBorrowed";
+            this.lblBorrowed.Size = new System.Drawing.Size(78, 45);
+            this.lblBorrowed.TabIndex = 93;
+            this.lblBorrowed.Text = "0";
+            this.lblBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblReturned
+            // 
+            this.lblReturned.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblReturned.Font = new System.Drawing.Font("Segoe UI", 27F);
+            this.lblReturned.ForeColor = System.Drawing.Color.White;
+            this.lblReturned.Location = new System.Drawing.Point(15, 0);
+            this.lblReturned.Name = "lblReturned";
+            this.lblReturned.Size = new System.Drawing.Size(78, 45);
+            this.lblReturned.TabIndex = 94;
+            this.lblReturned.Text = "0";
+            this.lblReturned.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,13 +246,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -269,14 +265,14 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTotalBooks;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTotalStudent;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblBorrowed;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblReturned;
         private Guna.UI.WinForms.GunaSeparator gunaSeparator1;
         private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
+        private System.Windows.Forms.Label lblTotalBooks;
+        private System.Windows.Forms.Label lblTotalStudent;
+        private System.Windows.Forms.Label lblBorrowed;
+        private System.Windows.Forms.Label lblReturned;
     }
 }

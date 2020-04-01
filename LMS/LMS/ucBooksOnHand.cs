@@ -40,9 +40,9 @@ namespace LMS
             }
         }
 
-        private void GunaLinePanel2_MouseHover(object sender, EventArgs e)
+        private void GunaLinePanel2_MouseEnter(object sender, EventArgs e)
         {
-             this.BackColor = Color.FromArgb(234, 162, 44);
+            this.BackColor = Color.FromArgb(234, 162, 44);
         }
 
         private void GunaLinePanel2_MouseLeave(object sender, EventArgs e)
@@ -120,12 +120,73 @@ namespace LMS
             }
 
             cn.Open();
-            cm = new SqlCommand("INSERT INTO tblFine VALUES (@borrowID, @studentID, @totalFine)", cn);
-            cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
-            cm.Parameters.AddWithValue("@studentID", lblStudentID.Text);
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = @totalFine WHERE borrowID = @borrowID", cn);
             cm.Parameters.AddWithValue("@totalFine", fine);
+            cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
             cm.ExecuteNonQuery();
             cn.Close();
+
+        }
+
+
+        //PENALTY
+        public void StatusLost()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Lost' WHERE borrowID = @borrowID", cn);
+            cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public void UpdateBookCopies()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBook SET allCopies = allCopies - 1 WHERE bookTitle = @bookTitle", cn);
+            cm.Parameters.AddWithValue("@bookTitle", lblBookName.Text);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public void UpdateAvailableCopies()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = @bookTitle", cn);
+            cm.Parameters.AddWithValue("@bookTitle", lblBookName.Text);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        private void DeclareLostBookToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MyMessageBox.ShowMessage("Declare selected book as lost?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + 500 WHERE borrowID = @borrowID", cn);
+                    cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    StatusLost();
+                    UpdateBookCopies();
+                    UpdateAvailableCopies();
+
+                    frmonhand.flowLayoutPanel1.Controls.Clear();
+                    frmonhand.BooksOnHand();
+                    frmonhand.BooksOverdue();
+                    frmonhand.RefreshAll();
+                    
+
+                    popupNotifier.ContentText = lblBookName.Text + " has been successfuly declared lost!";
+                    popupNotifier.Popup();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

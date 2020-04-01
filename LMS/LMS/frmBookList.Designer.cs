@@ -79,17 +79,17 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
-            this.lblLost = new System.Windows.Forms.Label();
-            this.lblAvailable = new System.Windows.Forms.Label();
-            this.lblBorrowed = new System.Windows.Forms.Label();
             this.gunaGroupBox2 = new Guna.UI.WinForms.GunaGroupBox();
-            this.lblAllCopies = new System.Windows.Forms.Label();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox4 = new Guna.UI.WinForms.GunaGroupBox();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.btnAddBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
+            this.lblAllCopies = new System.Windows.Forms.Label();
+            this.lblAvailable = new System.Windows.Forms.Label();
+            this.lblBorrowed = new System.Windows.Forms.Label();
+            this.lblLost = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -694,41 +694,6 @@
             this.gunaGroupBox1.Text = "Book Details";
             this.gunaGroupBox1.TextLocation = new System.Drawing.Point(10, 5);
             // 
-            // lblLost
-            // 
-            this.lblLost.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblLost.AutoSize = true;
-            this.lblLost.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLost.ForeColor = System.Drawing.Color.DimGray;
-            this.lblLost.Location = new System.Drawing.Point(29, 32);
-            this.lblLost.Name = "lblLost";
-            this.lblLost.Size = new System.Drawing.Size(34, 41);
-            this.lblLost.TabIndex = 3;
-            this.lblLost.Text = "0";
-            // 
-            // lblAvailable
-            // 
-            this.lblAvailable.AutoSize = true;
-            this.lblAvailable.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailable.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAvailable.Location = new System.Drawing.Point(20, 32);
-            this.lblAvailable.Name = "lblAvailable";
-            this.lblAvailable.Size = new System.Drawing.Size(50, 41);
-            this.lblAvailable.TabIndex = 2;
-            this.lblAvailable.Text = "00";
-            // 
-            // lblBorrowed
-            // 
-            this.lblBorrowed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblBorrowed.AutoSize = true;
-            this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBorrowed.ForeColor = System.Drawing.Color.DimGray;
-            this.lblBorrowed.Location = new System.Drawing.Point(29, 33);
-            this.lblBorrowed.Name = "lblBorrowed";
-            this.lblBorrowed.Size = new System.Drawing.Size(34, 41);
-            this.lblBorrowed.TabIndex = 3;
-            this.lblBorrowed.Text = "0";
-            // 
             // gunaGroupBox2
             // 
             this.gunaGroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -748,17 +713,6 @@
             this.gunaGroupBox2.TabIndex = 44;
             this.gunaGroupBox2.Text = "ALL COPIES";
             this.gunaGroupBox2.TextLocation = new System.Drawing.Point(12, 8);
-            // 
-            // lblAllCopies
-            // 
-            this.lblAllCopies.AutoSize = true;
-            this.lblAllCopies.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAllCopies.ForeColor = System.Drawing.Color.DimGray;
-            this.lblAllCopies.Location = new System.Drawing.Point(21, 32);
-            this.lblAllCopies.Name = "lblAllCopies";
-            this.lblAllCopies.Size = new System.Drawing.Size(50, 41);
-            this.lblAllCopies.TabIndex = 1;
-            this.lblAllCopies.Text = "00";
             // 
             // gunaGroupBox3
             // 
@@ -889,6 +843,58 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(680, 446);
             this.gunaLinePanel2.TabIndex = 62;
             // 
+            // lblAllCopies
+            // 
+            this.lblAllCopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAllCopies.BackColor = System.Drawing.Color.Transparent;
+            this.lblAllCopies.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblAllCopies.ForeColor = System.Drawing.Color.DimGray;
+            this.lblAllCopies.Location = new System.Drawing.Point(6, 31);
+            this.lblAllCopies.Name = "lblAllCopies";
+            this.lblAllCopies.Size = new System.Drawing.Size(78, 45);
+            this.lblAllCopies.TabIndex = 92;
+            this.lblAllCopies.Text = "0";
+            this.lblAllCopies.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAvailable
+            // 
+            this.lblAvailable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAvailable.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvailable.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblAvailable.ForeColor = System.Drawing.Color.DimGray;
+            this.lblAvailable.Location = new System.Drawing.Point(6, 31);
+            this.lblAvailable.Name = "lblAvailable";
+            this.lblAvailable.Size = new System.Drawing.Size(78, 45);
+            this.lblAvailable.TabIndex = 93;
+            this.lblAvailable.Text = "0";
+            this.lblAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblBorrowed
+            // 
+            this.lblBorrowed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBorrowed.BackColor = System.Drawing.Color.Transparent;
+            this.lblBorrowed.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblBorrowed.ForeColor = System.Drawing.Color.DimGray;
+            this.lblBorrowed.Location = new System.Drawing.Point(6, 31);
+            this.lblBorrowed.Name = "lblBorrowed";
+            this.lblBorrowed.Size = new System.Drawing.Size(78, 45);
+            this.lblBorrowed.TabIndex = 94;
+            this.lblBorrowed.Text = "0";
+            this.lblBorrowed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblLost
+            // 
+            this.lblLost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblLost.BackColor = System.Drawing.Color.Transparent;
+            this.lblLost.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblLost.ForeColor = System.Drawing.Color.DimGray;
+            this.lblLost.Location = new System.Drawing.Point(6, 31);
+            this.lblLost.Name = "lblLost";
+            this.lblLost.Size = new System.Drawing.Size(78, 45);
+            this.lblLost.TabIndex = 95;
+            this.lblLost.Text = "0";
+            this.lblLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmBookList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -917,13 +923,9 @@
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
             this.gunaGroupBox2.ResumeLayout(false);
-            this.gunaGroupBox2.PerformLayout();
             this.gunaGroupBox3.ResumeLayout(false);
-            this.gunaGroupBox3.PerformLayout();
             this.gunaGroupBox4.ResumeLayout(false);
-            this.gunaGroupBox4.PerformLayout();
             this.gunaGroupBox5.ResumeLayout(false);
-            this.gunaGroupBox5.PerformLayout();
             this.gunaLinePanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -958,14 +960,10 @@
         public System.Windows.Forms.Label lblPrice;
         public System.Windows.Forms.Label lblYear;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox1;
-        private System.Windows.Forms.Label lblLost;
-        private System.Windows.Forms.Label lblAvailable;
-        private System.Windows.Forms.Label lblBorrowed;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox2;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox3;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox4;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox5;
-        private System.Windows.Forms.Label lblAllCopies;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -987,5 +985,9 @@
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private Guna.UI.WinForms.GunaAdvenceButton btnAddBook;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
+        private System.Windows.Forms.Label lblAllCopies;
+        private System.Windows.Forms.Label lblAvailable;
+        private System.Windows.Forms.Label lblBorrowed;
+        private System.Windows.Forms.Label lblLost;
     }
 }

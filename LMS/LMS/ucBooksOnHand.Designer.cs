@@ -61,8 +61,8 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(610, 38);
             this.gunaLinePanel2.TabIndex = 5;
             this.gunaLinePanel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GunaLinePanel2_MouseDown);
+            this.gunaLinePanel2.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
             this.gunaLinePanel2.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
-            this.gunaLinePanel2.MouseHover += new System.EventHandler(this.GunaLinePanel2_MouseHover);
             this.gunaLinePanel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.GunaLinePanel2_MouseUp);
             // 
             // dtDueDate
@@ -105,6 +105,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 67;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // lblStatus
             // 
@@ -116,6 +118,8 @@
             this.lblStatus.Size = new System.Drawing.Size(39, 13);
             this.lblStatus.TabIndex = 7;
             this.lblStatus.Text = "Status";
+            this.lblStatus.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
+            this.lblStatus.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // lblDueDate
             // 
@@ -127,6 +131,8 @@
             this.lblDueDate.Size = new System.Drawing.Size(55, 13);
             this.lblDueDate.TabIndex = 6;
             this.lblDueDate.Text = "Due Date";
+            this.lblDueDate.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
+            this.lblDueDate.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // lblDateBorrowed
             // 
@@ -138,6 +144,8 @@
             this.lblDateBorrowed.Size = new System.Drawing.Size(84, 13);
             this.lblDateBorrowed.TabIndex = 5;
             this.lblDateBorrowed.Text = "Date Borrowed";
+            this.lblDateBorrowed.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
+            this.lblDateBorrowed.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // lblBookName
             // 
@@ -149,6 +157,8 @@
             this.lblBookName.Size = new System.Drawing.Size(65, 13);
             this.lblBookName.TabIndex = 4;
             this.lblBookName.Text = "Book Name";
+            this.lblBookName.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
+            this.lblBookName.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // gunaContextMenuStrip1
             // 
@@ -165,7 +175,7 @@
             this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
-            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(218, 48);
+            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(218, 70);
             // 
             // returnBookToolStripMenuItem
             // 
@@ -181,6 +191,7 @@
             this.declareLostBookToolStripMenuItem.Name = "declareLostBookToolStripMenuItem";
             this.declareLostBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
             this.declareLostBookToolStripMenuItem.Text = "Mark Selected Book as Lost";
+            this.declareLostBookToolStripMenuItem.Click += new System.EventHandler(this.DeclareLostBookToolStripMenuItem_Click);
             // 
             // popupNotifier
             // 

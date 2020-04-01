@@ -33,6 +33,8 @@ namespace LMS
             BooksOverdue();
         }
 
+        
+
         public void BooksOnHand()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -89,6 +91,7 @@ namespace LMS
             frmissue.LoadRecords();
             frmissue.CountFine();
             frmissue.Overdue();
+            frmissue.LostBook();
         }
     }
 }
