@@ -8,7 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 using System.IO;
+using ZXing.Common;
+using ZXing;
+using ZXing.QrCode;
 
 namespace LMS
 {
@@ -19,6 +23,7 @@ namespace LMS
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
 
+        QrCodeEncodingOptions options = new QrCodeEncodingOptions();
 
         public frmStudentList()
         {
@@ -41,6 +46,18 @@ namespace LMS
         private void FrmStudentList_Load(object sender, EventArgs e)
         {
             cboCourse.SelectedItem = "All Course";
+
+            options = new QrCodeEncodingOptions
+            {
+                DisableECI = true,
+                CharacterSet = "UTF-8",
+                Width = 100,
+                Height = 100,
+            };
+            var writer = new BarcodeWriter();
+            writer.Format = BarcodeFormat.QR_CODE;
+            writer.Options = options;
+
         }
 
         public void LoadRecords()
@@ -169,10 +186,55 @@ namespace LMS
             frm.Show();
         }
 
+        private void BtnGenerateID_Click(object sender, EventArgs e)
+        {
+            if (lblStudNo.Text == "Student Number")
+            {
+                MyMessageBox.ShowMessage("No student selected!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                frmLibraryCard frm = new frmLibraryCard();
+                cn.Open();
+                cm = new SqlCommand("SELECT (firstName + ' ' + LastName) AS Name, course, studentNum, image, contact FROM tblStudent WHERE studentNum = @studentNum", cn);
+                cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
+                dr = cm.ExecuteReader();
+                while (dr.Read())
+                {
+                    frm.lblStudentName.Text = dr["Name"].ToString();
+                    frm.lblCourse.Text = dr["course"].ToString();
+                    frm.lblStudentNum.Text = dr["studentNum"].ToString();
+                    frm.lblContactNo.Text = dr["contact"].ToString();
+                    //Load Image
+                    byte[] imgbytes = (byte[])dr["image"];
+                    MemoryStream mstream = new MemoryStream(imgbytes);
+                    frm.studentImage.Image = Image.FromStream(mstream);
+
+                    //
+                    if (String.IsNullOrWhiteSpace(lblStudNo.Text) || String.IsNullOrEmpty(lblStudNo.Text))
+                    {
+                        frm.QR.Image = null;
+                        MessageBox.Show("Text not found", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        var qr = new ZXing.BarcodeWriter();
+                        qr.Options = options;
+                        qr.Format = ZXing.BarcodeFormat.QR_CODE;
+                        var result = new Bitmap(qr.Write(lblStudNo.Text.Trim()));
+                        frm.QR.Image = result;
+                        lblStudNo.Text = "";
+                    }
+                }
+                dr.Close();
+                cn.Close();
+                frm.Show();
+            }
+        }
+
         private void CboCourse_TextChanged(object sender, EventArgs e)
         {
             LoadCourse();
         }
-
     }
 }

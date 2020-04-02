@@ -76,6 +76,12 @@
     <Reference Include="Tulpep.NotificationWindow, Version=1.1.25.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tulpep.NotificationWindow.1.1.25\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnection.cs" />
@@ -115,11 +121,23 @@
     <Compile Include="frmIssueBook.Designer.cs">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLibraryCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLibraryCard.Designer.cs">
+      <DependentUpon>frmLibraryCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmOnHand.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmOnHand.Designer.cs">
       <DependentUpon>frmOnHand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStudentList.cs">
       <SubType>Form</SubType>
@@ -153,8 +171,14 @@
     <EmbeddedResource Include="frmIssueBook.resx">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLibraryCard.resx">
+      <DependentUpon>frmLibraryCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmOnHand.resx">
       <DependentUpon>frmOnHand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentList.resx">
       <DependentUpon>frmStudentList.cs</DependentUpon>

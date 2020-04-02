@@ -76,6 +76,7 @@
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.btnAddStudent = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnGenerateID = new Guna.UI.WinForms.GunaAdvenceButton();
             this.cboCourse = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
@@ -649,6 +650,39 @@
             this.btnAddStudent.Text = "Add Student";
             this.btnAddStudent.Click += new System.EventHandler(this.BtnAddStudent_Click);
             // 
+            // btnGenerateID
+            // 
+            this.btnGenerateID.AnimationHoverSpeed = 0.07F;
+            this.btnGenerateID.AnimationSpeed = 0.03F;
+            this.btnGenerateID.BackColor = System.Drawing.Color.Transparent;
+            this.btnGenerateID.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnGenerateID.BorderColor = System.Drawing.Color.Black;
+            this.btnGenerateID.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnGenerateID.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnGenerateID.CheckedForeColor = System.Drawing.Color.White;
+            this.btnGenerateID.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnGenerateID.CheckedImage")));
+            this.btnGenerateID.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnGenerateID.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnGenerateID.FocusedColor = System.Drawing.Color.Empty;
+            this.btnGenerateID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnGenerateID.ForeColor = System.Drawing.Color.White;
+            this.btnGenerateID.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateID.Image")));
+            this.btnGenerateID.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnGenerateID.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnGenerateID.Location = new System.Drawing.Point(969, 58);
+            this.btnGenerateID.Name = "btnGenerateID";
+            this.btnGenerateID.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.btnGenerateID.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnGenerateID.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnGenerateID.OnHoverImage = null;
+            this.btnGenerateID.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnGenerateID.OnPressedColor = System.Drawing.Color.Black;
+            this.btnGenerateID.Radius = 7;
+            this.btnGenerateID.Size = new System.Drawing.Size(141, 35);
+            this.btnGenerateID.TabIndex = 64;
+            this.btnGenerateID.Text = "Generate ID";
+            this.btnGenerateID.Click += new System.EventHandler(this.BtnGenerateID_Click);
+            // 
             // cboCourse
             // 
             this.cboCourse.BackColor = System.Drawing.Color.Gainsboro;
@@ -663,17 +697,16 @@
             this.cboCourse.FormattingEnabled = true;
             this.cboCourse.Items.AddRange(new object[] {
             "All Course",
-            "BSIT",
-            "BEED",
-            "BSED",
-            "BSBA",
-            "BSCS"});
+            "BS in Information Technology",
+            "BS in Computer Science",
+            "Bachelor of Secondary Education",
+            "BS in Business Administrator"});
             this.cboCourse.Location = new System.Drawing.Point(686, 108);
             this.cboCourse.Name = "cboCourse";
             this.cboCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.cboCourse.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboCourse.Size = new System.Drawing.Size(130, 26);
-            this.cboCourse.TabIndex = 63;
+            this.cboCourse.Size = new System.Drawing.Size(217, 26);
+            this.cboCourse.TabIndex = 65;
             this.cboCourse.TextChanged += new System.EventHandler(this.CboCourse_TextChanged);
             // 
             // frmStudentList
@@ -683,6 +716,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1137, 641);
             this.Controls.Add(this.cboCourse);
+            this.Controls.Add(this.btnGenerateID);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -751,6 +785,7 @@
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private Guna.UI.WinForms.GunaAdvenceButton btnAddStudent;
+        private Guna.UI.WinForms.GunaAdvenceButton btnGenerateID;
         public Guna.UI.WinForms.GunaComboBox cboCourse;
     }
 }

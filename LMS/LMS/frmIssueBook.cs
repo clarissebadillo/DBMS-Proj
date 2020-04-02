@@ -425,5 +425,11 @@ namespace LMS
         {
             LoadReturnHistory();
         }
+
+        private void LblFine_Click(object sender, EventArgs e)
+        {
+            frmPayment frm = new frmPayment();
+            frm.Show();
+        }
     }
 }
