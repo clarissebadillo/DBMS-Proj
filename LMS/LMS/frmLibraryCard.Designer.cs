@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLibraryCard));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSaveQR = new Guna.UI.WinForms.GunaButton();
+            this.pnlID = new System.Windows.Forms.Panel();
             this.studentImage = new System.Windows.Forms.PictureBox();
             this.QR = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -61,11 +62,10 @@
             this.txtValidity = new Guna.UI.WinForms.GunaTextBox();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnSave = new Guna.UI.WinForms.GunaButton();
+            this.btnPrint = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSaveQR = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnlID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QR)).BeginInit();
             this.panel4.SuspendLayout();
@@ -80,13 +80,13 @@
             // 
             this.gunaLinePanel1.BackColor = System.Drawing.Color.White;
             this.gunaLinePanel1.Controls.Add(this.btnSaveQR);
-            this.gunaLinePanel1.Controls.Add(this.panel2);
+            this.gunaLinePanel1.Controls.Add(this.pnlID);
             this.gunaLinePanel1.Controls.Add(this.label1);
             this.gunaLinePanel1.Controls.Add(this.gunaGroupBox1);
             this.gunaLinePanel1.Controls.Add(this.txtValidity);
             this.gunaLinePanel1.Controls.Add(this.gunaControlBox1);
             this.gunaLinePanel1.Controls.Add(this.lblTitle);
-            this.gunaLinePanel1.Controls.Add(this.btnSave);
+            this.gunaLinePanel1.Controls.Add(this.btnPrint);
             this.gunaLinePanel1.Controls.Add(this.panel1);
             this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaLinePanel1.LineBottom = 1;
@@ -96,27 +96,55 @@
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(990, 569);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(990, 576);
             this.gunaLinePanel1.TabIndex = 2;
             // 
-            // panel2
+            // btnSaveQR
             // 
-            this.panel2.Controls.Add(this.studentImage);
-            this.panel2.Controls.Add(this.QR);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.lblID);
-            this.panel2.Location = new System.Drawing.Point(13, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(628, 490);
-            this.panel2.TabIndex = 55;
+            this.btnSaveQR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaveQR.AnimationHoverSpeed = 0.07F;
+            this.btnSaveQR.AnimationSpeed = 0.03F;
+            this.btnSaveQR.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveQR.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnSaveQR.BorderColor = System.Drawing.Color.Black;
+            this.btnSaveQR.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSaveQR.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSaveQR.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSaveQR.ForeColor = System.Drawing.Color.White;
+            this.btnSaveQR.Image = null;
+            this.btnSaveQR.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSaveQR.Location = new System.Drawing.Point(697, 501);
+            this.btnSaveQR.Name = "btnSaveQR";
+            this.btnSaveQR.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnSaveQR.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSaveQR.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSaveQR.OnHoverImage = null;
+            this.btnSaveQR.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSaveQR.Radius = 7;
+            this.btnSaveQR.Size = new System.Drawing.Size(136, 36);
+            this.btnSaveQR.TabIndex = 56;
+            this.btnSaveQR.Text = "Save QR Code";
+            this.btnSaveQR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSaveQR.Click += new System.EventHandler(this.BtnSaveQR_Click);
+            // 
+            // pnlID
+            // 
+            this.pnlID.Controls.Add(this.studentImage);
+            this.pnlID.Controls.Add(this.QR);
+            this.pnlID.Controls.Add(this.panel4);
+            this.pnlID.Controls.Add(this.panel3);
+            this.pnlID.Controls.Add(this.panel5);
+            this.pnlID.Controls.Add(this.pictureBox3);
+            this.pnlID.Controls.Add(this.pictureBox2);
+            this.pnlID.Controls.Add(this.lblID);
+            this.pnlID.Location = new System.Drawing.Point(13, 67);
+            this.pnlID.Name = "pnlID";
+            this.pnlID.Size = new System.Drawing.Size(628, 489);
+            this.pnlID.TabIndex = 55;
             // 
             // studentImage
             // 
-            this.studentImage.Location = new System.Drawing.Point(99, 118);
+            this.studentImage.Location = new System.Drawing.Point(99, 117);
             this.studentImage.Name = "studentImage";
             this.studentImage.Size = new System.Drawing.Size(125, 125);
             this.studentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -478,32 +506,33 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Library Identification Card";
             // 
-            // btnSave
+            // btnPrint
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.AnimationHoverSpeed = 0.07F;
-            this.btnSave.AnimationSpeed = 0.03F;
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnSave.BorderColor = System.Drawing.Color.Black;
-            this.btnSave.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSave.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = null;
-            this.btnSave.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSave.Location = new System.Drawing.Point(839, 501);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnSave.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSave.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSave.OnHoverImage = null;
-            this.btnSave.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSave.Radius = 7;
-            this.btnSave.Size = new System.Drawing.Size(136, 36);
-            this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "Print";
-            this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.AnimationHoverSpeed = 0.07F;
+            this.btnPrint.AnimationSpeed = 0.03F;
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnPrint.BorderColor = System.Drawing.Color.Black;
+            this.btnPrint.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPrint.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = null;
+            this.btnPrint.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnPrint.Location = new System.Drawing.Point(839, 501);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnPrint.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPrint.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPrint.OnHoverImage = null;
+            this.btnPrint.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPrint.Radius = 7;
+            this.btnPrint.Size = new System.Drawing.Size(136, 36);
+            this.btnPrint.TabIndex = 5;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // panel1
             // 
@@ -514,39 +543,11 @@
             this.panel1.Size = new System.Drawing.Size(990, 7);
             this.panel1.TabIndex = 26;
             // 
-            // btnSaveQR
-            // 
-            this.btnSaveQR.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSaveQR.AnimationHoverSpeed = 0.07F;
-            this.btnSaveQR.AnimationSpeed = 0.03F;
-            this.btnSaveQR.BackColor = System.Drawing.Color.Transparent;
-            this.btnSaveQR.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnSaveQR.BorderColor = System.Drawing.Color.Black;
-            this.btnSaveQR.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSaveQR.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSaveQR.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSaveQR.ForeColor = System.Drawing.Color.White;
-            this.btnSaveQR.Image = null;
-            this.btnSaveQR.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSaveQR.Location = new System.Drawing.Point(697, 501);
-            this.btnSaveQR.Name = "btnSaveQR";
-            this.btnSaveQR.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnSaveQR.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSaveQR.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSaveQR.OnHoverImage = null;
-            this.btnSaveQR.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSaveQR.Radius = 7;
-            this.btnSaveQR.Size = new System.Drawing.Size(136, 36);
-            this.btnSaveQR.TabIndex = 56;
-            this.btnSaveQR.Text = "Save QR Code";
-            this.btnSaveQR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnSaveQR.Click += new System.EventHandler(this.BtnSaveQR_Click);
-            // 
             // frmLibraryCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 569);
+            this.ClientSize = new System.Drawing.Size(990, 576);
             this.Controls.Add(this.gunaLinePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
@@ -556,8 +557,8 @@
             this.Load += new System.EventHandler(this.FrmLibraryCard_Load);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnlID.ResumeLayout(false);
+            this.pnlID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QR)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -587,11 +588,11 @@
         private Guna.UI.WinForms.GunaTextBox txtName;
         private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         public System.Windows.Forms.Label lblTitle;
-        public Guna.UI.WinForms.GunaButton btnSave;
+        public Guna.UI.WinForms.GunaButton btnPrint;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaTextBox txtValidity;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlID;
         public System.Windows.Forms.PictureBox studentImage;
         public System.Windows.Forms.PictureBox QR;
         private System.Windows.Forms.Panel panel4;
