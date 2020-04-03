@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -115,6 +124,12 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGenerateQR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerateQR.Designer.cs">
+      <DependentUpon>frmGenerateQR.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIssueBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +153,12 @@
     </Compile>
     <Compile Include="frmPayment.Designer.cs">
       <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQRScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQRScanner.Designer.cs">
+      <DependentUpon>frmQRScanner.cs</DependentUpon>
     </Compile>
     <Compile Include="frmStudentList.cs">
       <SubType>Form</SubType>
@@ -168,6 +189,9 @@
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerateQR.resx">
+      <DependentUpon>frmGenerateQR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIssueBook.resx">
       <DependentUpon>frmIssueBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPayment.resx">
       <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQRScanner.resx">
+      <DependentUpon>frmQRScanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentList.resx">
       <DependentUpon>frmStudentList.cs</DependentUpon>
@@ -227,6 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\jungkook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QRScanner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

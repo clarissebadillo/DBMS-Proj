@@ -347,7 +347,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
-            this.pictureBox1.Location = new System.Drawing.Point(654, 108);
+            this.pictureBox1.Location = new System.Drawing.Point(638, 112);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(26, 26);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -365,7 +365,7 @@
             this.txtSearch.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtSearch.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch.Location = new System.Drawing.Point(464, 108);
+            this.txtSearch.Location = new System.Drawing.Point(448, 112);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.Size = new System.Drawing.Size(191, 26);
@@ -377,9 +377,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.gunaDataGridView1);
-            this.panel1.Location = new System.Drawing.Point(464, 146);
+            this.panel1.Location = new System.Drawing.Point(448, 148);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(646, 464);
+            this.panel1.Size = new System.Drawing.Size(662, 462);
             this.panel1.TabIndex = 47;
             // 
             // gunaDataGridView1
@@ -438,7 +438,7 @@
             this.gunaDataGridView1.RowHeadersVisible = false;
             this.gunaDataGridView1.RowTemplate.Height = 35;
             this.gunaDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gunaDataGridView1.Size = new System.Drawing.Size(646, 464);
+            this.gunaDataGridView1.Size = new System.Drawing.Size(662, 462);
             this.gunaDataGridView1.TabIndex = 0;
             this.gunaDataGridView1.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.gunaDataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -636,7 +636,7 @@
             this.btnAddStudent.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStudent.Image")));
             this.btnAddStudent.ImageSize = new System.Drawing.Size(22, 22);
             this.btnAddStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnAddStudent.Location = new System.Drawing.Point(969, 99);
+            this.btnAddStudent.Location = new System.Drawing.Point(969, 103);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.btnAddStudent.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -666,10 +666,10 @@
             this.btnGenerateID.FocusedColor = System.Drawing.Color.Empty;
             this.btnGenerateID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnGenerateID.ForeColor = System.Drawing.Color.White;
-            this.btnGenerateID.Image = ((System.Drawing.Image)(resources.GetObject("btnGenerateID.Image")));
+            this.btnGenerateID.Image = null;
             this.btnGenerateID.ImageSize = new System.Drawing.Size(22, 22);
             this.btnGenerateID.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnGenerateID.Location = new System.Drawing.Point(969, 58);
+            this.btnGenerateID.Location = new System.Drawing.Point(969, 68);
             this.btnGenerateID.Name = "btnGenerateID";
             this.btnGenerateID.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.btnGenerateID.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -678,9 +678,10 @@
             this.btnGenerateID.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnGenerateID.OnPressedColor = System.Drawing.Color.Black;
             this.btnGenerateID.Radius = 7;
-            this.btnGenerateID.Size = new System.Drawing.Size(141, 35);
+            this.btnGenerateID.Size = new System.Drawing.Size(141, 29);
             this.btnGenerateID.TabIndex = 64;
-            this.btnGenerateID.Text = "Generate ID";
+            this.btnGenerateID.Text = "Generate QR Code";
+            this.btnGenerateID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnGenerateID.Click += new System.EventHandler(this.BtnGenerateID_Click);
             // 
             // cboCourse
@@ -701,7 +702,7 @@
             "BS in Computer Science",
             "Bachelor of Secondary Education",
             "BS in Business Administrator"});
-            this.cboCourse.Location = new System.Drawing.Point(686, 108);
+            this.cboCourse.Location = new System.Drawing.Point(670, 112);
             this.cboCourse.Name = "cboCourse";
             this.cboCourse.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.cboCourse.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));

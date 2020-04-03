@@ -42,7 +42,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
-            this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.lblBorrowID = new System.Windows.Forms.Label();
             this.btnProcessIssue = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -74,6 +73,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
+            this.btnScan = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaGroupBox4 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblBookLost = new System.Windows.Forms.Label();
             this.gunaGroupBox6 = new Guna.UI.WinForms.GunaGroupBox();
@@ -135,6 +135,7 @@
             this.dtTo = new Guna.UI.WinForms.GunaDateTimePicker();
             this.dtFrom = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
+            this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
@@ -687,6 +688,7 @@
             // 
             this.gunaLinePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel2.Controls.Add(this.btnScan);
             this.gunaLinePanel2.Controls.Add(this.gunaGroupBox4);
             this.gunaLinePanel2.Controls.Add(this.gunaGroupBox6);
             this.gunaLinePanel2.Controls.Add(this.gunaGroupBox3);
@@ -718,6 +720,41 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(1068, 201);
             this.gunaLinePanel2.TabIndex = 65;
             // 
+            // btnScan
+            // 
+            this.btnScan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnScan.AnimationHoverSpeed = 0.07F;
+            this.btnScan.AnimationSpeed = 0.03F;
+            this.btnScan.BackColor = System.Drawing.Color.Transparent;
+            this.btnScan.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnScan.BorderColor = System.Drawing.Color.Black;
+            this.btnScan.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnScan.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnScan.CheckedForeColor = System.Drawing.Color.White;
+            this.btnScan.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnScan.CheckedImage")));
+            this.btnScan.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnScan.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnScan.FocusedColor = System.Drawing.Color.Empty;
+            this.btnScan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnScan.ForeColor = System.Drawing.Color.White;
+            this.btnScan.Image = null;
+            this.btnScan.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnScan.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnScan.Location = new System.Drawing.Point(256, 47);
+            this.btnScan.Name = "btnScan";
+            this.btnScan.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.btnScan.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnScan.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnScan.OnHoverImage = null;
+            this.btnScan.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnScan.OnPressedColor = System.Drawing.Color.Black;
+            this.btnScan.Radius = 5;
+            this.btnScan.Size = new System.Drawing.Size(101, 25);
+            this.btnScan.TabIndex = 89;
+            this.btnScan.Text = "Scan QR Code";
+            this.btnScan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnScan.Click += new System.EventHandler(this.BtnScan_Click);
+            // 
             // gunaGroupBox4
             // 
             this.gunaGroupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -731,7 +768,7 @@
             this.gunaGroupBox4.LineLeft = 1;
             this.gunaGroupBox4.LineRight = 1;
             this.gunaGroupBox4.LineTop = 25;
-            this.gunaGroupBox4.Location = new System.Drawing.Point(920, 24);
+            this.gunaGroupBox4.Location = new System.Drawing.Point(937, 24);
             this.gunaGroupBox4.Name = "gunaGroupBox4";
             this.gunaGroupBox4.Size = new System.Drawing.Size(107, 74);
             this.gunaGroupBox4.TabIndex = 71;
@@ -763,7 +800,7 @@
             this.gunaGroupBox6.LineLeft = 1;
             this.gunaGroupBox6.LineRight = 1;
             this.gunaGroupBox6.LineTop = 25;
-            this.gunaGroupBox6.Location = new System.Drawing.Point(863, 104);
+            this.gunaGroupBox6.Location = new System.Drawing.Point(880, 104);
             this.gunaGroupBox6.Name = "gunaGroupBox6";
             this.gunaGroupBox6.Size = new System.Drawing.Size(164, 74);
             this.gunaGroupBox6.TabIndex = 74;
@@ -795,7 +832,7 @@
             this.gunaGroupBox3.LineLeft = 1;
             this.gunaGroupBox3.LineRight = 1;
             this.gunaGroupBox3.LineTop = 25;
-            this.gunaGroupBox3.Location = new System.Drawing.Point(807, 24);
+            this.gunaGroupBox3.Location = new System.Drawing.Point(824, 24);
             this.gunaGroupBox3.Name = "gunaGroupBox3";
             this.gunaGroupBox3.Size = new System.Drawing.Size(107, 74);
             this.gunaGroupBox3.TabIndex = 71;
@@ -827,7 +864,7 @@
             this.gunaGroupBox7.LineLeft = 1;
             this.gunaGroupBox7.LineRight = 1;
             this.gunaGroupBox7.LineTop = 25;
-            this.gunaGroupBox7.Location = new System.Drawing.Point(693, 104);
+            this.gunaGroupBox7.Location = new System.Drawing.Point(710, 104);
             this.gunaGroupBox7.Name = "gunaGroupBox7";
             this.gunaGroupBox7.Size = new System.Drawing.Size(164, 74);
             this.gunaGroupBox7.TabIndex = 75;
@@ -861,7 +898,7 @@
             this.gunaGroupBox1.LineLeft = 1;
             this.gunaGroupBox1.LineRight = 1;
             this.gunaGroupBox1.LineTop = 25;
-            this.gunaGroupBox1.Location = new System.Drawing.Point(694, 24);
+            this.gunaGroupBox1.Location = new System.Drawing.Point(711, 24);
             this.gunaGroupBox1.Name = "gunaGroupBox1";
             this.gunaGroupBox1.Size = new System.Drawing.Size(107, 74);
             this.gunaGroupBox1.TabIndex = 71;
@@ -895,7 +932,7 @@
             this.gunaGroupBox8.LineLeft = 1;
             this.gunaGroupBox8.LineRight = 1;
             this.gunaGroupBox8.LineTop = 25;
-            this.gunaGroupBox8.Location = new System.Drawing.Point(581, 104);
+            this.gunaGroupBox8.Location = new System.Drawing.Point(598, 104);
             this.gunaGroupBox8.Name = "gunaGroupBox8";
             this.gunaGroupBox8.Size = new System.Drawing.Size(107, 74);
             this.gunaGroupBox8.TabIndex = 72;
@@ -927,7 +964,7 @@
             this.gunaGroupBox2.LineLeft = 1;
             this.gunaGroupBox2.LineRight = 1;
             this.gunaGroupBox2.LineTop = 25;
-            this.gunaGroupBox2.Location = new System.Drawing.Point(581, 24);
+            this.gunaGroupBox2.Location = new System.Drawing.Point(598, 24);
             this.gunaGroupBox2.Name = "gunaGroupBox2";
             this.gunaGroupBox2.Size = new System.Drawing.Size(107, 74);
             this.gunaGroupBox2.TabIndex = 70;
@@ -950,7 +987,7 @@
             // 
             this.lblStudID.AutoSize = true;
             this.lblStudID.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudID.Location = new System.Drawing.Point(179, 24);
+            this.lblStudID.Location = new System.Drawing.Point(172, 32);
             this.lblStudID.Name = "lblStudID";
             this.lblStudID.Size = new System.Drawing.Size(0, 13);
             this.lblStudID.TabIndex = 23;
@@ -960,7 +997,7 @@
             // 
             this.lblYear.AutoSize = true;
             this.lblYear.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblYear.Location = new System.Drawing.Point(118, 159);
+            this.lblYear.Location = new System.Drawing.Point(111, 167);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(29, 15);
             this.lblYear.TabIndex = 21;
@@ -970,7 +1007,7 @@
             // 
             this.lblCourse.AutoSize = true;
             this.lblCourse.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCourse.Location = new System.Drawing.Point(118, 134);
+            this.lblCourse.Location = new System.Drawing.Point(111, 142);
             this.lblCourse.Name = "lblCourse";
             this.lblCourse.Size = new System.Drawing.Size(44, 15);
             this.lblCourse.TabIndex = 20;
@@ -980,7 +1017,7 @@
             // 
             this.lblStudNo.AutoSize = true;
             this.lblStudNo.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStudNo.Location = new System.Drawing.Point(118, 109);
+            this.lblStudNo.Location = new System.Drawing.Point(111, 117);
             this.lblStudNo.Name = "lblStudNo";
             this.lblStudNo.Size = new System.Drawing.Size(95, 15);
             this.lblStudNo.TabIndex = 19;
@@ -990,7 +1027,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(118, 84);
+            this.lblName.Location = new System.Drawing.Point(111, 92);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(81, 15);
             this.lblName.TabIndex = 18;
@@ -1001,7 +1038,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(42, 159);
+            this.label4.Location = new System.Drawing.Point(35, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 15);
             this.label4.TabIndex = 17;
@@ -1012,7 +1049,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(42, 134);
+            this.label5.Location = new System.Drawing.Point(35, 142);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 15);
             this.label5.TabIndex = 16;
@@ -1023,7 +1060,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(42, 109);
+            this.label3.Location = new System.Drawing.Point(35, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 15);
             this.label3.TabIndex = 15;
@@ -1033,7 +1070,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(233, 45);
+            this.pictureBox1.Location = new System.Drawing.Point(226, 53);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(15, 15);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -1045,7 +1082,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(42, 84);
+            this.label2.Location = new System.Drawing.Point(35, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 15);
             this.label2.TabIndex = 14;
@@ -1055,7 +1092,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(42, 24);
+            this.label15.Location = new System.Drawing.Point(35, 32);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(125, 15);
             this.label15.TabIndex = 68;
@@ -1068,7 +1105,7 @@
             this.studImage.BaseColor = System.Drawing.Color.Gainsboro;
             this.studImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.studImage.Image = global::LMS.Properties.Resources.user;
-            this.studImage.Location = new System.Drawing.Point(410, 24);
+            this.studImage.Location = new System.Drawing.Point(427, 24);
             this.studImage.Name = "studImage";
             this.studImage.Size = new System.Drawing.Size(155, 155);
             this.studImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1084,7 +1121,7 @@
             this.txtSearchStud.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtSearchStud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchStud.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSearchStud.Location = new System.Drawing.Point(41, 42);
+            this.txtSearchStud.Location = new System.Drawing.Point(34, 50);
             this.txtSearchStud.Metrocolor = System.Drawing.Color.Gainsboro;
             this.txtSearchStud.Name = "txtSearchStud";
             this.txtSearchStud.Size = new System.Drawing.Size(211, 21);
@@ -1345,7 +1382,6 @@
             this.dt2.OnPressedColor = System.Drawing.Color.Black;
             this.dt2.Size = new System.Drawing.Size(188, 30);
             this.dt2.TabIndex = 77;
-            this.dt2.Text = "03/23/2020";
             this.dt2.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dt2.ValueChanged += new System.EventHandler(this.Dt2_ValueChanged);
             // 
@@ -1372,7 +1408,6 @@
             this.dt1.OnPressedColor = System.Drawing.Color.Black;
             this.dt1.Size = new System.Drawing.Size(188, 30);
             this.dt1.TabIndex = 76;
-            this.dt1.Text = "03/23/2020";
             this.dt1.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dt1.ValueChanged += new System.EventHandler(this.Dt1_ValueChanged);
             // 
@@ -1748,7 +1783,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label15;
         public Guna.UI.WinForms.GunaPictureBox studImage;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearchStud;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
         private System.Windows.Forms.Panel panel2;
         public Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
@@ -1815,5 +1849,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private Guna.UI.WinForms.GunaAdvenceButton btnScan;
+        public Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearchStud;
     }
 }

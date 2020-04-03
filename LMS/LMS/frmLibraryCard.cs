@@ -25,7 +25,7 @@ namespace LMS
         PrintPreviewDialog prntprvw = new PrintPreviewDialog();
         PrintDocument printdoc = new PrintDocument();
 
-        
+
 
         public frmLibraryCard()
         {
@@ -85,18 +85,17 @@ namespace LMS
             }
         }
 
+
         private void BtnPrint_Click(object sender, EventArgs e)
         {
             Print(this.pnlID);
-        //var bitmap = ScrollableControlToBitmap(this.pnlID, true);
         }
-
 
         public void Print(Panel pnl)
         {
             PrinterSettings ps = new PrinterSettings();
-            pnlID = pnl;
-            GetPrintArea(pnl);
+            //pnlID = pnl;
+            //GetPrintArea(pnl);
             prntprvw.Document = printdoc;
             printdoc.PrintPage += new PrintPageEventHandler(printdoc_printpage);
             prntprvw.ShowDialog();
@@ -105,17 +104,9 @@ namespace LMS
 
         public void printdoc_printpage(Object sender, PrintPageEventArgs e)
         {
-            var bitmap = ScrollableControlToBitmap(this.pnlID, true);
+            var bitmap = ScrollableControlToBitmap(this.pnlID, false);
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(MemoryImage, (pagearea.Width / 2) - (this.pnlID.Width / 2), this.pnlID.Location.Y);
-        }
-
-        Bitmap MemoryImage;
-        public void GetPrintArea(Panel pnl)
-        {
-            MemoryImage = new Bitmap(pnl.Width, pnl.Height);
-            Rectangle rect = new Rectangle(0, 0, pnl.Width, pnl.Height);
-            pnl.DrawToBitmap(MemoryImage, new Rectangle(0, 0, pnl.Width, pnl.Height));
+            e.Graphics.DrawImage(bitmap, new Rectangle(0, 0, 625, 473));
         }
 
 
@@ -157,6 +148,7 @@ namespace LMS
             for (int i = parent.Controls.Count - 1; i >= 0; i--)
             {
                 var ctl = parent.Controls[i];
+                if (ctl.Width < 1 || ctl.Height < 1) continue;
                 var clipBounds = (parent == outerContainer)
                                ? ctl.Bounds
                                : Rectangle.Intersect(new Rectangle(Point.Empty, parentBounds.Size), ctl.Bounds);

@@ -188,6 +188,7 @@ namespace LMS
 
         private void BtnGenerateID_Click(object sender, EventArgs e)
         {
+            //frmGenerateQR frm = new frmGenerateQR();
             if (lblStudNo.Text == "Student Number")
             {
                 MyMessageBox.ShowMessage("No student selected!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
@@ -196,7 +197,8 @@ namespace LMS
             {
                 frmLibraryCard frm = new frmLibraryCard();
                 cn.Open();
-                cm = new SqlCommand("SELECT (firstName + ' ' + LastName) AS Name, course, studentNum, image, contact FROM tblStudent WHERE studentNum = @studentNum", cn);
+                cm = new SqlCommand("SELECT (firstName + ' ' + LastName) AS Name, studentNum, contact, course, image FROM tblStudent WHERE studentNum = @studentNum", cn);
+                //cm = new SqlCommand("SELECT (firstName + ' ' + LastName) AS Name, studentNum FROM tblStudent WHERE studentNum = @studentNum", cn);
                 cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
@@ -223,12 +225,12 @@ namespace LMS
                         qr.Format = ZXing.BarcodeFormat.QR_CODE;
                         var result = new Bitmap(qr.Write(lblStudNo.Text.Trim()));
                         frm.QR.Image = result;
-                        lblStudNo.Text = "";
+                        //lblStudNo.Text = "";
                     }
-                }
-                dr.Close();
-                cn.Close();
-                frm.Show();
+                    }
+                    dr.Close();
+                    cn.Close();
+                    frm.Show();
             }
         }
 

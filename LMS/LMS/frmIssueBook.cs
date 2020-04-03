@@ -431,5 +431,11 @@ namespace LMS
             frmPayment frm = new frmPayment();
             frm.Show();
         }
+
+        private void BtnScan_Click(object sender, EventArgs e)
+        {
+            frmQRScanner frm = new frmQRScanner(this);
+            frm.Show();
+        }
     }
 }
