@@ -51,6 +51,7 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnHistory = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,6 +92,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.pnlMenu.Controls.Add(this.btnHistory);
             this.pnlMenu.Controls.Add(this.btnIssueBook);
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton7);
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton3);
@@ -484,6 +486,40 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // btnHistory
+            // 
+            this.btnHistory.AnimationHoverSpeed = 0.07F;
+            this.btnHistory.AnimationSpeed = 0.03F;
+            this.btnHistory.BaseColor = System.Drawing.Color.Transparent;
+            this.btnHistory.BorderColor = System.Drawing.Color.Black;
+            this.btnHistory.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnHistory.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnHistory.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHistory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnHistory.CheckedImage")));
+            this.btnHistory.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.pnlMenuAnimation.SetDecoration(this.btnHistory, Guna.UI.Animation.DecorationType.None);
+            this.btnHistory.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnHistory.FocusedColor = System.Drawing.Color.Empty;
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.Image")));
+            this.btnHistory.ImageOffsetX = 15;
+            this.btnHistory.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnHistory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnHistory.Location = new System.Drawing.Point(0, 548);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnHistory.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnHistory.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnHistory.OnHoverImage = null;
+            this.btnHistory.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnHistory.OnPressedColor = System.Drawing.Color.Black;
+            this.btnHistory.Size = new System.Drawing.Size(231, 51);
+            this.btnHistory.TabIndex = 7;
+            this.btnHistory.Text = "History";
+            this.btnHistory.TextOffsetX = 18;
+            this.btnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,6 +564,7 @@
         private Guna.UI.WinForms.GunaCircleButton btnClose;
         public System.Windows.Forms.Panel panel3;
         private Guna.UI.WinForms.GunaAdvenceButton btnIssueBook;
+        private Guna.UI.WinForms.GunaAdvenceButton btnHistory;
     }
 }
 

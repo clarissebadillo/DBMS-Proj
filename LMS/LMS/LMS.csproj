@@ -130,6 +130,12 @@
     <Compile Include="frmGenerateQR.Designer.cs">
       <DependentUpon>frmGenerateQR.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistory.Designer.cs">
+      <DependentUpon>frmHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIssueBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGenerateQR.resx">
       <DependentUpon>frmGenerateQR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistory.resx">
+      <DependentUpon>frmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueBook.resx">
       <DependentUpon>frmIssueBook.cs</DependentUpon>

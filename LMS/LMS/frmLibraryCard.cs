@@ -63,6 +63,11 @@ namespace LMS
             lblValidity.Text = txtValidity.Text;
         }
 
+        private void TxtStudentName_TextChanged(object sender, EventArgs e)
+        {
+            lblStudentName.Text = txtStudentName.Text;
+        }
+
         private void BtnSaveQR_Click(object sender, EventArgs e)
         {
             if (QR.Image == null)

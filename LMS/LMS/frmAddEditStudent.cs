@@ -82,30 +82,46 @@ namespace LMS
                 {
                     if (MyMessageBox.ShowMessage("Are you sure you want to add " + txtFname.Text + " " + txtLname.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        cm = new SqlCommand("SELECT COUNT(*) FROM tblStudent WHERE studentNum = @studentNum", cn);
+                        cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
+
                         //open connection to the database
                         cn.Open();
-                        //command to be executed on the database
-                        cm = new SqlCommand("INSERT INTO tblStudent VALUES (@studentNum, @lastName, @firstName, @course, @year, @gender, @contact, @email, @address, @image)", cn);
-                        //set parameters value
-                        cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
-                        cm.Parameters.AddWithValue("@lastName", txtLname.Text);
-                        cm.Parameters.AddWithValue("@firstName", txtFname.Text);
-                        cm.Parameters.AddWithValue("@course", cboCourse.Text);
-                        cm.Parameters.AddWithValue("@year", cboYear.Text);
-                        cm.Parameters.AddWithValue("@gender", gender);
-                        cm.Parameters.AddWithValue("@contact", txtContact.Text);
-                        cm.Parameters.AddWithValue("@email", txtEmail.Text);
-                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
-                        cm.Parameters.AddWithValue("@image", img);
-                        //ask db to execute query
-                        cm.ExecuteNonQuery();
-                        //close connection
-                        cn.Close();
 
-                        popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + " has been successfully added!";
-                        popupNotifier.Popup();
-                        Clear();
-                        frmlist.LoadRecords();
+                        int records = (int)cm.ExecuteScalar();
+
+                        if (records == 0)
+                        {
+                            cm.Parameters.Clear();
+                            //command to be executed on the database
+                            cm = new SqlCommand("INSERT INTO tblStudent VALUES (@studentNum, @lastName, @firstName, @course, @year, @gender, @contact, @email, @address, @image)", cn);
+
+                            //set parameters value
+                            cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
+                            cm.Parameters.AddWithValue("@lastName", txtLname.Text);
+                            cm.Parameters.AddWithValue("@firstName", txtFname.Text);
+                            cm.Parameters.AddWithValue("@course", cboCourse.Text);
+                            cm.Parameters.AddWithValue("@year", cboYear.Text);
+                            cm.Parameters.AddWithValue("@gender", gender);
+                            cm.Parameters.AddWithValue("@contact", txtContact.Text);
+                            cm.Parameters.AddWithValue("@email", txtEmail.Text);
+                            cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                            cm.Parameters.AddWithValue("@image", img);
+                            //ask db to execute query
+                            cm.ExecuteNonQuery();
+                            //close connection
+
+                            popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + " has been successfully added!";
+                            popupNotifier.Popup();
+                            Clear();
+                            frmlist.LoadRecords();
+                        }
+                        else
+                        {
+                            MyMessageBox.ShowMessage("Reocrd already exist!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                        }
+                        //Close connection
+                        cn.Close();
                     }
                 }
                 catch (Exception ex)

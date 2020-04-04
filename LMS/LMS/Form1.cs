@@ -169,5 +169,13 @@ namespace LMS
             }
         }
 
+        private void BtnHistory_Click(object sender, EventArgs e)
+        {
+            frmHistory frm = new frmHistory();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

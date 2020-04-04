@@ -34,6 +34,7 @@ namespace LMS
             }
             comboBox1.SelectedIndex = 0;
             captureDevice = new VideoCaptureDevice();
+            btnStopScan.Visible = false;
         }
 
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -47,6 +48,8 @@ namespace LMS
             captureDevice.NewFrame += FinalFrame_NewFrame;
             captureDevice.Start();
             timer1.Start();
+            btnStartScan.Visible = false;
+            btnStopScan.Visible = true;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
@@ -73,6 +76,8 @@ namespace LMS
         {
             captureDevice.Stop();
             QRScanner.Image = Properties.Resources.QRScanner;
+            btnStartScan.Visible = true;
+            btnStopScan.Visible = false;
         }
 
         private void FrmQRScanner_FormClosing(object sender, FormClosingEventArgs e)

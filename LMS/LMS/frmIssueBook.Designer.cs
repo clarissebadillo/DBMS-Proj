@@ -597,7 +597,7 @@
             this.gunaControlBox1.IconSize = 10F;
             this.gunaControlBox1.Location = new System.Drawing.Point(1038, 8);
             this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
             this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox1.Size = new System.Drawing.Size(30, 29);
@@ -1170,7 +1170,7 @@
             this.gunaControlBox2.IconSize = 10F;
             this.gunaControlBox2.Location = new System.Drawing.Point(1038, 8);
             this.gunaControlBox2.Name = "gunaControlBox2";
-            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
             this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox2.Size = new System.Drawing.Size(30, 29);
@@ -1382,6 +1382,7 @@
             this.dt2.OnPressedColor = System.Drawing.Color.Black;
             this.dt2.Size = new System.Drawing.Size(188, 30);
             this.dt2.TabIndex = 77;
+            this.dt2.Text = "03/23/2020";
             this.dt2.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dt2.ValueChanged += new System.EventHandler(this.Dt2_ValueChanged);
             // 
@@ -1408,6 +1409,7 @@
             this.dt1.OnPressedColor = System.Drawing.Color.Black;
             this.dt1.Size = new System.Drawing.Size(188, 30);
             this.dt1.TabIndex = 76;
+            this.dt1.Text = "03/23/2020";
             this.dt1.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dt1.ValueChanged += new System.EventHandler(this.Dt1_ValueChanged);
             // 
@@ -1461,7 +1463,7 @@
             this.gunaControlBox3.IconSize = 10F;
             this.gunaControlBox3.Location = new System.Drawing.Point(1038, 8);
             this.gunaControlBox3.Name = "gunaControlBox3";
-            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox3.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.gunaControlBox3.OnHoverIconColor = System.Drawing.Color.White;
             this.gunaControlBox3.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox3.Size = new System.Drawing.Size(30, 29);
@@ -1639,6 +1641,7 @@
             this.dtTo.OnPressedColor = System.Drawing.Color.Black;
             this.dtTo.Size = new System.Drawing.Size(188, 30);
             this.dtTo.TabIndex = 83;
+            this.dtTo.Text = "03/23/2020";
             this.dtTo.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dtTo.ValueChanged += new System.EventHandler(this.DtTo_ValueChanged);
             // 
@@ -1665,6 +1668,7 @@
             this.dtFrom.OnPressedColor = System.Drawing.Color.Black;
             this.dtFrom.Size = new System.Drawing.Size(188, 30);
             this.dtFrom.TabIndex = 82;
+            this.dtFrom.Text = "03/23/2020";
             this.dtFrom.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
             // 

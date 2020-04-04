@@ -87,7 +87,7 @@
             this.btnStopScan.ForeColor = System.Drawing.Color.White;
             this.btnStopScan.Image = null;
             this.btnStopScan.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnStopScan.Location = new System.Drawing.Point(86, 424);
+            this.btnStopScan.Location = new System.Drawing.Point(86, 376);
             this.btnStopScan.Name = "btnStopScan";
             this.btnStopScan.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnStopScan.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -168,7 +168,7 @@
             this.gunaControlBox1.IconSize = 15F;
             this.gunaControlBox1.Location = new System.Drawing.Point(312, 7);
             this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
             this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox1.Size = new System.Drawing.Size(45, 29);
