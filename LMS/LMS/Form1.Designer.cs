@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation2 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnHistory = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnIssueBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton7 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaAdvenceButton3 = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -51,7 +52,6 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnHistory = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,39 +64,39 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(230, 87);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1030, 533);
+            this.panel3.Size = new System.Drawing.Size(1030, 582);
             this.panel3.TabIndex = 5;
             // 
             // pnlMenuAnimation
             // 
             this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
             this.pnlMenuAnimation.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation2;
             this.pnlMenuAnimation.TimeStep = 0.01F;
             // 
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.pnlMenu.Controls.Add(this.btnHistory);
             this.pnlMenu.Controls.Add(this.btnIssueBook);
+            this.pnlMenu.Controls.Add(this.btnStudent);
+            this.pnlMenu.Controls.Add(this.btnHistory);
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton7);
             this.pnlMenu.Controls.Add(this.gunaAdvenceButton3);
-            this.pnlMenu.Controls.Add(this.btnStudent);
             this.pnlMenu.Controls.Add(this.btnBook);
             this.pnlMenu.Controls.Add(this.btnDashboard);
             this.pnlMenu.Controls.Add(this.pictureBox1);
@@ -104,8 +104,42 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(230, 620);
+            this.pnlMenu.Size = new System.Drawing.Size(230, 669);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.AnimationHoverSpeed = 0.07F;
+            this.btnHistory.AnimationSpeed = 0.03F;
+            this.btnHistory.BaseColor = System.Drawing.Color.Transparent;
+            this.btnHistory.BorderColor = System.Drawing.Color.Black;
+            this.btnHistory.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnHistory.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnHistory.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHistory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnHistory.CheckedImage")));
+            this.btnHistory.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.pnlMenuAnimation.SetDecoration(this.btnHistory, Guna.UI.Animation.DecorationType.None);
+            this.btnHistory.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnHistory.FocusedColor = System.Drawing.Color.Empty;
+            this.btnHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.ForeColor = System.Drawing.Color.White;
+            this.btnHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.Image")));
+            this.btnHistory.ImageOffsetX = 15;
+            this.btnHistory.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnHistory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnHistory.Location = new System.Drawing.Point(0, 436);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnHistory.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnHistory.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnHistory.OnHoverImage = null;
+            this.btnHistory.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnHistory.OnPressedColor = System.Drawing.Color.Black;
+            this.btnHistory.Size = new System.Drawing.Size(231, 51);
+            this.btnHistory.TabIndex = 7;
+            this.btnHistory.Text = "Activity History";
+            this.btnHistory.TextOffsetX = 18;
+            this.btnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
             // 
             // btnIssueBook
             // 
@@ -161,7 +195,7 @@
             this.gunaAdvenceButton7.ImageOffsetX = 15;
             this.gunaAdvenceButton7.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton7.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton7.Location = new System.Drawing.Point(0, 491);
+            this.gunaAdvenceButton7.Location = new System.Drawing.Point(0, 546);
             this.gunaAdvenceButton7.Name = "gunaAdvenceButton7";
             this.gunaAdvenceButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.gunaAdvenceButton7.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -194,7 +228,7 @@
             this.gunaAdvenceButton3.ImageOffsetX = 15;
             this.gunaAdvenceButton3.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton3.Location = new System.Drawing.Point(0, 436);
+            this.gunaAdvenceButton3.Location = new System.Drawing.Point(0, 491);
             this.gunaAdvenceButton3.Name = "gunaAdvenceButton3";
             this.gunaAdvenceButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.gunaAdvenceButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -227,7 +261,7 @@
             this.btnStudent.ImageOffsetX = 15;
             this.btnStudent.ImageSize = new System.Drawing.Size(20, 20);
             this.btnStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnStudent.Location = new System.Drawing.Point(0, 326);
+            this.btnStudent.Location = new System.Drawing.Point(-1, 326);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnStudent.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -486,46 +520,12 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // btnHistory
-            // 
-            this.btnHistory.AnimationHoverSpeed = 0.07F;
-            this.btnHistory.AnimationSpeed = 0.03F;
-            this.btnHistory.BaseColor = System.Drawing.Color.Transparent;
-            this.btnHistory.BorderColor = System.Drawing.Color.Black;
-            this.btnHistory.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnHistory.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnHistory.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHistory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnHistory.CheckedImage")));
-            this.btnHistory.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.pnlMenuAnimation.SetDecoration(this.btnHistory, Guna.UI.Animation.DecorationType.None);
-            this.btnHistory.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnHistory.FocusedColor = System.Drawing.Color.Empty;
-            this.btnHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistory.ForeColor = System.Drawing.Color.White;
-            this.btnHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnHistory.Image")));
-            this.btnHistory.ImageOffsetX = 15;
-            this.btnHistory.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnHistory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnHistory.Location = new System.Drawing.Point(0, 548);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnHistory.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnHistory.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnHistory.OnHoverImage = null;
-            this.btnHistory.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnHistory.OnPressedColor = System.Drawing.Color.Black;
-            this.btnHistory.Size = new System.Drawing.Size(231, 51);
-            this.btnHistory.TabIndex = 7;
-            this.btnHistory.Text = "History";
-            this.btnHistory.TextOffsetX = 18;
-            this.btnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1260, 620);
+            this.ClientSize = new System.Drawing.Size(1260, 669);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlMenu);

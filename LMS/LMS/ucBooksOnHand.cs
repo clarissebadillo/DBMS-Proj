@@ -139,6 +139,15 @@ namespace LMS
             cn.Close();
         }
 
+        public void StatusDamage()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Damaged' WHERE borrowID = @borrowID", cn);
+            cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
         public void UpdateBookCopies()
         {
             cn.Open();
@@ -161,7 +170,7 @@ namespace LMS
         {
             try
             {
-                if (MyMessageBox.ShowMessage("Declare selected book as lost?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Declare selected book as lost? \n The penalty is ₱500.00", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
                     cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + 500 WHERE borrowID = @borrowID", cn);
@@ -177,9 +186,41 @@ namespace LMS
                     frmonhand.BooksOnHand();
                     frmonhand.BooksOverdue();
                     frmonhand.RefreshAll();
-                    
 
-                    popupNotifier.ContentText = lblBookName.Text + " has been successfuly declared lost!";
+
+                    popupNotifier.ContentText = lblBookName.Text + " has been successfuly pulled out!";
+                    popupNotifier.Popup();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void MarkSelectedBookAsDamagedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MyMessageBox.ShowMessage("Declare selected book as damaged? \n Book penalty is ₱300.00", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + 300 WHERE borrowID = @borrowID", cn);
+                    cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    StatusDamage();
+                    UpdateBookCopies();
+                    UpdateAvailableCopies();
+
+                    frmonhand.flowLayoutPanel1.Controls.Clear();
+                    frmonhand.BooksOnHand();
+                    frmonhand.BooksOverdue();
+                    frmonhand.RefreshAll();
+
+
+                    popupNotifier.ContentText = lblBookName.Text + " has been successfuly pulled out!";
                     popupNotifier.Popup();
                 }
             }

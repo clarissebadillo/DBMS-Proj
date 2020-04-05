@@ -118,7 +118,7 @@ namespace LMS
                         }
                         else
                         {
-                            MyMessageBox.ShowMessage("Reocrd already exist!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                            MyMessageBox.ShowMessage("Student number already exist!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         }
                         //Close connection
                         cn.Close();

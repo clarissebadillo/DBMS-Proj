@@ -39,54 +39,12 @@ namespace LMS
 
         private void FrmIssueBook_Load(object sender, EventArgs e)
         {
-            //ISSUE BOOK TAB
             AutoCompleteStudentNo();
             LoadRecords();
             Overdue();
 
             dtIssueDate.Value = DateTime.Now;
             dtDueDate.Value = dtIssueDate.Value.AddDays(5);
-
-            //BORROW HISTORY TAB
-            LoadAllBorrowHistory();
-
-            dt1.Value = DateTime.Today.AddDays(-1);
-            dt2.Value = DateTime.Now;
-
-            cboStatus.SelectedItem = "All Records";
-
-            //DataGridView Padding
-            gunaDataGridView1.Columns[2].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView1.Columns[3].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView1.Columns[4].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView1.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView1.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView1.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 20, 0);
-
-            gunaDataGridView1.Columns[2].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView1.Columns[3].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView1.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView1.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView1.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView1.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
-
-            //RETURN HISTORY
-            LoadReturnHistory();
-
-            dtFrom.Value = DateTime.Today.AddDays(-1);
-            dtTo.Value = DateTime.Now;
-
-            gunaDataGridView2.Columns[2].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView2.Columns[3].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView2.Columns[4].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView2.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView2.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 30, 0);
-
-            gunaDataGridView2.Columns[2].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView2.Columns[3].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView2.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView2.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView2.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
         }
 
         public void LoadRecords()
@@ -137,7 +95,7 @@ namespace LMS
             cn.Open();
             cm = new SqlCommand("SELECT SUM(CAST([totalFine] AS INT)) FROM tblBorrowedBook WHERE studentID =  @studentID", cn);
             cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
-            lblFine.Text = lblPesoSign.Text +  cm.ExecuteScalar().ToString() + lbl00.Text;
+            lblFine.Text = "₱" +  cm.ExecuteScalar().ToString() + ".00";
             cn.Close();
         }
 
@@ -161,7 +119,7 @@ namespace LMS
         {
             try
             {
-                if (MyMessageBox.ShowMessage("Are you sure you want to issue " + lblBookTitle.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Are you sure you want to issue " + lblBookTitle.Text + " to " + lblName.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int fine = 0;
                     cn.Open();
@@ -236,11 +194,6 @@ namespace LMS
             studImage.Image = Properties.Resources.user;
         }
 
-        private void BtnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         public void LoadDetails()
         {
             cn.Open();
@@ -262,7 +215,6 @@ namespace LMS
             cn.Close();
         }
 
-        
 
         private void TxtSearchStud_TextChanged(object sender, EventArgs e)
         {
@@ -289,7 +241,6 @@ namespace LMS
             CountFine();
             LostBook();
         }
-
 
         private void TxtSearchBook_TextChanged(object sender, EventArgs e)
         {
@@ -341,100 +292,15 @@ namespace LMS
             frm.Show();
         }
 
-
-
-        //BORROW HISTORY
-        public void LoadAllBorrowHistory()
+        private void BtnScan_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            if (cboStatus.Text == "All Records")
-            {
-                gunaDataGridView1.Rows.Clear();
-                cn.Open();
-                cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.dateBorrowed, bb.dueDate, bb.status FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE dateBorrowed BETWEEN @dt1 AND @dt2", cn);
-                cm.Parameters.AddWithValue("@dt1", dt1.Value);
-                cm.Parameters.AddWithValue("@dt2", dt2.Value);
-                dr = cm.ExecuteReader();
-                while (dr.Read())
-                {
-                    i += 1;
-                    gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"),  dr["status"].ToString());
-                }
-                dr.Close();
-                cn.Close();
-            }
-            else
-            {
-                gunaDataGridView1.Rows.Clear();
-                cn.Open();
-                cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.dateBorrowed, bb.dueDate ,bb.status FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE status LIKE @status AND dateBorrowed BETWEEN @dt1 AND @dt2", cn);
-                cm.Parameters.AddWithValue("@status", cboStatus.Text);
-                cm.Parameters.AddWithValue("@dt1", dt1.Value);
-                cm.Parameters.AddWithValue("@dt2", dt2.Value);
-                dr = cm.ExecuteReader();
-                while (dr.Read())
-                {
-                    i += 1;
-                    gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
-                }
-                dr.Close();
-                cn.Close();
-            }
-        }
-
-        private void CboStatus_TextChanged(object sender, EventArgs e)
-        {
-            LoadAllBorrowHistory();
-        }
-
-        private void Dt1_ValueChanged(object sender, EventArgs e)
-        {
-            LoadAllBorrowHistory();
-        }
-
-        private void Dt2_ValueChanged(object sender, EventArgs e)
-        {
-            LoadAllBorrowHistory();
-        }
-
-        //RETURN HISTORY
-        public void LoadReturnHistory()
-        {
-            int i = 0;
-            gunaDataGridView2.Rows.Clear();
-            cn.Open();
-            cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.returnedDate, bb.status FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE status = 'Returned' AND returnedDate BETWEEN @dtFrom AND @dtTo", cn);
-            cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value);
-            cm.Parameters.AddWithValue("@dtTo", dtTo.Value);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i += 1;
-                gunaDataGridView2.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), Convert.ToDateTime(dr["returnedDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
-            }
-            dr.Close();
-            cn.Close();
-        }
-
-        private void DtTo_ValueChanged(object sender, EventArgs e)
-        {
-            LoadReturnHistory();
-        }
-
-        private void DtFrom_ValueChanged(object sender, EventArgs e)
-        {
-            LoadReturnHistory();
+            frmQRScanner frm = new frmQRScanner(this);
+            frm.Show();
         }
 
         private void LblFine_Click(object sender, EventArgs e)
         {
             frmPayment frm = new frmPayment();
-            frm.Show();
-        }
-
-        private void BtnScan_Click(object sender, EventArgs e)
-        {
-            frmQRScanner frm = new frmQRScanner(this);
             frm.Show();
         }
     }

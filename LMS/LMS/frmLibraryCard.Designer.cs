@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLibraryCard));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtStudentName = new Guna.UI.WinForms.GunaTextBox();
             this.btnSaveQR = new Guna.UI.WinForms.GunaButton();
             this.pnlID = new System.Windows.Forms.Panel();
             this.studentImage = new System.Windows.Forms.PictureBox();
@@ -64,8 +66,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnPrint = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtStudentName = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLinePanel1.SuspendLayout();
             this.pnlID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
@@ -102,6 +102,34 @@
             this.gunaLinePanel1.Name = "gunaLinePanel1";
             this.gunaLinePanel1.Size = new System.Drawing.Size(990, 576);
             this.gunaLinePanel1.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(675, 390);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Student Name";
+            // 
+            // txtStudentName
+            // 
+            this.txtStudentName.BaseColor = System.Drawing.Color.Gainsboro;
+            this.txtStudentName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtStudentName.BorderSize = 1;
+            this.txtStudentName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStudentName.FocusedBaseColor = System.Drawing.Color.Gainsboro;
+            this.txtStudentName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtStudentName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtStudentName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtStudentName.Location = new System.Drawing.Point(672, 408);
+            this.txtStudentName.Name = "txtStudentName";
+            this.txtStudentName.PasswordChar = '\0';
+            this.txtStudentName.Size = new System.Drawing.Size(288, 30);
+            this.txtStudentName.TabIndex = 57;
+            this.txtStudentName.TextChanged += new System.EventHandler(this.TxtStudentName_TextChanged);
             // 
             // btnSaveQR
             // 
@@ -491,7 +519,7 @@
             this.gunaControlBox1.AnimationSpeed = 0.03F;
             this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
             this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(944, 6);
+            this.gunaControlBox1.Location = new System.Drawing.Point(944, 7);
             this.gunaControlBox1.Name = "gunaControlBox1";
             this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
@@ -546,34 +574,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(990, 7);
             this.panel1.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(675, 390);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Student Name";
-            // 
-            // txtStudentName
-            // 
-            this.txtStudentName.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtStudentName.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtStudentName.BorderSize = 1;
-            this.txtStudentName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtStudentName.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtStudentName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtStudentName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtStudentName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtStudentName.Location = new System.Drawing.Point(672, 408);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.PasswordChar = '\0';
-            this.txtStudentName.Size = new System.Drawing.Size(288, 30);
-            this.txtStudentName.TabIndex = 57;
-            this.txtStudentName.TextChanged += new System.EventHandler(this.TxtStudentName_TextChanged);
             // 
             // frmLibraryCard
             // 

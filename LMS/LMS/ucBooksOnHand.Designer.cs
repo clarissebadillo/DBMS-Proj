@@ -33,18 +33,19 @@
             this.dtDueDate = new System.Windows.Forms.DateTimePicker();
             this.lblStudentID = new System.Windows.Forms.Label();
             this.lblBorrowID = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblDueDate = new System.Windows.Forms.Label();
             this.lblDateBorrowed = new System.Windows.Forms.Label();
             this.lblBookName = new System.Windows.Forms.Label();
             this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.declareLostBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.markSelectedBookAsDamagedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gunaLinePanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaContextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel2
@@ -95,18 +96,6 @@
             this.lblBorrowID.Size = new System.Drawing.Size(0, 13);
             this.lblBorrowID.TabIndex = 8;
             this.lblBorrowID.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 67;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // lblStatus
             // 
@@ -164,7 +153,8 @@
             // 
             this.gunaContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.returnBookToolStripMenuItem,
-            this.declareLostBookToolStripMenuItem});
+            this.declareLostBookToolStripMenuItem,
+            this.markSelectedBookAsDamagedToolStripMenuItem});
             this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
             this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
@@ -175,13 +165,25 @@
             this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
             this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
-            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(218, 70);
+            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(247, 70);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(9, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.GunaLinePanel2_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.GunaLinePanel2_MouseLeave);
             // 
             // returnBookToolStripMenuItem
             // 
             this.returnBookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("returnBookToolStripMenuItem.Image")));
             this.returnBookToolStripMenuItem.Name = "returnBookToolStripMenuItem";
-            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.returnBookToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.returnBookToolStripMenuItem.Text = "Return Selected Book";
             this.returnBookToolStripMenuItem.Click += new System.EventHandler(this.ReturnBookToolStripMenuItem_Click);
             // 
@@ -189,7 +191,7 @@
             // 
             this.declareLostBookToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("declareLostBookToolStripMenuItem.Image")));
             this.declareLostBookToolStripMenuItem.Name = "declareLostBookToolStripMenuItem";
-            this.declareLostBookToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.declareLostBookToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.declareLostBookToolStripMenuItem.Text = "Mark Selected Book as Lost";
             this.declareLostBookToolStripMenuItem.Click += new System.EventHandler(this.DeclareLostBookToolStripMenuItem_Click);
             // 
@@ -216,6 +218,14 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
+            // markSelectedBookAsDamagedToolStripMenuItem
+            // 
+            this.markSelectedBookAsDamagedToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("markSelectedBookAsDamagedToolStripMenuItem.Image")));
+            this.markSelectedBookAsDamagedToolStripMenuItem.Name = "markSelectedBookAsDamagedToolStripMenuItem";
+            this.markSelectedBookAsDamagedToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.markSelectedBookAsDamagedToolStripMenuItem.Text = "Mark Selected Book as Damaged";
+            this.markSelectedBookAsDamagedToolStripMenuItem.Click += new System.EventHandler(this.MarkSelectedBookAsDamagedToolStripMenuItem_Click);
+            // 
             // ucBooksOnHand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,8 +240,8 @@
             this.Size = new System.Drawing.Size(610, 38);
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaContextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +262,6 @@
         public System.Windows.Forms.Label lblStudentID;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
         public System.Windows.Forms.DateTimePicker dtDueDate;
+        private System.Windows.Forms.ToolStripMenuItem markSelectedBookAsDamagedToolStripMenuItem;
     }
 }
