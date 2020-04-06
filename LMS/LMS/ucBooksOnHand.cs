@@ -113,15 +113,20 @@ namespace LMS
             TimeSpan diff = returnDate.Subtract(dueDate);
             int days = diff.Days;
             fine = days * 5;
-
+            string paymentStat = "";
             if (fine < 0)
             {
                 fine = 0;
             }
+            else
+            {
+                paymentStat = "Pending";
+            }
 
             cn.Open();
-            cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = @totalFine WHERE borrowID = @borrowID", cn);
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = @totalFine, paymentStatus = @paymentStatus WHERE borrowID = @borrowID", cn);
             cm.Parameters.AddWithValue("@totalFine", fine);
+            cm.Parameters.AddWithValue("@paymentStatus", paymentStat);
             cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
             cm.ExecuteNonQuery();
             cn.Close();
@@ -133,7 +138,7 @@ namespace LMS
         public void StatusLost()
         {
             cn.Open();
-            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Lost' WHERE borrowID = @borrowID", cn);
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Lost', paymentStatus = 'Pending' WHERE borrowID = @borrowID", cn);
             cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
             cm.ExecuteNonQuery();
             cn.Close();
@@ -142,7 +147,7 @@ namespace LMS
         public void StatusDamage()
         {
             cn.Open();
-            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Damaged' WHERE borrowID = @borrowID", cn);
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET status = 'Damaged', paymentStatus = 'Pending' WHERE borrowID = @borrowID", cn);
             cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
             cm.ExecuteNonQuery();
             cn.Close();

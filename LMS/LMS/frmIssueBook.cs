@@ -123,7 +123,7 @@ namespace LMS
                 {
                     int fine = 0;
                     cn.Open();
-                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned', @totalFine)", cn);
+                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned', @totalFine, @paymentStatus)", cn);
                     cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
                     cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
                     cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
@@ -131,6 +131,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@dateBorrowed", dtIssueDate.Value);
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
                     cm.Parameters.AddWithValue("@totalFine", fine);
+                    cm.Parameters.AddWithValue("@paymentStatus", "");
                     cm.ExecuteNonQuery();
                     cn.Close();
 
@@ -304,7 +305,7 @@ namespace LMS
             int i = 0;
             frm.gunaDataGridView1.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT borrowID, bookTitle, status, totalFine FROM tblBorrowedBook WHERE status IN('Lost', 'Damaged') AND studentNum = @studentNum", cn);
+            cm = new SqlCommand("SELECT borrowID, bookTitle, status, totalFine FROM tblBorrowedBook WHERE status IN('Lost', 'Damaged', 'Returned') AND paymentStatus = 'Pending' AND studentNum = @studentNum", cn);
             cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
             dr = cm.ExecuteReader();
             while (dr.Read())

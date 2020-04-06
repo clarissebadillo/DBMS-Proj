@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPayment));
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPayment));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.btnPrintPreview = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnPrintInvoice = new Guna.UI.WinForms.GunaAdvenceButton();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -45,12 +49,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtPaymentDate = new Guna.UI.WinForms.GunaDateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.InvoiceReport = new KimToo.EasyHTMLReports(this.components);
+            this.btnPrintReceipt = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.dtDueDate = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtPaymentDate = new Guna.UI.WinForms.GunaDateTimePicker();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +69,12 @@
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.dtPaymentDate);
+            this.gunaLinePanel1.Controls.Add(this.dtDueDate);
+            this.gunaLinePanel1.Controls.Add(this.btnPrintReceipt);
             this.gunaLinePanel1.Controls.Add(this.label5);
             this.gunaLinePanel1.Controls.Add(this.label2);
-            this.gunaLinePanel1.Controls.Add(this.btnPrintPreview);
+            this.gunaLinePanel1.Controls.Add(this.btnPrintInvoice);
             this.gunaLinePanel1.Controls.Add(this.lblTotalAmount);
             this.gunaLinePanel1.Controls.Add(this.label6);
             this.gunaLinePanel1.Controls.Add(this.lblName);
@@ -77,7 +85,6 @@
             this.gunaLinePanel1.Controls.Add(this.label3);
             this.gunaLinePanel1.Controls.Add(this.gunaTextBox1);
             this.gunaLinePanel1.Controls.Add(this.label1);
-            this.gunaLinePanel1.Controls.Add(this.dtPaymentDate);
             this.gunaLinePanel1.Controls.Add(this.panel2);
             this.gunaLinePanel1.Controls.Add(this.panel1);
             this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -91,39 +98,65 @@
             this.gunaLinePanel1.Size = new System.Drawing.Size(895, 526);
             this.gunaLinePanel1.TabIndex = 1;
             // 
-            // btnPrintPreview
+            // label5
             // 
-            this.btnPrintPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrintPreview.AnimationHoverSpeed = 0.07F;
-            this.btnPrintPreview.AnimationSpeed = 0.03F;
-            this.btnPrintPreview.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrintPreview.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnPrintPreview.BorderColor = System.Drawing.Color.Black;
-            this.btnPrintPreview.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnPrintPreview.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnPrintPreview.CheckedForeColor = System.Drawing.Color.White;
-            this.btnPrintPreview.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPrintPreview.CheckedImage")));
-            this.btnPrintPreview.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnPrintPreview.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnPrintPreview.FocusedColor = System.Drawing.Color.Empty;
-            this.btnPrintPreview.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnPrintPreview.ForeColor = System.Drawing.Color.White;
-            this.btnPrintPreview.Image = null;
-            this.btnPrintPreview.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnPrintPreview.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPrintPreview.Location = new System.Drawing.Point(12, 474);
-            this.btnPrintPreview.Name = "btnPrintPreview";
-            this.btnPrintPreview.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.btnPrintPreview.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnPrintPreview.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnPrintPreview.OnHoverImage = null;
-            this.btnPrintPreview.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnPrintPreview.OnPressedColor = System.Drawing.Color.Black;
-            this.btnPrintPreview.Radius = 7;
-            this.btnPrintPreview.Size = new System.Drawing.Size(137, 35);
-            this.btnPrintPreview.TabIndex = 94;
-            this.btnPrintPreview.Text = "Print Invoice";
-            this.btnPrintPreview.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.Location = new System.Drawing.Point(15, 420);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(335, 42);
+            this.label5.TabIndex = 97;
+            this.label5.Text = "Must pay the exact amount on or before a month after the declared lost/damaged bo" +
+    "ok.";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(16, 404);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 15);
+            this.label2.TabIndex = 96;
+            this.label2.Text = "Term and Condition";
+            // 
+            // btnPrintInvoice
+            // 
+            this.btnPrintInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintInvoice.AnimationHoverSpeed = 0.07F;
+            this.btnPrintInvoice.AnimationSpeed = 0.03F;
+            this.btnPrintInvoice.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrintInvoice.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnPrintInvoice.BorderColor = System.Drawing.Color.Black;
+            this.btnPrintInvoice.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPrintInvoice.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPrintInvoice.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPrintInvoice.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPrintInvoice.CheckedImage")));
+            this.btnPrintInvoice.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPrintInvoice.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPrintInvoice.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPrintInvoice.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPrintInvoice.ForeColor = System.Drawing.Color.White;
+            this.btnPrintInvoice.Image = null;
+            this.btnPrintInvoice.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnPrintInvoice.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPrintInvoice.Location = new System.Drawing.Point(18, 474);
+            this.btnPrintInvoice.Name = "btnPrintInvoice";
+            this.btnPrintInvoice.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.btnPrintInvoice.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPrintInvoice.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPrintInvoice.OnHoverImage = null;
+            this.btnPrintInvoice.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPrintInvoice.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPrintInvoice.Radius = 7;
+            this.btnPrintInvoice.Size = new System.Drawing.Size(137, 35);
+            this.btnPrintInvoice.TabIndex = 94;
+            this.btnPrintInvoice.Text = "Print Invoice";
+            this.btnPrintInvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnPrintInvoice.Click += new System.EventHandler(this.BtnPrintInvoice_Click);
             // 
             // lblTotalAmount
             // 
@@ -273,29 +306,6 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "Payment Date:";
             // 
-            // dtPaymentDate
-            // 
-            this.dtPaymentDate.BaseColor = System.Drawing.Color.Gainsboro;
-            this.dtPaymentDate.BorderColor = System.Drawing.Color.Silver;
-            this.dtPaymentDate.BorderSize = 0;
-            this.dtPaymentDate.CustomFormat = null;
-            this.dtPaymentDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtPaymentDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dtPaymentDate.Font = new System.Drawing.Font("Segoe UI", 8.75F);
-            this.dtPaymentDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.dtPaymentDate.Location = new System.Drawing.Point(15, 93);
-            this.dtPaymentDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtPaymentDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtPaymentDate.Name = "dtPaymentDate";
-            this.dtPaymentDate.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.dtPaymentDate.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dtPaymentDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.dtPaymentDate.OnPressedColor = System.Drawing.Color.Black;
-            this.dtPaymentDate.Size = new System.Drawing.Size(223, 23);
-            this.dtPaymentDate.TabIndex = 30;
-            this.dtPaymentDate.Text = "Thursday, 2 April 2020";
-            this.dtPaymentDate.Value = new System.DateTime(2020, 4, 2, 15, 25, 39, 76);
-            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -335,15 +345,15 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.gunaDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaDataGridView1.EnableHeadersVisualStyles = false;
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -386,30 +396,99 @@
             this.panel1.Size = new System.Drawing.Size(895, 7);
             this.panel1.TabIndex = 26;
             // 
-            // label2
+            // InvoiceReport
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(15, 365);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 15);
-            this.label2.TabIndex = 96;
-            this.label2.Text = "Term and Condition";
+            this.InvoiceReport.AlternativeRowBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.InvoiceReport.AlternativeRowGridColor = System.Drawing.SystemColors.ControlText;
+            this.InvoiceReport.HeaderBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.InvoiceReport.HeaderFontColor = System.Drawing.SystemColors.ControlText;
+            this.InvoiceReport.HeaderGridColor = System.Drawing.SystemColors.ControlText;
+            this.InvoiceReport.RowDefaultBackgroudColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.InvoiceReport.RowDefaultFontColor = System.Drawing.SystemColors.ControlText;
+            this.InvoiceReport.RowDefaultGridColor = System.Drawing.SystemColors.ControlText;
             // 
-            // label5
+            // btnPrintReceipt
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Location = new System.Drawing.Point(14, 381);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(335, 42);
-            this.label5.TabIndex = 97;
-            this.label5.Text = "Must pay the exact amount on or before a month after the declared lost/damaged bo" +
-    "ok.";
+            this.btnPrintReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrintReceipt.AnimationHoverSpeed = 0.07F;
+            this.btnPrintReceipt.AnimationSpeed = 0.03F;
+            this.btnPrintReceipt.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrintReceipt.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnPrintReceipt.BorderColor = System.Drawing.Color.Black;
+            this.btnPrintReceipt.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnPrintReceipt.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnPrintReceipt.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPrintReceipt.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnPrintReceipt.CheckedImage")));
+            this.btnPrintReceipt.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnPrintReceipt.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPrintReceipt.FocusedColor = System.Drawing.Color.Empty;
+            this.btnPrintReceipt.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnPrintReceipt.ForeColor = System.Drawing.Color.White;
+            this.btnPrintReceipt.Image = null;
+            this.btnPrintReceipt.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnPrintReceipt.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPrintReceipt.Location = new System.Drawing.Point(592, 474);
+            this.btnPrintReceipt.Name = "btnPrintReceipt";
+            this.btnPrintReceipt.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.btnPrintReceipt.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnPrintReceipt.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnPrintReceipt.OnHoverImage = null;
+            this.btnPrintReceipt.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnPrintReceipt.OnPressedColor = System.Drawing.Color.Black;
+            this.btnPrintReceipt.Radius = 7;
+            this.btnPrintReceipt.Size = new System.Drawing.Size(137, 35);
+            this.btnPrintReceipt.TabIndex = 98;
+            this.btnPrintReceipt.Text = "Generate Receipt";
+            this.btnPrintReceipt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dtDueDate
+            // 
+            this.dtDueDate.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dtDueDate.BorderColor = System.Drawing.Color.Silver;
+            this.dtDueDate.BorderSize = 0;
+            this.dtDueDate.CustomFormat = "dd MMMM yyyy";
+            this.dtDueDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtDueDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtDueDate.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.dtDueDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.dtDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDueDate.Location = new System.Drawing.Point(247, 91);
+            this.dtDueDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtDueDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtDueDate.Name = "dtDueDate";
+            this.dtDueDate.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dtDueDate.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtDueDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.dtDueDate.OnPressedColor = System.Drawing.Color.Black;
+            this.dtDueDate.Size = new System.Drawing.Size(223, 23);
+            this.dtDueDate.TabIndex = 100;
+            this.dtDueDate.Text = "02 April 2020";
+            this.dtDueDate.Value = new System.DateTime(2020, 4, 2, 15, 25, 39, 76);
+            this.dtDueDate.Visible = false;
+            // 
+            // dtPaymentDate
+            // 
+            this.dtPaymentDate.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dtPaymentDate.BorderColor = System.Drawing.Color.Silver;
+            this.dtPaymentDate.BorderSize = 0;
+            this.dtPaymentDate.CustomFormat = "dd MMMM yyyy";
+            this.dtPaymentDate.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dtPaymentDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtPaymentDate.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.dtPaymentDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.dtPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPaymentDate.Location = new System.Drawing.Point(18, 91);
+            this.dtPaymentDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtPaymentDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtPaymentDate.Name = "dtPaymentDate";
+            this.dtPaymentDate.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dtPaymentDate.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dtPaymentDate.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.dtPaymentDate.OnPressedColor = System.Drawing.Color.Black;
+            this.dtPaymentDate.Size = new System.Drawing.Size(223, 23);
+            this.dtPaymentDate.TabIndex = 101;
+            this.dtPaymentDate.Text = "02 April 2020";
+            this.dtPaymentDate.Value = new System.DateTime(2020, 4, 2, 15, 25, 39, 76);
             // 
             // Column1
             // 
@@ -451,6 +530,8 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column5.HeaderText = "CHARGE";
             this.Column5.Name = "Column5";
             this.Column5.Width = 115;
@@ -481,7 +562,6 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaDateTimePicker dtPaymentDate;
         public Guna.UI.WinForms.GunaDataGridView gunaDataGridView1;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
@@ -491,10 +571,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label6;
-        private Guna.UI.WinForms.GunaAdvenceButton btnPrintPreview;
+        private Guna.UI.WinForms.GunaAdvenceButton btnPrintInvoice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label lblName;
+        private KimToo.EasyHTMLReports InvoiceReport;
+        private Guna.UI.WinForms.GunaAdvenceButton btnPrintReceipt;
+        private Guna.UI.WinForms.GunaDateTimePicker dtPaymentDate;
+        private Guna.UI.WinForms.GunaDateTimePicker dtDueDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;

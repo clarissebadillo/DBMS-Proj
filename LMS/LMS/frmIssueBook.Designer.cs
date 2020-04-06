@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIssueBook));
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo3 = new Syncfusion.Windows.Forms.BannerTextInfo();
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
+            this.txtSearchBook = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
             this.gunaGroupBox3 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblBooksOverdue = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.lblBookID = new System.Windows.Forms.Label();
             this.dtIssueDate = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.txtSearchBook = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.gunaGroupBox1 = new Guna.UI.WinForms.GunaGroupBox();
@@ -92,6 +92,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.studImage = new Guna.UI.WinForms.GunaPictureBox();
             this.txtSearchStud = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearchBook)).BeginInit();
             this.gunaGroupBox3.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
             this.gunaGroupBox5.SuspendLayout();
@@ -104,13 +105,34 @@
             this.gunaGroupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gunaLinePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchBook)).BeginInit();
             this.gunaGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaLinePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearchStud)).BeginInit();
             this.SuspendLayout();
+            // 
+            // txtSearchBook
+            // 
+            this.txtSearchBook.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSearchBook.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSearchBook.BackColor = System.Drawing.Color.Gainsboro;
+            bannerTextInfo1.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            bannerTextInfo1.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo1.Text = "  Search book here";
+            bannerTextInfo1.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtSearchBook, bannerTextInfo1);
+            this.txtSearchBook.BeforeTouchSize = new System.Drawing.Size(211, 20);
+            this.txtSearchBook.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtSearchBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearchBook.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtSearchBook.Location = new System.Drawing.Point(27, 314);
+            this.txtSearchBook.Metrocolor = System.Drawing.Color.Gainsboro;
+            this.txtSearchBook.Name = "txtSearchBook";
+            this.txtSearchBook.Size = new System.Drawing.Size(312, 20);
+            this.txtSearchBook.TabIndex = 98;
+            this.txtSearchBook.UseBorderColorOnFocus = true;
+            this.txtSearchBook.TextChanged += new System.EventHandler(this.TxtSearchBook_TextChanged);
             // 
             // popupNotifier
             // 
@@ -281,21 +303,21 @@
             this.gunaDataGridView3.AllowUserToDeleteRows = false;
             this.gunaDataGridView3.AllowUserToResizeColumns = false;
             this.gunaDataGridView3.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gunaDataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gunaDataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.gunaDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaDataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gunaDataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gunaDataGridView3.ColumnHeadersHeight = 30;
             this.gunaDataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn16,
@@ -306,14 +328,14 @@
             this.dataGridViewTextBoxColumn21,
             this.Column6,
             this.Column8});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView3.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridView3.DefaultCellStyle = dataGridViewCellStyle3;
             this.gunaDataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaDataGridView3.EnableHeadersVisualStyles = false;
             this.gunaDataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -697,7 +719,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(35, 25);
+            this.label15.Location = new System.Drawing.Point(32, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(125, 15);
             this.label15.TabIndex = 68;
@@ -738,28 +760,6 @@
             this.dtIssueDate.TabIndex = 96;
             this.dtIssueDate.Text = "03/23/2020";
             this.dtIssueDate.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            // 
-            // txtSearchBook
-            // 
-            this.txtSearchBook.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtSearchBook.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearchBook.BackColor = System.Drawing.Color.Gainsboro;
-            bannerTextInfo3.Font = new System.Drawing.Font("Segoe UI", 8.55F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            bannerTextInfo3.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo3.Text = "  Search book here";
-            bannerTextInfo3.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtSearchBook, bannerTextInfo3);
-            this.txtSearchBook.BeforeTouchSize = new System.Drawing.Size(211, 20);
-            this.txtSearchBook.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtSearchBook.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearchBook.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtSearchBook.Location = new System.Drawing.Point(27, 314);
-            this.txtSearchBook.Metrocolor = System.Drawing.Color.Gainsboro;
-            this.txtSearchBook.Name = "txtSearchBook";
-            this.txtSearchBook.Size = new System.Drawing.Size(312, 20);
-            this.txtSearchBook.TabIndex = 98;
-            this.txtSearchBook.UseBorderColorOnFocus = true;
-            this.txtSearchBook.TextChanged += new System.EventHandler(this.TxtSearchBook_TextChanged);
             // 
             // label18
             // 
@@ -1027,6 +1027,7 @@
             this.Name = "frmIssueBook";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmIssueBook_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearchBook)).EndInit();
             this.gunaGroupBox3.ResumeLayout(false);
             this.gunaGroupBox2.ResumeLayout(false);
             this.gunaGroupBox5.ResumeLayout(false);
@@ -1040,7 +1041,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearchBook)).EndInit();
             this.gunaGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaLinePanel2.ResumeLayout(false);
