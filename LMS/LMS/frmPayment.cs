@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using KimToo;
+using MyMessage;
+
 
 namespace LMS
 {
@@ -17,16 +19,21 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
-        //SqlDataReader dr;
+        SqlDataReader dr;
+        frmIssueBook frmissue;
 
-        public frmPayment()
+        public frmPayment(frmIssueBook fissue)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            frmissue = fissue;
         }
 
         private void FrmPayment_Load(object sender, EventArgs e)
         {
+            LoadPending();
+            GetTotalAmount();
+
             dtPaymentDate.Value = DateTime.Now;
             dtDueDate.Value = dtPaymentDate.Value.AddMonths(1);
 
@@ -36,48 +43,175 @@ namespace LMS
             gunaDataGridView1.Columns[4].ReadOnly = false;
             gunaDataGridView1.Columns[5].ReadOnly = true;
 
-            gunaDataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            gunaDataGridView1.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 40, 0);
             gunaDataGridView1.Columns[1].DefaultCellStyle.Padding = new Padding(35, 0, 0, 0);
             gunaDataGridView1.Columns[1].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
+            gunaDataGridView1.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 40, 0);
+            gunaDataGridView1.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
         }
 
         private void BtnPrintInvoice_Click(object sender, EventArgs e)
         {
-            InvoiceReport.Clear();
-            InvoiceReport.AddImage(Properties.Resources.school_logo, "width = 120, style = 'float:left'");
-            InvoiceReport.AddString("<h3 style = 'margin: 20px 0 0 0'>  &nbsp &nbspSTATE UNIVERSITY LIBRARY</h3>");
-            InvoiceReport.AddString("<h5 style = 'margin:5px 0'> &nbsp &nbsp Sample Address, Sample Address, Sample Address");
-            InvoiceReport.AddString("<h5 style = 'margin:8px 0'> &nbsp &nbsp +63 900000000");
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddString("<h3 style = 'float:right', style='font-family: Segoe UI'>INVOICE</h3>");
-            InvoiceReport.AddString("<h5 style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Student Name: &nbsp<b>" + lblName.Text + "</b></h5>");
-            InvoiceReport.AddString("<h5 style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Student Number: &nbsp<b>" + lblName.Text + "</b></h5>");
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddHorizontalRule();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Status &nbsp&nbsp&nbsp <b>PENDING</b></p>");
-            InvoiceReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Date &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + Convert.ToDateTime(dtPaymentDate.Value).ToString("dd MMMM yyyy") + "</p>");
-            InvoiceReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Term &nbsp&nbsp&nbsp&nbsp One month</p>");
-            InvoiceReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Due &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + Convert.ToDateTime(dtDueDate.Value).ToString("dd MMMM yyyy") + "</p>");
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddHorizontalRule();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddString("<p style = 'font-weight: normal', style='font-family: Segoe UI'>The student <b>" + lblName.Text + "</b>, Student number: <b>" + lblName.Text + "</b> have pending charges of:</p>");
-            InvoiceReport.AddDatagridView(gunaDataGridView1);
-            InvoiceReport.AddString("<h3 style = 'float:right', style='font-family: Segoe UI'>TOTAL</h3>");
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddLineBreak();
-            InvoiceReport.AddString("<p style = 'font-size: 11px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Note: Please pay the exact amount indicated above on or before the payment due date. <br> Payments less than the amount will not be processed.</p>");
-            InvoiceReport.ShowPrintPreviewDialog();
+            printReport.Clear();
+            printReport.AddImage(Properties.Resources.school_logo, "width = 120, style = 'float:left'");
+            printReport.AddString("<h3 style = 'margin: 20px 0 0 0'>  &nbsp &nbspSTATE UNIVERSITY LIBRARY</h3>");
+            printReport.AddString("<h5 style = 'margin:5px 0'> &nbsp &nbsp Sample Address, Sample Address, Sample Address");
+            printReport.AddString("<h5 style = 'margin:8px 0'> &nbsp &nbsp +63 900000000");
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddString("<h3 style = 'float:right', style='font-family: Segoe UI'>INVOICE</h3>");
+            printReport.AddString("<h5 style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Student Name: &nbsp<b>" + lblName.Text + "</b></h5>");
+            printReport.AddString("<h5 style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Student Number: &nbsp<b>" + lblStudentNum.Text + "</b></h5>");
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddHorizontalRule();
+            printReport.AddLineBreak();
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Status &nbsp&nbsp&nbsp <b>PENDING</b></p>");
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Date &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + Convert.ToDateTime(dtPaymentDate.Value).ToString("dd MMMM yyyy") + "</p>");
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Term &nbsp&nbsp&nbsp&nbsp One month</p>");
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Due &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + Convert.ToDateTime(dtDueDate.Value).ToString("dd MMMM yyyy") + "</p>");
+            printReport.AddLineBreak();
+            printReport.AddHorizontalRule();
+            printReport.AddLineBreak();
+            printReport.AddString("<p style = 'font-weight: normal', style='font-family: Segoe UI'>The student <b>" + lblName.Text + "</b>, student number: <b>" + lblStudentNum.Text + "</b> have pending charges of:</p>");
+            printReport.AddDatagridView(gunaDataGridView1);
+            printReport.AddString("<h6 style = 'margin: 8px 0 0 0', style = 'float:right', style='font-family: Segoe UI', style = 'fonte-weight: normal'>AMOUNT DUE &nbsp&nbsp&nbsp<span style = 'font-size: 16px'>" + lblTotalAmount.Text + "</span></h6>");
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddString("<p style = 'font-size: 11px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Note: Please pay the exact amount indicated above on or before the payment due date. <br> Payments less than the amount will not be processed.</p>");
+            printReport.ShowPrintPreviewDialog();
+        }
+
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MyMessageBox.ShowMessage("Proceed processing the payment made by " + lblName.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    for (int i = 0; i < gunaDataGridView1.Rows.Count; i++)
+                    {
+                        cn.Open();
+                        cm = new SqlCommand("INSERT INTO tblPayment VALUES (@borrowID, @studentID, @totalPayment, @paymentDate, @description)", cn);
+                        cm.Parameters.AddWithValue("@studentID", lblStudentID.Text);
+                        cm.Parameters.AddWithValue("@totalPayment", lblTotalAmount.Text);
+                        cm.Parameters.AddWithValue("@paymentDate", dtPaymentDate.Value);
+                        cm.Parameters.AddWithValue("@borrowID", gunaDataGridView1.Rows[i].Cells[1].Value.ToString());
+                        cm.Parameters.AddWithValue("@description", gunaDataGridView1.Rows[i].Cells[3].Value.ToString());
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+                        UpdatePaymentStat();
+                        LoadPending();
+
+                        popupNotifier.ContentText = "Payment has been successfully processed!";
+                        popupNotifier.Popup();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void UpdatePaymentStat()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET paymentStatus = 'Cleared' WHERE paymentStatus = 'Pending' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", lblStudentNum.Text);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public void LoadPending()
+        {
+            int i = 0;
+            gunaDataGridView1.Rows.Clear();
+            gunaDataGridView2.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT borrowID, bookTitle, status, totalFine FROM tblBorrowedBook WHERE status IN('Lost', 'Damaged', 'Returned') AND paymentStatus = 'Pending' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", frmissue.lblStudNo.Text);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), "", dr["status"].ToString(), dr["totalFine"].ToString());
+                gunaDataGridView2.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), "", dr["status"].ToString(), dr["totalFine"].ToString(), "Paid");
+            }
+            dr.Close();
+            cn.Close();
+
+            cn.Open();
+            cm = new SqlCommand("SELECT (firstName + ' ' + lastName) AS Name, studentNum, studentID FROM tblStudent WHERE studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", frmissue.lblStudNo.Text);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                lblStudentID.Text = dr["studentID"].ToString();
+                lblName.Text = dr["Name"].ToString();
+                lblStudentNum.Text = dr["studentNum"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        public void GetTotalAmount()
+        {
+            Double sum = 0;
+            for (int i = 0; i < gunaDataGridView1.Rows.Count; ++i)
+            {
+                sum += Convert.ToDouble(gunaDataGridView1.Rows[i].Cells[5].Value);
+            }
+
+            lblTotalAmount.Text = "₱" + sum.ToString() + ".00";
+        }
+
+        private void BtnPrintReceipt_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < gunaDataGridView1.Rows.Count - 1; i++)
+            {
+                gunaDataGridView2.Rows.Add();
+                gunaDataGridView2.Rows[i].Cells[3].Value = gunaDataGridView1.Rows[i].Cells[3].Value.ToString();
+            }
+
+
+            printReport.Clear();
+            printReport.AddImage(Properties.Resources.school_logo, "width = 120, style = 'float:left'");
+            printReport.AddString("<h3 style = 'margin: 20px 0 0 0'>  &nbsp &nbspSTATE UNIVERSITY LIBRARY</h3>");
+            printReport.AddString("<h5 style = 'margin:5px 0'> &nbsp &nbsp Sample Address, Sample Address, Sample Address");
+            printReport.AddString("<h5 style = 'margin:8px 0'> &nbsp &nbsp +63 900000000");
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddString("<h3 style = 'float:right', style='font-family: Segoe UI'>PAYMENT RECEIPT</h3>");
+            printReport.AddString("<h5 style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Student Name: &nbsp<b>" + lblName.Text + "</b></h5>");
+            printReport.AddString("<h5 style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Student Number: &nbsp<b>" + lblStudentNum.Text + "</b></h5>");
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddHorizontalRule();
+            printReport.AddString("<p style = 'margin: 0 0 0 15px', style = 'font-weight: normal', style='font-family: Segoe UI'>The student <b>" + lblName.Text + "</b>, student number: <b>" + lblStudentNum.Text + "</b> has no record of pending charges.</p>");
+            printReport.AddDatagridView(gunaDataGridView2);
+            printReport.AddLineBreak();
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Status &nbsp&nbsp&nbsp <b>CLEARED</b></p>");
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Date &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + Convert.ToDateTime(dtPaymentDate.Value).ToString("dd MMMM yyyy") + "</p>");
+            printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Generated by &nbsp&nbsp&nbsp Librarian</p>");
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddLineBreak();
+            printReport.AddString("<pre style = 'float: right', style = 'margin: 5px, 0 0 0>______________________________ <br>     School Administrator</pre>");
+            printReport.AddString("<pre>______________________________ <br>          Librarian</pre>");
+            printReport.AddString("<p style = 'font-size: 11px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Note: Please pay the exact amount indicated above on or before the payment due date. <br> Payments less than the amount will not be processed.</p>");
+            printReport.ShowPrintPreviewDialog();
         }
     }
 }

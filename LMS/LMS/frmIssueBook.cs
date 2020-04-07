@@ -95,7 +95,7 @@ namespace LMS
             cn.Open();
             cm = new SqlCommand("SELECT SUM(CAST([totalFine] AS INT)) FROM tblBorrowedBook WHERE studentID =  @studentID", cn);
             cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
-            lblFine.Text = "₱" +  cm.ExecuteScalar().ToString() + ".00";
+            lblFine.Text = "₱" + cm.ExecuteScalar().ToString() + ".00";
             cn.Close();
         }
 
@@ -145,7 +145,7 @@ namespace LMS
                 MessageBox.Show(ex.Message);
             }
         }
-    
+
 
         public void Deduction()
         {
@@ -301,31 +301,7 @@ namespace LMS
 
         private void LblFine_Click(object sender, EventArgs e)
         {
-            frmPayment frm = new frmPayment();
-            int i = 0;
-            frm.gunaDataGridView1.Rows.Clear();
-            cn.Open();
-            cm = new SqlCommand("SELECT borrowID, bookTitle, status, totalFine FROM tblBorrowedBook WHERE status IN('Lost', 'Damaged', 'Returned') AND paymentStatus = 'Pending' AND studentNum = @studentNum", cn);
-            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                i += 1;
-                frm.gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), "", dr["status"].ToString(), dr["totalFine"].ToString());
-            }
-            dr.Close();
-            cn.Close();
-
-            cn.Open();
-            cm = new SqlCommand("SELECT (firstName + ' ' + lastName) AS Name FROM tblStudent WHERE studentNum = @studentNum", cn);
-            cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
-            dr = cm.ExecuteReader();
-            while (dr.Read())
-            {
-                frm.lblName.Text = dr["Name"].ToString();
-            }
-            dr.Close();
-            cn.Close();
+            frmPayment frm = new frmPayment(this);
             frm.Show();
         }
     }
