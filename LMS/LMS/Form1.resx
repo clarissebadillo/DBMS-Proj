@@ -120,38 +120,35 @@
   <metadata name="pnlMenuAnimation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="pnlMenuAnimation.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="animation2.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="animation1.BlindCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
         d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAACAPwAAAAAL
 </value>
   </data>
-  <data name="animation2.MosaicCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="animation1.MosaicCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
         d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
 </value>
   </data>
-  <data name="animation2.MosaicShift" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="animation1.MosaicShift" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
         d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
 </value>
   </data>
-  <data name="animation2.ScaleCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="animation1.ScaleCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
         d2luZy5Qb2ludEYCAAAAAXgBeQAACwsCAAAAAAAAAAAAAAAL
 </value>
   </data>
-  <data name="animation2.SlideCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="animation1.SlideCoeff" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFFTeXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0
         dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJh
@@ -224,15 +221,15 @@
   </data>
   <data name="btnHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAGmSURBVFhH7Ze7SgNBFIY3IogYO6tUCoqFrbeHsBALX8FKsJFALEyniIKNtdgIPoCFNvoAol0a
-        0crCQq28VLr+Z86/sFkme2M2EJgPPgJn/jNzGLIkG3gGnjAMZ+EzFP7gPWxwrQEf4G/BuuwjPMEZWcsN
-        GnZMazeP8JifcYrWhRaPygca2tpXGW0elQ9p0L7K8ANl4WSgbTjKSC4kD5vSnMDJQHUuFwJ949rehbMb
-        GmYkF5KHld2QS/xAWTj7DqU+ZVifhrafiiROBsr1lCF3pPFUnN1Q6lOG9UnYtxtyiR8oCz9QFtdwDY7x
-        yHQQrHqgiBc4z2N7g1C/BhJe4QSPtoNAcqArKNccZw/KL3kZpfcDRuzzaDsIxAe6g0NUXm8i1hkvBfpX
-        dRtDh2U7COxqznDAstQPtWRoslwK9Nd1G8MPy3YQ2NKc4ZRlqZ9pybDJcinQP6XbGN5ZtoPAsuYMX3AR
-        LsFvKZAFxguD3hF4bnZRLrlkB4EalNffqrjlZ8QKj+4NQnPwzcTdEx/ohEdmg7D84bqAn9LpkBvYgRuw
-        xuM8g0oQ/AMlUP5BJzk9gQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAaZJREFUWEft
+        l7tKA0EUhjciiBg7q1QKioWtt4ewEAtfwUqwkUAsTKeIgo212Ag+gIU2+gCiXRrRysJCrbxUuv5nzr+w
+        WSZ7YzYQmA8+Amf+M3MYsiQbeAaeMAxn4TMU/uA9bHCtAR/gb8G67CM8wRlZyw0adkxrN4/wmJ9xitaF
+        Fo/KBxra2lcZbR6VD2nQvsrwA2XhZKBtOMpILiQPm9KcwMlAdS4XAn3j2t6FsxsaZiQXkoeV3ZBL/EBZ
+        OPsOpT5lWJ+Gtp+KJE4GyvWUIXek8VSc3VDqU4b1Sdi3G3KJHygLP1AW13ANjvHIdBCseqCIFzjPY3uD
+        UL8GEl7hBI+2g0ByoCso1xxnD8oveRml9wNG7PNoOwjEB7qDQ1RebyLWGS8F+ld1G0OHZTsI7GrOcMCy
+        1A+1ZGiyXAr013Ubww/LdhDY0pzhlGWpn2nJsMlyKdA/pdsY3lm2g8Cy5gxfcBEuwW8pkAXGC4PeEXhu
+        dlEuuWQHgRqU19+quOVnxAqP7g1Cc/DNxN0TH+iER2aDsPzhuoCf0umQG9iBG7DG4zyDShD8AyVQ/kEn
+        OT2BAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="gunaAdvenceButton7.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

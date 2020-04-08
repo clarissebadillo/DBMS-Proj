@@ -25,6 +25,16 @@ namespace LMS
             cn = new SqlConnection(dbcon.MyConnection());
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
         private void FrmHistory_Load(object sender, EventArgs e)
         {
             //BORROW HISTORY
@@ -67,6 +77,25 @@ namespace LMS
             gunaDataGridView2.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView2.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView2.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
+
+            //PAYMENT HISTORY
+            LoadAllPaymentHistory();
+            dt3.Value = DateTime.Today.AddDays(-1);
+            dt4.Value = DateTime.Now;
+
+            gunaDataGridView3.Columns[2].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView3.Columns[3].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView3.Columns[4].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView3.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView3.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView3.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 20, 0);
+
+            gunaDataGridView3.Columns[2].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView3.Columns[3].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView3.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView3.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView3.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView3.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
         }
 
         public void LoadAllBorrowHistory()
@@ -122,6 +151,8 @@ namespace LMS
             LoadAllBorrowHistory();
         }
 
+
+        //RETURN HISTORY TAB
         public void LoadReturnHistory()
         {
             int i = 0;
@@ -148,6 +179,36 @@ namespace LMS
         private void DtTo_ValueChanged(object sender, EventArgs e)
         {
             LoadReturnHistory();
+        }
+
+
+        //PAYMENT HISTORY TAB
+        public void LoadAllPaymentHistory()
+        {
+            int i = 0;
+            gunaDataGridView3.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT p.paymentID, p.totalPayment, p.paymentDate, p.summaryDesc, (s.lastName + ' ' + s.firstName) AS Name, s.studentNum, bb.paymentStatus FROM ((tblPayment AS p INNER JOIN tblStudent AS s ON p.studentID = s.studentID) INNER JOIN tblBorrowedBook  AS bb ON p.studentID = bb.studentID) WHERE bb.paymentStatus = 'Cleared' AND paymentDate BETWEEN @dt3 AND @dt4", cn);
+            cm.Parameters.AddWithValue("@dt3", dt3.Value);
+            cm.Parameters.AddWithValue("@dt4", dt4.Value);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                gunaDataGridView3.Rows.Add(i, dr["paymentID"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), dr["summaryDesc"].ToString(), Convert.ToDateTime(dr["paymentDate"]).ToString("MM/dd/yyyy"), dr["totalPayment"].ToString(), dr["paymentStatus"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void Dt3_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAllPaymentHistory();
+        }
+
+        private void Dt4_ValueChanged(object sender, EventArgs e)
+        {
+            LoadAllPaymentHistory();
         }
     }
 }

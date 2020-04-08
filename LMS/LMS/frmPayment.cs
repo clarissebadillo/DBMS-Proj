@@ -104,24 +104,21 @@ namespace LMS
             {
                 if (MyMessageBox.ShowMessage("Proceed processing the payment made by " + lblName.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    for (int i = 0; i < gunaDataGridView1.Rows.Count; i++)
-                    {
-                        cn.Open();
-                        cm = new SqlCommand("INSERT INTO tblPayment VALUES (@borrowID, @studentID, @totalPayment, @paymentDate)", cn);
-                        cm.Parameters.AddWithValue("@studentID", lblStudentID.Text);
-                        cm.Parameters.AddWithValue("@totalPayment", lblAmount.Text);
-                        cm.Parameters.AddWithValue("@paymentDate", dtPaymentDate.Value);
-                        cm.Parameters.AddWithValue("@borrowID", gunaDataGridView1.Rows[i].Cells[1].Value.ToString());
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        UpdatePaymentStat();
-                        LoadPending();
-                        ClearPayment();
-                        RefreshAll();
+                    cn.Open();
+                    cm = new SqlCommand("INSERT INTO tblPayment VALUES (@studentID, @totalPayment, @paymentDate, @summaryDesc)", cn);
+                    cm.Parameters.AddWithValue("@studentID", lblStudentID.Text);
+                    cm.Parameters.AddWithValue("@totalPayment", lblAmount.Text);
+                    cm.Parameters.AddWithValue("@paymentDate", dtPaymentDate.Value);
+                    cm.Parameters.AddWithValue("@summaryDesc", txtSummaryRprt.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    UpdatePaymentStat();
+                    LoadPending();
+                    ClearPayment();
+                    RefreshAll();
 
-                        popupNotifier.ContentText = "Payment has been successfully processed!";
-                        popupNotifier.Popup();
-                    }
+                    popupNotifier.ContentText = "Payment has been successfully processed!";
+                    popupNotifier.Popup();
                 }
             }
             catch (Exception ex)

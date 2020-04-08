@@ -79,6 +79,7 @@ namespace LMS
             btnStudent.Checked = false;
             btnBook.Checked = false;
             btnIssueBook.Checked = false;
+            btnHistory.Checked = false;
 
             frmDashboard frm = new frmDashboard();
             frm.TopLevel = false;
@@ -93,6 +94,7 @@ namespace LMS
             btnStudent.Checked = false;
             btnDashboard.Checked = false;
             btnIssueBook.Checked = false;
+            btnHistory.Checked = false;
 
             frmBookList frm = new frmBookList();
             frm.TopLevel = false;
@@ -107,6 +109,7 @@ namespace LMS
             btnBook.Checked = false;
             btnDashboard.Checked = false;
             btnIssueBook.Checked = false;
+            btnHistory.Checked = false;
 
             frmStudentList frm = new frmStudentList();
             frm.TopLevel = false;
@@ -121,6 +124,7 @@ namespace LMS
             btnStudent.Checked = false;
             btnBook.Checked = false;
             btnDashboard.Checked = false;
+            btnHistory.Checked = false;
 
             frmIssueBook frm = new frmIssueBook();
             frm.TopLevel = false;
@@ -128,6 +132,22 @@ namespace LMS
             frm.BringToFront();
             frm.Show();
         }
+
+        private void BtnHistory_Click(object sender, EventArgs e)
+        {
+            btnIssueBook.Checked = false;
+            btnStudent.Checked = false;
+            btnBook.Checked = false;
+            btnDashboard.Checked = false;
+            btnHistory.Checked = true;
+
+            frmHistory frm = new frmHistory();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -169,13 +189,5 @@ namespace LMS
             }
         }
 
-        private void BtnHistory_Click(object sender, EventArgs e)
-        {
-            frmHistory frm = new frmHistory();
-            frm.TopLevel = false;
-            panel3.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
     }
 }
