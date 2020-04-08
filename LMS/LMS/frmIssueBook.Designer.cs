@@ -62,7 +62,7 @@
             this.gunaGroupBox9 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblAvailable = new System.Windows.Forms.Label();
             this.gunaGroupBox8 = new Guna.UI.WinForms.GunaGroupBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblDamagedBook = new System.Windows.Forms.Label();
             this.dtDueDate = new Guna.UI.WinForms.GunaDateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -537,7 +537,7 @@
             this.gunaGroupBox8.BackColor = System.Drawing.Color.Transparent;
             this.gunaGroupBox8.BaseColor = System.Drawing.Color.White;
             this.gunaGroupBox8.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaGroupBox8.Controls.Add(this.label10);
+            this.gunaGroupBox8.Controls.Add(this.lblDamagedBook);
             this.gunaGroupBox8.ForeColor = System.Drawing.Color.White;
             this.gunaGroupBox8.LineBottom = 1;
             this.gunaGroupBox8.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(84)))), ((int)(((byte)(0)))));
@@ -548,20 +548,20 @@
             this.gunaGroupBox8.Name = "gunaGroupBox8";
             this.gunaGroupBox8.Size = new System.Drawing.Size(107, 74);
             this.gunaGroupBox8.TabIndex = 72;
-            this.gunaGroupBox8.Text = "Lost (Cleared)";
-            this.gunaGroupBox8.TextLocation = new System.Drawing.Point(14, 5);
+            this.gunaGroupBox8.Text = "Damaged";
+            this.gunaGroupBox8.TextLocation = new System.Drawing.Point(29, 5);
             // 
-            // label10
+            // lblDamagedBook
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 22F);
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(9, 27);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 45);
-            this.label10.TabIndex = 89;
-            this.label10.Text = "0";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDamagedBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDamagedBook.Font = new System.Drawing.Font("Segoe UI", 22F);
+            this.lblDamagedBook.ForeColor = System.Drawing.Color.DimGray;
+            this.lblDamagedBook.Location = new System.Drawing.Point(9, 27);
+            this.lblDamagedBook.Name = "lblDamagedBook";
+            this.lblDamagedBook.Size = new System.Drawing.Size(87, 45);
+            this.lblDamagedBook.TabIndex = 89;
+            this.lblDamagedBook.Text = "0";
+            this.lblDamagedBook.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtDueDate
             // 
@@ -1062,7 +1062,6 @@
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox5;
         private System.Windows.Forms.Label lblBookAllCopies;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox4;
-        private System.Windows.Forms.Label lblBookLost;
         private System.Windows.Forms.Panel panel4;
         public Guna.UI.WinForms.GunaDataGridView gunaDataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
@@ -1074,13 +1073,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox6;
-        private System.Windows.Forms.Label lblClearedPayments;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox7;
-        private System.Windows.Forms.Label lblFine;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox9;
         private System.Windows.Forms.Label lblAvailable;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox8;
-        private System.Windows.Forms.Label label10;
         public Guna.UI.WinForms.GunaDateTimePicker dtDueDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -1111,5 +1107,9 @@
         private System.Windows.Forms.Label label4;
         public Guna.UI.WinForms.GunaPictureBox studImage;
         public Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearchStud;
+        public System.Windows.Forms.Label lblClearedPayments;
+        public System.Windows.Forms.Label lblFine;
+        public System.Windows.Forms.Label lblDamagedBook;
+        public System.Windows.Forms.Label lblBookLost;
     }
 }

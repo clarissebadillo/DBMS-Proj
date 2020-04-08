@@ -29,6 +29,16 @@ namespace LMS
             frmissue = fissue;
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
         private void FrmPayment_Load(object sender, EventArgs e)
         {
             LoadPending();
@@ -97,16 +107,17 @@ namespace LMS
                     for (int i = 0; i < gunaDataGridView1.Rows.Count; i++)
                     {
                         cn.Open();
-                        cm = new SqlCommand("INSERT INTO tblPayment VALUES (@borrowID, @studentID, @totalPayment, @paymentDate, @description)", cn);
+                        cm = new SqlCommand("INSERT INTO tblPayment VALUES (@borrowID, @studentID, @totalPayment, @paymentDate)", cn);
                         cm.Parameters.AddWithValue("@studentID", lblStudentID.Text);
-                        cm.Parameters.AddWithValue("@totalPayment", lblTotalAmount.Text);
+                        cm.Parameters.AddWithValue("@totalPayment", lblAmount.Text);
                         cm.Parameters.AddWithValue("@paymentDate", dtPaymentDate.Value);
                         cm.Parameters.AddWithValue("@borrowID", gunaDataGridView1.Rows[i].Cells[1].Value.ToString());
-                        cm.Parameters.AddWithValue("@description", gunaDataGridView1.Rows[i].Cells[3].Value.ToString());
                         cm.ExecuteNonQuery();
                         cn.Close();
                         UpdatePaymentStat();
                         LoadPending();
+                        ClearPayment();
+                        RefreshAll();
 
                         popupNotifier.ContentText = "Payment has been successfully processed!";
                         popupNotifier.Popup();
@@ -168,7 +179,8 @@ namespace LMS
                 sum += Convert.ToDouble(gunaDataGridView1.Rows[i].Cells[5].Value);
             }
 
-            lblTotalAmount.Text = "₱" + sum.ToString() + ".00";
+            lblAmount.Text = sum.ToString();
+            lblTotalAmount.Text = "₱" + lblAmount.Text + ".00";
         }
 
         private void BtnPrintReceipt_Click(object sender, EventArgs e)
@@ -197,7 +209,7 @@ namespace LMS
             printReport.AddLineBreak();
             printReport.AddLineBreak();
             printReport.AddHorizontalRule();
-            printReport.AddString("<p style = 'margin: 0 0 0 15px', style = 'font-weight: normal', style='font-family: Segoe UI'>The student <b>" + lblName.Text + "</b>, student number: <b>" + lblStudentNum.Text + "</b> has no record of pending charges.</p>");
+            printReport.AddString("<p style = 'font-weight: normal', style='font-family: Segoe UI'>The student <b>" + lblName.Text + "</b>, student number: <b>" + lblStudentNum.Text + "</b> has no record of pending charges.</p>");
             printReport.AddDatagridView(gunaDataGridView2);
             printReport.AddLineBreak();
             printReport.AddString("<p style = 'font-size: 12px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Status &nbsp&nbsp&nbsp <b>CLEARED</b></p>");
@@ -208,10 +220,25 @@ namespace LMS
             printReport.AddLineBreak();
             printReport.AddLineBreak();
             printReport.AddLineBreak();
-            printReport.AddString("<pre style = 'float: right', style = 'margin: 5px, 0 0 0>______________________________ <br>     School Administrator</pre>");
-            printReport.AddString("<pre>______________________________ <br>          Librarian</pre>");
-            printReport.AddString("<p style = 'font-size: 11px', style='font-family: Segoe UI', style = 'font-weight: normal', style = 'margin: 5px 0 0 0'>Note: Please pay the exact amount indicated above on or before the payment due date. <br> Payments less than the amount will not be processed.</p>");
+            printReport.AddString("<pre style = 'float: right', style = 'margin: 5px 0 0 0'>___________________________________ <br>        School Administrator</pre>");
+            printReport.AddString("<pre>___________________________________ <br>            Librarian</pre>");
             printReport.ShowPrintPreviewDialog();
+        }
+
+        public void ClearPayment()
+        {
+            cn.Open();
+            cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = 0 WHERE studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", frmissue.lblStudNo.Text);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        public void RefreshAll()
+        {
+            frmissue.Clear();
+            frmissue.CountFine();
+            frmissue.CountClearedPayments();
         }
     }
 }

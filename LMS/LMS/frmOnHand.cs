@@ -92,6 +92,7 @@ namespace LMS
             frmissue.CountFine();
             frmissue.Overdue();
             frmissue.LostBook();
+            frmissue.DamagedBook();
         }
     }
 }

@@ -39,6 +39,8 @@ namespace LMS
 
         private void FrmIssueBook_Load(object sender, EventArgs e)
         {
+            txtSearchStud.Select();
+
             AutoCompleteStudentNo();
             LoadRecords();
             Overdue();
@@ -99,12 +101,30 @@ namespace LMS
             cn.Close();
         }
 
+        public void CountClearedPayments()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT SUM(totalPayment) FROM tblPayment WHERE studentID =  @studentID", cn);
+            cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
+            lblClearedPayments.Text = "₱" + cm.ExecuteScalar().ToString() + ".00";
+            cn.Close();
+        }
+
         public void LostBook()
         {
             cn.Open();
             cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Lost' AND studentNum = @studentNum", cn);
             cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
             lblBookLost.Text = cm.ExecuteScalar().ToString();
+            cn.Close();
+        }
+
+        public void DamagedBook()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT COUNT(*) FROM tblBorrowedBook WHERE status = 'Damaged' AND studentNum = @studentNum", cn);
+            cm.Parameters.AddWithValue("@studentNum", txtSearchStud.Text);
+            lblDamagedBook.Text = cm.ExecuteScalar().ToString();
             cn.Close();
         }
 
@@ -241,6 +261,8 @@ namespace LMS
             BorrowHistory();
             CountFine();
             LostBook();
+            DamagedBook();
+            CountClearedPayments();
         }
 
         private void TxtSearchBook_TextChanged(object sender, EventArgs e)
@@ -273,7 +295,7 @@ namespace LMS
             {
                 MyMessageBox.ShowMessage("Student already reached the maximum number of borrowed book!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-            else if (lblAvailable.Text == "0")
+            else if (lblAvailable.Text == "0" || lblAvailable.Text == "-1")
             {
                 MyMessageBox.ShowMessage("No available copies left!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
