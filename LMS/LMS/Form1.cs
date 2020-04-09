@@ -80,6 +80,7 @@ namespace LMS
             btnBook.Checked = false;
             btnIssueBook.Checked = false;
             btnHistory.Checked = false;
+            btnReports.Checked = false;
 
             frmDashboard frm = new frmDashboard();
             frm.TopLevel = false;
@@ -95,6 +96,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnIssueBook.Checked = false;
             btnHistory.Checked = false;
+            btnReports.Checked = false;
 
             frmBookList frm = new frmBookList();
             frm.TopLevel = false;
@@ -110,6 +112,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnIssueBook.Checked = false;
             btnHistory.Checked = false;
+            btnReports.Checked = false;
 
             frmStudentList frm = new frmStudentList();
             frm.TopLevel = false;
@@ -125,6 +128,7 @@ namespace LMS
             btnBook.Checked = false;
             btnDashboard.Checked = false;
             btnHistory.Checked = false;
+            btnReports.Checked = false;
 
             frmIssueBook frm = new frmIssueBook();
             frm.TopLevel = false;
@@ -135,13 +139,30 @@ namespace LMS
 
         private void BtnHistory_Click(object sender, EventArgs e)
         {
+            btnHistory.Checked = true;
             btnIssueBook.Checked = false;
             btnStudent.Checked = false;
             btnBook.Checked = false;
             btnDashboard.Checked = false;
-            btnHistory.Checked = true;
+            btnReports.Checked = false;
 
             frmHistory frm = new frmHistory();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void BtnReports_Click(object sender, EventArgs e)
+        {
+            btnReports.Checked = true;
+            btnIssueBook.Checked = false;
+            btnStudent.Checked = false;
+            btnBook.Checked = false;
+            btnDashboard.Checked = false;
+            btnHistory.Checked = false;
+
+            frmReport frm = new frmReport();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();
