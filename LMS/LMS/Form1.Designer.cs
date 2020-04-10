@@ -181,7 +181,7 @@
             this.btnHistory.AnimationSpeed = 0.03F;
             this.btnHistory.BaseColor = System.Drawing.Color.Transparent;
             this.btnHistory.BorderColor = System.Drawing.Color.Black;
-            this.btnHistory.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnHistory.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnHistory.CheckedBorderColor = System.Drawing.Color.Black;
             this.btnHistory.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnHistory.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnHistory.CheckedImage")));
