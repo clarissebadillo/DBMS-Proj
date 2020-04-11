@@ -41,6 +41,13 @@ namespace LMS
             crystalReportViewer2.ReportSource = studentRprt;
             crystalReportViewer2.Refresh();
             crystalReportViewer2.Zoom(85);
+
+            //BOOK SUMMARY REPORTS
+            Reports.BookSummary bookRprt = new Reports.BookSummary();
+            crystalReportViewer3.ReportSource = null;
+            crystalReportViewer3.ReportSource = bookRprt;
+            crystalReportViewer3.Refresh();
+            crystalReportViewer3.Zoom(85);
         }
     }
 }

@@ -30,17 +30,17 @@
         {
             this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
             this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabPageAdv3 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.crystalReportViewer3 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabPageAdv4 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
             this.tabPageAdv1.SuspendLayout();
             this.tabPageAdv2.SuspendLayout();
+            this.tabPageAdv3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdv1
@@ -70,7 +70,6 @@
             // tabPageAdv1
             // 
             this.tabPageAdv1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPageAdv1.Controls.Add(this.gunaControlBox1);
             this.tabPageAdv1.Controls.Add(this.crystalReportViewer1);
             this.tabPageAdv1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.tabPageAdv1.Image = null;
@@ -82,22 +81,6 @@
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "Activity Report";
             this.tabPageAdv1.ThemesEnabled = false;
-            // 
-            // gunaControlBox1
-            // 
-            this.gunaControlBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox1.AnimationSpeed = 0.03F;
-            this.gunaControlBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(956, 0);
-            this.gunaControlBox1.Name = "gunaControlBox1";
-            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox1.Size = new System.Drawing.Size(29, 28);
-            this.gunaControlBox1.TabIndex = 1;
             // 
             // crystalReportViewer1
             // 
@@ -120,7 +103,6 @@
             // tabPageAdv2
             // 
             this.tabPageAdv2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.tabPageAdv2.Controls.Add(this.gunaControlBox2);
             this.tabPageAdv2.Controls.Add(this.crystalReportViewer2);
             this.tabPageAdv2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.tabPageAdv2.Image = null;
@@ -132,22 +114,6 @@
             this.tabPageAdv2.TabIndex = 2;
             this.tabPageAdv2.Text = "Student Report";
             this.tabPageAdv2.ThemesEnabled = false;
-            // 
-            // gunaControlBox2
-            // 
-            this.gunaControlBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
-            this.gunaControlBox2.AnimationSpeed = 0.03F;
-            this.gunaControlBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.gunaControlBox2.IconColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.IconSize = 15F;
-            this.gunaControlBox2.Location = new System.Drawing.Point(956, 0);
-            this.gunaControlBox2.Name = "gunaControlBox2";
-            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
-            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaControlBox2.Size = new System.Drawing.Size(29, 28);
-            this.gunaControlBox2.TabIndex = 2;
             // 
             // crystalReportViewer2
             // 
@@ -170,6 +136,7 @@
             // tabPageAdv3
             // 
             this.tabPageAdv3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPageAdv3.Controls.Add(this.crystalReportViewer3);
             this.tabPageAdv3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.tabPageAdv3.Image = null;
             this.tabPageAdv3.ImageSize = new System.Drawing.Size(16, 16);
@@ -180,6 +147,24 @@
             this.tabPageAdv3.TabIndex = 3;
             this.tabPageAdv3.Text = "Book Summary";
             this.tabPageAdv3.ThemesEnabled = false;
+            // 
+            // crystalReportViewer3
+            // 
+            this.crystalReportViewer3.ActiveViewIndex = -1;
+            this.crystalReportViewer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer3.EnableDrillDown = false;
+            this.crystalReportViewer3.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer3.Name = "crystalReportViewer3";
+            this.crystalReportViewer3.ShowCloseButton = false;
+            this.crystalReportViewer3.ShowGotoPageButton = false;
+            this.crystalReportViewer3.ShowGroupTreeButton = false;
+            this.crystalReportViewer3.ShowLogo = false;
+            this.crystalReportViewer3.ShowParameterPanelButton = false;
+            this.crystalReportViewer3.Size = new System.Drawing.Size(986, 639);
+            this.crystalReportViewer3.TabIndex = 2;
+            this.crystalReportViewer3.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // tabPageAdv4
             // 
@@ -211,6 +196,7 @@
             this.tabControlAdv1.ResumeLayout(false);
             this.tabPageAdv1.ResumeLayout(false);
             this.tabPageAdv2.ResumeLayout(false);
+            this.tabPageAdv3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -223,8 +209,7 @@
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv3;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv4;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
-        private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer3;
     }
 }
