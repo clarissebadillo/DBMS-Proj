@@ -48,6 +48,12 @@ namespace LMS
             crystalReportViewer3.ReportSource = bookRprt;
             crystalReportViewer3.Refresh();
             crystalReportViewer3.Zoom(85);
+
+            //BILLING REPORTS
+            Reports.Billing billingRprt = new Reports.Billing();
+            crystalReportViewer4.ReportSource = null;
+            crystalReportViewer4.ReportSource = billingRprt;
+            crystalReportViewer4.Refresh();
         }
     }
 }

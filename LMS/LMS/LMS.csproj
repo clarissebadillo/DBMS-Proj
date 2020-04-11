@@ -200,6 +200,12 @@
       <DependentUpon>Activity.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Billing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Billing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\BookSummary.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -268,6 +274,10 @@
     <EmbeddedResource Include="Reports\Activity.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Activity.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Billing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Billing.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\BookSummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
