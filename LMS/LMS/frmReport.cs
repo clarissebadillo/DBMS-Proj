@@ -12,7 +12,16 @@ namespace LMS
 {
     public partial class frmReport : Form
     {
-        
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
         public frmReport()
         {
             InitializeComponent();
@@ -25,6 +34,13 @@ namespace LMS
             crystalReportViewer1.ReportSource = null;
             crystalReportViewer1.ReportSource = activityRprt;
             crystalReportViewer1.Refresh();
+
+            //STUDENT REPORTS
+            Reports.Student studentRprt = new Reports.Student();
+            crystalReportViewer2.ReportSource = null;
+            crystalReportViewer2.ReportSource = studentRprt;
+            crystalReportViewer2.Refresh();
+            crystalReportViewer2.Zoom(85);
         }
     }
 }

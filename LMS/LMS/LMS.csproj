@@ -200,6 +200,12 @@
       <DependentUpon>Activity.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Student.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Student.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ucBooksOnHand.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -256,6 +262,10 @@
     <EmbeddedResource Include="Reports\Activity.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Activity.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Student.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Student.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ucBooksOnHand.resx">
       <DependentUpon>ucBooksOnHand.cs</DependentUpon>
