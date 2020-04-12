@@ -38,7 +38,8 @@ namespace LMS
 
         private void FrmNewAccount_Load(object sender, EventArgs e)
         {
-
+            txtPassword.UseSystemPasswordChar = true;
+            txtRetypePass.UseSystemPasswordChar = true;
         }
 
         public void Clear()
@@ -87,6 +88,50 @@ namespace LMS
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void BtnShowPass_Click(object sender, EventArgs e)
+        {
+            btnShowPass.Visible = false;
+            btnHidePass.Visible = true;
+
+            if (txtPassword.UseSystemPasswordChar == true)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void BtnHidePass_Click(object sender, EventArgs e)
+        {
+            btnShowPass.Visible = true;
+            btnHidePass.Visible = false;
+
+            if (txtPassword.UseSystemPasswordChar == false)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void BtnShowPass2_Click(object sender, EventArgs e)
+        {
+            btnShowPass2.Visible = false;
+            btnHidePass2.Visible = true;
+
+            if (txtRetypePass.UseSystemPasswordChar == true)
+            {
+                txtRetypePass.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void BtnHidePass2_Click(object sender, EventArgs e)
+        {
+            btnShowPass2.Visible = true;
+            btnHidePass2.Visible = false;
+
+            if (txtRetypePass.UseSystemPasswordChar == false)
+            {
+                txtRetypePass.UseSystemPasswordChar = true;
             }
         }
     }

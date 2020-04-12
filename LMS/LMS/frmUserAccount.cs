@@ -75,6 +75,24 @@ namespace LMS
             }
         }
 
-        
+        private void Guna2DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (guna2DataGridView1.CurrentCell.ColumnIndex == 4)//select target column
+            {
+                TextBox textBox = e.Control as TextBox;
+                if (textBox != null)
+                {
+                    textBox.UseSystemPasswordChar = true;
+                }
+            }
+        }
+
+        private void Guna2DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.Value != null)
+            {
+                e.Value = new String('\u25CF', e.Value.ToString().Length);
+            }
+        }
     }
 }
