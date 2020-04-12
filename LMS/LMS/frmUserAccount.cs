@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -51,7 +52,7 @@ namespace LMS
             while (dr.Read())
             {
                 i += 1;
-                guna2DataGridView1.Rows.Add(i, dr["userID"].ToString(), dr["fullName"].ToString(), dr["username"].ToString(), dr["password"].ToString(), dr["email"].ToString());
+                guna2DataGridView1.Rows.Add(i, dr["userID"].ToString(), dr["fullName"].ToString(), dr["username"].ToString(), dr["password"].ToString(), dr["email"].ToString(), dr["status"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -101,5 +102,32 @@ namespace LMS
             frmChangePass frm = new frmChangePass(this);
             frm.Show();
         }
+
+        private void BtnDeactivateAcc_Click(object sender, EventArgs e)
+        {
+
+
+
+            try
+            {
+                if (MyMessageBox.ShowMessage("Are you sure you want to deactivate this account?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE tblUser SET status = 'Deactivated' WHERE userID = @userID", cn);
+                    cm.Parameters.AddWithValue("@userID", lblID.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    MyMessageBox.ShowMessage("Account deactivated successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadRecords();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
     }
 }
