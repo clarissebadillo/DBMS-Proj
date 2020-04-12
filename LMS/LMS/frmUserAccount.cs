@@ -72,12 +72,13 @@ namespace LMS
                 rowIndex = e.RowIndex;
                 gunaContextMenuStrip1.Show(guna2DataGridView1.Location);
                 gunaContextMenuStrip1.Show(Cursor.Position);
+                lblID.Text = guna2DataGridView1[1, e.RowIndex].Value.ToString();
             }
         }
 
         private void Guna2DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (guna2DataGridView1.CurrentCell.ColumnIndex == 4)//select target column
+            if (guna2DataGridView1.CurrentCell.ColumnIndex == 4)
             {
                 TextBox textBox = e.Control as TextBox;
                 if (textBox != null)
@@ -93,6 +94,12 @@ namespace LMS
             {
                 e.Value = new String('\u25CF', e.Value.ToString().Length);
             }
+        }
+
+        private void BtnChangePass_Click(object sender, EventArgs e)
+        {
+            frmChangePass frm = new frmChangePass(this);
+            frm.Show();
         }
     }
 }
