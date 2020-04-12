@@ -210,5 +210,13 @@ namespace LMS
             }
         }
 
+        private void BtnUserAccount_Click(object sender, EventArgs e)
+        {
+            frmUserAccount frm = new frmUserAccount();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
     }
 }

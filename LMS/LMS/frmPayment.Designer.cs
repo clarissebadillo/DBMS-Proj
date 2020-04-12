@@ -43,7 +43,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtSummaryRprt = new Guna.UI.WinForms.GunaTextBox();
             this.lblAmount = new System.Windows.Forms.Label();
             this.lblBorrowID = new System.Windows.Forms.Label();
             this.lblStudentID = new System.Windows.Forms.Label();
@@ -81,6 +80,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.printReport = new KimToo.EasyHTMLReports(this.components);
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.txtSummaryRprt = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunaLinePanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
@@ -89,8 +89,8 @@
             // 
             // gunaLinePanel1
             // 
-            this.gunaLinePanel1.Controls.Add(this.label3);
             this.gunaLinePanel1.Controls.Add(this.txtSummaryRprt);
+            this.gunaLinePanel1.Controls.Add(this.label3);
             this.gunaLinePanel1.Controls.Add(this.lblAmount);
             this.gunaLinePanel1.Controls.Add(this.lblBorrowID);
             this.gunaLinePanel1.Controls.Add(this.lblStudentID);
@@ -133,22 +133,6 @@
             this.label3.Size = new System.Drawing.Size(97, 15);
             this.label3.TabIndex = 107;
             this.label3.Text = "Summary Report";
-            // 
-            // txtSummaryRprt
-            // 
-            this.txtSummaryRprt.BaseColor = System.Drawing.Color.Gainsboro;
-            this.txtSummaryRprt.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtSummaryRprt.BorderSize = 1;
-            this.txtSummaryRprt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSummaryRprt.FocusedBaseColor = System.Drawing.Color.Gainsboro;
-            this.txtSummaryRprt.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtSummaryRprt.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSummaryRprt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSummaryRprt.Location = new System.Drawing.Point(457, 452);
-            this.txtSummaryRprt.Name = "txtSummaryRprt";
-            this.txtSummaryRprt.PasswordChar = '\0';
-            this.txtSummaryRprt.Size = new System.Drawing.Size(376, 26);
-            this.txtSummaryRprt.TabIndex = 106;
             // 
             // lblAmount
             // 
@@ -762,6 +746,28 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
+            // txtSummaryRprt
+            // 
+            this.txtSummaryRprt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSummaryRprt.DefaultText = "";
+            this.txtSummaryRprt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSummaryRprt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSummaryRprt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSummaryRprt.DisabledState.Parent = this.txtSummaryRprt;
+            this.txtSummaryRprt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSummaryRprt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSummaryRprt.FocusedState.Parent = this.txtSummaryRprt;
+            this.txtSummaryRprt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSummaryRprt.HoverState.Parent = this.txtSummaryRprt;
+            this.txtSummaryRprt.Location = new System.Drawing.Point(457, 452);
+            this.txtSummaryRprt.Name = "txtSummaryRprt";
+            this.txtSummaryRprt.PasswordChar = '\0';
+            this.txtSummaryRprt.PlaceholderText = "e.g. Fine for lost, damaged, overdue book......";
+            this.txtSummaryRprt.SelectedText = "";
+            this.txtSummaryRprt.ShadowDecoration.Parent = this.txtSummaryRprt;
+            this.txtSummaryRprt.Size = new System.Drawing.Size(376, 26);
+            this.txtSummaryRprt.TabIndex = 108;
+            // 
             // frmPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,6 +830,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaTextBox txtSummaryRprt;
+        private Guna.UI2.WinForms.Guna2TextBox txtSummaryRprt;
     }
 }
