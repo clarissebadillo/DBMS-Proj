@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation8 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
@@ -40,10 +40,12 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnlError = new System.Windows.Forms.Panel();
-            this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lblErrorMessage = new Guna.UI.WinForms.GunaLabel();
+            this.btnClose = new Guna.UI2.WinForms.Guna2ImageButton();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlError.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +56,7 @@
             this.guna2Transition1.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.label1.Location = new System.Drawing.Point(537, 111);
+            this.label1.Location = new System.Drawing.Point(537, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 46);
             this.label1.TabIndex = 1;
@@ -77,7 +79,7 @@
             this.txtUsername.HoverState.Parent = this.txtUsername;
             this.txtUsername.IconRight = ((System.Drawing.Image)(resources.GetObject("txtUsername.IconRight")));
             this.txtUsername.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.txtUsername.Location = new System.Drawing.Point(472, 179);
+            this.txtUsername.Location = new System.Drawing.Point(472, 186);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "Username";
@@ -115,7 +117,7 @@
             this.txtPassword.HoverState.Parent = this.txtPassword;
             this.txtPassword.IconRight = ((System.Drawing.Image)(resources.GetObject("txtPassword.IconRight")));
             this.txtPassword.IconRightOffset = new System.Drawing.Point(3, 0);
-            this.txtPassword.Location = new System.Drawing.Point(472, 226);
+            this.txtPassword.Location = new System.Drawing.Point(472, 233);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "Password";
@@ -135,7 +137,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(472, 283);
+            this.btnLogin.Location = new System.Drawing.Point(472, 303);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
@@ -182,11 +184,23 @@
             this.pnlError.Controls.Add(this.lblErrorMessage);
             this.pnlError.Controls.Add(this.btnClose);
             this.guna2Transition1.SetDecoration(this.pnlError, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnlError.Location = new System.Drawing.Point(451, 58);
+            this.pnlError.Location = new System.Drawing.Point(451, 134);
             this.pnlError.Name = "pnlError";
             this.pnlError.Size = new System.Drawing.Size(296, 47);
             this.pnlError.TabIndex = 7;
             this.pnlError.Visible = false;
+            // 
+            // lblErrorMessage
+            // 
+            this.guna2Transition1.SetDecoration(this.lblErrorMessage, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblErrorMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblErrorMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblErrorMessage.Location = new System.Drawing.Point(49, 8);
+            this.lblErrorMessage.Name = "lblErrorMessage";
+            this.lblErrorMessage.Size = new System.Drawing.Size(237, 31);
+            this.lblErrorMessage.TabIndex = 1;
+            this.lblErrorMessage.Text = "Invalid username or password!\r\nPlease try again.";
+            this.lblErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnClose
             // 
@@ -204,18 +218,6 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // lblErrorMessage
-            // 
-            this.guna2Transition1.SetDecoration(this.lblErrorMessage, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblErrorMessage.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblErrorMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblErrorMessage.Location = new System.Drawing.Point(49, 8);
-            this.lblErrorMessage.Name = "lblErrorMessage";
-            this.lblErrorMessage.Size = new System.Drawing.Size(237, 31);
-            this.lblErrorMessage.TabIndex = 1;
-            this.lblErrorMessage.Text = "Sorry, we couldn\'t find an account with that username. Please try again.";
-            this.lblErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 8;
@@ -225,23 +227,68 @@
             // 
             this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Scale;
             this.guna2Transition1.Cursor = null;
-            animation5.AnimateOnlyDifferences = true;
-            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
-            animation5.LeafCoeff = 0F;
-            animation5.MaxTime = 1F;
-            animation5.MinTime = 0F;
-            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
-            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
-            animation5.MosaicSize = 0;
-            animation5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation5.RotateCoeff = 0F;
-            animation5.RotateLimit = 0F;
-            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
-            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
-            animation5.TimeCoeff = 0F;
-            animation5.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation5;
-            this.guna2Transition1.TimeStep = 0.01F;
+            animation8.AnimateOnlyDifferences = true;
+            animation8.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.BlindCoeff")));
+            animation8.LeafCoeff = 0F;
+            animation8.MaxTime = 1F;
+            animation8.MinTime = 0F;
+            animation8.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicCoeff")));
+            animation8.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation8.MosaicShift")));
+            animation8.MosaicSize = 0;
+            animation8.Padding = new System.Windows.Forms.Padding(0);
+            animation8.RotateCoeff = 0F;
+            animation8.RotateLimit = 0F;
+            animation8.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.ScaleCoeff")));
+            animation8.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation8.SlideCoeff")));
+            animation8.TimeCoeff = 0F;
+            animation8.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation8;
+            this.guna2Transition1.Interval = 1;
+            // 
+            // popupNotifier
+            // 
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.SystemColors.ControlText;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 11F);
+            this.popupNotifier.TitlePadding = new System.Windows.Forms.Padding(5, 15, 0, 0);
+            this.popupNotifier.TitleText = "ACCESS GRANTED!";
+            // 
+            // checkbox
+            // 
+            this.checkbox.AutoSize = true;
+            this.checkbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.checkbox.CheckedState.BorderRadius = 2;
+            this.checkbox.CheckedState.BorderThickness = 0;
+            this.checkbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2Transition1.SetDecoration(this.checkbox, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.checkbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.checkbox.Location = new System.Drawing.Point(472, 275);
+            this.checkbox.Name = "checkbox";
+            this.checkbox.Size = new System.Drawing.Size(102, 17);
+            this.checkbox.TabIndex = 8;
+            this.checkbox.Text = "Show Password";
+            this.checkbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkbox.UncheckedState.BorderRadius = 2;
+            this.checkbox.UncheckedState.BorderThickness = 0;
+            this.checkbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.checkbox.UseVisualStyleBackColor = true;
+            this.checkbox.CheckedChanged += new System.EventHandler(this.Checkbox_CheckedChanged);
             // 
             // frmLogin
             // 
@@ -249,6 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(789, 463);
+            this.Controls.Add(this.checkbox);
             this.Controls.Add(this.pnlError);
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.guna2ControlBox1);
@@ -285,5 +333,7 @@
         private Guna.UI.WinForms.GunaLabel lblErrorMessage;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
+        private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
+        private Guna.UI2.WinForms.Guna2CheckBox checkbox;
     }
 }
