@@ -36,12 +36,6 @@
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCreateAccount = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
-            this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnDeactivateAcc = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblID = new System.Windows.Forms.Label();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDeactivateAcc = new System.Windows.Forms.ToolStripMenuItem();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,6 +99,8 @@
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
             this.guna2DataGridView1.AllowUserToDeleteRows = false;
+            this.guna2DataGridView1.AllowUserToResizeColumns = false;
+            this.guna2DataGridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -168,90 +170,6 @@
             this.guna2DataGridView1.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Guna2DataGridView1_CellMouseUp);
             this.guna2DataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.Guna2DataGridView1_EditingControlShowing);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.guna2DataGridView1);
-            this.panel1.Location = new System.Drawing.Point(26, 135);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1084, 473);
-            this.panel1.TabIndex = 3;
-            // 
-            // btnCreateAccount
-            // 
-            this.btnCreateAccount.AnimationHoverSpeed = 0.07F;
-            this.btnCreateAccount.AnimationSpeed = 0.03F;
-            this.btnCreateAccount.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreateAccount.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.btnCreateAccount.BorderColor = System.Drawing.Color.Black;
-            this.btnCreateAccount.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.btnCreateAccount.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnCreateAccount.CheckedForeColor = System.Drawing.Color.White;
-            this.btnCreateAccount.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.CheckedImage")));
-            this.btnCreateAccount.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.btnCreateAccount.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCreateAccount.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCreateAccount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
-            this.btnCreateAccount.Image = null;
-            this.btnCreateAccount.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnCreateAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCreateAccount.Location = new System.Drawing.Point(967, 97);
-            this.btnCreateAccount.Name = "btnCreateAccount";
-            this.btnCreateAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.btnCreateAccount.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCreateAccount.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCreateAccount.OnHoverImage = null;
-            this.btnCreateAccount.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCreateAccount.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCreateAccount.Radius = 7;
-            this.btnCreateAccount.Size = new System.Drawing.Size(143, 29);
-            this.btnCreateAccount.TabIndex = 63;
-            this.btnCreateAccount.Text = "Create New Account";
-            this.btnCreateAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnCreateAccount.Click += new System.EventHandler(this.BtnCreateAccount_Click);
-            // 
-            // gunaContextMenuStrip1
-            // 
-            this.gunaContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnChangePass,
-            this.btnDeactivateAcc});
-            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
-            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.Empty;
-            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
-            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
-            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
-            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
-            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
-            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
-            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(178, 48);
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(177, 22);
-            this.btnChangePass.Text = "Change Password";
-            this.btnChangePass.Click += new System.EventHandler(this.BtnChangePass_Click);
-            // 
-            // btnDeactivateAcc
-            // 
-            this.btnDeactivateAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnDeactivateAcc.Image")));
-            this.btnDeactivateAcc.Name = "btnDeactivateAcc";
-            this.btnDeactivateAcc.Size = new System.Drawing.Size(177, 22);
-            this.btnDeactivateAcc.Text = "Deactivate Account";
-            this.btnDeactivateAcc.Click += new System.EventHandler(this.BtnDeactivateAcc_Click);
-            // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(23, 113);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(0, 13);
-            this.lblID.TabIndex = 64;
-            this.lblID.Visible = false;
-            // 
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -296,6 +214,90 @@
             this.Column7.HeaderText = "Status";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.guna2DataGridView1);
+            this.panel1.Location = new System.Drawing.Point(26, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1084, 473);
+            this.panel1.TabIndex = 3;
+            // 
+            // gunaContextMenuStrip1
+            // 
+            this.gunaContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnChangePass,
+            this.btnDeactivateAcc});
+            this.gunaContextMenuStrip1.Name = "gunaContextMenuStrip1";
+            this.gunaContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.Empty;
+            this.gunaContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.ColorTable = null;
+            this.gunaContextMenuStrip1.RenderStyle.RoundedEdges = true;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.gunaContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.gunaContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
+            this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
+            this.gunaContextMenuStrip1.Size = new System.Drawing.Size(178, 48);
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(23, 113);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TabIndex = 64;
+            this.lblID.Visible = false;
+            // 
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.AnimationHoverSpeed = 0.07F;
+            this.btnCreateAccount.AnimationSpeed = 0.03F;
+            this.btnCreateAccount.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreateAccount.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnCreateAccount.BorderColor = System.Drawing.Color.Black;
+            this.btnCreateAccount.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.btnCreateAccount.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnCreateAccount.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnCreateAccount.CheckedImage")));
+            this.btnCreateAccount.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.btnCreateAccount.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCreateAccount.FocusedColor = System.Drawing.Color.Empty;
+            this.btnCreateAccount.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnCreateAccount.ForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.Image = null;
+            this.btnCreateAccount.ImageSize = new System.Drawing.Size(22, 22);
+            this.btnCreateAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnCreateAccount.Location = new System.Drawing.Point(967, 97);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.btnCreateAccount.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnCreateAccount.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnCreateAccount.OnHoverImage = null;
+            this.btnCreateAccount.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnCreateAccount.OnPressedColor = System.Drawing.Color.Black;
+            this.btnCreateAccount.Radius = 7;
+            this.btnCreateAccount.Size = new System.Drawing.Size(143, 29);
+            this.btnCreateAccount.TabIndex = 63;
+            this.btnCreateAccount.Text = "Create New Account";
+            this.btnCreateAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnCreateAccount.Click += new System.EventHandler(this.BtnCreateAccount_Click);
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(177, 22);
+            this.btnChangePass.Text = "Change Password";
+            this.btnChangePass.Click += new System.EventHandler(this.BtnChangePass_Click);
+            // 
+            // btnDeactivateAcc
+            // 
+            this.btnDeactivateAcc.Image = global::LMS.Properties.Resources.delete_30px;
+            this.btnDeactivateAcc.Name = "btnDeactivateAcc";
+            this.btnDeactivateAcc.Size = new System.Drawing.Size(177, 22);
+            this.btnDeactivateAcc.Text = "Deactivate Account";
+            this.btnDeactivateAcc.Click += new System.EventHandler(this.BtnDeactivateAcc_Click);
             // 
             // frmUserAccount
             // 

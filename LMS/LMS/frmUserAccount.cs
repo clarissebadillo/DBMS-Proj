@@ -75,6 +75,17 @@ namespace LMS
                 gunaContextMenuStrip1.Show(Cursor.Position);
                 lblID.Text = guna2DataGridView1[1, e.RowIndex].Value.ToString();
             }
+
+            if (guna2DataGridView1[6, e.RowIndex].Value.ToString() == "Deactivated")
+            {
+                gunaContextMenuStrip1.Items[1].Text = "Activate Account";
+                gunaContextMenuStrip1.Items[1].Image = Properties.Resources.checkmark_30px;
+            }
+            else
+            {
+                gunaContextMenuStrip1.Items[1].Text = "Deactivate Account";
+                gunaContextMenuStrip1.Items[1].Image = Properties.Resources.delete_30px;
+            }
         }
 
         private void Guna2DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -105,21 +116,35 @@ namespace LMS
 
         private void BtnDeactivateAcc_Click(object sender, EventArgs e)
         {
-
-
-
             try
             {
-                if (MyMessageBox.ShowMessage("Are you sure you want to deactivate this account?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (gunaContextMenuStrip1.Items[1].Text == "Deactivate Account")
                 {
-                    cn.Open();
-                    cm = new SqlCommand("UPDATE tblUser SET status = 'Deactivated' WHERE userID = @userID", cn);
-                    cm.Parameters.AddWithValue("@userID", lblID.Text);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
+                    if (MyMessageBox.ShowMessage("Are you sure you want to deactivate this account?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tblUser SET status = 'Deactivated' WHERE userID = @userID", cn);
+                        cm.Parameters.AddWithValue("@userID", lblID.Text);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
 
-                    MyMessageBox.ShowMessage("Account deactivated successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadRecords();
+                        MyMessageBox.ShowMessage("Account deactivated successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadRecords();
+                    }
+                }
+                else
+                {
+                    if (MyMessageBox.ShowMessage("Are you sure you want to activate this account?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cn.Open();
+                        cm = new SqlCommand("UPDATE tblUser SET status = 'Active' WHERE userID = @userID", cn);
+                        cm.Parameters.AddWithValue("@userID", lblID.Text);
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        MyMessageBox.ShowMessage("Account activated successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadRecords();
+                    }
                 }
             }
             catch (Exception ex)
