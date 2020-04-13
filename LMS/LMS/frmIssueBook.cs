@@ -20,11 +20,16 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        Form1 frm1;
+        string admin;
 
-        public frmIssueBook()
+        public frmIssueBook(Form1 f1)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            frm1 = f1;
+
+            admin = frm1.lblLibrarian.Text;
         }
 
         protected override CreateParams CreateParams
@@ -143,7 +148,7 @@ namespace LMS
                 {
                     int fine = 0;
                     cn.Open();
-                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned', @totalFine, @paymentStatus)", cn);
+                    cm = new SqlCommand("INSERT INTO tblBorrowedBook VALUES (@studentID, @bookID, @studentNum, @bookTitle, @dateBorrowed, @dueDate, '', 'Not Returned', @totalFine, @paymentStatus, @librarian)", cn);
                     cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
                     cm.Parameters.AddWithValue("@studentNum", lblStudNo.Text);
                     cm.Parameters.AddWithValue("@bookID", lblBookID.Text);
@@ -152,6 +157,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@dueDate", dtDueDate.Value);
                     cm.Parameters.AddWithValue("@totalFine", fine);
                     cm.Parameters.AddWithValue("@paymentStatus", "");
+                    cm.Parameters.AddWithValue("@librarian", frm1.lblLibrarian.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
@@ -324,6 +330,7 @@ namespace LMS
         private void LblFine_Click(object sender, EventArgs e)
         {
             frmPayment frm = new frmPayment(this);
+            frm.lblLibrarianName.Text = admin;
             frm.Show();
         }
     }

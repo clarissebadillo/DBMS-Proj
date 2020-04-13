@@ -51,14 +51,16 @@ namespace LMS
             gunaDataGridView1.Columns[4].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
             gunaDataGridView1.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
             gunaDataGridView1.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView1.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 20, 0);
+            gunaDataGridView1.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView1.Columns[8].DefaultCellStyle.Padding = new Padding(20, 0, 20, 0);
 
             gunaDataGridView1.Columns[2].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView1.Columns[3].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView1.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView1.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView1.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView1.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
+            gunaDataGridView1.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView1.Columns[8].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
 
             //RETURN HISTORY
             LoadReturnHistory();
@@ -70,13 +72,15 @@ namespace LMS
             gunaDataGridView2.Columns[3].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
             gunaDataGridView2.Columns[4].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
             gunaDataGridView2.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView2.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 30, 0);
+            gunaDataGridView2.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView2.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 30, 0);
 
             gunaDataGridView2.Columns[2].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView2.Columns[3].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView2.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView2.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView2.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
+            gunaDataGridView2.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView2.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
 
             //PAYMENT HISTORY
             LoadAllPaymentHistory();
@@ -88,14 +92,16 @@ namespace LMS
             gunaDataGridView3.Columns[4].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
             gunaDataGridView3.Columns[5].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
             gunaDataGridView3.Columns[6].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
-            gunaDataGridView3.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 20, 0);
+            gunaDataGridView3.Columns[7].DefaultCellStyle.Padding = new Padding(20, 0, 0, 0);
+            gunaDataGridView3.Columns[8].DefaultCellStyle.Padding = new Padding(20, 0, 20, 0);
 
             gunaDataGridView3.Columns[2].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView3.Columns[3].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView3.Columns[4].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView3.Columns[5].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView3.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
-            gunaDataGridView3.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
+            gunaDataGridView3.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
+            gunaDataGridView3.Columns[8].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
         }
 
         public void LoadAllBorrowHistory()
@@ -105,14 +111,14 @@ namespace LMS
             {
                 gunaDataGridView1.Rows.Clear();
                 cn.Open();
-                cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.dateBorrowed, bb.dueDate, bb.status FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE dateBorrowed BETWEEN @dt1 AND @dt2", cn);
+                cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.dateBorrowed, bb.dueDate, bb.status, bb.librarian FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE dateBorrowed BETWEEN @dt1 AND @dt2", cn);
                 cm.Parameters.AddWithValue("@dt1", dt1.Value);
                 cm.Parameters.AddWithValue("@dt2", dt2.Value);
                 dr = cm.ExecuteReader();
                 while (dr.Read())
                 {
                     i += 1;
-                    gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
+                    gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), dr["librarian"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
                 }
                 dr.Close();
                 cn.Close();
@@ -121,7 +127,7 @@ namespace LMS
             {
                 gunaDataGridView1.Rows.Clear();
                 cn.Open();
-                cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.dateBorrowed, bb.dueDate ,bb.status FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE status LIKE @status AND dateBorrowed BETWEEN @dt1 AND @dt2", cn);
+                cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.dateBorrowed, bb.dueDate, bb.status, bb.librarian FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE status LIKE @status AND dateBorrowed BETWEEN @dt1 AND @dt2", cn);
                 cm.Parameters.AddWithValue("@status", cboStatus.Text);
                 cm.Parameters.AddWithValue("@dt1", dt1.Value);
                 cm.Parameters.AddWithValue("@dt2", dt2.Value);
@@ -129,7 +135,7 @@ namespace LMS
                 while (dr.Read())
                 {
                     i += 1;
-                    gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
+                    gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), dr["librarian"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MM/dd/yyyy"), Convert.ToDateTime(dr["dueDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
                 }
                 dr.Close();
                 cn.Close();
@@ -158,14 +164,14 @@ namespace LMS
             int i = 0;
             gunaDataGridView2.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.returnedDate, bb.status FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE status = 'Returned' AND returnedDate BETWEEN @dtFrom AND @dtTo", cn);
+            cm = new SqlCommand("SELECT bb.borrowID,  bb.bookTitle,  bb.studentNum, (s.lastName + ' ' + s.firstName) AS Name, bb.returnedDate, bb.status, bb.librarian FROM tblBorrowedBook as bb INNER JOIN tblStudent AS s ON bb.studentID = s.studentID WHERE status = 'Returned' AND returnedDate BETWEEN @dtFrom AND @dtTo", cn);
             cm.Parameters.AddWithValue("@dtFrom", dtFrom.Value);
             cm.Parameters.AddWithValue("@dtTo", dtTo.Value);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView2.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), Convert.ToDateTime(dr["returnedDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
+                gunaDataGridView2.Rows.Add(i, dr["borrowID"].ToString(), dr["bookTitle"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), dr["librarian"].ToString(), Convert.ToDateTime(dr["returnedDate"]).ToString("MM/dd/yyyy"), dr["status"].ToString());
             }
             dr.Close();
             cn.Close();
@@ -188,14 +194,14 @@ namespace LMS
             int i = 0;
             gunaDataGridView3.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT p.paymentID, p.totalPayment, p.paymentDate, p.summaryDesc, (s.lastName + ' ' + s.firstName) AS Name, s.studentNum, bb.paymentStatus FROM ((tblPayment AS p INNER JOIN tblStudent AS s ON p.studentID = s.studentID) INNER JOIN tblBorrowedBook  AS bb ON p.studentID = bb.studentID) WHERE bb.paymentStatus = 'Cleared' AND paymentDate BETWEEN @dt3 AND @dt4", cn);
+            cm = new SqlCommand("SELECT p.paymentID, p.totalPayment, p.paymentDate, p.summaryDesc, p.librarian, (s.lastName + ' ' + s.firstName) AS Name, s.studentNum, bb.paymentStatus FROM ((tblPayment AS p INNER JOIN tblStudent AS s ON p.studentID = s.studentID) INNER JOIN tblBorrowedBook  AS bb ON p.studentID = bb.studentID) WHERE bb.paymentStatus = 'Cleared' AND paymentDate BETWEEN @dt3 AND @dt4", cn);
             cm.Parameters.AddWithValue("@dt3", dt3.Value);
             cm.Parameters.AddWithValue("@dt4", dt4.Value);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i += 1;
-                gunaDataGridView3.Rows.Add(i, dr["paymentID"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), dr["summaryDesc"].ToString(), Convert.ToDateTime(dr["paymentDate"]).ToString("MM/dd/yyyy"), dr["totalPayment"].ToString(), dr["paymentStatus"].ToString());
+                gunaDataGridView3.Rows.Add(i, dr["paymentID"].ToString(), dr["studentNum"].ToString(), dr["Name"].ToString(), dr["summaryDesc"].ToString(), dr["librarian"].ToString(), Convert.ToDateTime(dr["paymentDate"]).ToString("MM/dd/yyyy"), dr["totalPayment"].ToString(), dr["paymentStatus"].ToString());
             }
             dr.Close();
             cn.Close();

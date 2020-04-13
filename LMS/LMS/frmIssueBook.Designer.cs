@@ -994,6 +994,7 @@
             this.txtSearchStud.BorderColor = System.Drawing.Color.Gainsboro;
             this.txtSearchStud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchStud.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtSearchStud.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtSearchStud.Location = new System.Drawing.Point(34, 43);
             this.txtSearchStud.Metrocolor = System.Drawing.Color.Gainsboro;
             this.txtSearchStud.Name = "txtSearchStud";

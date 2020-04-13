@@ -17,10 +17,12 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
 
+
         public Form1()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+
         }
 
         private const int cs = 0x00020000;
@@ -130,7 +132,7 @@ namespace LMS
             btnHistory.Checked = false;
             btnReports.Checked = false;
 
-            frmIssueBook frm = new frmIssueBook();
+            frmIssueBook frm = new frmIssueBook(this);
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

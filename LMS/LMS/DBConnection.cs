@@ -13,5 +13,6 @@ namespace LMS
             string con = "Data Source=LAPTOP-PM36MAJR;Initial Catalog=LibraryDB;Integrated Security=True";
             return con;
         }
+
     }
 }
