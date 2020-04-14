@@ -28,36 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBookList));
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI.WinForms.GunaTextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -87,19 +69,42 @@
             this.lblBorrowed = new System.Windows.Forms.Label();
             this.gunaGroupBox5 = new Guna.UI.WinForms.GunaGroupBox();
             this.lblLost = new System.Windows.Forms.Label();
-            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
-            this.btnAddBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
             this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
+            this.sfToolTip1 = new Syncfusion.Windows.Forms.SfToolTip(this.components);
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnAddBook = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddCopy = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).BeginInit();
             this.gunaLinePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaGroupBox1.SuspendLayout();
             this.gunaGroupBox2.SuspendLayout();
             this.gunaGroupBox3.SuspendLayout();
             this.gunaGroupBox4.SuspendLayout();
             this.gunaGroupBox5.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaDataGridView1
@@ -108,21 +113,21 @@
             this.gunaDataGridView1.AllowUserToDeleteRows = false;
             this.gunaDataGridView1.AllowUserToResizeColumns = false;
             this.gunaDataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.gunaDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gunaDataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gunaDataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.gunaDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaDataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gunaDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gunaDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.gunaDataGridView1.ColumnHeadersHeight = 38;
             this.gunaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -141,16 +146,17 @@
             this.Column14,
             this.Column16,
             this.Column15,
+            this.AddCopy,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gunaDataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.gunaDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaDataGridView1.EnableHeadersVisualStyles = false;
             this.gunaDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -185,158 +191,6 @@
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.gunaDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GunaDataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "#";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 37;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "ID";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            this.Column2.Width = 42;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "Title";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.HeaderText = "ISBN";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 58;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column7.HeaderText = "Subject";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 71;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "Genre";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 64;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Type";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Language";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "Author";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Publisher";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Visible = false;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Price";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "Year";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            this.Column6.Width = 55;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column13.HeaderText = "Copies";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            this.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column13.Visible = false;
-            this.Column13.Width = 68;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column14.HeaderText = "Available";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column14.Visible = false;
-            this.Column14.Width = 79;
-            // 
-            // Column16
-            // 
-            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column16.HeaderText = "Borrowed";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            this.Column16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column16.Visible = false;
-            this.Column16.Width = 83;
-            // 
-            // Column15
-            // 
-            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column15.HeaderText = "Lost";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column15.Visible = false;
-            this.Column15.Width = 53;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Edit.HeaderText = "";
-            this.Edit.Image = global::LMS.Properties.Resources.pencil_16px;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Width = 5;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Delete.HeaderText = "";
-            this.Delete.Image = global::LMS.Properties.Resources.trash_16px;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Width = 5;
             // 
             // gunaLinePanel1
             // 
@@ -402,18 +256,6 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.ReadOnly = true;
             this.dataGridViewImageColumn1.Width = 604;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
-            this.pictureBox1.Location = new System.Drawing.Point(608, 119);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -827,31 +669,70 @@
             this.lblLost.Text = "0";
             this.lblLost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // popupNotifier
+            // gunaLinePanel2
             // 
-            this.popupNotifier.BodyColor = System.Drawing.Color.White;
-            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
-            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.popupNotifier.ContentText = null;
-            this.popupNotifier.GradientPower = 0;
-            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.popupNotifier.HeaderHeight = 10;
-            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
-            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
-            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
-            this.popupNotifier.IsRightToLeft = false;
-            this.popupNotifier.OptionsMenu = null;
-            this.popupNotifier.ShowGrip = false;
-            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
-            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
-            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
-            this.popupNotifier.TitleText = null;
+            this.gunaLinePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel2.Controls.Add(this.gunaDataGridView1);
+            this.gunaLinePanel2.LineBottom = 2;
+            this.gunaLinePanel2.LineColor = System.Drawing.Color.Gainsboro;
+            this.gunaLinePanel2.LineLeft = 1;
+            this.gunaLinePanel2.LineRight = 1;
+            this.gunaLinePanel2.LineStyle = System.Windows.Forms.BorderStyle.None;
+            this.gunaLinePanel2.Location = new System.Drawing.Point(432, 157);
+            this.gunaLinePanel2.Name = "gunaLinePanel2";
+            this.gunaLinePanel2.Size = new System.Drawing.Size(680, 446);
+            this.gunaLinePanel2.TabIndex = 62;
+            // 
+            // cboSubject
+            // 
+            this.cboSubject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSubject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboSubject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderSize = 1;
+            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
+            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboSubject.FormattingEnabled = true;
+            this.cboSubject.Items.AddRange(new object[] {
+            "All Subjects",
+            "Math",
+            "English",
+            "Programming",
+            "Economics",
+            "History",
+            "Law",
+            "Science",
+            "Others"});
+            this.cboSubject.Location = new System.Drawing.Point(644, 119);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.cboSubject.Size = new System.Drawing.Size(146, 26);
+            this.cboSubject.TabIndex = 63;
+            this.cboSubject.TextChanged += new System.EventHandler(this.CboSubject_TextChanged);
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::LMS.Properties.Resources.pencil_16px;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::LMS.Properties.Resources.trash_16px;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             // 
             // btnAddBook
             // 
+            this.btnAddBook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddBook.AnimationHoverSpeed = 0.07F;
             this.btnAddBook.AnimationSpeed = 0.03F;
             this.btnAddBook.BackColor = System.Drawing.Color.Transparent;
@@ -883,50 +764,201 @@
             this.btnAddBook.Text = "Add New Book";
             this.btnAddBook.Click += new System.EventHandler(this.BtnAddBook_Click);
             // 
-            // gunaLinePanel2
+            // pictureBox1
             // 
-            this.gunaLinePanel2.Controls.Add(this.gunaDataGridView1);
-            this.gunaLinePanel2.LineBottom = 2;
-            this.gunaLinePanel2.LineColor = System.Drawing.Color.Gainsboro;
-            this.gunaLinePanel2.LineLeft = 1;
-            this.gunaLinePanel2.LineRight = 1;
-            this.gunaLinePanel2.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel2.Location = new System.Drawing.Point(432, 157);
-            this.gunaLinePanel2.Name = "gunaLinePanel2";
-            this.gunaLinePanel2.Size = new System.Drawing.Size(680, 446);
-            this.gunaLinePanel2.TabIndex = 62;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
+            this.pictureBox1.Location = new System.Drawing.Point(608, 119);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
-            // cboSubject
+            // popupNotifier
             // 
-            this.cboSubject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboSubject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BorderSize = 1;
-            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
-            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Items.AddRange(new object[] {
-            "All Subjects",
-            "Math",
-            "English",
-            "Programming",
-            "Economics",
-            "History",
-            "Law",
-            "Science",
-            "Others"});
-            this.cboSubject.Location = new System.Drawing.Point(644, 119);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.Size = new System.Drawing.Size(146, 26);
-            this.cboSubject.TabIndex = 63;
-            this.cboSubject.TextChanged += new System.EventHandler(this.CboSubject_TextChanged);
+            this.popupNotifier.BodyColor = System.Drawing.Color.White;
+            this.popupNotifier.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ButtonHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.ContentFont = new System.Drawing.Font("Tahoma", 10F);
+            this.popupNotifier.ContentPadding = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.popupNotifier.ContentText = null;
+            this.popupNotifier.GradientPower = 0;
+            this.popupNotifier.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.popupNotifier.HeaderHeight = 10;
+            this.popupNotifier.Image = global::LMS.Properties.Resources.jungkook;
+            this.popupNotifier.ImagePadding = new System.Windows.Forms.Padding(10, 12, 0, 0);
+            this.popupNotifier.ImageSize = new System.Drawing.Size(70, 70);
+            this.popupNotifier.IsRightToLeft = false;
+            this.popupNotifier.OptionsMenu = null;
+            this.popupNotifier.ShowGrip = false;
+            this.popupNotifier.Size = new System.Drawing.Size(400, 100);
+            this.popupNotifier.TitleColor = System.Drawing.Color.Transparent;
+            this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.popupNotifier.TitleText = null;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "#";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 37;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.HeaderText = "ID";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            this.Column2.Width = 42;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column3.HeaderText = "Title";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column5.HeaderText = "ISBN";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 58;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column7.HeaderText = "Subject";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 71;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column4.HeaderText = "Genre";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 64;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Type";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Language";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Visible = false;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "Author";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Publisher";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Visible = false;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Price";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            this.Column12.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column6.HeaderText = "Year";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            this.Column6.Width = 55;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column13.HeaderText = "Copies";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            this.Column13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column13.Visible = false;
+            this.Column13.Width = 68;
+            // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column14.HeaderText = "Available";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column14.Visible = false;
+            this.Column14.Width = 79;
+            // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column16.HeaderText = "Borrowed";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            this.Column16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column16.Visible = false;
+            this.Column16.Width = 83;
+            // 
+            // Column15
+            // 
+            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column15.HeaderText = "Lost";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column15.Visible = false;
+            this.Column15.Width = 53;
+            // 
+            // AddCopy
+            // 
+            this.AddCopy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.AddCopy.HeaderText = "";
+            this.AddCopy.Image = ((System.Drawing.Image)(resources.GetObject("AddCopy.Image")));
+            this.AddCopy.Name = "AddCopy";
+            this.AddCopy.ReadOnly = true;
+            this.AddCopy.Width = 5;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Edit.HeaderText = "";
+            this.Edit.Image = global::LMS.Properties.Resources.pencil_16px;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Delete.HeaderText = "";
+            this.Delete.Image = global::LMS.Properties.Resources.trash_16px;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Width = 5;
             // 
             // frmBookList
             // 
@@ -953,7 +985,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView1)).EndInit();
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaGroupBox1.ResumeLayout(false);
             this.gunaGroupBox1.PerformLayout();
             this.gunaGroupBox2.ResumeLayout(false);
@@ -961,6 +992,7 @@
             this.gunaGroupBox4.ResumeLayout(false);
             this.gunaGroupBox5.ResumeLayout(false);
             this.gunaLinePanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -999,6 +1031,16 @@
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox4;
         private Guna.UI.WinForms.GunaGroupBox gunaGroupBox5;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
+        private Guna.UI.WinForms.GunaAdvenceButton btnAddBook;
+        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
+        private System.Windows.Forms.Label lblAllCopies;
+        private System.Windows.Forms.Label lblAvailable;
+        private System.Windows.Forms.Label lblBorrowed;
+        private System.Windows.Forms.Label lblLost;
+        public Guna.UI.WinForms.GunaComboBox cboSubject;
+        private Syncfusion.Windows.Forms.SfToolTip sfToolTip1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -1015,14 +1057,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewImageColumn AddCopy;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
-        private Guna.UI.WinForms.GunaAdvenceButton btnAddBook;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
-        private System.Windows.Forms.Label lblAllCopies;
-        private System.Windows.Forms.Label lblAvailable;
-        private System.Windows.Forms.Label lblBorrowed;
-        private System.Windows.Forms.Label lblLost;
-        public Guna.UI.WinForms.GunaComboBox cboSubject;
     }
 }

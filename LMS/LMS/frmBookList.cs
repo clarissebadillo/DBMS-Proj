@@ -154,6 +154,14 @@ namespace LMS
                     LoadRecords();
                 }
             }
+            else if (colName == "AddCopy")
+            {
+                frmAcquireBooks frm = new frmAcquireBooks(this);
+                frm.lblBookTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
+                frm.lblAlLCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
+                frm.lblAvailCopies.Text = gunaDataGridView1[13, e.RowIndex].Value.ToString();
+                frm.ShowDialog();
+            }
         }
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
@@ -177,5 +185,6 @@ namespace LMS
         {
             LoadSubjects();
         }
+
     }
 }

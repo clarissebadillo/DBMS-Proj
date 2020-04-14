@@ -174,15 +174,6 @@ namespace LMS
             cn.Close();
         }
 
-        public void UpdateAvailableCopies()
-        {
-            cn.Open();
-            cm = new SqlCommand("UPDATE tblBook SET availableCopies = availableCopies - 1 WHERE bookTitle = @bookTitle", cn);
-            cm.Parameters.AddWithValue("@bookTitle", lblBookName.Text);
-            cm.ExecuteNonQuery();
-            cn.Close();
-        }
-
         private void DeclareLostBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
@@ -197,7 +188,6 @@ namespace LMS
 
                     StatusLost();
                     UpdateBookCopies();
-                    UpdateAvailableCopies();
 
                     frmonhand.flowLayoutPanel1.Controls.Clear();
                     frmonhand.BooksOnHand();
@@ -229,7 +219,6 @@ namespace LMS
 
                     StatusDamage();
                     UpdateBookCopies();
-                    UpdateAvailableCopies();
 
                     frmonhand.flowLayoutPanel1.Controls.Clear();
                     frmonhand.BooksOnHand();
