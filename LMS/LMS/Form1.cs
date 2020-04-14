@@ -92,6 +92,7 @@ namespace LMS
             btnHistory.Checked = false;
             btnReports.Checked = false;
             btnUserAccount.Checked = false;
+            btnSettings.Checked = false;
 
             frmDashboard frm = new frmDashboard();
             frm.TopLevel = false;
@@ -109,6 +110,7 @@ namespace LMS
             btnHistory.Checked = false;
             btnReports.Checked = false;
             btnUserAccount.Checked = false;
+            btnSettings.Checked = false;
 
             frmBookList frm = new frmBookList();
             frm.TopLevel = false;
@@ -126,6 +128,7 @@ namespace LMS
             btnHistory.Checked = false;
             btnReports.Checked = false;
             btnUserAccount.Checked = false;
+            btnSettings.Checked = false;
 
             frmStudentList frm = new frmStudentList();
             frm.TopLevel = false;
@@ -143,6 +146,7 @@ namespace LMS
             btnHistory.Checked = false;
             btnReports.Checked = false;
             btnUserAccount.Checked = false;
+            btnSettings.Checked = false;
 
             frmIssueBook frm = new frmIssueBook(this);
             frm.TopLevel = false;
@@ -160,6 +164,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnReports.Checked = false;
             btnUserAccount.Checked = false;
+            btnSettings.Checked = false;
 
             frmHistory frm = new frmHistory();
             frm.TopLevel = false;
@@ -177,6 +182,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnHistory.Checked = false;
             btnUserAccount.Checked = false;
+            btnSettings.Checked = false;
 
             frmReport frm = new frmReport();
             frm.TopLevel = false;
@@ -194,6 +200,7 @@ namespace LMS
             btnBook.Checked = false;
             btnDashboard.Checked = false;
             btnHistory.Checked = false;
+            btnSettings.Checked = false;
 
             frmUserAccount frm = new frmUserAccount();
             frm.TopLevel = false;

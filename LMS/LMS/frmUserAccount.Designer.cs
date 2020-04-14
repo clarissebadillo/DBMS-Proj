@@ -45,10 +45,10 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaContextMenuStrip1 = new Guna.UI.WinForms.GunaContextMenuStrip();
-            this.lblID = new System.Windows.Forms.Label();
-            this.btnCreateAccount = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnChangePass = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDeactivateAcc = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblID = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -217,6 +217,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.guna2DataGridView1);
             this.panel1.Location = new System.Drawing.Point(26, 135);
             this.panel1.Name = "panel1";
@@ -240,6 +243,22 @@
             this.gunaContextMenuStrip1.RenderStyle.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.SystemDefault;
             this.gunaContextMenuStrip1.Size = new System.Drawing.Size(178, 48);
             // 
+            // btnChangePass
+            // 
+            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(177, 22);
+            this.btnChangePass.Text = "Change Password";
+            this.btnChangePass.Click += new System.EventHandler(this.BtnChangePass_Click);
+            // 
+            // btnDeactivateAcc
+            // 
+            this.btnDeactivateAcc.Image = global::LMS.Properties.Resources.delete_30px;
+            this.btnDeactivateAcc.Name = "btnDeactivateAcc";
+            this.btnDeactivateAcc.Size = new System.Drawing.Size(177, 22);
+            this.btnDeactivateAcc.Text = "Deactivate Account";
+            this.btnDeactivateAcc.Click += new System.EventHandler(this.BtnDeactivateAcc_Click);
+            // 
             // lblID
             // 
             this.lblID.AutoSize = true;
@@ -251,6 +270,7 @@
             // 
             // btnCreateAccount
             // 
+            this.btnCreateAccount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCreateAccount.AnimationHoverSpeed = 0.07F;
             this.btnCreateAccount.AnimationSpeed = 0.03F;
             this.btnCreateAccount.BackColor = System.Drawing.Color.Transparent;
@@ -282,22 +302,6 @@
             this.btnCreateAccount.Text = "Create New Account";
             this.btnCreateAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnCreateAccount.Click += new System.EventHandler(this.BtnCreateAccount_Click);
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(177, 22);
-            this.btnChangePass.Text = "Change Password";
-            this.btnChangePass.Click += new System.EventHandler(this.BtnChangePass_Click);
-            // 
-            // btnDeactivateAcc
-            // 
-            this.btnDeactivateAcc.Image = global::LMS.Properties.Resources.delete_30px;
-            this.btnDeactivateAcc.Name = "btnDeactivateAcc";
-            this.btnDeactivateAcc.Size = new System.Drawing.Size(177, 22);
-            this.btnDeactivateAcc.Text = "Deactivate Account";
-            this.btnDeactivateAcc.Click += new System.EventHandler(this.BtnDeactivateAcc_Click);
             // 
             // frmUserAccount
             // 

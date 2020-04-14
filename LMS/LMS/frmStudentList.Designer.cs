@@ -344,7 +344,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::LMS.Properties.Resources.search_20px;
             this.pictureBox1.Location = new System.Drawing.Point(638, 112);
@@ -356,7 +355,6 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearch.BaseColor = System.Drawing.Color.Gainsboro;
             this.txtSearch.BorderColor = System.Drawing.Color.Silver;
             this.txtSearch.BorderSize = 0;
@@ -619,6 +617,7 @@
             // 
             // btnAddStudent
             // 
+            this.btnAddStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddStudent.AnimationHoverSpeed = 0.07F;
             this.btnAddStudent.AnimationSpeed = 0.03F;
             this.btnAddStudent.BackColor = System.Drawing.Color.Transparent;
@@ -652,6 +651,7 @@
             // 
             // btnGenerateID
             // 
+            this.btnGenerateID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGenerateID.AnimationHoverSpeed = 0.07F;
             this.btnGenerateID.AnimationSpeed = 0.03F;
             this.btnGenerateID.BackColor = System.Drawing.Color.Transparent;
@@ -680,7 +680,7 @@
             this.btnGenerateID.Radius = 7;
             this.btnGenerateID.Size = new System.Drawing.Size(141, 29);
             this.btnGenerateID.TabIndex = 64;
-            this.btnGenerateID.Text = "Generate QR Code";
+            this.btnGenerateID.Text = "Generate ID";
             this.btnGenerateID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnGenerateID.Click += new System.EventHandler(this.BtnGenerateID_Click);
             // 

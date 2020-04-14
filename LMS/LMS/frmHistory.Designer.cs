@@ -46,27 +46,6 @@
             this.cboStatus = new Guna.UI.WinForms.GunaComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gunaDataGridView1 = new Guna.UI.WinForms.GunaDataGridView();
-            this.dt2 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dt1 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tabPageAdv3 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
-            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.gunaDataGridView2 = new Guna.UI.WinForms.GunaDataGridView();
-            this.dtTo = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dtFrom = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
-            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaDataGridView3 = new Guna.UI.WinForms.GunaDataGridView();
-            this.dt4 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.dt3 = new Guna.UI.WinForms.GunaDateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +55,15 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt2 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dt1 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPageAdv3 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.gunaLinePanel4 = new Guna.UI.WinForms.GunaLinePanel();
+            this.gunaControlBox3 = new Guna.UI.WinForms.GunaControlBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.gunaDataGridView2 = new Guna.UI.WinForms.GunaDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +72,15 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtTo = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dtFrom = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaDataGridView3 = new Guna.UI.WinForms.GunaDataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +90,10 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dt4 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.dt3 = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
             this.tabPageAdv2.SuspendLayout();
@@ -107,6 +108,7 @@
             this.gunaLinePanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView3)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdv1
@@ -121,10 +123,11 @@
             this.tabControlAdv1.Controls.Add(this.tabPageAdv3);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
             this.tabControlAdv1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlAdv1.FocusOnTabClick = false;
             this.tabControlAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAdv1.ItemSize = new System.Drawing.Size(90, 30);
-            this.tabControlAdv1.Location = new System.Drawing.Point(12, 11);
+            this.tabControlAdv1.Location = new System.Drawing.Point(0, 0);
             this.tabControlAdv1.MultilineText = true;
             this.tabControlAdv1.Name = "tabControlAdv1";
             this.tabControlAdv1.Padding = new System.Drawing.Point(4, 5);
@@ -304,6 +307,76 @@
             this.gunaDataGridView1.ThemeStyle.RowsStyle.Height = 30;
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "#";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 37;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column2.HeaderText = "ID";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
+            this.Column2.Width = 42;
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "Book Title";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column3.HeaderText = "Student Number";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Name";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column12.HeaderText = "Issued By";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column10.HeaderText = "Date Borrowed";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Width = 112;
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column11.HeaderText = "Due Date";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            this.Column11.Width = 82;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column4.HeaderText = "Status";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 64;
             // 
             // dt2
             // 
@@ -510,6 +583,68 @@
             this.gunaDataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.HeaderText = "#";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 37;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            this.dataGridViewTextBoxColumn2.Width = 42;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Book Title";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Student Number";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "Received By";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Date Returned";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 64;
+            // 
             // dtTo
             // 
             this.dtTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -533,7 +668,6 @@
             this.dtTo.OnPressedColor = System.Drawing.Color.Black;
             this.dtTo.Size = new System.Drawing.Size(188, 30);
             this.dtTo.TabIndex = 83;
-            this.dtTo.Text = "03/23/2020";
             this.dtTo.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dtTo.ValueChanged += new System.EventHandler(this.DtTo_ValueChanged);
             // 
@@ -560,7 +694,6 @@
             this.dtFrom.OnPressedColor = System.Drawing.Color.Black;
             this.dtFrom.Size = new System.Drawing.Size(188, 30);
             this.dtFrom.TabIndex = 82;
-            this.dtFrom.Text = "03/23/2020";
             this.dtFrom.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
             this.dtFrom.ValueChanged += new System.EventHandler(this.DtFrom_ValueChanged);
             // 
@@ -716,202 +849,6 @@
             this.gunaDataGridView3.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.gunaDataGridView3.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             // 
-            // dt4
-            // 
-            this.dt4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dt4.BackColor = System.Drawing.Color.Gainsboro;
-            this.dt4.BaseColor = System.Drawing.Color.Gainsboro;
-            this.dt4.BorderColor = System.Drawing.Color.Gainsboro;
-            this.dt4.BorderSize = 1;
-            this.dt4.CustomFormat = "MM/dd/yyyy";
-            this.dt4.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dt4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dt4.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dt4.ForeColor = System.Drawing.Color.Black;
-            this.dt4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt4.Location = new System.Drawing.Point(212, 96);
-            this.dt4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dt4.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dt4.Name = "dt4";
-            this.dt4.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.dt4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dt4.OnHoverForeColor = System.Drawing.Color.Black;
-            this.dt4.OnPressedColor = System.Drawing.Color.Black;
-            this.dt4.Size = new System.Drawing.Size(188, 30);
-            this.dt4.TabIndex = 83;
-            this.dt4.Text = "03/23/2020";
-            this.dt4.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            this.dt4.ValueChanged += new System.EventHandler(this.Dt4_ValueChanged);
-            // 
-            // dt3
-            // 
-            this.dt3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dt3.BackColor = System.Drawing.Color.Gainsboro;
-            this.dt3.BaseColor = System.Drawing.Color.Gainsboro;
-            this.dt3.BorderColor = System.Drawing.Color.Gainsboro;
-            this.dt3.BorderSize = 1;
-            this.dt3.CustomFormat = "MM/dd/yyyy";
-            this.dt3.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dt3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dt3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dt3.ForeColor = System.Drawing.Color.Black;
-            this.dt3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dt3.Location = new System.Drawing.Point(18, 96);
-            this.dt3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dt3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dt3.Name = "dt3";
-            this.dt3.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
-            this.dt3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.dt3.OnHoverForeColor = System.Drawing.Color.Black;
-            this.dt3.OnPressedColor = System.Drawing.Color.Black;
-            this.dt3.Size = new System.Drawing.Size(188, 30);
-            this.dt3.TabIndex = 82;
-            this.dt3.Text = "03/23/2020";
-            this.dt3.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
-            this.dt3.ValueChanged += new System.EventHandler(this.Dt3_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 77);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 16);
-            this.label2.TabIndex = 81;
-            this.label2.Text = "Filter By Date (From - To)";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "#";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 37;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.HeaderText = "ID";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Visible = false;
-            this.Column2.Width = 42;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "Book Title";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "Student Number";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 120;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Name";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column12.HeaderText = "Issued By";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column10.HeaderText = "Date Borrowed";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 112;
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column11.HeaderText = "Due Date";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 82;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "Status";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 64;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.HeaderText = "#";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 37;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            this.dataGridViewTextBoxColumn2.Width = 42;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Book Title";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Student Number";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.HeaderText = "Received By";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Date Returned";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 64;
-            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -982,13 +919,86 @@
             this.Column8.ReadOnly = true;
             this.Column8.Width = 64;
             // 
+            // dt4
+            // 
+            this.dt4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dt4.BackColor = System.Drawing.Color.Gainsboro;
+            this.dt4.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dt4.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dt4.BorderSize = 1;
+            this.dt4.CustomFormat = "MM/dd/yyyy";
+            this.dt4.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dt4.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dt4.ForeColor = System.Drawing.Color.Black;
+            this.dt4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt4.Location = new System.Drawing.Point(212, 96);
+            this.dt4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dt4.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dt4.Name = "dt4";
+            this.dt4.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dt4.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt4.OnHoverForeColor = System.Drawing.Color.Black;
+            this.dt4.OnPressedColor = System.Drawing.Color.Black;
+            this.dt4.Size = new System.Drawing.Size(188, 30);
+            this.dt4.TabIndex = 83;
+            this.dt4.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
+            this.dt4.ValueChanged += new System.EventHandler(this.Dt4_ValueChanged);
+            // 
+            // dt3
+            // 
+            this.dt3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dt3.BackColor = System.Drawing.Color.Gainsboro;
+            this.dt3.BaseColor = System.Drawing.Color.Gainsboro;
+            this.dt3.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dt3.BorderSize = 1;
+            this.dt3.CustomFormat = "MM/dd/yyyy";
+            this.dt3.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dt3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dt3.ForeColor = System.Drawing.Color.Black;
+            this.dt3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dt3.Location = new System.Drawing.Point(18, 96);
+            this.dt3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dt3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dt3.Name = "dt3";
+            this.dt3.OnHoverBaseColor = System.Drawing.Color.Gainsboro;
+            this.dt3.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.dt3.OnHoverForeColor = System.Drawing.Color.Black;
+            this.dt3.OnPressedColor = System.Drawing.Color.Black;
+            this.dt3.Size = new System.Drawing.Size(188, 30);
+            this.dt3.TabIndex = 82;
+            this.dt3.Value = new System.DateTime(2020, 3, 23, 0, 0, 0, 0);
+            this.dt3.ValueChanged += new System.EventHandler(this.Dt3_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(15, 77);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 16);
+            this.label2.TabIndex = 81;
+            this.label2.Text = "Filter By Date (From - To)";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.tabControlAdv1);
+            this.panel4.Location = new System.Drawing.Point(12, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1113, 617);
+            this.panel4.TabIndex = 68;
+            // 
             // frmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1137, 641);
-            this.Controls.Add(this.tabControlAdv1);
+            this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHistory";
             this.Text = "frmHistory";
@@ -1013,6 +1023,7 @@
             this.gunaLinePanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaDataGridView3)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1074,5 +1085,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Panel panel4;
     }
 }

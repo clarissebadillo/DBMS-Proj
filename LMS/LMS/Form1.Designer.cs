@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation2 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
@@ -75,22 +75,22 @@
             // 
             this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
             this.pnlMenuAnimation.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation2;
             this.pnlMenuAnimation.TimeStep = 0.01F;
             // 
             // pnlMenu
@@ -132,7 +132,7 @@
             this.btnSettings.ImageOffsetX = 15;
             this.btnSettings.ImageSize = new System.Drawing.Size(20, 20);
             this.btnSettings.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnSettings.Location = new System.Drawing.Point(0, 601);
+            this.btnSettings.Location = new System.Drawing.Point(0, 580);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnSettings.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -140,7 +140,7 @@
             this.btnSettings.OnHoverImage = null;
             this.btnSettings.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnSettings.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSettings.Size = new System.Drawing.Size(231, 51);
+            this.btnSettings.Size = new System.Drawing.Size(231, 48);
             this.btnSettings.TabIndex = 8;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextOffsetX = 18;
@@ -166,7 +166,7 @@
             this.btnIssueBook.ImageOffsetX = 15;
             this.btnIssueBook.ImageSize = new System.Drawing.Size(22, 22);
             this.btnIssueBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnIssueBook.Location = new System.Drawing.Point(0, 381);
+            this.btnIssueBook.Location = new System.Drawing.Point(0, 372);
             this.btnIssueBook.Name = "btnIssueBook";
             this.btnIssueBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnIssueBook.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -174,7 +174,7 @@
             this.btnIssueBook.OnHoverImage = null;
             this.btnIssueBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnIssueBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnIssueBook.Size = new System.Drawing.Size(231, 51);
+            this.btnIssueBook.Size = new System.Drawing.Size(231, 48);
             this.btnIssueBook.TabIndex = 6;
             this.btnIssueBook.Text = "Issue Book";
             this.btnIssueBook.TextOffsetX = 18;
@@ -200,7 +200,7 @@
             this.btnStudent.ImageOffsetX = 15;
             this.btnStudent.ImageSize = new System.Drawing.Size(20, 20);
             this.btnStudent.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnStudent.Location = new System.Drawing.Point(-1, 326);
+            this.btnStudent.Location = new System.Drawing.Point(0, 320);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnStudent.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -208,7 +208,7 @@
             this.btnStudent.OnHoverImage = null;
             this.btnStudent.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnStudent.OnPressedColor = System.Drawing.Color.Black;
-            this.btnStudent.Size = new System.Drawing.Size(231, 51);
+            this.btnStudent.Size = new System.Drawing.Size(231, 48);
             this.btnStudent.TabIndex = 3;
             this.btnStudent.Text = "Students";
             this.btnStudent.TextOffsetX = 18;
@@ -234,7 +234,7 @@
             this.btnHistory.ImageOffsetX = 15;
             this.btnHistory.ImageSize = new System.Drawing.Size(20, 20);
             this.btnHistory.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnHistory.Location = new System.Drawing.Point(0, 436);
+            this.btnHistory.Location = new System.Drawing.Point(-1, 424);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnHistory.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -242,7 +242,7 @@
             this.btnHistory.OnHoverImage = null;
             this.btnHistory.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnHistory.OnPressedColor = System.Drawing.Color.Black;
-            this.btnHistory.Size = new System.Drawing.Size(231, 51);
+            this.btnHistory.Size = new System.Drawing.Size(231, 48);
             this.btnHistory.TabIndex = 7;
             this.btnHistory.Text = "Activity History";
             this.btnHistory.TextOffsetX = 18;
@@ -268,7 +268,7 @@
             this.btnUserAccount.ImageOffsetX = 15;
             this.btnUserAccount.ImageSize = new System.Drawing.Size(22, 22);
             this.btnUserAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnUserAccount.Location = new System.Drawing.Point(0, 546);
+            this.btnUserAccount.Location = new System.Drawing.Point(0, 528);
             this.btnUserAccount.Name = "btnUserAccount";
             this.btnUserAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnUserAccount.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -276,7 +276,7 @@
             this.btnUserAccount.OnHoverImage = null;
             this.btnUserAccount.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnUserAccount.OnPressedColor = System.Drawing.Color.Black;
-            this.btnUserAccount.Size = new System.Drawing.Size(231, 51);
+            this.btnUserAccount.Size = new System.Drawing.Size(231, 48);
             this.btnUserAccount.TabIndex = 5;
             this.btnUserAccount.Text = "User Account";
             this.btnUserAccount.TextOffsetX = 18;
@@ -302,7 +302,7 @@
             this.btnReports.ImageOffsetX = 15;
             this.btnReports.ImageSize = new System.Drawing.Size(20, 20);
             this.btnReports.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnReports.Location = new System.Drawing.Point(0, 491);
+            this.btnReports.Location = new System.Drawing.Point(-1, 476);
             this.btnReports.Name = "btnReports";
             this.btnReports.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnReports.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -310,7 +310,7 @@
             this.btnReports.OnHoverImage = null;
             this.btnReports.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnReports.OnPressedColor = System.Drawing.Color.Black;
-            this.btnReports.Size = new System.Drawing.Size(231, 51);
+            this.btnReports.Size = new System.Drawing.Size(231, 48);
             this.btnReports.TabIndex = 4;
             this.btnReports.Text = "Reports";
             this.btnReports.TextOffsetX = 18;
@@ -336,7 +336,7 @@
             this.btnBook.ImageOffsetX = 15;
             this.btnBook.ImageSize = new System.Drawing.Size(20, 20);
             this.btnBook.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnBook.Location = new System.Drawing.Point(0, 271);
+            this.btnBook.Location = new System.Drawing.Point(0, 268);
             this.btnBook.Name = "btnBook";
             this.btnBook.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnBook.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -344,7 +344,7 @@
             this.btnBook.OnHoverImage = null;
             this.btnBook.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnBook.OnPressedColor = System.Drawing.Color.Black;
-            this.btnBook.Size = new System.Drawing.Size(231, 51);
+            this.btnBook.Size = new System.Drawing.Size(231, 48);
             this.btnBook.TabIndex = 2;
             this.btnBook.Text = "Books";
             this.btnBook.TextOffsetX = 18;
@@ -378,7 +378,7 @@
             this.btnDashboard.OnHoverImage = null;
             this.btnDashboard.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
             this.btnDashboard.OnPressedColor = System.Drawing.Color.Black;
-            this.btnDashboard.Size = new System.Drawing.Size(231, 51);
+            this.btnDashboard.Size = new System.Drawing.Size(231, 48);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.TextOffsetX = 18;
