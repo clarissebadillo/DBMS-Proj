@@ -26,6 +26,8 @@ namespace LMS
         string borrowDays;
         string borrowBooks;
         string fine;
+        string withPending;
+        string withOverdue;
 
         public frmIssueBook(Form1 f1)
         {
@@ -219,7 +221,6 @@ namespace LMS
             lblName.Text = "";
             lblStudNo.Text = "";
             lblYear.Text = "";
-            //txtSearchStud.Text = "";
             lblBookAllCopies.Text = "00";
             lblAvailable.Text = "00";
             lblBooksOnHand.Text = "0";
@@ -301,6 +302,8 @@ namespace LMS
                 borrowBooks = dr["maxBorrowBooks"].ToString();
                 borrowDays = dr["maxBorrowDays"].ToString();
                 fine = dr["fine"].ToString();
+                withPending = dr["withPending"].ToString();
+                withOverdue = dr["withOverdue"].ToString();
             }
             dr.Close();
             cn.Close();
@@ -325,6 +328,14 @@ namespace LMS
             else if (lblAvailable.Text == "0" || lblAvailable.Text == "-1")
             {
                 MyMessageBox.ShowMessage("No available copies left!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else if(withPending == "False")
+            {
+                MyMessageBox.ShowMessage("Student needs to settle all pending payments to allow checking out another books.", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else if (withOverdue == "False")
+            {
+                MyMessageBox.ShowMessage("Student needs to return all overdue books to allow checking out another books.", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
             else
             {
