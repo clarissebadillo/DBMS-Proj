@@ -17,9 +17,10 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
         frmOnHand frmonhand;
 
-        int fine = 5;
+        int fine;
 
         public ucBooksOnHand(frmOnHand fonhand)
         {
@@ -104,15 +105,27 @@ namespace LMS
             }
         }
 
+        void GetFine()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT fine FROM tblSettings", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                fine = int.Parse(dr["fine"].ToString());
+            }
+            cn.Close();
+        }
         public void CalculateFine()
         {
+            GetFine();
             DateTime dueDate = new DateTime();
             DateTime returnDate = new DateTime();
             dueDate = dtDueDate.Value;
             returnDate = DateTime.Now;
             TimeSpan diff = returnDate.Subtract(dueDate);
             int days = diff.Days;
-            fine = days * 5;
+            fine = days * fine;
             string paymentStat = "";
             if (fine < 0)
             {
@@ -130,7 +143,6 @@ namespace LMS
             cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
             cm.ExecuteNonQuery();
             cn.Close();
-
         }
 
 

@@ -21,7 +21,11 @@ namespace LMS
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
         Form1 frm1;
+
         string admin;
+        string borrowDays;
+        string borrowBooks;
+        string fine;
 
         public frmIssueBook(Form1 f1)
         {
@@ -49,9 +53,10 @@ namespace LMS
             AutoCompleteStudentNo();
             LoadRecords();
             Overdue();
+            GetSettings();
 
             dtIssueDate.Value = DateTime.Now;
-            dtDueDate.Value = dtIssueDate.Value.AddDays(5);
+            dtDueDate.Value = dtIssueDate.Value.AddDays(Double.Parse(borrowDays));
         }
 
         public void LoadRecords()
@@ -285,6 +290,22 @@ namespace LMS
             lblBookTitle.Text = gunaDataGridView3[2, e.RowIndex].Value.ToString();
         }
 
+        void GetSettings()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblSettings", cn);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                borrowBooks = dr["maxBorrowBooks"].ToString();
+                borrowDays = dr["maxBorrowDays"].ToString();
+                fine = dr["fine"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+        }
+
         private void BtnProcessIssue_Click(object sender, EventArgs e)
         {
             frmOnHand frm = new frmOnHand(this);
@@ -297,7 +318,7 @@ namespace LMS
             {
                 MyMessageBox.ShowMessage("Please choose the book to issue!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
-            else if (lblBooksOnHand.Text == "5")
+            else if (lblBooksOnHand.Text == borrowBooks)
             {
                 MyMessageBox.ShowMessage("Student already reached the maximum number of borrowed book!", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }

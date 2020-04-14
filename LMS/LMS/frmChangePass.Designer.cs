@@ -230,11 +230,11 @@
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.lblPass.Location = new System.Drawing.Point(51, 294);
+            this.lblPass.Location = new System.Drawing.Point(48, 294);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(138, 15);
+            this.lblPass.Size = new System.Drawing.Size(143, 15);
             this.lblPass.TabIndex = 73;
-            this.lblPass.Text = "Password did not match!";
+            this.lblPass.Text = "*Password did not match!";
             this.lblPass.Visible = false;
             // 
             // label1
@@ -244,9 +244,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.label1.Location = new System.Drawing.Point(51, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 17);
+            this.label1.Size = new System.Drawing.Size(111, 17);
             this.label1.TabIndex = 66;
-            this.label1.Text = "Enter Old Password";
+            this.label1.Text = "Current Password";
             // 
             // btnChangePass
             // 

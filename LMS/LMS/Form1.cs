@@ -83,6 +83,7 @@ namespace LMS
             btnIssueBook.Checked = false;
             btnHistory.Checked = false;
             btnReports.Checked = false;
+            btnUserAccount.Checked = false;
 
             frmDashboard frm = new frmDashboard();
             frm.TopLevel = false;
@@ -99,6 +100,7 @@ namespace LMS
             btnIssueBook.Checked = false;
             btnHistory.Checked = false;
             btnReports.Checked = false;
+            btnUserAccount.Checked = false;
 
             frmBookList frm = new frmBookList();
             frm.TopLevel = false;
@@ -115,6 +117,7 @@ namespace LMS
             btnIssueBook.Checked = false;
             btnHistory.Checked = false;
             btnReports.Checked = false;
+            btnUserAccount.Checked = false;
 
             frmStudentList frm = new frmStudentList();
             frm.TopLevel = false;
@@ -131,6 +134,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnHistory.Checked = false;
             btnReports.Checked = false;
+            btnUserAccount.Checked = false;
 
             frmIssueBook frm = new frmIssueBook(this);
             frm.TopLevel = false;
@@ -147,6 +151,7 @@ namespace LMS
             btnBook.Checked = false;
             btnDashboard.Checked = false;
             btnReports.Checked = false;
+            btnUserAccount.Checked = false;
 
             frmHistory frm = new frmHistory();
             frm.TopLevel = false;
@@ -163,6 +168,7 @@ namespace LMS
             btnBook.Checked = false;
             btnDashboard.Checked = false;
             btnHistory.Checked = false;
+            btnUserAccount.Checked = false;
 
             frmReport frm = new frmReport();
             frm.TopLevel = false;
@@ -171,6 +177,40 @@ namespace LMS
             frm.Show();
         }
 
+        private void BtnUserAccount_Click(object sender, EventArgs e)
+        {
+            btnUserAccount.Checked = true;
+            btnReports.Checked = false;
+            btnIssueBook.Checked = false;
+            btnStudent.Checked = false;
+            btnBook.Checked = false;
+            btnDashboard.Checked = false;
+            btnHistory.Checked = false;
+
+            frmUserAccount frm = new frmUserAccount();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
+
+        private void BtnSettings_Click(object sender, EventArgs e)
+        {
+            btnSettings.Checked = true;
+            btnUserAccount.Checked = false;
+            btnReports.Checked = false;
+            btnIssueBook.Checked = false;
+            btnStudent.Checked = false;
+            btnBook.Checked = false;
+            btnDashboard.Checked = false;
+            btnHistory.Checked = false;
+
+            frmSettings frm = new frmSettings();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -212,13 +252,5 @@ namespace LMS
             }
         }
 
-        private void BtnUserAccount_Click(object sender, EventArgs e)
-        {
-            frmUserAccount frm = new frmUserAccount();
-            frm.TopLevel = false;
-            panel3.Controls.Add(frm);
-            frm.BringToFront();
-            frm.Show();
-        }
     }
 }
