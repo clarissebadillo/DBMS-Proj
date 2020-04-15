@@ -49,7 +49,23 @@ namespace LMS
             gunaDataGridView1.Columns[5].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
             gunaDataGridView1.Columns[8].HeaderCell.Style.Padding = new Padding(30, 0, 0, 0);
 
+            LoadAllSubjects();
             cboSubject.SelectedItem = "All Subjects";
+        }
+
+        void LoadAllSubjects()
+        {
+            cboSubject.Items.Clear();
+            cboSubject.Items.Add("All Subjects");
+            cn.Open();
+            cm = new SqlCommand("SELECT subject FROM tblSubjects", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                cboSubject.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+            cn.Close();
         }
 
         public void LoadRecords()

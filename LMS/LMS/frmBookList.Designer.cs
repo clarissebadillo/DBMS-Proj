@@ -853,16 +853,6 @@
             this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Items.AddRange(new object[] {
-            "All Subjects",
-            "Math",
-            "English",
-            "Programming",
-            "Economics",
-            "History",
-            "Law",
-            "Science",
-            "Others"});
             this.cboSubject.Location = new System.Drawing.Point(644, 119);
             this.cboSubject.Name = "cboSubject";
             this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));

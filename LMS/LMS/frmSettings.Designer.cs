@@ -79,13 +79,29 @@
             this.txtSubject = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.subjectList = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.tabPageAdv4 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditSub = new System.Windows.Forms.DataGridViewImageColumn();
             this.DeleteSub = new System.Windows.Forms.DataGridViewImageColumn();
+            this.tabPageAdv4 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.gunaLabel15 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.gunaLabel16 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2ToggleSwitch2 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.gunaLabel17 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaLabel18 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaLabel19 = new Guna.UI.WinForms.GunaLabel();
+            this.guna2ToggleSwitch3 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
@@ -96,6 +112,7 @@
             this.tabPageAdv3.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subjectList)).BeginInit();
+            this.tabPageAdv4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -399,7 +416,7 @@
             // 
             this.lblProgID.AutoSize = true;
             this.lblProgID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblProgID.Location = new System.Drawing.Point(770, 284);
+            this.lblProgID.Location = new System.Drawing.Point(770, 301);
             this.lblProgID.Name = "lblProgID";
             this.lblProgID.Size = new System.Drawing.Size(0, 15);
             this.lblProgID.TabIndex = 67;
@@ -423,7 +440,7 @@
             this.btnProgClear.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.btnProgClear.ForeColor = System.Drawing.Color.White;
             this.btnProgClear.HoverState.Parent = this.btnProgClear;
-            this.btnProgClear.Location = new System.Drawing.Point(957, 266);
+            this.btnProgClear.Location = new System.Drawing.Point(957, 283);
             this.btnProgClear.Name = "btnProgClear";
             this.btnProgClear.ShadowDecoration.Parent = this.btnProgClear;
             this.btnProgClear.Size = new System.Drawing.Size(81, 33);
@@ -439,7 +456,7 @@
             this.btnProgUpdate.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.btnProgUpdate.ForeColor = System.Drawing.Color.White;
             this.btnProgUpdate.HoverState.Parent = this.btnProgUpdate;
-            this.btnProgUpdate.Location = new System.Drawing.Point(870, 266);
+            this.btnProgUpdate.Location = new System.Drawing.Point(870, 283);
             this.btnProgUpdate.Name = "btnProgUpdate";
             this.btnProgUpdate.ShadowDecoration.Parent = this.btnProgUpdate;
             this.btnProgUpdate.Size = new System.Drawing.Size(81, 33);
@@ -455,7 +472,7 @@
             this.btnProgSave.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.btnProgSave.ForeColor = System.Drawing.Color.White;
             this.btnProgSave.HoverState.Parent = this.btnProgSave;
-            this.btnProgSave.Location = new System.Drawing.Point(783, 266);
+            this.btnProgSave.Location = new System.Drawing.Point(783, 283);
             this.btnProgSave.Name = "btnProgSave";
             this.btnProgSave.ShadowDecoration.Parent = this.btnProgSave;
             this.btnProgSave.Size = new System.Drawing.Size(81, 33);
@@ -467,7 +484,7 @@
             // 
             this.gunaLabel8.AutoSize = true;
             this.gunaLabel8.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel8.Location = new System.Drawing.Point(714, 202);
+            this.gunaLabel8.Location = new System.Drawing.Point(712, 213);
             this.gunaLabel8.Name = "gunaLabel8";
             this.gunaLabel8.Size = new System.Drawing.Size(67, 15);
             this.gunaLabel8.TabIndex = 20;
@@ -487,13 +504,13 @@
             this.txtDesc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.txtDesc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtDesc.HoverState.Parent = this.txtDesc;
-            this.txtDesc.Location = new System.Drawing.Point(715, 225);
+            this.txtDesc.Location = new System.Drawing.Point(713, 236);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.PasswordChar = '\0';
             this.txtDesc.PlaceholderText = "";
             this.txtDesc.SelectedText = "";
             this.txtDesc.ShadowDecoration.Parent = this.txtDesc;
-            this.txtDesc.Size = new System.Drawing.Size(323, 25);
+            this.txtDesc.Size = new System.Drawing.Size(323, 36);
             this.txtDesc.TabIndex = 19;
             // 
             // gunaLabel7
@@ -658,7 +675,7 @@
             this.txtCode.PlaceholderText = "";
             this.txtCode.SelectedText = "";
             this.txtCode.ShadowDecoration.Parent = this.txtCode;
-            this.txtCode.Size = new System.Drawing.Size(323, 25);
+            this.txtCode.Size = new System.Drawing.Size(323, 36);
             this.txtCode.TabIndex = 16;
             // 
             // tabPageAdv3
@@ -685,7 +702,7 @@
             // 
             this.lblSubjectID.AutoSize = true;
             this.lblSubjectID.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblSubjectID.Location = new System.Drawing.Point(773, 259);
+            this.lblSubjectID.Location = new System.Drawing.Point(773, 266);
             this.lblSubjectID.Name = "lblSubjectID";
             this.lblSubjectID.Size = new System.Drawing.Size(0, 15);
             this.lblSubjectID.TabIndex = 77;
@@ -709,7 +726,7 @@
             this.btnSubjClear.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.btnSubjClear.ForeColor = System.Drawing.Color.White;
             this.btnSubjClear.HoverState.Parent = this.btnSubjClear;
-            this.btnSubjClear.Location = new System.Drawing.Point(960, 241);
+            this.btnSubjClear.Location = new System.Drawing.Point(960, 248);
             this.btnSubjClear.Name = "btnSubjClear";
             this.btnSubjClear.ShadowDecoration.Parent = this.btnSubjClear;
             this.btnSubjClear.Size = new System.Drawing.Size(81, 33);
@@ -725,7 +742,7 @@
             this.btnSubjUpdate.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.btnSubjUpdate.ForeColor = System.Drawing.Color.White;
             this.btnSubjUpdate.HoverState.Parent = this.btnSubjUpdate;
-            this.btnSubjUpdate.Location = new System.Drawing.Point(873, 241);
+            this.btnSubjUpdate.Location = new System.Drawing.Point(873, 248);
             this.btnSubjUpdate.Name = "btnSubjUpdate";
             this.btnSubjUpdate.ShadowDecoration.Parent = this.btnSubjUpdate;
             this.btnSubjUpdate.Size = new System.Drawing.Size(81, 33);
@@ -741,7 +758,7 @@
             this.btnSubjSave.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.btnSubjSave.ForeColor = System.Drawing.Color.White;
             this.btnSubjSave.HoverState.Parent = this.btnSubjSave;
-            this.btnSubjSave.Location = new System.Drawing.Point(786, 241);
+            this.btnSubjSave.Location = new System.Drawing.Point(786, 248);
             this.btnSubjSave.Name = "btnSubjSave";
             this.btnSubjSave.ShadowDecoration.Parent = this.btnSubjSave;
             this.btnSubjSave.Size = new System.Drawing.Size(81, 33);
@@ -779,7 +796,7 @@
             this.txtSubject.PlaceholderText = "";
             this.txtSubject.SelectedText = "";
             this.txtSubject.ShadowDecoration.Parent = this.txtSubject;
-            this.txtSubject.Size = new System.Drawing.Size(323, 25);
+            this.txtSubject.Size = new System.Drawing.Size(323, 36);
             this.txtSubject.TabIndex = 71;
             // 
             // panel3
@@ -865,29 +882,6 @@
             this.subjectList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
             this.subjectList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SubjectList_CellContentClick);
             // 
-            // tabPageAdv4
-            // 
-            this.tabPageAdv4.Image = null;
-            this.tabPageAdv4.ImageSize = new System.Drawing.Size(16, 16);
-            this.tabPageAdv4.Location = new System.Drawing.Point(0, 29);
-            this.tabPageAdv4.Name = "tabPageAdv4";
-            this.tabPageAdv4.ShowCloseButton = true;
-            this.tabPageAdv4.Size = new System.Drawing.Size(1083, 513);
-            this.tabPageAdv4.TabIndex = 4;
-            this.tabPageAdv4.Text = "SMTP Setup";
-            this.tabPageAdv4.ThemesEnabled = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.tabControlAdv1);
-            this.panel1.Location = new System.Drawing.Point(26, 72);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1083, 542);
-            this.panel1.TabIndex = 3;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -928,6 +922,288 @@
             this.DeleteSub.ReadOnly = true;
             this.DeleteSub.Width = 6;
             // 
+            // tabPageAdv4
+            // 
+            this.tabPageAdv4.Controls.Add(this.gunaLabel19);
+            this.tabPageAdv4.Controls.Add(this.guna2ToggleSwitch3);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel13);
+            this.tabPageAdv4.Controls.Add(this.guna2TextBox2);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel18);
+            this.tabPageAdv4.Controls.Add(this.guna2TextBox4);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel10);
+            this.tabPageAdv4.Controls.Add(this.guna2TextBox1);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel14);
+            this.tabPageAdv4.Controls.Add(this.guna2TextBox3);
+            this.tabPageAdv4.Controls.Add(this.guna2Button1);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel15);
+            this.tabPageAdv4.Controls.Add(this.guna2ToggleSwitch1);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel16);
+            this.tabPageAdv4.Controls.Add(this.guna2ToggleSwitch2);
+            this.tabPageAdv4.Controls.Add(this.gunaLabel17);
+            this.tabPageAdv4.Image = null;
+            this.tabPageAdv4.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabPageAdv4.Location = new System.Drawing.Point(0, 29);
+            this.tabPageAdv4.Name = "tabPageAdv4";
+            this.tabPageAdv4.ShowCloseButton = true;
+            this.tabPageAdv4.Size = new System.Drawing.Size(1083, 513);
+            this.tabPageAdv4.TabIndex = 4;
+            this.tabPageAdv4.Text = "SMTP Setup";
+            this.tabPageAdv4.ThemesEnabled = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.tabControlAdv1);
+            this.panel1.Location = new System.Drawing.Point(26, 72);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1083, 542);
+            this.panel1.TabIndex = 3;
+            // 
+            // gunaLabel14
+            // 
+            this.gunaLabel14.AutoSize = true;
+            this.gunaLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel14.Location = new System.Drawing.Point(40, 92);
+            this.gunaLabel14.Name = "gunaLabel14";
+            this.gunaLabel14.Size = new System.Drawing.Size(93, 15);
+            this.gunaLabel14.TabIndex = 26;
+            this.gunaLabel14.Text = "Institution Email";
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Location = new System.Drawing.Point(43, 115);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Size = new System.Drawing.Size(423, 36);
+            this.guna2TextBox3.TabIndex = 25;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.BorderRadius = 17;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9.55F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(43, 378);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(140, 37);
+            this.guna2Button1.TabIndex = 24;
+            this.guna2Button1.Text = "Update";
+            // 
+            // gunaLabel15
+            // 
+            this.gunaLabel15.AutoSize = true;
+            this.gunaLabel15.Font = new System.Drawing.Font("Segoe UI", 9.55F);
+            this.gunaLabel15.Location = new System.Drawing.Point(88, 297);
+            this.gunaLabel15.Name = "gunaLabel15";
+            this.gunaLabel15.Size = new System.Drawing.Size(355, 17);
+            this.gunaLabel15.TabIndex = 23;
+            this.gunaLabel15.Text = "Send Email on book Return (Inclusive of any penalty or fine)";
+            // 
+            // guna2ToggleSwitch1
+            // 
+            this.guna2ToggleSwitch1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2ToggleSwitch1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2ToggleSwitch1.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.CheckedState.Parent = this.guna2ToggleSwitch1;
+            this.guna2ToggleSwitch1.Location = new System.Drawing.Point(45, 298);
+            this.guna2ToggleSwitch1.Name = "guna2ToggleSwitch1";
+            this.guna2ToggleSwitch1.ShadowDecoration.Parent = this.guna2ToggleSwitch1;
+            this.guna2ToggleSwitch1.Size = new System.Drawing.Size(38, 20);
+            this.guna2ToggleSwitch1.TabIndex = 22;
+            this.guna2ToggleSwitch1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch1.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch1.UncheckedState.Parent = this.guna2ToggleSwitch1;
+            // 
+            // gunaLabel16
+            // 
+            this.gunaLabel16.AutoSize = true;
+            this.gunaLabel16.Font = new System.Drawing.Font("Segoe UI", 9.55F);
+            this.gunaLabel16.Location = new System.Drawing.Point(88, 254);
+            this.gunaLabel16.Name = "gunaLabel16";
+            this.gunaLabel16.Size = new System.Drawing.Size(124, 17);
+            this.gunaLabel16.TabIndex = 21;
+            this.gunaLabel16.Text = "Send Email on Issue";
+            // 
+            // guna2ToggleSwitch2
+            // 
+            this.guna2ToggleSwitch2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2ToggleSwitch2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2ToggleSwitch2.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch2.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch2.CheckedState.Parent = this.guna2ToggleSwitch2;
+            this.guna2ToggleSwitch2.Location = new System.Drawing.Point(44, 256);
+            this.guna2ToggleSwitch2.Name = "guna2ToggleSwitch2";
+            this.guna2ToggleSwitch2.ShadowDecoration.Parent = this.guna2ToggleSwitch2;
+            this.guna2ToggleSwitch2.Size = new System.Drawing.Size(38, 20);
+            this.guna2ToggleSwitch2.TabIndex = 20;
+            this.guna2ToggleSwitch2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch2.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch2.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch2.UncheckedState.Parent = this.guna2ToggleSwitch2;
+            // 
+            // gunaLabel17
+            // 
+            this.gunaLabel17.AutoSize = true;
+            this.gunaLabel17.Font = new System.Drawing.Font("Segoe UI", 15F);
+            this.gunaLabel17.Location = new System.Drawing.Point(39, 31);
+            this.gunaLabel17.Name = "gunaLabel17";
+            this.gunaLabel17.Size = new System.Drawing.Size(124, 28);
+            this.gunaLabel17.TabIndex = 19;
+            this.gunaLabel17.Text = "Maintenance\r\n";
+            // 
+            // gunaLabel10
+            // 
+            this.gunaLabel10.AutoSize = true;
+            this.gunaLabel10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel10.Location = new System.Drawing.Point(472, 92);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Size = new System.Drawing.Size(57, 15);
+            this.gunaLabel10.TabIndex = 28;
+            this.gunaLabel10.Text = "Password";
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Location = new System.Drawing.Point(475, 115);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Size = new System.Drawing.Size(423, 36);
+            this.guna2TextBox1.TabIndex = 27;
+            // 
+            // gunaLabel13
+            // 
+            this.gunaLabel13.AutoSize = true;
+            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel13.Location = new System.Drawing.Point(472, 164);
+            this.gunaLabel13.Name = "gunaLabel13";
+            this.gunaLabel13.Size = new System.Drawing.Size(29, 15);
+            this.gunaLabel13.TabIndex = 32;
+            this.gunaLabel13.Text = "Port";
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Location = new System.Drawing.Point(475, 187);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Size = new System.Drawing.Size(423, 36);
+            this.guna2TextBox2.TabIndex = 31;
+            // 
+            // gunaLabel18
+            // 
+            this.gunaLabel18.AutoSize = true;
+            this.gunaLabel18.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel18.Location = new System.Drawing.Point(40, 164);
+            this.gunaLabel18.Name = "gunaLabel18";
+            this.gunaLabel18.Size = new System.Drawing.Size(32, 15);
+            this.gunaLabel18.TabIndex = 30;
+            this.gunaLabel18.Text = "Host";
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Location = new System.Drawing.Point(43, 187);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Size = new System.Drawing.Size(423, 36);
+            this.guna2TextBox4.TabIndex = 29;
+            // 
+            // gunaLabel19
+            // 
+            this.gunaLabel19.AutoSize = true;
+            this.gunaLabel19.Font = new System.Drawing.Font("Segoe UI", 9.55F);
+            this.gunaLabel19.Location = new System.Drawing.Point(88, 338);
+            this.gunaLabel19.Name = "gunaLabel19";
+            this.gunaLabel19.Size = new System.Drawing.Size(321, 17);
+            this.gunaLabel19.TabIndex = 34;
+            this.gunaLabel19.Text = "Send automated Email reminder 1 day prior due date";
+            // 
+            // guna2ToggleSwitch3
+            // 
+            this.guna2ToggleSwitch3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2ToggleSwitch3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.guna2ToggleSwitch3.CheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch3.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch3.CheckedState.Parent = this.guna2ToggleSwitch3;
+            this.guna2ToggleSwitch3.Location = new System.Drawing.Point(45, 339);
+            this.guna2ToggleSwitch3.Name = "guna2ToggleSwitch3";
+            this.guna2ToggleSwitch3.ShadowDecoration.Parent = this.guna2ToggleSwitch3;
+            this.guna2ToggleSwitch3.Size = new System.Drawing.Size(38, 20);
+            this.guna2ToggleSwitch3.TabIndex = 33;
+            this.guna2ToggleSwitch3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2ToggleSwitch3.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch3.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.guna2ToggleSwitch3.UncheckedState.Parent = this.guna2ToggleSwitch3;
+            // 
             // frmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -955,6 +1231,8 @@
             this.tabPageAdv3.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.subjectList)).EndInit();
+            this.tabPageAdv4.ResumeLayout(false);
+            this.tabPageAdv4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1014,5 +1292,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewImageColumn EditSub;
         private System.Windows.Forms.DataGridViewImageColumn DeleteSub;
+        private Guna.UI.WinForms.GunaLabel gunaLabel19;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch3;
+        private Guna.UI.WinForms.GunaLabel gunaLabel13;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel18;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI.WinForms.GunaLabel gunaLabel10;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel14;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel15;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch1;
+        private Guna.UI.WinForms.GunaLabel gunaLabel16;
+        private Guna.UI2.WinForms.Guna2ToggleSwitch guna2ToggleSwitch2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel17;
     }
 }

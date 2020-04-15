@@ -45,6 +45,7 @@ namespace LMS
 
         private void FrmStudentList_Load(object sender, EventArgs e)
         {
+            LoadPrograms();
             cboCourse.SelectedItem = "All Course";
 
             options = new QrCodeEncodingOptions
@@ -57,7 +58,21 @@ namespace LMS
             var writer = new BarcodeWriter();
             writer.Format = BarcodeFormat.QR_CODE;
             writer.Options = options;
+        }
 
+        void LoadPrograms()
+        {
+            cboCourse.Items.Clear();
+            cboCourse.Items.Add("All Course");
+            cn.Open();
+            cm = new SqlCommand("SELECT description FROM tblPrograms", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                cboCourse.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+            cn.Close();
         }
 
         public void LoadRecords()
@@ -237,6 +252,11 @@ namespace LMS
         private void CboCourse_TextChanged(object sender, EventArgs e)
         {
             LoadCourse();
+        }
+
+        private void TxtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            LoadRecords();
         }
     }
 }
