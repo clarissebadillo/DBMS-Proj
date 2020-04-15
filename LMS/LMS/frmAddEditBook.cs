@@ -17,6 +17,7 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
         frmBookList frmlist;
 
         public frmAddEditBook(frmBookList flist)
@@ -38,7 +39,21 @@ namespace LMS
 
         private void FrmAddEditBook_Load(object sender, EventArgs e)
         {
-            //
+            LoadSubjects();
+        }
+
+        void LoadSubjects()
+        {
+            cboSubject.Items.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT subject FROM tblSubjects", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                cboSubject.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+            cn.Close();
         }
 
         private void Clear()
@@ -183,5 +198,6 @@ namespace LMS
                 e.Handled = true;
             }
         }
+
     }
 }

@@ -221,15 +221,6 @@
             this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Items.AddRange(new object[] {
-            "Science",
-            "Math",
-            "English",
-            "Programming",
-            "Economics",
-            "History",
-            "Law",
-            "Others"});
             this.cboSubject.Location = new System.Drawing.Point(22, 36);
             this.cboSubject.Name = "cboSubject";
             this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
@@ -643,6 +634,7 @@
             this.Name = "frmAddEditBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditBook";
+            this.Load += new System.EventHandler(this.FrmAddEditBook_Load);
             this.gunaLinePanel1.ResumeLayout(false);
             this.gunaLinePanel1.PerformLayout();
             this.gunaLinePanel3.ResumeLayout(false);
