@@ -18,16 +18,10 @@ namespace LMS
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
+        SqlDataReader dr;
         frmStudentList frmlist;
 
         string gender = "";
-
-        public frmAddEditStudent(frmStudentList flist)
-        {
-            InitializeComponent();
-            cn = new SqlConnection(dbcon.MyConnection());
-            frmlist = flist;
-        }
 
         protected override CreateParams CreateParams
         {
@@ -38,6 +32,19 @@ namespace LMS
                 return handleParam;
             }
         }
+
+        public frmAddEditStudent(frmStudentList flist)
+        {
+            InitializeComponent();
+            cn = new SqlConnection(dbcon.MyConnection());
+            frmlist = flist;
+        }
+
+        private void FrmAddEditStudent_Load(object sender, EventArgs e)
+        {
+            LoadPrograms();
+        }
+
 
         public void Clear()
         {
@@ -52,6 +59,20 @@ namespace LMS
             cboCourse.SelectedIndex = -1;
             cboYear.SelectedIndex = -1;
             studImage.Image = Properties.Resources.user;
+        }
+
+        void LoadPrograms()
+        {
+            cboCourse.Items.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT description FROM tblPrograms", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                cboCourse.Items.Add(dr[0].ToString());
+            }
+            dr.Close();
+            cn.Close();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -209,5 +230,6 @@ namespace LMS
                 e.Handled = true;
             }
         }
+
     }
 }

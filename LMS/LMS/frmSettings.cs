@@ -32,6 +32,9 @@ namespace LMS
         {
             LoadSettings();
             Toggle();
+
+            LoadPrograms();
+            btnProgUpdate.Enabled = false;
         }
 
         void Toggle()
@@ -129,6 +132,113 @@ namespace LMS
             UpdateSettings();
             Clear();
             LoadSettings();
+        }
+
+
+        void ClearProgram()
+        {
+            txtCode.Clear();
+            txtDesc.Clear();
+        }
+
+        void LoadPrograms()
+        {
+            int i = 0;
+            programList.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblPrograms", cn);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                programList.Rows.Add(i, dr["programID"].ToString(), dr["code"].ToString(), dr["description"].ToString());
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void BtnProgSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MyMessageBox.ShowMessage("Are you sure you want to save " + txtCode.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("INSERT INTO tblPrograms VALUES (@code, @description)", cn);
+                    cm.Parameters.AddWithValue("@code", txtCode.Text);
+                    cm.Parameters.AddWithValue("@description", txtDesc.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    LoadPrograms();
+                    ClearProgram();
+
+                    MyMessageBox.ShowMessage("Program has been successfully saved!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ProgramList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = programList.Columns[e.ColumnIndex].Name;
+            if (colName == "Edit")
+            {
+                btnProgSave.Enabled = false;
+                btnProgUpdate.Enabled = true;
+                lblProgID.Text = programList[1, e.RowIndex].Value.ToString();
+                txtCode.Text = programList[2, e.RowIndex].Value.ToString();
+                txtDesc.Text = programList[3, e.RowIndex].Value.ToString();
+            }
+            else if (colName == "Delete")
+            {
+                if (MyMessageBox.ShowMessage("Are you sure you want to remove this program?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("DELETE FROM tblPrograms WHERE programID LIKE '" + programList[1, e.RowIndex].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    MyMessageBox.ShowMessage("Program has been successfully removed!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadPrograms();
+                }
+            }
+        }
+
+        private void BtnProgUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MyMessageBox.ShowMessage("Are you sure you want to update " + txtCode.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("UPDATE tblPrograms SET code = @code, description = @description WHERE programID = @programID", cn);
+                    cm.Parameters.AddWithValue("@code", txtCode.Text);
+                    cm.Parameters.AddWithValue("@description", txtDesc.Text);
+                    cm.Parameters.AddWithValue("programID", lblProgID.Text);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+                    LoadPrograms();
+                    
+                    MyMessageBox.ShowMessage("Program has been successfully updated!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    btnProgUpdate.Enabled = false;
+                    btnProgSave.Enabled = true;
+                    ClearProgram();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void BtnProgClear_Click(object sender, EventArgs e)
+        {
+            ClearProgram();
         }
     }
 }

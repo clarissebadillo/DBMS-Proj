@@ -171,12 +171,12 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="AddCopy.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAADuSURBVEhL1ZTPDsFAEIdX4kDC7jqIrjbRODm5eAUHHsCDOImIdrjjvXgodnQIOl0tiT+/5Ds0
-        M/Nls91d8bmAKLeh3jNLNeAIoNGnzvwJpkG1HamD5ehGA43kixfJMS9iiPWKxp7Hj9SElWRgYrmhUXeK
-        ihETyS2NZ+cVMeLHcmfHS4mFyatiBP8PadJxikENz3A1C86SJh2X2JvXmghXQ35D7Gou0suteHa5ynjV
-        kcs31m57i4qv/Mce36PXCVztLbGb74gLPZsPGJAj0qST/6G/x652H4KokCYj9qx6oMMWqG4ezEJ3zmf8
-        MxHiBDa0n2GuPt7TAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAAAO5JREFUSEvV
+        lM8OwUAQh1fiQMLuOoiuNtE4Obl4BQcewIM4iYh2uOO9eCh2dAg6XS2JP7/kOzQz82Wz3V3xuYAot6He
+        M0s14Aig0afO/AmmQbUdqYPl6EYDjeSLF8kxL2KI9YrGnseP1ISVZGBiuaFRd4qKERPJLY1n5xUx4sdy
+        Z8dLiYXJq2IE/w9p0nGKQQ3PcDULzpImHZfYm9eaCFdDfkPsai7Sy614drnKeNWRyzfWbnuLiq/8xx7f
+        o9cJXO0tsZvviAs9mw8YkCPSpJP/ob/HrnYfgqiQJiP2rHqgwxaobh7MQnfOZ/wzEeIENrSfYa4+3tMA
+        AAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -184,9 +184,6 @@
   </metadata>
   <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="sfToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>146, 17</value>
   </metadata>
   <data name="btnAddBook.CheckedImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
