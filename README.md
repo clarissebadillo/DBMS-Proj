@@ -1,2 +1,1 @@
-# LMS-Ver-2
-
+# Final project for DBMS 2
