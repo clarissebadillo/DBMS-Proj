@@ -139,6 +139,7 @@ namespace LMS
                 {
                     if (MyMessageBox.ShowMessage("Are you sure you want to update " + txtTitle.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        UpdateBookLogs();
                         cn.Open();
                         cm = new SqlCommand("UPDATE tblBook SET bookISBN = @bookisbn, bookTitle = @booktitle, subject = @subject, genre = @genre, mediaType = @mediatype, language = @language, author = @author, publisher = @publisher, price = @price, pubyear = @year WHERE bookID LIKE '" + lblID.Text + "'", cn);
                         cm.Parameters.AddWithValue("@bookisbn", txtISBN.Text);
@@ -153,7 +154,6 @@ namespace LMS
                         cm.Parameters.AddWithValue("@year", txtYear.Text);
                         cm.ExecuteNonQuery();
                         cn.Close();
-                        UpdateBookLogs();
 
                         popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
                         popupNotifier.Popup();

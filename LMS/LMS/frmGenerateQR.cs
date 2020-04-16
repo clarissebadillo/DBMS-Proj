@@ -12,14 +12,16 @@ namespace LMS
 {
     public partial class frmGenerateQR : Form
     {
-        public frmGenerateQR()
+        frmStudentList frm;
+
+        public frmGenerateQR(frmStudentList flist)
         {
             InitializeComponent();
+            frm = flist;
         }
 
         private void BtnSaveQR_Click(object sender, EventArgs e)
         {
-            frmStudentList frm = new frmStudentList();
             if (QR.Image == null)
             {
                 MessageBox.Show("Image not found", "Oops!", MessageBoxButtons.OK, MessageBoxIcon.Error);

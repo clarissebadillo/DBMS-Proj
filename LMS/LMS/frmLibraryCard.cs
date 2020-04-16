@@ -94,6 +94,7 @@ namespace LMS
         private void BtnPrint_Click(object sender, EventArgs e)
         {
             Print(this.pnlID);
+            Logs();
         }
 
         public void Print(Panel pnl)
@@ -271,6 +272,18 @@ namespace LMS
                     public int cpMax;           // Last character of range (-1 for end of doc)
                 }
             }
+        }
+
+
+        void Logs()
+        {
+            var details = lblLibrarian.Text + " generated library card for " + lblStudentName.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
 
     }

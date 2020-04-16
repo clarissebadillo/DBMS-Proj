@@ -147,6 +147,7 @@ namespace LMS
             if (colName == "Edit")
             {
                 frmAddEditBook frm = new frmAddEditBook(this);
+                frm.lblLibrarian.Text = admin;
                 frm.btnSave.Enabled = false;
                 frm.txtCopies.Enabled = false;
                 frm.lblTitle.Text = "Edit Book Details";
@@ -175,6 +176,7 @@ namespace LMS
 
                     MyMessageBox.ShowMessage("Record has been successfully removed!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadRecords();
+                    RemoveBookLogs();
                 }
             }
             else if (colName == "AddCopy")
@@ -209,6 +211,17 @@ namespace LMS
         private void CboSubject_TextChanged(object sender, EventArgs e)
         {
             LoadSubjects();
+        }
+
+        void RemoveBookLogs()
+        {
+            var details = frm1.lblLibrarian.Text + " removed " + lblBookTitle.Text + " from the book list";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
 
     }

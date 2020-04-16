@@ -22,13 +22,19 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        Form1 frm1;
+
+        string admin;
 
         QrCodeEncodingOptions options = new QrCodeEncodingOptions();
 
-        public frmStudentList()
+        public frmStudentList(Form1 f1)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            frm1 = f1;
+            admin = frm1.lblLibrarian.Text;
+
             LoadRecords();
         }
 
@@ -151,6 +157,7 @@ namespace LMS
             if (colName == "Edit")
             {
                 frmAddEditStudent frm = new frmAddEditStudent(this);
+                frm.lblLibrarian.Text = admin;
                 frm.btnSave.Enabled = false;
                 frm.lblTitle.Text = "Edit Student Details";
                 frm.lblID.Text = gunaDataGridView1[1, e.RowIndex].Value.ToString();
@@ -187,6 +194,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
+                    RemoveStudentLogs();
                     popupNotifier.ContentText = "Record has been successfully removed!";
                     popupNotifier.Popup();
                     LoadRecords();
@@ -197,6 +205,7 @@ namespace LMS
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
             frmAddEditStudent frm = new frmAddEditStudent(this);
+            frm.lblLibrarian.Text = admin;
             frm.btnUpdate.Enabled = false;
             frm.Show();
         }
@@ -211,6 +220,7 @@ namespace LMS
             else
             {
                 frmLibraryCard frm = new frmLibraryCard();
+                frm.lblLibrarian.Text = admin;
                 cn.Open();
                 cm = new SqlCommand("SELECT (firstName + ' ' + LastName) AS Name, studentNum, contact, course, image FROM tblStudent WHERE studentNum = @studentNum", cn);
                 //cm = new SqlCommand("SELECT (firstName + ' ' + LastName) AS Name, studentNum FROM tblStudent WHERE studentNum = @studentNum", cn);
@@ -257,6 +267,17 @@ namespace LMS
         private void TxtSearch_TextChanged_1(object sender, EventArgs e)
         {
             LoadRecords();
+        }
+
+        void RemoveStudentLogs()
+        {
+            var details = frm1.lblLibrarian.Text + " removed " + lblName.Text + " from the student list";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

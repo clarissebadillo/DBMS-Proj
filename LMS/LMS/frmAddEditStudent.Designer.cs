@@ -63,6 +63,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.lblLibrarian = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
@@ -426,6 +427,7 @@
             // 
             this.gunaLinePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel2.Controls.Add(this.lblLibrarian);
             this.gunaLinePanel2.Controls.Add(this.studImage);
             this.gunaLinePanel2.Controls.Add(this.groupBox1);
             this.gunaLinePanel2.Controls.Add(this.btnChoose);
@@ -612,6 +614,18 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
+            // lblLibrarian
+            // 
+            this.lblLibrarian.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblLibrarian.AutoSize = true;
+            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblLibrarian.Location = new System.Drawing.Point(335, 33);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(0, 13);
+            this.lblLibrarian.TabIndex = 11;
+            this.lblLibrarian.Visible = false;
+            // 
             // frmAddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,5 +690,6 @@
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
         public Guna.UI.WinForms.GunaComboBox cboYear;
         public Guna.UI.WinForms.GunaComboBox cboCourse;
+        public System.Windows.Forms.Label lblLibrarian;
     }
 }

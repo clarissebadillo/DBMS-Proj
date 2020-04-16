@@ -130,7 +130,7 @@ namespace LMS
             btnUserAccount.Checked = false;
             btnSettings.Checked = false;
 
-            frmStudentList frm = new frmStudentList();
+            frmStudentList frm = new frmStudentList(this);
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

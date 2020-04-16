@@ -66,6 +66,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnPrint = new Guna.UI.WinForms.GunaButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLibrarian = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.pnlID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentImage)).BeginInit();
@@ -81,6 +82,7 @@
             // gunaLinePanel1
             // 
             this.gunaLinePanel1.BackColor = System.Drawing.Color.White;
+            this.gunaLinePanel1.Controls.Add(this.lblLibrarian);
             this.gunaLinePanel1.Controls.Add(this.label2);
             this.gunaLinePanel1.Controls.Add(this.txtStudentName);
             this.gunaLinePanel1.Controls.Add(this.btnSaveQR);
@@ -255,7 +257,7 @@
             // 
             // lblCourse
             // 
-            this.lblCourse.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCourse.Font = new System.Drawing.Font("Segoe UI", 9.55F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCourse.ForeColor = System.Drawing.Color.White;
             this.lblCourse.Location = new System.Drawing.Point(3, 33);
             this.lblCourse.Name = "lblCourse";
@@ -575,6 +577,17 @@
             this.panel1.Size = new System.Drawing.Size(990, 7);
             this.panel1.TabIndex = 26;
             // 
+            // lblLibrarian
+            // 
+            this.lblLibrarian.AutoSize = true;
+            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrarian.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblLibrarian.Location = new System.Drawing.Point(656, 61);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(0, 13);
+            this.lblLibrarian.TabIndex = 59;
+            this.lblLibrarian.Visible = false;
+            // 
             // frmLibraryCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -645,5 +658,6 @@
         public Guna.UI.WinForms.GunaButton btnSaveQR;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaTextBox txtStudentName;
+        public System.Windows.Forms.Label lblLibrarian;
     }
 }

@@ -103,16 +103,16 @@ namespace LMS
                 {
                     if (MyMessageBox.ShowMessage("Are you sure you want to add " + txtFname.Text + " " + txtLname.Text + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        cn.Open();
                         cm = new SqlCommand("SELECT COUNT(*) FROM tblStudent WHERE studentNum = @studentNum", cn);
                         cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);
 
-                        //open connection to the database
-                        cn.Open();
 
                         int records = (int)cm.ExecuteScalar();
-
+                        cn.Close();
                         if (records == 0)
                         {
+                            cn.Open();
                             cm.Parameters.Clear();
                             //command to be executed on the database
                             cm = new SqlCommand("INSERT INTO tblStudent VALUES (@studentNum, @lastName, @firstName, @course, @year, @gender, @contact, @email, @address, @image)", cn);
@@ -130,8 +130,9 @@ namespace LMS
                             cm.Parameters.AddWithValue("@image", img);
                             //ask db to execute query
                             cm.ExecuteNonQuery();
-                            //close connection
+                            cn.Close();
 
+                            AddStudentLogs();
                             popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + " has been successfully added!";
                             popupNotifier.Popup();
                             Clear();
@@ -141,8 +142,7 @@ namespace LMS
                         {
                             MyMessageBox.ShowMessage("Student number already exist!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         }
-                        //Close connection
-                        cn.Close();
+
                     }
                 }
                 catch (Exception ex)
@@ -210,6 +210,8 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     //close connection
                     cn.Close();
+
+                    UpdateStudentLogs();
                     popupNotifier.ContentText = txtFname.Text + " " + txtLname.Text + " has been successfully updated!";
                     popupNotifier.Popup();
                     Clear();
@@ -229,6 +231,28 @@ namespace LMS
             {
                 e.Handled = true;
             }
+        }
+
+        void AddStudentLogs()
+        {
+            var details = lblLibrarian.Text + " added " + txtLname.Text + " " + txtFname.Text + " to the student list";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        void UpdateStudentLogs()
+        {
+            var details = lblLibrarian.Text + " updated " + txtLname.Text + " " + txtFname.Text + " details";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
 
     }
