@@ -18,14 +18,26 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        Form1 frm1;
 
         string allowPending;
         string allowOverdue;
 
-        public frmSettings()
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+                return handleParam;
+            }
+        }
+
+        public frmSettings(Form1 f1)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            frm1 = f1;
         }
 
         private void FrmSettings_Load(object sender, EventArgs e)
@@ -133,6 +145,7 @@ namespace LMS
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             UpdateSettings();
+            UpdateLogs();
             Clear();
             LoadSettings();
         }
@@ -349,6 +362,17 @@ namespace LMS
                     LoadSubjects();
                 }
             }
+        }
+
+        void UpdateLogs()
+        {
+            var details = frm1.lblLibrarian.Text + " updated the library setup settings";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
 
     }

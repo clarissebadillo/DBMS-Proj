@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewAccount));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.btnShowPass2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnShowPass = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnHidePass2 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnHidePass = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lblPass = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,17 +46,15 @@
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.txtFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnShowPass = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnHidePass = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnHidePass2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnShowPass2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.txtRetypePass = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRetypePass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblLibrarian = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.lblLibrarian);
             this.gunaLinePanel1.Controls.Add(this.btnShowPass2);
             this.gunaLinePanel1.Controls.Add(this.btnShowPass);
             this.gunaLinePanel1.Controls.Add(this.btnHidePass2);
@@ -83,6 +85,56 @@
             this.gunaLinePanel1.Size = new System.Drawing.Size(652, 400);
             this.gunaLinePanel1.TabIndex = 0;
             // 
+            // btnShowPass2
+            // 
+            this.btnShowPass2.CheckedState.Parent = this.btnShowPass2;
+            this.btnShowPass2.HoverState.Parent = this.btnShowPass2;
+            this.btnShowPass2.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPass2.Image")));
+            this.btnShowPass2.Location = new System.Drawing.Point(546, 291);
+            this.btnShowPass2.Name = "btnShowPass2";
+            this.btnShowPass2.PressedState.Parent = this.btnShowPass2;
+            this.btnShowPass2.Size = new System.Drawing.Size(23, 23);
+            this.btnShowPass2.TabIndex = 77;
+            this.btnShowPass2.Click += new System.EventHandler(this.BtnShowPass2_Click);
+            // 
+            // btnShowPass
+            // 
+            this.btnShowPass.CheckedState.Parent = this.btnShowPass;
+            this.btnShowPass.HoverState.Parent = this.btnShowPass;
+            this.btnShowPass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPass.Image")));
+            this.btnShowPass.Location = new System.Drawing.Point(546, 244);
+            this.btnShowPass.Name = "btnShowPass";
+            this.btnShowPass.PressedState.Parent = this.btnShowPass;
+            this.btnShowPass.Size = new System.Drawing.Size(23, 23);
+            this.btnShowPass.TabIndex = 74;
+            this.btnShowPass.Click += new System.EventHandler(this.BtnShowPass_Click);
+            // 
+            // btnHidePass2
+            // 
+            this.btnHidePass2.CheckedState.Parent = this.btnHidePass2;
+            this.btnHidePass2.HoverState.Parent = this.btnHidePass2;
+            this.btnHidePass2.Image = ((System.Drawing.Image)(resources.GetObject("btnHidePass2.Image")));
+            this.btnHidePass2.Location = new System.Drawing.Point(546, 291);
+            this.btnHidePass2.Name = "btnHidePass2";
+            this.btnHidePass2.PressedState.Parent = this.btnHidePass2;
+            this.btnHidePass2.Size = new System.Drawing.Size(23, 23);
+            this.btnHidePass2.TabIndex = 76;
+            this.btnHidePass2.Visible = false;
+            this.btnHidePass2.Click += new System.EventHandler(this.BtnHidePass2_Click);
+            // 
+            // btnHidePass
+            // 
+            this.btnHidePass.CheckedState.Parent = this.btnHidePass;
+            this.btnHidePass.HoverState.Parent = this.btnHidePass;
+            this.btnHidePass.Image = ((System.Drawing.Image)(resources.GetObject("btnHidePass.Image")));
+            this.btnHidePass.Location = new System.Drawing.Point(546, 244);
+            this.btnHidePass.Name = "btnHidePass";
+            this.btnHidePass.PressedState.Parent = this.btnHidePass;
+            this.btnHidePass.Size = new System.Drawing.Size(23, 23);
+            this.btnHidePass.TabIndex = 75;
+            this.btnHidePass.Visible = false;
+            this.btnHidePass.Click += new System.EventHandler(this.BtnHidePass_Click);
+            // 
             // lblPass
             // 
             this.lblPass.AutoSize = true;
@@ -90,9 +142,9 @@
             this.lblPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.lblPass.Location = new System.Drawing.Point(187, 326);
             this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(138, 15);
+            this.lblPass.Size = new System.Drawing.Size(143, 15);
             this.lblPass.TabIndex = 73;
-            this.lblPass.Text = "Password did not match!";
+            this.lblPass.Text = "*Password did not match!";
             this.lblPass.Visible = false;
             // 
             // txtEmail
@@ -279,55 +331,28 @@
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "Create New Account";
             // 
-            // btnShowPass
+            // txtPassword
             // 
-            this.btnShowPass.CheckedState.Parent = this.btnShowPass;
-            this.btnShowPass.HoverState.Parent = this.btnShowPass;
-            this.btnShowPass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPass.Image")));
-            this.btnShowPass.Location = new System.Drawing.Point(546, 244);
-            this.btnShowPass.Name = "btnShowPass";
-            this.btnShowPass.PressedState.Parent = this.btnShowPass;
-            this.btnShowPass.Size = new System.Drawing.Size(23, 23);
-            this.btnShowPass.TabIndex = 74;
-            this.btnShowPass.Click += new System.EventHandler(this.BtnShowPass_Click);
-            // 
-            // btnHidePass
-            // 
-            this.btnHidePass.CheckedState.Parent = this.btnHidePass;
-            this.btnHidePass.HoverState.Parent = this.btnHidePass;
-            this.btnHidePass.Image = ((System.Drawing.Image)(resources.GetObject("btnHidePass.Image")));
-            this.btnHidePass.Location = new System.Drawing.Point(546, 244);
-            this.btnHidePass.Name = "btnHidePass";
-            this.btnHidePass.PressedState.Parent = this.btnHidePass;
-            this.btnHidePass.Size = new System.Drawing.Size(23, 23);
-            this.btnHidePass.TabIndex = 75;
-            this.btnHidePass.Visible = false;
-            this.btnHidePass.Click += new System.EventHandler(this.BtnHidePass_Click);
-            // 
-            // btnHidePass2
-            // 
-            this.btnHidePass2.CheckedState.Parent = this.btnHidePass2;
-            this.btnHidePass2.HoverState.Parent = this.btnHidePass2;
-            this.btnHidePass2.Image = ((System.Drawing.Image)(resources.GetObject("btnHidePass2.Image")));
-            this.btnHidePass2.Location = new System.Drawing.Point(546, 291);
-            this.btnHidePass2.Name = "btnHidePass2";
-            this.btnHidePass2.PressedState.Parent = this.btnHidePass2;
-            this.btnHidePass2.Size = new System.Drawing.Size(23, 23);
-            this.btnHidePass2.TabIndex = 76;
-            this.btnHidePass2.Visible = false;
-            this.btnHidePass2.Click += new System.EventHandler(this.BtnHidePass2_Click);
-            // 
-            // btnShowPass2
-            // 
-            this.btnShowPass2.CheckedState.Parent = this.btnShowPass2;
-            this.btnShowPass2.HoverState.Parent = this.btnShowPass2;
-            this.btnShowPass2.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPass2.Image")));
-            this.btnShowPass2.Location = new System.Drawing.Point(546, 291);
-            this.btnShowPass2.Name = "btnShowPass2";
-            this.btnShowPass2.PressedState.Parent = this.btnShowPass2;
-            this.btnShowPass2.Size = new System.Drawing.Size(23, 23);
-            this.btnShowPass2.TabIndex = 77;
-            this.btnShowPass2.Click += new System.EventHandler(this.BtnShowPass2_Click);
+            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPassword.DefaultText = "";
+            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.DisabledState.Parent = this.txtPassword;
+            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtPassword.FocusedState.Parent = this.txtPassword;
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtPassword.HoverState.Parent = this.txtPassword;
+            this.txtPassword.Location = new System.Drawing.Point(182, 239);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PlaceholderText = "●●●●●●●●";
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
+            this.txtPassword.Size = new System.Drawing.Size(396, 36);
+            this.txtPassword.TabIndex = 78;
             // 
             // txtRetypePass
             // 
@@ -352,28 +377,16 @@
             this.txtRetypePass.Size = new System.Drawing.Size(396, 36);
             this.txtRetypePass.TabIndex = 79;
             // 
-            // txtPassword
+            // lblLibrarian
             // 
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "";
-            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.DisabledState.Parent = this.txtPassword;
-            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtPassword.FocusedState.Parent = this.txtPassword;
-            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtPassword.HoverState.Parent = this.txtPassword;
-            this.txtPassword.Location = new System.Drawing.Point(182, 239);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.PlaceholderText = "●●●●●●●●";
-            this.txtPassword.SelectedText = "";
-            this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
-            this.txtPassword.Size = new System.Drawing.Size(396, 36);
-            this.txtPassword.TabIndex = 78;
+            this.lblLibrarian.AutoSize = true;
+            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.lblLibrarian.Location = new System.Drawing.Point(191, 353);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(0, 15);
+            this.lblLibrarian.TabIndex = 80;
+            this.lblLibrarian.Visible = false;
             // 
             // frmNewAccount
             // 
@@ -414,5 +427,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton btnHidePass;
         private Guna.UI2.WinForms.Guna2TextBox txtRetypePass;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
+        public System.Windows.Forms.Label lblLibrarian;
     }
 }

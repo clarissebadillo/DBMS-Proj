@@ -79,6 +79,8 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         cn.Close();
 
+                        Logs();
+
                         Clear();
                         MyMessageBox.ShowMessage("Account created successfully!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frm.LoadRecords();
@@ -134,5 +136,17 @@ namespace LMS
                 txtRetypePass.UseSystemPasswordChar = true;
             }
         }
+
+        void Logs()
+        {
+            var details = lblLibrarian.Text + " added " + txtUsername.Text + " to the user account list";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
     }
 }

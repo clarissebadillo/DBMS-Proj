@@ -18,6 +18,7 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        Form1 frm1;
 
         int rowIndex;
 
@@ -31,10 +32,11 @@ namespace LMS
             }
         }
 
-        public frmUserAccount()
+        public frmUserAccount(Form1 f1)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            frm1 = f1;
         }
 
         private void FrmUserAccount_Load(object sender, EventArgs e)
@@ -61,6 +63,7 @@ namespace LMS
         private void BtnCreateAccount_Click(object sender, EventArgs e)
         {
             frmNewAccount frm = new frmNewAccount(this);
+            frm.lblLibrarian.Text = frm1.lblLibrarian.Text;
             frm.Show();
         }
 
@@ -153,6 +156,5 @@ namespace LMS
             }
         }
 
-        
     }
 }
