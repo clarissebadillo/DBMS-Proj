@@ -33,10 +33,7 @@
             this.btnUpdate = new Guna.UI.WinForms.GunaButton();
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
-            this.cboGenre = new Guna.UI.WinForms.GunaComboBox();
-            this.cboSubject = new Guna.UI.WinForms.GunaComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboMediaType = new Guna.UI.WinForms.GunaComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtPrice = new Guna.UI.WinForms.GunaTextBox();
             this.txtYear = new Guna.UI.WinForms.GunaTextBox();
@@ -51,6 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
+            this.lblLibrarian = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCopies = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,12 +59,17 @@
             this.btnBack = new Bunifu.Framework.UI.BunifuImageButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
-            this.lblLibrarian = new System.Windows.Forms.Label();
+            this.cboSubject = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cboGenre = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cboMediaType = new Syncfusion.WinForms.ListView.SfComboBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
             this.gunaLinePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSubject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboGenre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMediaType)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
@@ -86,7 +89,7 @@
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(562, 524);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(562, 552);
             this.gunaLinePanel1.TabIndex = 0;
             // 
             // lblID
@@ -160,10 +163,10 @@
             // 
             this.gunaLinePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLinePanel3.Controls.Add(this.cboMediaType);
             this.gunaLinePanel3.Controls.Add(this.cboGenre);
             this.gunaLinePanel3.Controls.Add(this.cboSubject);
             this.gunaLinePanel3.Controls.Add(this.label1);
-            this.gunaLinePanel3.Controls.Add(this.cboMediaType);
             this.gunaLinePanel3.Controls.Add(this.label11);
             this.gunaLinePanel3.Controls.Add(this.txtPrice);
             this.gunaLinePanel3.Controls.Add(this.txtYear);
@@ -184,51 +187,6 @@
             this.gunaLinePanel3.Size = new System.Drawing.Size(538, 237);
             this.gunaLinePanel3.TabIndex = 30;
             // 
-            // cboGenre
-            // 
-            this.cboGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboGenre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboGenre.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboGenre.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboGenre.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cboGenre.BorderSize = 1;
-            this.cboGenre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboGenre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGenre.FocusedColor = System.Drawing.Color.Empty;
-            this.cboGenre.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboGenre.FormattingEnabled = true;
-            this.cboGenre.Items.AddRange(new object[] {
-            "Fiction",
-            "Non-Fiction"});
-            this.cboGenre.Location = new System.Drawing.Point(284, 36);
-            this.cboGenre.Name = "cboGenre";
-            this.cboGenre.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboGenre.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboGenre.Size = new System.Drawing.Size(234, 26);
-            this.cboGenre.TabIndex = 42;
-            // 
-            // cboSubject
-            // 
-            this.cboSubject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboSubject.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cboSubject.BorderSize = 1;
-            this.cboSubject.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSubject.FocusedColor = System.Drawing.Color.Empty;
-            this.cboSubject.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.FormattingEnabled = true;
-            this.cboSubject.Location = new System.Drawing.Point(22, 36);
-            this.cboSubject.Name = "cboSubject";
-            this.cboSubject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboSubject.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboSubject.Size = new System.Drawing.Size(234, 26);
-            this.cboSubject.TabIndex = 41;
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -240,32 +198,6 @@
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 40;
             this.label1.Text = "Published year";
-            // 
-            // cboMediaType
-            // 
-            this.cboMediaType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboMediaType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboMediaType.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.BaseColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cboMediaType.BorderSize = 1;
-            this.cboMediaType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboMediaType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMediaType.FocusedColor = System.Drawing.Color.Empty;
-            this.cboMediaType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboMediaType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboMediaType.FormattingEnabled = true;
-            this.cboMediaType.Items.AddRange(new object[] {
-            "Book",
-            "DVD",
-            "Magazine",
-            "Digital Ebook"});
-            this.cboMediaType.Location = new System.Drawing.Point(21, 87);
-            this.cboMediaType.Name = "cboMediaType";
-            this.cboMediaType.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboMediaType.OnHoverItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.cboMediaType.Size = new System.Drawing.Size(234, 26);
-            this.cboMediaType.TabIndex = 38;
             // 
             // label11
             // 
@@ -471,6 +403,18 @@
             this.gunaLinePanel2.Size = new System.Drawing.Size(538, 153);
             this.gunaLinePanel2.TabIndex = 28;
             // 
+            // lblLibrarian
+            // 
+            this.lblLibrarian.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblLibrarian.AutoSize = true;
+            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.lblLibrarian.Location = new System.Drawing.Point(254, 36);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(0, 13);
+            this.lblLibrarian.TabIndex = 4;
+            this.lblLibrarian.Visible = false;
+            // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -625,24 +569,63 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
-            // lblLibrarian
+            // cboSubject
             // 
-            this.lblLibrarian.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblLibrarian.AutoSize = true;
-            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblLibrarian.Location = new System.Drawing.Point(254, 36);
-            this.lblLibrarian.Name = "lblLibrarian";
-            this.lblLibrarian.Size = new System.Drawing.Size(0, 13);
-            this.lblLibrarian.TabIndex = 4;
-            this.lblLibrarian.Visible = false;
+            this.cboSubject.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboSubject.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cboSubject.Location = new System.Drawing.Point(22, 36);
+            this.cboSubject.Name = "cboSubject";
+            this.cboSubject.Size = new System.Drawing.Size(234, 26);
+            this.cboSubject.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboSubject.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboSubject.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboSubject.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboSubject.TabIndex = 8;
+            // 
+            // cboGenre
+            // 
+            this.cboGenre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboGenre.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cboGenre.Location = new System.Drawing.Point(284, 36);
+            this.cboGenre.Name = "cboGenre";
+            this.cboGenre.Size = new System.Drawing.Size(234, 26);
+            this.cboGenre.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboGenre.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboGenre.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboGenre.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboGenre.TabIndex = 41;
+            // 
+            // cboMediaType
+            // 
+            this.cboMediaType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboMediaType.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cboMediaType.Location = new System.Drawing.Point(22, 87);
+            this.cboMediaType.Name = "cboMediaType";
+            this.cboMediaType.Size = new System.Drawing.Size(234, 26);
+            this.cboMediaType.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboMediaType.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboMediaType.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboMediaType.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboMediaType.TabIndex = 42;
             // 
             // frmAddEditBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(562, 524);
+            this.ClientSize = new System.Drawing.Size(562, 552);
             this.Controls.Add(this.gunaLinePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAddEditBook";
@@ -658,6 +641,9 @@
             this.gunaLinePanel4.ResumeLayout(false);
             this.gunaLinePanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboSubject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboGenre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboMediaType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -687,16 +673,16 @@
         public Guna.UI.WinForms.GunaLinePanel gunaLinePanel4;
         public Bunifu.Framework.UI.BunifuImageButton btnBack;
         public System.Windows.Forms.Label lblTitle;
-        public Guna.UI.WinForms.GunaComboBox cboMediaType;
         public Guna.UI.WinForms.GunaButton btnUpdate;
         public System.Windows.Forms.Label label1;
         public Guna.UI.WinForms.GunaTextBox txtYear;
         public System.Windows.Forms.Label lblID;
-        public Guna.UI.WinForms.GunaComboBox cboSubject;
         public System.Windows.Forms.Label label10;
         public Guna.UI.WinForms.GunaTextBox txtCopies;
-        public Guna.UI.WinForms.GunaComboBox cboGenre;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
         public System.Windows.Forms.Label lblLibrarian;
+        public Syncfusion.WinForms.ListView.SfComboBox cboSubject;
+        public Syncfusion.WinForms.ListView.SfComboBox cboGenre;
+        public Syncfusion.WinForms.ListView.SfComboBox cboMediaType;
     }
 }

@@ -43,6 +43,13 @@ namespace LMS
         private void FrmAddEditStudent_Load(object sender, EventArgs e)
         {
             LoadPrograms();
+
+            List<string> year = new List<string>();
+            year.Add("First Year");
+            year.Add("Second Year");
+            year.Add("Third Year");
+            year.Add("Fourth Year");
+            cboYear.DataSource = year;
         }
 
 
@@ -61,19 +68,22 @@ namespace LMS
             studImage.Image = Properties.Resources.user;
         }
 
+
         void LoadPrograms()
         {
-            cboCourse.Items.Clear();
+            List<string> course = new List<string>();
             cn.Open();
             cm = new SqlCommand("SELECT description FROM tblPrograms", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                cboCourse.Items.Add(dr[0].ToString());
+                course.Add(dr[0].ToString());
             }
             dr.Close();
             cn.Close();
+            cboCourse.DataSource = course;
         }
+            
 
         private void BtnSave_Click(object sender, EventArgs e)
         {

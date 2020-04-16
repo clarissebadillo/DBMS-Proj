@@ -40,20 +40,33 @@ namespace LMS
         private void FrmAddEditBook_Load(object sender, EventArgs e)
         {
             LoadSubjects();
+
+            List<string> genre = new List<string>();
+            genre.Add("Fiction");
+            genre.Add("Non-Fiction");
+            cboGenre.DataSource = genre;
+
+            List<string> mediaType = new List<string>();
+            mediaType.Add("Book");
+            mediaType.Add("DVD");
+            mediaType.Add("Magazine");
+            cboMediaType.DataSource = mediaType;
         }
 
         void LoadSubjects()
         {
-            cboSubject.Items.Clear();
+            List<string> subj = new List<string>();
             cn.Open();
             cm = new SqlCommand("SELECT subject FROM tblSubjects", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
-                cboSubject.Items.Add(dr[0].ToString());
+                subj.Add(dr[0].ToString());
             }
             dr.Close();
             cn.Close();
+            subj.Add("Others");
+            cboSubject.DataSource = subj;
         }
 
         private void Clear()
@@ -222,6 +235,5 @@ namespace LMS
             cm.ExecuteNonQuery();
             cn.Close();
         }
-
     }
 }

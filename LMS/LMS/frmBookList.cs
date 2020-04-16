@@ -72,6 +72,7 @@ namespace LMS
             }
             dr.Close();
             cn.Close();
+            cboSubject.Items.Add("Others");
         }
 
         public void LoadRecords()

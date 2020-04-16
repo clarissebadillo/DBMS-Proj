@@ -202,7 +202,7 @@ namespace LMS
             btnHistory.Checked = false;
             btnSettings.Checked = false;
 
-            frmUserAccount frm = new frmUserAccount();
+            frmUserAccount frm = new frmUserAccount(this);
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();
@@ -220,7 +220,7 @@ namespace LMS
             btnDashboard.Checked = false;
             btnHistory.Checked = false;
 
-            frmSettings frm = new frmSettings();
+            frmSettings frm = new frmSettings(this);
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();
