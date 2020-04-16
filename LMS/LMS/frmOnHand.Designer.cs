@@ -42,6 +42,8 @@
             this.returnBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.declareLostBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.lblLibrarian = new System.Windows.Forms.Label();
+            this.lblStudentName = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel2.SuspendLayout();
             this.gunaContextMenuStrip1.SuspendLayout();
@@ -49,6 +51,8 @@
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.lblStudentName);
+            this.gunaLinePanel1.Controls.Add(this.lblLibrarian);
             this.gunaLinePanel1.Controls.Add(this.gunaLinePanel2);
             this.gunaLinePanel1.Controls.Add(this.flowLayoutPanel1);
             this.gunaLinePanel1.Controls.Add(this.gunaControlBox1);
@@ -210,6 +214,24 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
+            // lblLibrarian
+            // 
+            this.lblLibrarian.AutoSize = true;
+            this.lblLibrarian.Location = new System.Drawing.Point(372, 45);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(0, 13);
+            this.lblLibrarian.TabIndex = 5;
+            this.lblLibrarian.Visible = false;
+            // 
+            // lblStudentName
+            // 
+            this.lblStudentName.AutoSize = true;
+            this.lblStudentName.Location = new System.Drawing.Point(422, 35);
+            this.lblStudentName.Name = "lblStudentName";
+            this.lblStudentName.Size = new System.Drawing.Size(0, 13);
+            this.lblStudentName.TabIndex = 6;
+            this.lblStudentName.Visible = false;
+            // 
             // frmOnHand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,5 +269,7 @@
         private System.Windows.Forms.ToolStripMenuItem declareLostBookToolStripMenuItem;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
         public System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        public System.Windows.Forms.Label lblLibrarian;
+        public System.Windows.Forms.Label lblStudentName;
     }
 }

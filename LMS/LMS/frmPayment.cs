@@ -119,6 +119,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     lblTotalAmount.Text = "₱0.00";
                     cn.Close();
+                    Logs();
                     UpdatePaymentStat();
                     LoadPending();
                     ClearPayment();
@@ -245,6 +246,17 @@ namespace LMS
             frmissue.Clear();
             frmissue.CountFine();
             frmissue.CountClearedPayments();
+        }
+
+        void Logs()
+        {
+            var details = lblLibrarianName.Text + " received fine/penalty payment from " + lblName.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

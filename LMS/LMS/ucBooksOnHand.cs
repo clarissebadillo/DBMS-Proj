@@ -86,6 +86,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
+                    ReturnBookLogs();
                     UpdateStatus();
                     RetrieveBookCopy();
                     CalculateFine();
@@ -186,6 +187,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
+                    LostBookLogs();
                     StatusLost();
                     UpdateBookCopies();
 
@@ -217,6 +219,7 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
+                    DamageBookLogs();
                     StatusDamage();
                     UpdateBookCopies();
 
@@ -234,6 +237,39 @@ namespace LMS
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        void ReturnBookLogs()
+        {
+            var details = frmonhand.lblLibrarian.Text + " received book returned by " + frmonhand.lblStudentName.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        void DamageBookLogs()
+        {
+            var details = frmonhand.lblLibrarian.Text + " received and pulled out damaged book by " + frmonhand.lblStudentName.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        void LostBookLogs()
+        {
+            var details = frmonhand.lblLibrarian.Text + " received and pulled out lost book by " + frmonhand.lblStudentName.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

@@ -340,6 +340,7 @@ namespace LMS
             else
             {
                 BorrowBook();
+                Logs();
                 Clear();
                 LoadDetails();
                 BooksOnHand();
@@ -350,6 +351,8 @@ namespace LMS
         private void LblBooksOnHand_Click(object sender, EventArgs e)
         {
             frmOnHand frm = new frmOnHand(this);
+            frm.lblLibrarian.Text = admin;
+            frm.lblStudentName.Text = lblName.Text;
             frm.Show();
         }
 
@@ -365,5 +368,18 @@ namespace LMS
             frm.lblLibrarianName.Text = admin;
             frm.Show();
         }
+
+
+        void Logs()
+        {
+            var details = frm1.lblLibrarian.Text + " issued " + lblBookTitle.Text + " to " + lblName.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
     }
 }
