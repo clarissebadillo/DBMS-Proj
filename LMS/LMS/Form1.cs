@@ -112,7 +112,7 @@ namespace LMS
             btnUserAccount.Checked = false;
             btnSettings.Checked = false;
 
-            frmBookList frm = new frmBookList();
+            frmBookList frm = new frmBookList(this);
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

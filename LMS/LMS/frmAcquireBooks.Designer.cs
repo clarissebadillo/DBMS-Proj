@@ -43,12 +43,14 @@
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
+            this.lblLibrarian = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaGroupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
             // 
+            this.gunaLinePanel1.Controls.Add(this.lblLibrarian);
             this.gunaLinePanel1.Controls.Add(this.btnAddCopies);
             this.gunaLinePanel1.Controls.Add(this.gunaLabel4);
             this.gunaLinePanel1.Controls.Add(this.gunaGroupBox1);
@@ -266,6 +268,15 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
+            // lblLibrarian
+            // 
+            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblLibrarian.Location = new System.Drawing.Point(28, 289);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(237, 15);
+            this.lblLibrarian.TabIndex = 63;
+            this.lblLibrarian.Visible = false;
+            // 
             // frmAcquireBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +313,6 @@
         public Guna.UI.WinForms.GunaLabel lblBookTitle;
         public Guna.UI.WinForms.GunaLabel lblAlLCopies;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
+        public Guna.UI.WinForms.GunaLabel lblLibrarian;
     }
 }

@@ -18,11 +18,17 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
+        Form1 frm1;
 
-        public frmBookList()
+        string admin;
+
+        public frmBookList(Form1 f1)
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            frm1 = f1;
+            admin = frm1.lblLibrarian.Text;
+
             LoadRecords();
         }
 
@@ -142,6 +148,7 @@ namespace LMS
             {
                 frmAddEditBook frm = new frmAddEditBook(this);
                 frm.btnSave.Enabled = false;
+                frm.txtCopies.Enabled = false;
                 frm.lblTitle.Text = "Edit Book Details";
                 frm.lblID.Text = gunaDataGridView1[1, e.RowIndex].Value.ToString();
                 frm.txtTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
@@ -173,6 +180,7 @@ namespace LMS
             else if (colName == "AddCopy")
             {
                 frmAcquireBooks frm = new frmAcquireBooks(this);
+                frm.lblLibrarian.Text = admin;
                 frm.lblBookTitle.Text = gunaDataGridView1[2, e.RowIndex].Value.ToString();
                 frm.lblAlLCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
                 frm.lblAvailCopies.Text = gunaDataGridView1[13, e.RowIndex].Value.ToString();
@@ -194,6 +202,7 @@ namespace LMS
         {
             frmAddEditBook frm = new frmAddEditBook(this);
             frm.btnUpdate.Enabled = false;
+            frm.lblLibrarian.Text = admin;
             frm.ShowDialog();
         }
 

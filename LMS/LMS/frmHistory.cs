@@ -102,6 +102,11 @@ namespace LMS
             gunaDataGridView3.Columns[6].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView3.Columns[7].HeaderCell.Style.Padding = new Padding(20, 5, 0, 5);
             gunaDataGridView3.Columns[8].HeaderCell.Style.Padding = new Padding(20, 5, 20, 5);
+
+            //ACTIVITY LOGS
+            LoadActivityHistory();
+            dt5.Value = DateTime.Today.AddDays(-1);
+            dt6.Value = DateTime.Now;
         }
 
         public void LoadAllBorrowHistory()
@@ -215,6 +220,36 @@ namespace LMS
         private void Dt4_ValueChanged(object sender, EventArgs e)
         {
             LoadAllPaymentHistory();
+        }
+
+
+        //ACTIVITY LOGS
+        public void LoadActivityHistory()
+        {
+            int i = 0;
+            gunaDataGridView4.Rows.Clear();
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblLogs WHERE date BETWEEN @dt5 AND @dt6", cn);
+            cm.Parameters.AddWithValue("@dt5", dt5.Value);
+            cm.Parameters.AddWithValue("@dt6", dt6.Value);
+            dr = cm.ExecuteReader();
+            while (dr.Read())
+            {
+                i += 1;
+                gunaDataGridView4.Rows.Add(i, dr["logID"].ToString(), dr["details"].ToString(), Convert.ToDateTime(dr["date"]).ToString("MMMM dd, yyyy HH:mm:ss"));
+            }
+            dr.Close();
+            cn.Close();
+        }
+
+        private void Dt5_ValueChanged(object sender, EventArgs e)
+        {
+            LoadActivityHistory();
+        }
+
+        private void Dt6_ValueChanged(object sender, EventArgs e)
+        {
+            LoadActivityHistory();
         }
     }
 }

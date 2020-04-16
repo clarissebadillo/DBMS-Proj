@@ -106,6 +106,7 @@ namespace LMS
                         cm.ExecuteNonQuery();
                         //close connection
                         cn.Close();
+                        Logs();
 
                         popupNotifier.ContentText = txtTitle.Text + " has been successfully added!";
                         popupNotifier.Popup();
@@ -152,6 +153,7 @@ namespace LMS
                         cm.Parameters.AddWithValue("@year", txtYear.Text);
                         cm.ExecuteNonQuery();
                         cn.Close();
+                        UpdateBookLogs();
 
                         popupNotifier.ContentText = txtTitle.Text + " has been successfully updated!";
                         popupNotifier.Popup();
@@ -197,6 +199,28 @@ namespace LMS
             {
                 e.Handled = true;
             }
+        }
+
+        void Logs()
+        {
+            var details = lblLibrarian.Text + " added a new stock of book (" + txtTitle.Text + ") with " + txtCopies.Text + " copies";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
+        void UpdateBookLogs()
+        {
+            var details = lblLibrarian.Text + " updated the book details of " + txtTitle.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
 
     }

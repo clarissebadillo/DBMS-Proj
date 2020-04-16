@@ -59,6 +59,7 @@ namespace LMS
                     cm.Parameters.AddWithValue("@bookTitle", lblBookTitle.Text);
                     cm.ExecuteNonQuery();
                     cn.Close();
+                    Logs();
 
                     frm.gunaDataGridView1.Rows.Clear();
                     frm.LoadRecords();
@@ -72,6 +73,17 @@ namespace LMS
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        void Logs()
+        {
+            var details = lblLibrarian.Text + " added " + txtCopies.Text + " new copies of " + lblBookTitle.Text + "";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

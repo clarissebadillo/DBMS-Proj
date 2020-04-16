@@ -19,6 +19,8 @@ namespace LMS
         DBConnection dbcon = new DBConnection();
         SqlDataReader dr;
 
+        string name = "";
+
         protected override CreateParams CreateParams
         {
             get
@@ -42,8 +44,6 @@ namespace LMS
 
         public void Login()
         {
-            string name = "";
-
             cn.Open();
             cm = new SqlCommand("SELECT * FROM tblUser WHERE username = @username AND password = @password AND status = 'Active'", cn);
             cm.Parameters.AddWithValue("@username", txtUsername.Text);
@@ -117,7 +117,19 @@ namespace LMS
             else
             {
                 Login();
+                Logs();
             }
+        }
+
+        void Logs()
+        {
+            var details = name + " logged in";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }
