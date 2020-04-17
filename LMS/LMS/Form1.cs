@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MyMessage;
 
 namespace LMS
 {
@@ -17,31 +18,10 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
 
-        //protected override CreateParams CreateParams
-        //{
-        //    get
-        //    {
-        //        CreateParams handleParam = base.CreateParams;
-        //        handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
-        //        return handleParam;
-        //    }
-        //}
         public Form1()
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
-
-        }
-
-        private const int cs = 0x00020000;
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ClassStyle = cs;
-                return cp;
-            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -53,10 +33,11 @@ namespace LMS
 
             //form shadow
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
-
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;
         }
+
+        
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -226,6 +207,29 @@ namespace LMS
             frm.BringToFront();
             frm.Show();
         }
+
+        private void BtnLogout_Click(object sender, EventArgs e)
+        {
+            if (MyMessageBox.ShowMessage("Are you sure you want to logout?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                this.Hide();
+                Logs();
+                frmLogin frm = new frmLogin();
+                frm.ShowDialog();
+            }
+        }
+
+        void Logs()
+        {
+            var details = lblLibrarian.Text + " logged out";
+
+            cn.Open();
+            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
+            cm.Parameters.AddWithValue("@details", details);
+            cm.ExecuteNonQuery();
+            cn.Close();
+        }
+
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
