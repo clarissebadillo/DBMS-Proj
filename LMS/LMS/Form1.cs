@@ -18,6 +18,17 @@ namespace LMS
         SqlCommand cm = new SqlCommand();
         DBConnection dbcon = new DBConnection();
 
+
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams handleParam = base.CreateParams;
+        //        handleParam.ExStyle |= 0x02000000;      // WS_EX_COMPOSITED
+        //        return handleParam;
+        //    }
+        //}
+
         public Form1()
         {
             InitializeComponent();
@@ -35,6 +46,8 @@ namespace LMS
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;
+
+            Dashboard();
         }
 
         
@@ -230,6 +243,17 @@ namespace LMS
             cn.Close();
         }
 
+
+        void Dashboard()
+        {
+            btnDashboard.Checked = true;
+
+            frmDashboard frm = new frmDashboard();
+            frm.TopLevel = false;
+            panel3.Controls.Add(frm);
+            frm.BringToFront();
+            frm.Show();
+        }
 
         private void BtnClose_Click(object sender, EventArgs e)
         {

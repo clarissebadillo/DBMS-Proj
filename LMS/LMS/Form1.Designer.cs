@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation5 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlMenuAnimation = new Guna.UI.WinForms.GunaTransition(this.components);
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnSettings = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnIssueBook = new Guna.UI.WinForms.GunaAdvenceButton();
             this.btnStudent = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -55,7 +56,6 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnLogout = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -69,29 +69,29 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(230, 87);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1030, 607);
+            this.panel3.Size = new System.Drawing.Size(1050, 596);
             this.panel3.TabIndex = 5;
             // 
             // pnlMenuAnimation
             // 
             this.pnlMenuAnimation.AnimationType = Guna.UI.Animation.AnimationType.HorizBlind;
             this.pnlMenuAnimation.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.pnlMenuAnimation.DefaultAnimation = animation1;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.pnlMenuAnimation.DefaultAnimation = animation5;
             this.pnlMenuAnimation.TimeStep = 0.01F;
             // 
             // pnlMenu
@@ -111,14 +111,49 @@
             this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(230, 694);
+            this.pnlMenu.Size = new System.Drawing.Size(230, 683);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnLogout.AnimationHoverSpeed = 0.07F;
+            this.btnLogout.AnimationSpeed = 0.03F;
+            this.btnLogout.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.btnLogout.BorderColor = System.Drawing.Color.Black;
+            this.btnLogout.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnLogout.CheckedBorderColor = System.Drawing.Color.Black;
+            this.btnLogout.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.CheckedImage")));
+            this.btnLogout.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.pnlMenuAnimation.SetDecoration(this.btnLogout, Guna.UI.Animation.DecorationType.None);
+            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLogout.FocusedColor = System.Drawing.Color.Empty;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageOffsetX = 15;
+            this.btnLogout.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnLogout.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnLogout.Location = new System.Drawing.Point(-1, 632);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
+            this.btnLogout.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnLogout.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnLogout.OnHoverImage = null;
+            this.btnLogout.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.btnLogout.OnPressedColor = System.Drawing.Color.Black;
+            this.btnLogout.Size = new System.Drawing.Size(231, 48);
+            this.btnLogout.TabIndex = 9;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.TextOffsetX = 18;
+            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // btnSettings
             // 
             this.btnSettings.AnimationHoverSpeed = 0.07F;
             this.btnSettings.AnimationSpeed = 0.03F;
-            this.btnSettings.BaseColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnSettings.BorderColor = System.Drawing.Color.Black;
             this.btnSettings.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnSettings.CheckedBorderColor = System.Drawing.Color.Black;
@@ -152,7 +187,7 @@
             // 
             this.btnIssueBook.AnimationHoverSpeed = 0.07F;
             this.btnIssueBook.AnimationSpeed = 0.03F;
-            this.btnIssueBook.BaseColor = System.Drawing.Color.Transparent;
+            this.btnIssueBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnIssueBook.BorderColor = System.Drawing.Color.Black;
             this.btnIssueBook.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnIssueBook.CheckedBorderColor = System.Drawing.Color.Black;
@@ -186,7 +221,7 @@
             // 
             this.btnStudent.AnimationHoverSpeed = 0.07F;
             this.btnStudent.AnimationSpeed = 0.03F;
-            this.btnStudent.BaseColor = System.Drawing.Color.Transparent;
+            this.btnStudent.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnStudent.BorderColor = System.Drawing.Color.Black;
             this.btnStudent.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnStudent.CheckedBorderColor = System.Drawing.Color.Black;
@@ -220,7 +255,7 @@
             // 
             this.btnHistory.AnimationHoverSpeed = 0.07F;
             this.btnHistory.AnimationSpeed = 0.03F;
-            this.btnHistory.BaseColor = System.Drawing.Color.Transparent;
+            this.btnHistory.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnHistory.BorderColor = System.Drawing.Color.Black;
             this.btnHistory.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnHistory.CheckedBorderColor = System.Drawing.Color.Black;
@@ -254,7 +289,7 @@
             // 
             this.btnUserAccount.AnimationHoverSpeed = 0.07F;
             this.btnUserAccount.AnimationSpeed = 0.03F;
-            this.btnUserAccount.BaseColor = System.Drawing.Color.Transparent;
+            this.btnUserAccount.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnUserAccount.BorderColor = System.Drawing.Color.Black;
             this.btnUserAccount.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnUserAccount.CheckedBorderColor = System.Drawing.Color.Black;
@@ -288,7 +323,7 @@
             // 
             this.btnReports.AnimationHoverSpeed = 0.07F;
             this.btnReports.AnimationSpeed = 0.03F;
-            this.btnReports.BaseColor = System.Drawing.Color.Transparent;
+            this.btnReports.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnReports.BorderColor = System.Drawing.Color.Black;
             this.btnReports.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnReports.CheckedBorderColor = System.Drawing.Color.Black;
@@ -322,7 +357,7 @@
             // 
             this.btnBook.AnimationHoverSpeed = 0.07F;
             this.btnBook.AnimationSpeed = 0.03F;
-            this.btnBook.BaseColor = System.Drawing.Color.Transparent;
+            this.btnBook.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnBook.BorderColor = System.Drawing.Color.Black;
             this.btnBook.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnBook.CheckedBorderColor = System.Drawing.Color.Black;
@@ -356,7 +391,7 @@
             // 
             this.btnDashboard.AnimationHoverSpeed = 0.07F;
             this.btnDashboard.AnimationSpeed = 0.03F;
-            this.btnDashboard.BaseColor = System.Drawing.Color.Transparent;
+            this.btnDashboard.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.btnDashboard.BorderColor = System.Drawing.Color.Black;
             this.btnDashboard.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
             this.btnDashboard.CheckedBorderColor = System.Drawing.Color.Black;
@@ -416,7 +451,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(230, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1030, 87);
+            this.panel2.Size = new System.Drawing.Size(1050, 87);
             this.panel2.TabIndex = 4;
             // 
             // pictureBox2
@@ -454,7 +489,7 @@
             this.btnMin.ForeColor = System.Drawing.Color.White;
             this.btnMin.Image = null;
             this.btnMin.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnMin.Location = new System.Drawing.Point(956, 13);
+            this.btnMin.Location = new System.Drawing.Point(976, 13);
             this.btnMin.Name = "btnMin";
             this.btnMin.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(173)))), ((int)(((byte)(4)))));
             this.btnMin.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -479,7 +514,7 @@
             this.btnMax.ForeColor = System.Drawing.Color.White;
             this.btnMax.Image = null;
             this.btnMax.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnMax.Location = new System.Drawing.Point(977, 13);
+            this.btnMax.Location = new System.Drawing.Point(997, 13);
             this.btnMax.Name = "btnMax";
             this.btnMax.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(179)))), ((int)(((byte)(57)))));
             this.btnMax.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -504,7 +539,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = null;
             this.btnClose.ImageSize = new System.Drawing.Size(52, 52);
-            this.btnClose.Location = new System.Drawing.Point(998, 13);
+            this.btnClose.Location = new System.Drawing.Point(1018, 13);
             this.btnClose.Name = "btnClose";
             this.btnClose.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(62)))), ((int)(((byte)(52)))));
             this.btnClose.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -550,7 +585,7 @@
             this.pnlMenuAnimation.SetDecoration(this.label3, Guna.UI.Animation.DecorationType.None);
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.label3.Location = new System.Drawing.Point(874, 49);
+            this.label3.Location = new System.Drawing.Point(894, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(15, 21);
             this.label3.TabIndex = 6;
@@ -563,7 +598,7 @@
             this.pnlMenuAnimation.SetDecoration(this.lblTime, Guna.UI.Animation.DecorationType.None);
             this.lblTime.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblTime.Location = new System.Drawing.Point(897, 51);
+            this.lblTime.Location = new System.Drawing.Point(917, 51);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(42, 20);
             this.lblTime.TabIndex = 5;
@@ -576,7 +611,7 @@
             this.pnlMenuAnimation.SetDecoration(this.lblDate, Guna.UI.Animation.DecorationType.None);
             this.lblDate.Font = new System.Drawing.Font("Segoe UI", 10.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.lblDate.Location = new System.Drawing.Point(694, 52);
+            this.lblDate.Location = new System.Drawing.Point(714, 52);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(41, 20);
             this.lblDate.TabIndex = 4;
@@ -586,51 +621,17 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnLogout.AnimationHoverSpeed = 0.07F;
-            this.btnLogout.AnimationSpeed = 0.03F;
-            this.btnLogout.BaseColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BorderColor = System.Drawing.Color.Black;
-            this.btnLogout.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnLogout.CheckedBorderColor = System.Drawing.Color.Black;
-            this.btnLogout.CheckedForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnLogout.CheckedImage = ((System.Drawing.Image)(resources.GetObject("btnLogout.CheckedImage")));
-            this.btnLogout.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.pnlMenuAnimation.SetDecoration(this.btnLogout, Guna.UI.Animation.DecorationType.None);
-            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLogout.FocusedColor = System.Drawing.Color.Empty;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageOffsetX = 15;
-            this.btnLogout.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnLogout.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogout.Location = new System.Drawing.Point(-1, 643);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(58)))));
-            this.btnLogout.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnLogout.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnLogout.OnHoverImage = null;
-            this.btnLogout.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnLogout.OnPressedColor = System.Drawing.Color.Black;
-            this.btnLogout.Size = new System.Drawing.Size(231, 48);
-            this.btnLogout.TabIndex = 9;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.TextOffsetX = 18;
-            this.btnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1260, 694);
+            this.ClientSize = new System.Drawing.Size(1280, 683);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlMenu);
             this.pnlMenuAnimation.SetDecoration(this, Guna.UI.Animation.DecorationType.None);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

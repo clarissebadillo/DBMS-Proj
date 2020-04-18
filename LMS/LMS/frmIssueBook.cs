@@ -109,7 +109,7 @@ namespace LMS
             cn.Open();
             cm = new SqlCommand("SELECT SUM(CAST([totalFine] AS INT)) FROM tblBorrowedBook WHERE studentID =  @studentID", cn);
             cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
-            lblFine.Text = "₱" + cm.ExecuteScalar().ToString() + ".00";
+            lblFine.Text = "₱" + cm.ExecuteScalar() + ".00";
             cn.Close();
         }
 
@@ -118,7 +118,7 @@ namespace LMS
             cn.Open();
             cm = new SqlCommand("SELECT SUM(totalPayment) FROM tblPayment WHERE studentID =  @studentID", cn);
             cm.Parameters.AddWithValue("@studentID", lblStudID.Text);
-            lblClearedPayments.Text = "₱" + cm.ExecuteScalar().ToString() + ".00";
+            lblClearedPayments.Text = "₱" + cm.ExecuteScalar() + ".00";
             cn.Close();
         }
 

@@ -20,6 +20,7 @@ namespace LMS
         SqlDataReader dr;
 
         string name = "";
+        Form1 frm = new Form1();
 
         protected override CreateParams CreateParams
         {
@@ -54,7 +55,6 @@ namespace LMS
 
                 name = dr["fullName"].ToString();
 
-                Form1 frm = new Form1();
                 frm.lblLibrarian.Text = name;
                 frm.Show();
                 this.Hide();

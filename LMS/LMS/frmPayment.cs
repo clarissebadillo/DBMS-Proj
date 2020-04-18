@@ -183,7 +183,7 @@ namespace LMS
             }
 
             lblAmount.Text = sum.ToString();
-            lblTotalAmount.Text = "₱" + lblAmount.Text + ".00";
+            lblTotalAmount.Text = "₱" + Convert.ToDouble(lblAmount.Text).ToString("N");
         }
 
 
