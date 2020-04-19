@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClosedXML.Excel;
 using MyMessage;
 
 namespace LMS
@@ -373,6 +374,141 @@ namespace LMS
             cm.Parameters.AddWithValue("@details", details);
             cm.ExecuteNonQuery();
             cn.Close();
+        }
+
+
+        //BACKUP DATA
+        private DataTable GetStudents()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT studentNum, (lastName + ' ' + firstName) AS name, course, year, gender, contact, email, address FROM tblStudent", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cn.Close();
+            
+            return dt;
+        }
+
+        private DataTable GetBooks()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT bookTitle, bookISBN, subject, genre, mediaType, language, author, publisher, price, pubYear, allCopies, availableCopies FROM tblBook", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cn.Close();
+
+            return dt;
+        }
+
+        private DataTable GetIssuedBooks()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT b.studentNum, (s.lastName + ' ' + firstName) AS name, b.bookTitle, b.dateBorrowed, b.dueDate, b.returnedDate, b.status, b.totalFine, b.paymentStatus, b.librarian FROM tblBorrowedBook b INNER JOIN tblStudent s ON b.studentID = s.studentID", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cn.Close();
+
+            return dt;
+        }
+
+        private DataTable GetPayments()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT (s.lastName + ' ' + s.firstName) AS name, p.totalPayment, p.paymentDate, p.summaryDesc, p.librarian FROM tblPayment p INNER JOIN tblStudent s ON p.studentID = s.studentID", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cn.Close();
+
+            return dt;
+        }
+
+        public DataSet ExportToExcel()
+        {
+            DataSet ds = new DataSet();
+
+            DataTable dtStudents = new DataTable("Students");
+            dtStudents = GetStudents();
+
+            DataTable dtBooks = new DataTable("Books");
+            dtBooks = GetBooks();
+
+            DataTable dtIssuedBooks = new DataTable("Issued Books");
+            dtIssuedBooks = GetIssuedBooks();
+
+            DataTable dtPayments = new DataTable("Payments");
+            dtPayments = GetPayments();
+
+            ds.Tables.Add(dtStudents);
+            ds.Tables.Add(dtBooks);
+            ds.Tables.Add(dtIssuedBooks);
+            ds.Tables.Add(dtPayments);
+
+            return ds;
+        }
+
+        void ClearCB()
+        {
+            cbBooks.Checked = false;
+            cbPayments.Checked = false;
+            cbBorrowedBooks.Checked = false;
+            cbStudents.Checked = false;
+        }
+
+        private void BtnExport_Click(object sender, EventArgs e)
+        {
+            if (cbPayments.Checked == false && cbStudents.Checked == false && cbBooks.Checked == false && cbBorrowedBooks.Checked == false)
+            {
+                MyMessageBox.ShowMessage("Please select the data to backup!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            }
+            else
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "Excel files|*.xlsx";
+                sfd.Title = "Save an Excel File";
+                sfd.FileName = "Database backup";
+
+                DataSet ds = ExportToExcel();
+
+                using (XLWorkbook wb = new XLWorkbook())
+                {
+                    if (cbStudents.Checked == true)
+                    {
+                        var ws = wb.Worksheets.Add(ds.Tables[0], "Students");
+                        ws.Columns().AdjustToContents();
+                    }
+                    if (cbBooks.Checked == true)
+                    {
+                        var ws = wb.Worksheets.Add(ds.Tables[1], "Books");
+                        ws.Columns().AdjustToContents();
+                    }
+                    if (cbBorrowedBooks.Checked == true)
+                    {
+                        var ws = wb.Worksheets.Add(ds.Tables[2], "Issued Books");
+                        ws.Columns().AdjustToContents();
+                    }
+                    if (cbPayments.Checked == true)
+                    {
+                        var ws = wb.Worksheets.Add(ds.Tables[3], "Payments");
+                        ws.Columns().AdjustToContents();
+                    }
+
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        sfd.InitialDirectory = Environment.GetFolderPath
+                                    (Environment.SpecialFolder.Desktop);
+
+                        wb.SaveAs(sfd.FileName);
+                        MyMessageBox.ShowMessage("Data successfully backed up!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearCB();
+                        wb.Dispose();
+                    }
+                }
+            }
+
         }
 
     }
