@@ -71,7 +71,7 @@ namespace LMS
                     if (MyMessageBox.ShowMessage("Are you sure you want to add " + txtFullName.Text + " as a new librarian?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         cn.Open();
-                        cm = new SqlCommand("INSERT INTO tblUser VALUES (@username, @password, @fullName, @email)", cn);
+                        cm = new SqlCommand("INSERT INTO tblUser VALUES (@username, @password, @fullName, @email, 'Active')", cn);
                         cm.Parameters.AddWithValue("@username", txtUsername.Text);
                         cm.Parameters.AddWithValue("@password", txtPassword.Text);
                         cm.Parameters.AddWithValue("@fullName", txtFullName.Text);

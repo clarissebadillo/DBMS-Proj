@@ -33,6 +33,8 @@ namespace LMS
         {
             InitializeComponent();
             cn = new SqlConnection(dbcon.MyConnection());
+            this.WindowState = FormWindowState.Maximized;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,13 +46,9 @@ namespace LMS
 
             //form shadow
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.WindowState = FormWindowState.Maximized;
-
-            Dashboard();
+            //Dashboard();
         }
 
-        
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
@@ -244,11 +242,11 @@ namespace LMS
         }
 
 
-        void Dashboard()
+        public void Dashboard()
         {
             btnDashboard.Checked = true;
 
-            frmDashboard frm = new frmDashboard();
+            var frm = new frmDashboard();
             frm.TopLevel = false;
             panel3.Controls.Add(frm);
             frm.BringToFront();

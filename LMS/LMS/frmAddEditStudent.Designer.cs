@@ -35,6 +35,8 @@
             this.btnSave = new Guna.UI.WinForms.GunaButton();
             this.lblID = new System.Windows.Forms.Label();
             this.gunaLinePanel3 = new Guna.UI.WinForms.GunaLinePanel();
+            this.cboYear = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cboCourse = new Syncfusion.WinForms.ListView.SfComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtFname = new Guna.UI.WinForms.GunaTextBox();
@@ -62,17 +64,15 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
-            this.cboCourse = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.cboYear = new Syncfusion.WinForms.ListView.SfComboBox();
             this.gunaLinePanel1.SuspendLayout();
             this.gunaLinePanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboCourse)).BeginInit();
             this.gunaLinePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studImage)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gunaLinePanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboCourse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboYear)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaLinePanel1
@@ -198,6 +198,40 @@
             this.gunaLinePanel3.Size = new System.Drawing.Size(535, 242);
             this.gunaLinePanel3.TabIndex = 30;
             // 
+            // cboYear
+            // 
+            this.cboYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboYear.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboYear.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cboYear.Location = new System.Drawing.Point(282, 87);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(234, 26);
+            this.cboYear.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboYear.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
+            this.cboYear.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
+            this.cboYear.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboYear.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboYear.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboYear.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboYear.TabIndex = 5;
+            // 
+            // cboCourse
+            // 
+            this.cboCourse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboCourse.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cboCourse.Location = new System.Drawing.Point(20, 87);
+            this.cboCourse.Name = "cboCourse";
+            this.cboCourse.Size = new System.Drawing.Size(234, 26);
+            this.cboCourse.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.cboCourse.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboCourse.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.cboCourse.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboCourse.TabIndex = 4;
+            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -238,7 +272,7 @@
             this.txtFname.Name = "txtFname";
             this.txtFname.PasswordChar = '\0';
             this.txtFname.Size = new System.Drawing.Size(234, 25);
-            this.txtFname.TabIndex = 41;
+            this.txtFname.TabIndex = 2;
             // 
             // label11
             // 
@@ -268,7 +302,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PasswordChar = '\0';
             this.txtAddress.Size = new System.Drawing.Size(496, 25);
-            this.txtAddress.TabIndex = 36;
+            this.txtAddress.TabIndex = 8;
             // 
             // label8
             // 
@@ -298,7 +332,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.Size = new System.Drawing.Size(234, 25);
-            this.txtEmail.TabIndex = 34;
+            this.txtEmail.TabIndex = 7;
             // 
             // label9
             // 
@@ -328,7 +362,7 @@
             this.txtContact.Name = "txtContact";
             this.txtContact.PasswordChar = '\0';
             this.txtContact.Size = new System.Drawing.Size(234, 25);
-            this.txtContact.TabIndex = 32;
+            this.txtContact.TabIndex = 6;
             this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtContact_KeyPress);
             // 
             // label7
@@ -371,7 +405,7 @@
             this.txtLname.Name = "txtLname";
             this.txtLname.PasswordChar = '\0';
             this.txtLname.Size = new System.Drawing.Size(234, 25);
-            this.txtLname.TabIndex = 26;
+            this.txtLname.TabIndex = 3;
             // 
             // panel1
             // 
@@ -516,7 +550,7 @@
             this.txtStudNo.Name = "txtStudNo";
             this.txtStudNo.PasswordChar = '\0';
             this.txtStudNo.Size = new System.Drawing.Size(301, 26);
-            this.txtStudNo.TabIndex = 2;
+            this.txtStudNo.TabIndex = 1;
             // 
             // gunaLinePanel4
             // 
@@ -585,40 +619,6 @@
             this.popupNotifier.TitleFont = new System.Drawing.Font("Segoe UI", 9F);
             this.popupNotifier.TitleText = null;
             // 
-            // cboCourse
-            // 
-            this.cboCourse.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboCourse.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboCourse.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cboCourse.Location = new System.Drawing.Point(20, 87);
-            this.cboCourse.Name = "cboCourse";
-            this.cboCourse.Size = new System.Drawing.Size(234, 26);
-            this.cboCourse.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboCourse.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
-            this.cboCourse.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
-            this.cboCourse.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboCourse.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboCourse.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboCourse.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboCourse.TabIndex = 45;
-            // 
-            // cboYear
-            // 
-            this.cboYear.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboYear.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboYear.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cboYear.Location = new System.Drawing.Point(282, 87);
-            this.cboYear.Name = "cboYear";
-            this.cboYear.Size = new System.Drawing.Size(234, 26);
-            this.cboYear.Style.DropDownButtonStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboYear.Style.DropDownButtonStyle.FocusedBackColor = System.Drawing.Color.Gainsboro;
-            this.cboYear.Style.DropDownButtonStyle.HoverBackColor = System.Drawing.Color.Gainsboro;
-            this.cboYear.Style.EditorStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.cboYear.Style.EditorStyle.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboYear.Style.EditorStyle.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.cboYear.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboYear.TabIndex = 46;
-            // 
             // frmAddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,6 +635,8 @@
             this.gunaLinePanel1.PerformLayout();
             this.gunaLinePanel3.ResumeLayout(false);
             this.gunaLinePanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cboYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboCourse)).EndInit();
             this.gunaLinePanel2.ResumeLayout(false);
             this.gunaLinePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studImage)).EndInit();
@@ -643,8 +645,6 @@
             this.gunaLinePanel4.ResumeLayout(false);
             this.gunaLinePanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboCourse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboYear)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -307,6 +307,32 @@ namespace LMS
             }
         }
 
+        private void SubjectList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = subjectList.Columns[e.ColumnIndex].Name;
+            if (colName == "EditSub")
+            {
+                txtSubject.Focus();
+                btnSubjSave.Enabled = false;
+                btnSubjUpdate.Enabled = true;
+                lblSubjectID.Text = subjectList[1, e.RowIndex].Value.ToString();
+                txtSubject.Text = subjectList[2, e.RowIndex].Value.ToString();
+            }
+            else if (colName == "DeleteSub")
+            {
+                if (MyMessageBox.ShowMessage("Are you sure you want to remove this subject?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    cn.Open();
+                    cm = new SqlCommand("DELETE FROM tblSubjects WHERE subjectID LIKE '" + subjectList[1, e.RowIndex].Value.ToString() + "'", cn);
+                    cm.ExecuteNonQuery();
+                    cn.Close();
+
+                    MyMessageBox.ShowMessage("Subject has been successfully removed!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadSubjects();
+                }
+            }
+        }
+
         private void BtnSubjUpdate_Click(object sender, EventArgs e)
         {
             try
@@ -337,32 +363,6 @@ namespace LMS
         private void BtnSubjClear_Click(object sender, EventArgs e)
         {
             ClearSubject();
-        }
-
-        private void SubjectList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = subjectList.Columns[e.ColumnIndex].Name;
-            if (colName == "EditSub")
-            {
-                txtSubject.Focus();
-                btnSubjSave.Enabled = false;
-                btnSubjUpdate.Enabled = true;
-                lblSubjectID.Text = subjectList[1, e.RowIndex].Value.ToString();
-                txtSubject.Text = subjectList[2, e.RowIndex].Value.ToString();
-            }
-            else if (colName == "DeleteSub")
-            {
-                if (MyMessageBox.ShowMessage("Are you sure you want to remove this subject?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cm = new SqlCommand("DELETE FROM tblSubjects WHERE subjectID LIKE '" + subjectList[1, e.RowIndex].Value.ToString() + "'", cn);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
-
-                    MyMessageBox.ShowMessage("Subject has been successfully removed!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadSubjects();
-                }
-            }
         }
 
         void UpdateLogs()

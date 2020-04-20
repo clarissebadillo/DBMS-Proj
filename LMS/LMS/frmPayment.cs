@@ -244,6 +244,7 @@ namespace LMS
         public void RefreshAll()
         {
             frmissue.Clear();
+            frmissue.LoadDetails();
             frmissue.CountFine();
             frmissue.CountClearedPayments();
         }

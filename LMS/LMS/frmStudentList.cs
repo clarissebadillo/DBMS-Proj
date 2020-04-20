@@ -187,7 +187,7 @@ namespace LMS
             }
             else if (colName == "Delete")
             {
-                if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
                     cm = new SqlCommand("DELETE FROM tblStudent WHERE studentID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);

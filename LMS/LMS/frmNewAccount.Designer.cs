@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewAccount));
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.lblLibrarian = new System.Windows.Forms.Label();
             this.btnShowPass2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnShowPass = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnHidePass2 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -48,7 +49,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRetypePass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblLibrarian = new System.Windows.Forms.Label();
             this.gunaLinePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,17 @@
             this.gunaLinePanel1.Name = "gunaLinePanel1";
             this.gunaLinePanel1.Size = new System.Drawing.Size(652, 400);
             this.gunaLinePanel1.TabIndex = 0;
+            // 
+            // lblLibrarian
+            // 
+            this.lblLibrarian.AutoSize = true;
+            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
+            this.lblLibrarian.Location = new System.Drawing.Point(191, 353);
+            this.lblLibrarian.Name = "lblLibrarian";
+            this.lblLibrarian.Size = new System.Drawing.Size(0, 15);
+            this.lblLibrarian.TabIndex = 80;
+            this.lblLibrarian.Visible = false;
             // 
             // btnShowPass2
             // 
@@ -352,7 +363,7 @@
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(396, 36);
-            this.txtPassword.TabIndex = 78;
+            this.txtPassword.TabIndex = 4;
             // 
             // txtRetypePass
             // 
@@ -375,18 +386,7 @@
             this.txtRetypePass.SelectedText = "";
             this.txtRetypePass.ShadowDecoration.Parent = this.txtRetypePass;
             this.txtRetypePass.Size = new System.Drawing.Size(396, 36);
-            this.txtRetypePass.TabIndex = 79;
-            // 
-            // lblLibrarian
-            // 
-            this.lblLibrarian.AutoSize = true;
-            this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.lblLibrarian.Location = new System.Drawing.Point(191, 353);
-            this.lblLibrarian.Name = "lblLibrarian";
-            this.lblLibrarian.Size = new System.Drawing.Size(0, 15);
-            this.lblLibrarian.TabIndex = 80;
-            this.lblLibrarian.Visible = false;
+            this.txtRetypePass.TabIndex = 5;
             // 
             // frmNewAccount
             // 

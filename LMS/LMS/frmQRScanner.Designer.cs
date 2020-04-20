@@ -128,7 +128,7 @@
             this.QRScanner.Location = new System.Drawing.Point(44, 92);
             this.QRScanner.Name = "QRScanner";
             this.QRScanner.Size = new System.Drawing.Size(270, 270);
-            this.QRScanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.QRScanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.QRScanner.TabIndex = 57;
             this.QRScanner.TabStop = false;
             // 

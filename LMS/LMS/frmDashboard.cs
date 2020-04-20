@@ -58,8 +58,6 @@ namespace LMS
             CountStudents();
             CountBorrowToday();
             CountReturnToday();
-            LatestBorrower();
-            LoadChart();
             ClearedPayments();
             PendingPayments();
         }
@@ -115,14 +113,14 @@ namespace LMS
         public void LatestBorrower()
         {
             int i = 0;
-            guna2DataGridView1.Rows.Clear();
+            gunaDataGridView1.Rows.Clear();
             cm = new SqlCommand("SELECT TOP 8 b.borrowID, b.studentNum, (s.firstName + ' ' + s.lastName) AS name, b.bookTitle, b.dateBorrowed FROM tblBorrowedBook b INNER JOIN tblStudent s ON b.studentID = s.studentID ORDER BY borrowID DESC", cn);
             cn.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
                 i += 1;
-                guna2DataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentNum"].ToString(), dr["name"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MMMM dd, yyyy"));
+                gunaDataGridView1.Rows.Add(i, dr["borrowID"].ToString(), dr["studentNum"].ToString(), dr["name"].ToString(), dr["bookTitle"].ToString(), Convert.ToDateTime(dr["dateBorrowed"]).ToString("MMMM dd, yyyy"));
             }
             dr.Close();
             cn.Close();

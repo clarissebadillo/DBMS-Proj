@@ -57,6 +57,7 @@ namespace LMS
 
                 frm.lblLibrarian.Text = name;
                 frm.Show();
+                frm.Dashboard();
                 this.Hide();
 
                 popupNotifier.ContentText = "Welcome back " + name + "! Ready to start working?";
