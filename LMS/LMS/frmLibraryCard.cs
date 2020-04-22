@@ -85,9 +85,7 @@ namespace LMS
             else
             {
                 SaveFileDialog save = new SaveFileDialog();
-                save.CreatePrompt = true;
-                save.OverwritePrompt = true;
-                save.FileName = "QR";
+                save.FileName = "QR - " + lblStudentName.Text;
                 save.Filter = "PNG|*.png|JPEG|*.jpg|BMP|*.bmp|GIF|*.gif";
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
