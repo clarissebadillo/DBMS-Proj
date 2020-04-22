@@ -137,7 +137,7 @@ namespace LMS
             lblLanguage.Text = gunaDataGridView1[7, e.RowIndex].Value.ToString();
             lblAuthor.Text = gunaDataGridView1[8, e.RowIndex].Value.ToString();
             lblPublisher.Text = gunaDataGridView1[9, e.RowIndex].Value.ToString();
-            lblPrice.Text = gunaDataGridView1[10, e.RowIndex].Value.ToString();
+            lblPrice.Text = "₱" + Convert.ToDouble(gunaDataGridView1[10, e.RowIndex].Value).ToString("N");
             lblYear.Text = gunaDataGridView1[11, e.RowIndex].Value.ToString();
             lblAllCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
             lblAvailable.Text = gunaDataGridView1[13, e.RowIndex].Value.ToString();

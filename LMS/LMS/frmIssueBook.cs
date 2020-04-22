@@ -25,7 +25,6 @@ namespace LMS
         string admin;
         string borrowDays;
         string borrowBooks;
-        string fine;
         string withPending;
         string withOverdue;
 
@@ -301,7 +300,6 @@ namespace LMS
             {
                 borrowBooks = dr["maxBorrowBooks"].ToString();
                 borrowDays = dr["maxBorrowDays"].ToString();
-                fine = dr["fine"].ToString();
                 withPending = dr["withPending"].ToString();
                 withOverdue = dr["withOverdue"].ToString();
             }
@@ -340,7 +338,6 @@ namespace LMS
             else
             {
                 BorrowBook();
-                Logs();
                 Clear();
                 LoadDetails();
                 BooksOnHand();
@@ -369,17 +366,6 @@ namespace LMS
             frm.Show();
         }
 
-
-        void Logs()
-        {
-            var details = frm1.lblLibrarian.Text + " issued " + lblBookTitle.Text + " to " + lblName.Text + "";
-
-            cn.Open();
-            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
-            cm.Parameters.AddWithValue("@details", details);
-            cm.ExecuteNonQuery();
-            cn.Close();
-        }
 
     }
 }

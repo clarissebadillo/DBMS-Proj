@@ -97,7 +97,7 @@ namespace LMS
         public void ClearedPayments()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT SUM(totalPayment) FROM tblPayment", cn);
+            cm = new SqlCommand("SELECT ISNULL(SUM(totalPayment), 0.00) FROM tblPayment", cn);
             lblClearedPayments.Text = "₱" + Convert.ToDouble(cm.ExecuteScalar()).ToString("N");
             cn.Close();
         }
@@ -105,7 +105,7 @@ namespace LMS
         public void PendingPayments()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT SUM(totalFine) FROM tblBorrowedBook WHERE paymentStatus = 'Pending'", cn);
+            cm = new SqlCommand("SELECT ISNULL(SUM(totalFine), 0.00) FROM tblBorrowedBook WHERE paymentStatus = 'Pending'", cn);
             lblPendingPayment.Text = "₱" + Convert.ToDouble(cm.ExecuteScalar()).ToString("N"); 
             cn.Close();
         }

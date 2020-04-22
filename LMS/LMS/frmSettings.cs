@@ -90,10 +90,12 @@ namespace LMS
                 if (MyMessageBox.ShowMessage("Are you sure you want to save the following settings?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("UPDATE tblSettings SET maxBorrowBooks = @maxBorrowBooks, maxBorrowDays = @maxBorrowDays, fine = @fine, withPending = @withPending, withOverdue = @withOverdue", cn);
+                    cm = new SqlCommand("UPDATE tblSettings SET maxBorrowBooks = @maxBorrowBooks, maxBorrowDays = @maxBorrowDays, fine = @fine, damagedBook = @damagedBook, lostBook = @lostBook, withPending = @withPending, withOverdue = @withOverdue", cn);
                     cm.Parameters.AddWithValue("@maxBorrowBooks", txtBorrowBooks.Text);
                     cm.Parameters.AddWithValue("@maxBorrowDays", txtBorrowDays.Text);
                     cm.Parameters.AddWithValue("@fine", txtFine.Text);
+                    cm.Parameters.AddWithValue("@damagedBook", txtDamage.Text);
+                    cm.Parameters.AddWithValue("@lostBook", txtLostBook.Text);
                     cm.Parameters.AddWithValue("@withPending", allowPending);
                     cm.Parameters.AddWithValue("@withOverdue", allowOverdue);
                     cm.ExecuteNonQuery();
@@ -117,9 +119,12 @@ namespace LMS
             {
                 txtBorrowBooks.Text = dr["maxBorrowBooks"].ToString();
                 txtBorrowDays.Text = dr["maxBorrowDays"].ToString();
+                txtDamage.Text = dr["damagedBook"].ToString();
+                txtLostBook.Text = dr["lostBook"].ToString();
                 txtFine.Text = dr["fine"].ToString();
                 allowPending = dr["withPending"].ToString();
                 allowOverdue = dr["withOverdue"].ToString();
+                
 
                 if (allowPending == "True")
                 {

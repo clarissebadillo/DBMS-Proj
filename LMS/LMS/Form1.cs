@@ -255,7 +255,12 @@ namespace LMS
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            MyMessageBox.ShowMessage("Closing the application will log you out from all of your session", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (MyMessageBox.ShowMessage("Are you sure you want to log out?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+                Logs();
+                Application.Exit();
+            }
         }
 
         private void BtnMax_Click(object sender, EventArgs e)

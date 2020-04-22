@@ -21,6 +21,8 @@ namespace LMS
         frmOnHand frmonhand;
 
         int fine;
+        string damagedBook;
+        string lostBook;
 
         public ucBooksOnHand(frmOnHand fonhand)
         {
@@ -86,7 +88,6 @@ namespace LMS
                     cm.ExecuteNonQuery();
                     cn.Close();
 
-                    ReturnBookLogs();
                     UpdateStatus();
                     RetrieveBookCopy();
                     CalculateFine();
@@ -175,15 +176,32 @@ namespace LMS
             cn.Close();
         }
 
+        void GetSettings()
+        {
+            cn.Open();
+            cm = new SqlCommand("SELECT * FROM tblSettings", cn);
+            dr = cm.ExecuteReader();
+            dr.Read();
+            if (dr.HasRows)
+            {
+                damagedBook = dr["damagedBook"].ToString();
+                lostBook = dr["lostBook"].ToString();
+            }
+            dr.Close();
+            cn.Close();
+        }
+
         private void DeclareLostBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GetSettings();
             try
             {
-                if (MyMessageBox.ShowMessage("Declare selected book as lost? \n The penalty is ₱500.00", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Declare selected book as lost? \n The penalty is ₱" + lostBook + ".00", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + 500 WHERE borrowID = @borrowID", cn);
+                    cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + @lostBook WHERE borrowID = @borrowID", cn);
                     cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+                    cm.Parameters.AddWithValue("@lostBook", lostBook);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
@@ -209,13 +227,15 @@ namespace LMS
 
         private void MarkSelectedBookAsDamagedToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GetSettings();
             try
             {
-                if (MyMessageBox.ShowMessage("Declare selected book as damaged? \n Book penalty is ₱300.00", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MyMessageBox.ShowMessage("Declare selected book as damaged? \n Book penalty is ₱" + damagedBook + ".00", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + 300 WHERE borrowID = @borrowID", cn);
+                    cm = new SqlCommand("UPDATE tblBorrowedBook SET totalFine = totalFine + @damagedBook WHERE borrowID = @borrowID", cn);
                     cm.Parameters.AddWithValue("@borrowID", lblBorrowID.Text);
+                    cm.Parameters.AddWithValue("@damagedBook", damagedBook);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
@@ -239,16 +259,6 @@ namespace LMS
             }
         }
 
-        void ReturnBookLogs()
-        {
-            var details = frmonhand.lblLibrarian.Text + " received book returned by " + frmonhand.lblStudentName.Text + "";
-
-            cn.Open();
-            cm = new SqlCommand("INSERT INTO tblLogs VALUES (@details, GETDATE())", cn);
-            cm.Parameters.AddWithValue("@details", details);
-            cm.ExecuteNonQuery();
-            cn.Close();
-        }
 
         void DamageBookLogs()
         {
