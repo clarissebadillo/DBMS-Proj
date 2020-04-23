@@ -40,6 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControlAdv1 = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
+            this.txtLostBook = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
+            this.txtDamage = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.txtFine = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
@@ -95,10 +99,6 @@
             this.btnExport = new Guna.UI2.WinForms.Guna2Button();
             this.gunaLabel17 = new Guna.UI.WinForms.GunaLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gunaLabel13 = new Guna.UI.WinForms.GunaLabel();
-            this.txtDamage = new Guna.UI2.WinForms.Guna2TextBox();
-            this.gunaLabel14 = new Guna.UI.WinForms.GunaLabel();
-            this.txtLostBook = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunaLinePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
@@ -208,6 +208,72 @@
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "Library Setup";
             this.tabPageAdv1.ThemesEnabled = false;
+            // 
+            // gunaLabel14
+            // 
+            this.gunaLabel14.AutoSize = true;
+            this.gunaLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel14.Location = new System.Drawing.Point(515, 166);
+            this.gunaLabel14.Name = "gunaLabel14";
+            this.gunaLabel14.Size = new System.Drawing.Size(119, 15);
+            this.gunaLabel14.TabIndex = 22;
+            this.gunaLabel14.Text = "Penalty for Lost Book";
+            // 
+            // txtLostBook
+            // 
+            this.txtLostBook.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtLostBook.DefaultText = "";
+            this.txtLostBook.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtLostBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtLostBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLostBook.DisabledState.Parent = this.txtLostBook;
+            this.txtLostBook.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtLostBook.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtLostBook.FocusedState.Parent = this.txtLostBook;
+            this.txtLostBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.txtLostBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtLostBook.HoverState.Parent = this.txtLostBook;
+            this.txtLostBook.Location = new System.Drawing.Point(518, 191);
+            this.txtLostBook.Name = "txtLostBook";
+            this.txtLostBook.PasswordChar = '\0';
+            this.txtLostBook.PlaceholderText = "";
+            this.txtLostBook.SelectedText = "";
+            this.txtLostBook.ShadowDecoration.Parent = this.txtLostBook;
+            this.txtLostBook.Size = new System.Drawing.Size(423, 36);
+            this.txtLostBook.TabIndex = 21;
+            // 
+            // gunaLabel13
+            // 
+            this.gunaLabel13.AutoSize = true;
+            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLabel13.Location = new System.Drawing.Point(515, 92);
+            this.gunaLabel13.Name = "gunaLabel13";
+            this.gunaLabel13.Size = new System.Drawing.Size(148, 15);
+            this.gunaLabel13.TabIndex = 20;
+            this.gunaLabel13.Text = "Penalty for Damaged Book";
+            // 
+            // txtDamage
+            // 
+            this.txtDamage.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDamage.DefaultText = "";
+            this.txtDamage.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDamage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDamage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDamage.DisabledState.Parent = this.txtDamage;
+            this.txtDamage.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDamage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtDamage.FocusedState.Parent = this.txtDamage;
+            this.txtDamage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
+            this.txtDamage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
+            this.txtDamage.HoverState.Parent = this.txtDamage;
+            this.txtDamage.Location = new System.Drawing.Point(518, 117);
+            this.txtDamage.Name = "txtDamage";
+            this.txtDamage.PasswordChar = '\0';
+            this.txtDamage.PlaceholderText = "";
+            this.txtDamage.SelectedText = "";
+            this.txtDamage.ShadowDecoration.Parent = this.txtDamage;
+            this.txtDamage.Size = new System.Drawing.Size(423, 36);
+            this.txtDamage.TabIndex = 19;
             // 
             // gunaLabel6
             // 
@@ -332,9 +398,9 @@
             this.gunaLabel3.Font = new System.Drawing.Font("Segoe UI", 9.55F);
             this.gunaLabel3.Location = new System.Drawing.Point(87, 368);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(284, 17);
+            this.gunaLabel3.Size = new System.Drawing.Size(302, 17);
             this.gunaLabel3.TabIndex = 11;
-            this.gunaLabel3.Text = "Allow book issue with overdue book in position";
+            this.gunaLabel3.Text = "Allow book issue with overdue book in possession";
             // 
             // tglWithOverdue
             // 
@@ -1070,72 +1136,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1083, 542);
             this.panel1.TabIndex = 3;
-            // 
-            // gunaLabel13
-            // 
-            this.gunaLabel13.AutoSize = true;
-            this.gunaLabel13.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel13.Location = new System.Drawing.Point(515, 92);
-            this.gunaLabel13.Name = "gunaLabel13";
-            this.gunaLabel13.Size = new System.Drawing.Size(148, 15);
-            this.gunaLabel13.TabIndex = 20;
-            this.gunaLabel13.Text = "Penalty for Damaged Book";
-            // 
-            // txtDamage
-            // 
-            this.txtDamage.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDamage.DefaultText = "";
-            this.txtDamage.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDamage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDamage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDamage.DisabledState.Parent = this.txtDamage;
-            this.txtDamage.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDamage.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtDamage.FocusedState.Parent = this.txtDamage;
-            this.txtDamage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.txtDamage.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtDamage.HoverState.Parent = this.txtDamage;
-            this.txtDamage.Location = new System.Drawing.Point(518, 117);
-            this.txtDamage.Name = "txtDamage";
-            this.txtDamage.PasswordChar = '\0';
-            this.txtDamage.PlaceholderText = "";
-            this.txtDamage.SelectedText = "";
-            this.txtDamage.ShadowDecoration.Parent = this.txtDamage;
-            this.txtDamage.Size = new System.Drawing.Size(423, 36);
-            this.txtDamage.TabIndex = 19;
-            // 
-            // gunaLabel14
-            // 
-            this.gunaLabel14.AutoSize = true;
-            this.gunaLabel14.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel14.Location = new System.Drawing.Point(515, 166);
-            this.gunaLabel14.Name = "gunaLabel14";
-            this.gunaLabel14.Size = new System.Drawing.Size(119, 15);
-            this.gunaLabel14.TabIndex = 22;
-            this.gunaLabel14.Text = "Penalty for Lost Book";
-            // 
-            // txtLostBook
-            // 
-            this.txtLostBook.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtLostBook.DefaultText = "";
-            this.txtLostBook.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtLostBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtLostBook.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLostBook.DisabledState.Parent = this.txtLostBook;
-            this.txtLostBook.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtLostBook.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtLostBook.FocusedState.Parent = this.txtLostBook;
-            this.txtLostBook.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.txtLostBook.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
-            this.txtLostBook.HoverState.Parent = this.txtLostBook;
-            this.txtLostBook.Location = new System.Drawing.Point(518, 191);
-            this.txtLostBook.Name = "txtLostBook";
-            this.txtLostBook.PasswordChar = '\0';
-            this.txtLostBook.PlaceholderText = "";
-            this.txtLostBook.SelectedText = "";
-            this.txtLostBook.ShadowDecoration.Parent = this.txtLostBook;
-            this.txtLostBook.Size = new System.Drawing.Size(423, 36);
-            this.txtLostBook.TabIndex = 21;
             // 
             // frmSettings
             // 

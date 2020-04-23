@@ -66,6 +66,7 @@ namespace LMS
             {
                 MyMessageBox.ShowMessage("Please enter the correct password!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 txtOldPass.Focus();
+                lblPass.Visible = false;
                 txtOldPass.FocusedState.BorderColor = Color.FromArgb(232, 17, 35);
             }
             else

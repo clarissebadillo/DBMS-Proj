@@ -66,6 +66,16 @@ namespace LMS
             cboCourse.SelectedIndex = -1;
             cboYear.SelectedIndex = -1;
             studImage.Image = Properties.Resources.user;
+
+            frmlist.lblAddress.Text = "";
+            frmlist.lblContact.Text = "";
+            frmlist.lblCourse.Text = "";
+            frmlist.lblEmail.Text = "";
+            frmlist.lblGender.Text = "";
+            frmlist.lblName.Text = "";
+            frmlist.lblStudNo.Text = "";
+            frmlist.lblYear.Text = "";
+            frmlist.stImage.Image = Properties.Resources.user;
         }
 
 

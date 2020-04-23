@@ -71,6 +71,17 @@ namespace LMS
 
         private void Clear()
         {
+            frmlist.lblAuthor.Text = "";
+            frmlist.lblBookTitle.Text = "";
+            frmlist.lblGenre.Text = "";
+            frmlist.lblISBN.Text = "";
+            frmlist.lblLanguage.Text = "";
+            frmlist.lblMediaType.Text = "";
+            frmlist.lblPrice.Text = "";
+            frmlist.lblPublisher.Text = "";
+            frmlist.lblSubject.Text = "";
+            frmlist.lblYear.Text = "";
+
             txtTitle.Text = "";
             txtAuthor.Text = "";
             txtISBN.Text = "";

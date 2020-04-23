@@ -310,6 +310,9 @@ namespace LMS
         private void BtnProcessIssue_Click(object sender, EventArgs e)
         {
             frmOnHand frm = new frmOnHand(this);
+
+
+
             if (txtSearchStud.Text == "")
             {
                 txtSearchStud.Focus();
@@ -327,13 +330,35 @@ namespace LMS
             {
                 MyMessageBox.ShowMessage("No available copies left!", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
             }
-            else if(withPending == "False")
+            else if (withPending == "False")
             {
-                MyMessageBox.ShowMessage("Student needs to settle all pending payments to allow checking out another books.", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (lblFine.Text == "₱.00" || lblFine.Text == "₱0.00")
+                {
+                    BorrowBook();
+                    Clear();
+                    LoadDetails();
+                    BooksOnHand();
+                    BorrowHistory();
+                }
+                else
+                {
+                    MyMessageBox.ShowMessage("Student needs to settle all pending payments to allow checking out another books.", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
             }
             else if (withOverdue == "False")
             {
-                MyMessageBox.ShowMessage("Student needs to return all overdue books to allow checking out another books.", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                if (lblBooksOverdue.Text == "0")
+                {
+                    BorrowBook();
+                    Clear();
+                    LoadDetails();
+                    BooksOnHand();
+                    BorrowHistory();
+                }
+                else
+                {
+                    MyMessageBox.ShowMessage("Student needs to return all overdue books to allow checking out another books.", "", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
             }
             else
             {
