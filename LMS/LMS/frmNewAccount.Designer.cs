@@ -37,11 +37,6 @@
             this.btnHidePass = new Guna.UI2.WinForms.Guna2ImageButton();
             this.lblPass = new System.Windows.Forms.Label();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCreateAccount = new Guna.UI.WinForms.GunaAdvenceButton();
             this.txtUsername = new Guna.UI2.WinForms.Guna2TextBox();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
@@ -61,11 +56,6 @@
             this.gunaLinePanel1.Controls.Add(this.btnHidePass);
             this.gunaLinePanel1.Controls.Add(this.lblPass);
             this.gunaLinePanel1.Controls.Add(this.txtEmail);
-            this.gunaLinePanel1.Controls.Add(this.label5);
-            this.gunaLinePanel1.Controls.Add(this.label4);
-            this.gunaLinePanel1.Controls.Add(this.label3);
-            this.gunaLinePanel1.Controls.Add(this.label2);
-            this.gunaLinePanel1.Controls.Add(this.label1);
             this.gunaLinePanel1.Controls.Add(this.btnCreateAccount);
             this.gunaLinePanel1.Controls.Add(this.txtUsername);
             this.gunaLinePanel1.Controls.Add(this.gunaControlBox1);
@@ -82,7 +72,7 @@
             this.gunaLinePanel1.LineTop = 8;
             this.gunaLinePanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
-            this.gunaLinePanel1.Size = new System.Drawing.Size(652, 400);
+            this.gunaLinePanel1.Size = new System.Drawing.Size(477, 400);
             this.gunaLinePanel1.TabIndex = 0;
             // 
             // lblLibrarian
@@ -90,7 +80,7 @@
             this.lblLibrarian.AutoSize = true;
             this.lblLibrarian.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLibrarian.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.lblLibrarian.Location = new System.Drawing.Point(191, 353);
+            this.lblLibrarian.Location = new System.Drawing.Point(46, 352);
             this.lblLibrarian.Name = "lblLibrarian";
             this.lblLibrarian.Size = new System.Drawing.Size(0, 15);
             this.lblLibrarian.TabIndex = 80;
@@ -101,7 +91,7 @@
             this.btnShowPass2.CheckedState.Parent = this.btnShowPass2;
             this.btnShowPass2.HoverState.Parent = this.btnShowPass2;
             this.btnShowPass2.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPass2.Image")));
-            this.btnShowPass2.Location = new System.Drawing.Point(546, 291);
+            this.btnShowPass2.Location = new System.Drawing.Point(404, 289);
             this.btnShowPass2.Name = "btnShowPass2";
             this.btnShowPass2.PressedState.Parent = this.btnShowPass2;
             this.btnShowPass2.Size = new System.Drawing.Size(23, 23);
@@ -113,7 +103,7 @@
             this.btnShowPass.CheckedState.Parent = this.btnShowPass;
             this.btnShowPass.HoverState.Parent = this.btnShowPass;
             this.btnShowPass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPass.Image")));
-            this.btnShowPass.Location = new System.Drawing.Point(546, 244);
+            this.btnShowPass.Location = new System.Drawing.Point(404, 242);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.PressedState.Parent = this.btnShowPass;
             this.btnShowPass.Size = new System.Drawing.Size(23, 23);
@@ -125,7 +115,7 @@
             this.btnHidePass2.CheckedState.Parent = this.btnHidePass2;
             this.btnHidePass2.HoverState.Parent = this.btnHidePass2;
             this.btnHidePass2.Image = ((System.Drawing.Image)(resources.GetObject("btnHidePass2.Image")));
-            this.btnHidePass2.Location = new System.Drawing.Point(546, 291);
+            this.btnHidePass2.Location = new System.Drawing.Point(404, 289);
             this.btnHidePass2.Name = "btnHidePass2";
             this.btnHidePass2.PressedState.Parent = this.btnHidePass2;
             this.btnHidePass2.Size = new System.Drawing.Size(23, 23);
@@ -138,7 +128,7 @@
             this.btnHidePass.CheckedState.Parent = this.btnHidePass;
             this.btnHidePass.HoverState.Parent = this.btnHidePass;
             this.btnHidePass.Image = ((System.Drawing.Image)(resources.GetObject("btnHidePass.Image")));
-            this.btnHidePass.Location = new System.Drawing.Point(546, 244);
+            this.btnHidePass.Location = new System.Drawing.Point(404, 242);
             this.btnHidePass.Name = "btnHidePass";
             this.btnHidePass.PressedState.Parent = this.btnHidePass;
             this.btnHidePass.Size = new System.Drawing.Size(23, 23);
@@ -151,7 +141,7 @@
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Segoe UI", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
-            this.lblPass.Location = new System.Drawing.Point(187, 326);
+            this.lblPass.Location = new System.Drawing.Point(42, 325);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(143, 15);
             this.lblPass.TabIndex = 73;
@@ -172,69 +162,14 @@
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtEmail.HoverState.Parent = this.txtEmail;
-            this.txtEmail.Location = new System.Drawing.Point(182, 149);
+            this.txtEmail.Location = new System.Drawing.Point(40, 150);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PlaceholderText = "sample@email.com";
+            this.txtEmail.PlaceholderText = "Email";
             this.txtEmail.SelectedText = "";
             this.txtEmail.ShadowDecoration.Parent = this.txtEmail;
             this.txtEmail.Size = new System.Drawing.Size(396, 36);
             this.txtEmail.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.label5.Location = new System.Drawing.Point(53, 294);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 17);
-            this.label5.TabIndex = 70;
-            this.label5.Text = "Re-type Password";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.label4.Location = new System.Drawing.Point(53, 248);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 17);
-            this.label4.TabIndex = 69;
-            this.label4.Text = "Password";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.label3.Location = new System.Drawing.Point(53, 203);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
-            this.label3.TabIndex = 68;
-            this.label3.Text = "Username";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.label2.Location = new System.Drawing.Point(53, 158);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 17);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "Email";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.label1.Location = new System.Drawing.Point(53, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Full Name";
             // 
             // btnCreateAccount
             // 
@@ -255,7 +190,7 @@
             this.btnCreateAccount.Image = null;
             this.btnCreateAccount.ImageSize = new System.Drawing.Size(22, 22);
             this.btnCreateAccount.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.btnCreateAccount.Location = new System.Drawing.Point(426, 333);
+            this.btnCreateAccount.Location = new System.Drawing.Point(284, 332);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.btnCreateAccount.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -284,7 +219,7 @@
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.txtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtUsername.HoverState.Parent = this.txtUsername;
-            this.txtUsername.Location = new System.Drawing.Point(182, 193);
+            this.txtUsername.Location = new System.Drawing.Point(40, 192);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.PasswordChar = '\0';
             this.txtUsername.PlaceholderText = "Username";
@@ -300,7 +235,7 @@
             this.gunaControlBox1.AnimationSpeed = 0.03F;
             this.gunaControlBox1.IconColor = System.Drawing.Color.Black;
             this.gunaControlBox1.IconSize = 15F;
-            this.gunaControlBox1.Location = new System.Drawing.Point(613, 8);
+            this.gunaControlBox1.Location = new System.Drawing.Point(438, 8);
             this.gunaControlBox1.Name = "gunaControlBox1";
             this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(17)))), ((int)(((byte)(35)))));
             this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
@@ -322,7 +257,7 @@
             this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtFullName.HoverState.Parent = this.txtFullName;
-            this.txtFullName.Location = new System.Drawing.Point(182, 103);
+            this.txtFullName.Location = new System.Drawing.Point(40, 104);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
             this.txtFullName.PlaceholderText = "Full Name";
@@ -336,7 +271,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
-            this.lblTitle.Location = new System.Drawing.Point(187, 43);
+            this.lblTitle.Location = new System.Drawing.Point(42, 42);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(278, 37);
             this.lblTitle.TabIndex = 1;
@@ -356,10 +291,10 @@
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtPassword.HoverState.Parent = this.txtPassword;
-            this.txtPassword.Location = new System.Drawing.Point(182, 239);
+            this.txtPassword.Location = new System.Drawing.Point(40, 237);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.PlaceholderText = "●●●●●●●●";
+            this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.SelectedText = "";
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(396, 36);
@@ -379,10 +314,10 @@
             this.txtRetypePass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(56)))));
             this.txtRetypePass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(162)))), ((int)(((byte)(44)))));
             this.txtRetypePass.HoverState.Parent = this.txtRetypePass;
-            this.txtRetypePass.Location = new System.Drawing.Point(182, 285);
+            this.txtRetypePass.Location = new System.Drawing.Point(40, 283);
             this.txtRetypePass.Name = "txtRetypePass";
             this.txtRetypePass.PasswordChar = '\0';
-            this.txtRetypePass.PlaceholderText = "●●●●●●●●";
+            this.txtRetypePass.PlaceholderText = "Re-type Password";
             this.txtRetypePass.SelectedText = "";
             this.txtRetypePass.ShadowDecoration.Parent = this.txtRetypePass;
             this.txtRetypePass.Size = new System.Drawing.Size(396, 36);
@@ -393,7 +328,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(652, 400);
+            this.ClientSize = new System.Drawing.Size(477, 400);
             this.Controls.Add(this.gunaLinePanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNewAccount";
@@ -415,12 +350,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtFullName;
         private Guna.UI.WinForms.GunaAdvenceButton btnCreateAccount;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2ImageButton btnShowPass2;
         private Guna.UI2.WinForms.Guna2ImageButton btnShowPass;
         private Guna.UI2.WinForms.Guna2ImageButton btnHidePass2;
