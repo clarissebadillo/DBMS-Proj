@@ -1001,7 +1001,7 @@
             this.tabPageAdv4.ShowCloseButton = true;
             this.tabPageAdv4.Size = new System.Drawing.Size(1083, 513);
             this.tabPageAdv4.TabIndex = 4;
-            this.tabPageAdv4.Text = "Backup Database";
+            this.tabPageAdv4.Text = "Export Data";
             this.tabPageAdv4.ThemesEnabled = false;
             // 
             // gunaLabel10

@@ -166,20 +166,6 @@ namespace LMS
                 frm.txtCopies.Text = gunaDataGridView1[12, e.RowIndex].Value.ToString();
                 frm.ShowDialog();
             }
-            else if (colName == "Delete")
-            {
-                if (MyMessageBox.ShowMessage("Are you sure you want to remove this record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    cn.Open();
-                    cm = new SqlCommand("DELETE FROM tblBook WHERE bookID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
-                    cm.ExecuteNonQuery();
-                    cn.Close();
-
-                    MyMessageBox.ShowMessage("Record has been successfully removed!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadRecords();
-                    RemoveBookLogs();
-                }
-            }
             else if (colName == "AddCopy")
             {
                 frmAcquireBooks frm = new frmAcquireBooks(this);

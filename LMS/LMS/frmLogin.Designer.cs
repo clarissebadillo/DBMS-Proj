@@ -46,7 +46,6 @@
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.checkbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.popupNotifier = new Tulpep.NotificationWindow.PopupNotifier();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlError.SuspendLayout();
             this.SuspendLayout();
@@ -291,37 +290,12 @@
             this.popupNotifier.TitlePadding = new System.Windows.Forms.Padding(5, 15, 0, 0);
             this.popupNotifier.TitleText = "ACCESS GRANTED!";
             // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2Transition1.SetDecoration(this.guna2TextBox1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(472, 365);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Password";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(255, 36);
-            this.guna2TextBox1.TabIndex = 9;
-            this.guna2TextBox1.UseSystemPasswordChar = true;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(789, 463);
-            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.checkbox);
             this.Controls.Add(this.pnlError);
             this.Controls.Add(this.gunaLabel1);
@@ -361,6 +335,5 @@
         private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
         private Tulpep.NotificationWindow.PopupNotifier popupNotifier;
         private Guna.UI2.WinForms.Guna2CheckBox checkbox;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
     }
 }

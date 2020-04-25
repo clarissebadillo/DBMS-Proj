@@ -135,7 +135,7 @@ namespace LMS
                             cn.Open();
                             cm.Parameters.Clear();
                             //command to be executed on the database
-                            cm = new SqlCommand("INSERT INTO tblStudent VALUES (@studentNum, @lastName, @firstName, @course, @year, @gender, @contact, @email, @address, @image)", cn);
+                            cm = new SqlCommand("INSERT INTO tblStudent VALUES (@studentNum, @lastName, @firstName, @course, @year, @gender, @contact, @email, @address, @image, 'Active')", cn);
 
                             //set parameters value
                             cm.Parameters.AddWithValue("@studentNum", txtStudNo.Text);

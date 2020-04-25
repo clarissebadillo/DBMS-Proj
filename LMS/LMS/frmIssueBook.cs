@@ -193,7 +193,7 @@ namespace LMS
         public void AutoCompleteStudentNo()
         {
             cn.Open();
-            cm = new SqlCommand("SELECT studentNum FROM tblStudent", cn);
+            cm = new SqlCommand("SELECT studentNum FROM tblStudent WHERE accountStat = 'Active'", cn);
             dr = cm.ExecuteReader();
             AutoCompleteStringCollection Collection = new AutoCompleteStringCollection();
             while (dr.Read())

@@ -86,7 +86,7 @@ namespace LMS
             int i = 0;
             gunaDataGridView1.Rows.Clear();
             cn.Open();
-            cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s WHERE lastName LIKE '" + txtSearch.Text + "%'", cn); //abc%'")
+            cm = new SqlCommand("SELECT s.*, (SELECT COUNT(*) FROM tblBorrowedBook b  WHERE b.status = 'Not Returned' AND b.studentID = s.StudentId) as BookCount FROM tblStudent s WHERE accountStat = 'Active' AND lastName LIKE '" + txtSearch.Text + "%'", cn);
             dr = cm.ExecuteReader();
             while (dr.Read())
             {
@@ -190,7 +190,7 @@ namespace LMS
                 if (MyMessageBox.ShowMessage("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     cn.Open();
-                    cm = new SqlCommand("DELETE FROM tblStudent WHERE studentID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
+                    cm = new SqlCommand("UPDATE tblStudent SET accountStat = 'Deactivated' WHERE studentID like '" + gunaDataGridView1[1, e.RowIndex].Value.ToString() + "'", cn);
                     cm.ExecuteNonQuery();
                     cn.Close();
 
